@@ -73,13 +73,9 @@
   .pill .pval{ font-family:var(--font-display); font-size:.82rem; font-weight:700; }
   .pill.streak .pval{ color:var(--gold) }
   .pill.xp .pval{ color:var(--accent-500) }
-  .adminlink{ font-family:var(--font-body); font-size:.78rem; font-weight:600; letter-spacing:.02em;
-    color:var(--accent-600); text-decoration:none; padding:.45rem .85rem; border-radius:8px;
-    border:1px solid var(--accent-500); background:var(--accent-soft); transition:.15s;
-    display:inline-flex; align-items:center; gap:.4rem }
-  .adminlink::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent-500); box-shadow:0 0 8px var(--accent-500); }
-  .adminlink:hover{ background:var(--accent-500); color:var(--ink-950); border-color:var(--accent-500) }
-  .adminlink:hover::before{ background:var(--ink-950); box-shadow:none }
+  .adminlink{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-500); text-decoration:none; padding:.35rem .7rem; border-radius:8px; }
+  .adminlink:hover{ background:var(--accent-soft) }
   @media(max-width:520px){ .pill{ display:none } .adminlink{ display:none } }
 
   /* main tool page */
@@ -193,7 +189,17 @@
   @keyframes bob{ 0%,100%{ transform:translateX(-50%) translateY(0) } 50%{ transform:translateX(-50%) translateY(3px) } }
   @media (prefers-reduced-motion:reduce){ .tooltip{ animation:none } }
 
-  .card{ position:relative; width:100%; height:340px; cursor:pointer; }
+  .cardactions{ position:absolute; top:14px; right:16px; display:flex; gap:.35rem; z-index:2 }
+  .cardaction{ width:30px; height:30px; border-radius:8px; background:transparent; border:1px solid var(--line);
+    color:var(--text-soft); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.15s; padding:0 }
+  .cardaction:hover{ color:var(--accent-500); border-color:var(--accent-500); background:var(--accent-soft) }
+  .cardaction svg{ width:14px; height:14px }
+  .scen{ margin-top:.9rem; padding:.7rem .9rem; border-radius:9px; background:rgba(232,153,58,.09);
+    border-left:2px solid var(--accent-500); font-size:.85rem; line-height:1.5; color:#F1F5F9; opacity:.9 }
+  .scen .scenlbl{ display:block; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent-glow); font-weight:700; margin-bottom:.3rem }
+
+  .card{ position:relative; width:100%; height:400px; cursor:pointer; }
   .card .face{ position:absolute; inset:0; border-radius:16px; border:1px solid var(--line);
     box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
     display:flex; flex-direction:column; padding:2rem 2.2rem;
@@ -323,6 +329,23 @@
     text-decoration:none; padding:.7rem 1.1rem; border:1px solid rgba(255,255,255,.18); border-radius:10px; }
   .coursecta a.golink:hover{ border-color:var(--accent-500); color:var(--accent-500) }
   .coursecta .trustline{ font-size:.72rem; color:rgba(241,245,249,.55); margin:0 }
+  .coursecta .testimonial{ background:rgba(255,255,255,.04); border-left:3px solid var(--accent-500);
+    border-radius:0 8px 8px 0; padding:.9rem 1.1rem; }
+  .coursecta .tquote{ font-style:italic; font-size:.9rem; line-height:1.5; color:#F1F5F9; margin:0 0 .5rem }
+  .coursecta .tattr{ font-size:.72rem; color:rgba(241,245,249,.6); margin:0 }
+  .coursecta .tname{ color:var(--accent-glow); font-weight:700 }
+
+  .badgestrip{ background:linear-gradient(135deg, rgba(232,153,58,.14), rgba(212,168,90,.08));
+    border:1px solid var(--accent-line); border-radius:12px; padding:.9rem 1.1rem; margin:.5rem 0 0 }
+  .badgestriplbl{ font-size:.64rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent-600); font-weight:700; margin-bottom:.6rem }
+  .badgestripitems{ display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center }
+  .badgeitem{ display:flex; gap:.5rem; align-items:center; text-align:left }
+  .badgeitem .bi{ width:34px; height:34px; border-radius:50%; background:var(--accent-500); color:var(--ink-950);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem;
+    box-shadow:0 0 14px -3px rgba(232,153,58,.6) }
+  .badgeitem b{ display:block; font-size:.82rem; color:var(--text); font-weight:700 }
+  .badgeitem em{ display:block; font-size:.7rem; color:var(--text-soft); font-style:normal; margin-top:.1rem }
 
   /* footer */
   footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
@@ -382,6 +405,12 @@
   .demonote{ background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
     padding:.85rem 1rem; font-size:.76rem; color:var(--text); margin-top:1.2rem; }
   .demonote b{ color:var(--accent-600) }
+  .admintablehead{ display:flex; justify-content:space-between; align-items:center; margin-bottom:.9rem; gap:.6rem; flex-wrap:wrap }
+  .admintablehead h3{ margin:0 }
+  .csvbtn{ font-family:var(--font-body); font-size:.78rem; font-weight:600; background:var(--text); color:var(--panel-bg);
+    border:none; border-radius:8px; padding:.55rem .9rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; transition:.15s }
+  .csvbtn:hover{ background:var(--accent-500); color:var(--ink-950) }
+  .csvbtn svg{ width:14px; height:14px }
 </style>
 
 <header class="top">
@@ -494,14 +523,20 @@
     </div>
   </div>
   <div class="adminpanel">
-    <h3>Recent signups &amp; activity</h3>
+    <div class="admintablehead">
+      <h3>Recent signups &amp; activity</h3>
+      <button class="csvbtn" id="csvExportBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export CSV
+      </button>
+    </div>
     <div class="tablewrap">
       <table class="usertable" id="userTable">
         <thead><tr><th>Email</th><th>Signed up</th><th>Sessions</th><th>Mastered</th><th>Streak</th><th>Last active</th><th>Status</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
-    <div class="demonote"><b>Demo data.</b> Production version connects to your CRM and database. Export to CSV, HubSpot sync, and per-user drilldowns available in the paid build.</div>
+    <div class="demonote"><b>Demo data.</b> Production version connects to your CRM and database. HubSpot sync and per-user drilldowns available in the paid build.</div>
   </div>
 </div>
 
@@ -515,34 +550,34 @@
   var STORAGE_KEY = 'invensis-asm-flashcards-v10';
 
   var CARDS = [
-    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
-    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The set of guidelines behind the Manifesto. Covers customer satisfaction, welcoming change, frequent delivery of working software, close daily collaboration, motivated teams, sustainable pace, technical excellence, simplicity, and self-organising teams.'},
-    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
-    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
-    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true},
-    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.'},
-    {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.'},
-    {id:'facilitation',cat:'Scrum Roles',term:'Facilitation',def:'The Scrum Master skill of helping the team hold effective conversations and reach shared decisions without dictating content or outcome.'},
-    {id:'coaching',cat:'Scrum Roles',term:'Coaching',def:'The Scrum Master practice of helping individuals and the team grow in self-management, an agile mindset, and continuous improvement over time.'},
-    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
-    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
-    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
-    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
-    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
-    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
-    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
-    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
-    {id:'story-points',cat:'Estimation & Planning',term:'Story points',def:'A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.'},
-    {id:'relative-sizing',cat:'Estimation & Planning',term:'Relative sizing',def:'Estimating backlog items by comparing them to each other (bigger, smaller, roughly the same) rather than trying to fix an absolute time to each one.'},
-    {id:'velocity',cat:'Estimation & Planning',term:'Velocity',def:'The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.'},
-    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
-    {id:'agile-estimation',cat:'Estimation & Planning',term:'Agile estimation',def:'Collaborative techniques the team uses to size backlog items, commonly Planning Poker or T-shirt sizing. Surfaces shared understanding, not just numbers.'},
-    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
-    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
-    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
-    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
-    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
-    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'}
+    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.',scen:'A team debating a 40-page architecture doc versus shipping a working prototype for feedback. The Manifesto answers: prototype first.'},
+    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The set of guidelines behind the Manifesto. Covers customer satisfaction, welcoming change, frequent delivery of working software, close daily collaboration, motivated teams, sustainable pace, technical excellence, simplicity, and self-organising teams.',scen:'The team asks "should we release every 6 months or every 2 weeks?" Principle 3 says: as frequently as possible, with a preference for the shorter timescale.'},
+    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.',scen:'A developer notices a design flaw mid-Sprint but stays quiet. Courage says: raise it now, even if it means rework.'},
+    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.',scen:'The Product Owner wants a 6-month plan up front. Empiricism says: plan just the next Sprint, inspect what shipped, adapt from there.'},
+    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true,scen:'HR asks the Scrum Master to write annual reviews for team members. The answer: no. The SM protects the team from command-and-control interference.'},
+    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.',scen:'Two stakeholders disagree on priority. The PO decides. Not by consensus, not by manager escalation. That is the accountability.'},
+    {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.',scen:'The tester finds a bug the day before Sprint end. Developers self-organise around it. No manager assigns who fixes what.'},
+    {id:'facilitation',cat:'Scrum Roles',term:'Facilitation',def:'The Scrum Master skill of helping the team hold effective conversations and reach shared decisions without dictating content or outcome.',scen:'A retro devolves into blame. The SM facilitates by structuring the discussion around events and impact, not people.'},
+    {id:'coaching',cat:'Scrum Roles',term:'Coaching',def:'The Scrum Master practice of helping individuals and the team grow in self-management, an agile mindset, and continuous improvement over time.',scen:'A new Developer struggles with estimation. The SM coaches over several Sprints. Asks questions rather than giving answers.'},
+    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true,scen:'Mid-Sprint, the CEO asks to add urgent work. The Sprint is protected. The item goes to the next Sprint or Backlog.'},
+    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.',scen:'The team commits to 25 story points based on last Sprint\'s velocity of 24. Realistic, not aspirational.'},
+    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.',scen:'A Developer says "I am blocked on database access." The team decides on the spot who unblocks them by lunchtime.'},
+    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.',scen:'A stakeholder sees the shipped feature and realises they need a different UX. The Product Backlog is updated on the spot.'},
+    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.',scen:'The team notices their Daily Scrum runs 30 minutes. Action item: appoint a timekeeper next Sprint.'},
+    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."',scen:'200 items in the backlog, roughly ordered. Only the top 20 are refined to detail. The rest can wait.'},
+    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.',scen:'On day 4 of a 10-day Sprint, the team realises they under-scoped and adds a small item. The Sprint Backlog is theirs to change.'},
+    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true,scen:'"As a new user, I want to save a draft so that I do not lose work if I get interrupted." Clear who, what, why.'},
+    {id:'story-points',cat:'Estimation & Planning',term:'Story points',def:'A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.',scen:'"This login work is a 3, and this password reset is a 5. About twice the effort." Comparative, not hours.'},
+    {id:'relative-sizing',cat:'Estimation & Planning',term:'Relative sizing',def:'Estimating backlog items by comparing them to each other (bigger, smaller, roughly the same) rather than trying to fix an absolute time to each one.',scen:'The team debates hours vs. story points for months. Then they try Planning Poker: 30 minutes, consensus, useful estimate.'},
+    {id:'velocity',cat:'Estimation & Planning',term:'Velocity',def:'The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.',scen:'Last 3 Sprints delivered 22, 24, 25 points. Forecast: the team can probably handle 23 to 24 next Sprint.'},
+    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.',scen:'Mid-Sprint burndown is flat. No work is being finished. Prompts a retro-worthy conversation, not a manager scolding.'},
+    {id:'agile-estimation',cat:'Estimation & Planning',term:'Agile estimation',def:'Collaborative techniques the team uses to size backlog items, commonly Planning Poker or T-shirt sizing. Surfaces shared understanding, not just numbers.',scen:'In Planning Poker, everyone reveals a number simultaneously. If estimates diverge wildly, the outlier explains. Often surfaces missed complexity.'},
+    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.',scen:'5 teams working on one product. Instead of one giant daily standup, teams send a rep to a Scrum of Scrums for coordination.'},
+    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.',scen:'A compliance report with 100 known rules is not a good fit. A predictive plan works better. A new mobile app with fuzzy requirements is a great fit.'},
+    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.',scen:'A distributed team uses Jira for the Sprint Backlog, GitHub for code, Slack for the Daily Scrum. Tools serve the practice, not the other way round.'},
+    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.',scen:'Nobody assigns User Story 42 to a Developer. A Developer picks it up because they have capacity and interest.'},
+    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.',scen:'A backlog item three months out is a one-line title. The one being worked on this Sprint has acceptance criteria and mockups.'},
+    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.',scen:'A company runs Scrum on one team, sees results, then realises adoption requires HR to change reviews, finance to change budgeting, leadership to change how they set goals.'}
   ];
 
   var FREE_LIMIT = 3;
@@ -557,8 +592,23 @@
 
   var state = loadState() || {
     unlocked:false, email:'', cardStates:{}, streak:{count:0,lastActive:null},
-    totalSessionsCompleted:0, xp:0
+    totalSessionsCompleted:0, xp:0, badges:{}
   };
+  if (!state.badges) state.badges = {};
+
+  var BADGES = {
+    first_session: { name:'First Session', desc:'Completed your first study session', icon:'✓' },
+    three_streak: { name:'3-Day Streak', desc:'Studied 3 days in a row', icon:'★' },
+    perfect_score: { name:'Perfect Score', desc:'100% on a session', icon:'◆' },
+    deck_mastered: { name:'Deck Mastered', desc:'All 28 cards rated Nailed It', icon:'♦' },
+    persistent: { name:'Persistent', desc:'Rated 5+ cards Study Again in a session and kept going', icon:'↻' }
+  };
+
+  var TESTIMONIALS = [
+    { quote:'The spaced-repetition alone made me pass. I stopped re-reading notes and just came back daily.', name:'Ananya M.', role:'Certified Scrum Master, Bengaluru' },
+    { quote:'Cleared ASM on the first attempt after two weeks with this + the Invensis course. Worth every rupee.', name:'Rohit K.', role:'Delivery Lead, Pune' },
+    { quote:'Best free resource I found. The scenario examples on the back of each card is what made concepts click for me.', name:'Priya S.', role:'Business Analyst, Hyderabad' }
+  ];
 
   function updateStreak(){
     var today = todayISO();
@@ -715,12 +765,21 @@
     sessionShown[i] = true;
     cardEl.classList.remove('flipped'); flipped=false;
     frontFace.innerHTML =
+      '<div class="cardactions">' +
+        '<button class="cardaction" data-act="audio" title="Read term aloud" aria-label="Read term aloud">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>' +
+        '</button>' +
+        '<button class="cardaction" data-act="share" title="Share this term on LinkedIn" aria-label="Share on LinkedIn">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>' +
+        '</button>' +
+      '</div>' +
       '<div class="prompt">Try to recall</div>' +
       '<div class="term">'+card.term+'</div>' +
       '<div class="flipcue">Tap to reveal definition ↻</div>';
     backFace.innerHTML =
       '<div class="prompt">Definition</div>' +
       '<div class="def">'+card.def+'</div>' +
+      (card.scen ? '<div class="scen"><span class="scenlbl">In practice</span>'+card.scen+'</div>' : '') +
       '<div class="rate">' +
         '<button class="again" data-rate="again">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
@@ -734,6 +793,21 @@
       '</div>';
     backFace.querySelectorAll('.rate button').forEach(function(b){
       b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
+    });
+    frontFace.querySelectorAll('.cardaction').forEach(function(b){
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (b.dataset.act === 'audio' && window.speechSynthesis){
+          window.speechSynthesis.cancel();
+          var u = new SpeechSynthesisUtterance(card.term);
+          u.rate = .95; u.pitch = 1;
+          window.speechSynthesis.speak(u);
+        } else if (b.dataset.act === 'share'){
+          var url = 'https://www.invensislearning.com/agile-scrum-master/';
+          var text = 'Studying "' + card.term + '" for the Agile Scrum Master exam.';
+          window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url) + '&summary=' + encodeURIComponent(text), '_blank', 'noopener');
+        }
+      });
     });
     hint.textContent='Try to recall, then flip';
     tooltip.style.display = (distinctShown()===1 && !tooltipDismissed) ? 'block' : 'none';
@@ -837,6 +911,10 @@
           '<div><b>2</b><span>Full-length mock exams</span></div>' +
           '<div><b>100%</b><span>Money-back pass guarantee</span></div>' +
         '</div>' +
+        '<div class="testimonial" style="transition:opacity .3s ease">' +
+          '<p class="tquote">“'+TESTIMONIALS[0].quote+'”</p>' +
+          '<p class="tattr"><b class="tname">'+TESTIMONIALS[0].name+'</b> · <span class="trole">'+TESTIMONIALS[0].role+'</span></p>' +
+        '</div>' +
         '<div class="ctarow">' +
           '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
           '<a class="golink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Talk to an advisor</a>' +
@@ -866,7 +944,45 @@
       stageEl.style.display = 'flex';
       renderCard();
     });
-    state.totalSessionsCompleted++; saveState();
+    state.totalSessionsCompleted++;
+    var newBadges = [];
+    if (!state.badges.first_session){ state.badges.first_session = todayISO(); newBadges.push('first_session'); }
+    if (state.streak.count >= 3 && !state.badges.three_streak){ state.badges.three_streak = todayISO(); newBadges.push('three_streak'); }
+    if (score === 100 && !state.badges.perfect_score){ state.badges.perfect_score = todayISO(); newBadges.push('perfect_score'); }
+    if (masteredCount() === CARDS.length && !state.badges.deck_mastered){ state.badges.deck_mastered = todayISO(); newBadges.push('deck_mastered'); }
+    if (again >= 5 && !state.badges.persistent){ state.badges.persistent = todayISO(); newBadges.push('persistent'); }
+    if (newBadges.length){
+      var bhtml = '<div class="badgestrip"><div class="badgestriplbl">New badges unlocked</div><div class="badgestripitems">';
+      newBadges.forEach(function(k){
+        var b = BADGES[k];
+        bhtml += '<div class="badgeitem"><span class="bi">'+b.icon+'</span><span><b>'+b.name+'</b><em>'+b.desc+'</em></span></div>';
+      });
+      bhtml += '</div></div>';
+      var badgesEl = document.createElement('div');
+      badgesEl.innerHTML = bhtml;
+      summaryCard.insertBefore(badgesEl.firstChild, summaryCard.querySelector('.stats'));
+    }
+    startTestimonialRotator();
+    saveState();
+  }
+
+  function startTestimonialRotator(){
+    var el = summaryCard.querySelector('.testimonial');
+    if (!el) return;
+    var idx = 0;
+    function tick(){
+      idx = (idx + 1) % TESTIMONIALS.length;
+      var t = TESTIMONIALS[idx];
+      el.style.opacity = '0';
+      setTimeout(function(){
+        el.querySelector('.tquote').textContent = '“' + t.quote + '”';
+        el.querySelector('.tname').textContent = t.name;
+        el.querySelector('.trole').textContent = t.role;
+        el.style.opacity = '1';
+      }, 300);
+    }
+    if (el._rotator) clearInterval(el._rotator);
+    el._rotator = setInterval(tick, 6000);
   }
 
   function generateShareImage(score, grade){
@@ -1017,6 +1133,23 @@
         '<td class="num">'+u.streak+'</td><td>'+u.active+'</td>'+
         '<td><span class="status '+u.status+'">'+(u.status==='active'?'● Active':u.status==='new'?'● New':'○ Idle')+'</span></td></tr>';
     }).join('');
+
+    var csvBtn = document.getElementById('csvExportBtn');
+    if (csvBtn && !csvBtn._wired){
+      csvBtn._wired = true;
+      csvBtn.addEventListener('click', function(){
+        var header = ['Email','Signed up','Sessions','Mastered','Streak','Last active','Status'];
+        var rows = users.map(function(u){ return [u.email, u.signed, u.sessions, u.mastered, u.streak, u.active, u.status]; });
+        var csv = [header].concat(rows).map(function(r){
+          return r.map(function(c){ var s = String(c); return /[",\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }).join(',');
+        }).join('\n');
+        var blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'asm-flashcards-signups-'+todayISO()+'.csv';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      });
+    }
   }
 
   var resetLink = document.getElementById('resetLink');
