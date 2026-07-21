@@ -1,39 +1,35 @@
 # Invensis Learning Tools
 
-Prototype tools and internal reference files for Invensis Learning's certification prep suite.
+Prototype tools for Invensis Learning's certification prep suite. This repo holds the ASM (Agile Scrum Master) Flashcards prototype and a few internal reference files. Once the development team picks this up, the tool is meant to be embedded in the Invensis Learning website — email capture and study progress get wired into the existing CRM.
 
-## ASM Flashcards Prototype
+## Main deliverable
 
-Recall-based flashcard study tool for the Agile Scrum Master (ASM) certification. 28 concept cards covering the full ASM syllabus, with spaced-repetition scheduling, an email gate after 3 free preview cards, and an admin analytics view accessible via `#admin` URL hash.
+**`index.html`** — the ASM Flashcards study tool. Single-file HTML, no build step, no dependencies. Open it in any browser.
 
-Two variants:
+### What it does
 
-- **`ASM-Flashcards-Prototype-v3.html`** — Standalone focused study tool. Sticky header, embedded flashcard panel, session summary with score and course CTA. Meant to run as its own page.
-- **`ASM-Flashcards-Final.html`** — Same underlying tool wrapped inside a mock blog article ("What Does a Scrum Master Actually Do?"). Shows how the widget appears when embedded within an Invensis Learning blog post.
-- **`ASM-Flashcards-Prototype-v4.html`** — Earlier landing-page variant with hero, features grid, and how-it-works sections. Superseded by v3 for the standalone use case.
+- 75-card deck covering the full Agile Scrum Master certification syllabus across 10 categories (Agile Concepts, Scrum Roles, Scrum Events, Scrum Artifacts, Estimation & Planning, Metrics & Reporting, Scaling & Adoption, Facilitation & Team Dynamics, Kanban & Complementary, Technical Practices)
+- Session-based study: 15 cards per session, randomised on each restart so the same user sees different subsets
+- Recall-first mechanic: see term, try to answer, flip to check, self-rate Hard / Good / Easy
+- Spaced-repetition scheduling: rated cards return the next day for another attempt
+- Email gate soft-locks the deck after 3 free preview cards (Scrum Master, Sprint, User Story). Gate captures name + email
+- Session summary with weighted percentage score (Easy × 100 + Good × 70 + Hard × 30) and grade label
+- Downloadable PDF report of the session: name, score, grade, per-card breakdown with rating badges, course CTA, contact block
+- Downloadable session share image (1200×630 PNG) with user's name, brand mark, score, and rating column
+- Related tools grid: LSSBB Practice, PMP Flashcards (coming soon), Change Management Flashcards (coming soon)
+- Contact strip: email `contact@invensislearning.com` · phone `+1 470-260-0084` · blog link
+- All progress and unlock state persists to browser localStorage. Reset progress link in footer for testing
 
-### Key features (both variants)
+### Integration notes for the dev team
 
-- Recall-first flip mechanic (see term → try to recall → flip → self-rate)
-- Three rating buttons: Study Again, Almost, Nailed It
-- Spaced-repetition scheduling: Almost = review in 3 days, Nailed It = review in 7 days
-- Session summary with weighted percentage score (Nailed It × 100 + Almost × 70 + Study Again × 30) and grade label
-- Downloadable session share image (1200x630 PNG)
-- Email gate soft-locks the deck after 3 free preview cards (Scrum Master, Sprint, User Story)
-- Mobile swipe gestures: left = Study Again, right = Almost, up = Nailed It
-- Progress and unlock state persist to browser localStorage
-- Sparkle burst animation on Nailed It
-- Admin dashboard at `#admin` with sample KPI tiles, signup chart, top-studied concepts, and user activity table (demo data — production version connects to CRM)
+- **Email capture**: the gate form (`#gateForm`) currently stores name + email in `localStorage` only. Wire the submit handler to your CRM endpoint (HubSpot / Mailchimp / internal API). Fields are `#gateName` and `#gateEmail`.
+- **PDF delivery**: the "Download PDF report" button opens a print-ready page and triggers browser print. For real delivery via email, generate the PDF server-side and attach to the welcome email that fires when the CRM captures the lead.
+- **Analytics**: the tool tracks per-user session data in localStorage (`cardStates`, `totalSessionsCompleted`, `streak`, etc.). To capture aggregated analytics across all users, POST session results to your data warehouse on each `showSummary()` call.
+- **Storage key**: currently `invensis-asm-flashcards-v15`. Bump the version number to force fresh state for all users after a major update.
 
-### To reset the demo for testing
+## Other files
 
-Click the "reset progress" link in the footer, or clear the browser's localStorage entry `invensis-asm-flashcards-v10`.
-
-## Reference files (internal)
-
-- **`Invensis Learning — Assets - Tools Browser.html`** — Master database of 1,038 planned assets across all 57 Invensis Learning certification courses. Filterable browsable list. Source of the ASM Flashcards spec.
-- **`LSSBB Black Belt Practice _ Invensis Learning.html`** — Teammate's LSSBB practice tool saved from local dev server. Used as visual/structural reference for the flashcard tool's landing-page treatment.
-
-## Notes
-
-All prototypes are self-contained single-file HTML. No build step, no dependencies. Open in a browser and they run. Email capture, PDF delivery, and admin analytics all require backend integration (Mailchimp / HubSpot / CRM of choice) for production use.
+- **`ASM-Flashcards-Final.html`** — Same underlying tool wrapped inside a mock blog article. Shows how the widget appears when embedded within an Invensis Learning blog post.
+- **`ASM-Flashcards-Prototype-v4.html`** — Older landing-page variant. Superseded — kept for reference only.
+- **`Invensis Learning — Assets - Tools Browser.html`** — Internal master database of 1,038 planned assets across all 57 Invensis Learning certification courses. Source of the ASM Flashcards spec.
+- **`LSSBB Black Belt Practice _ Invensis Learning.html`** — Teammate's LSSBB practice tool. Used as visual and structural reference.

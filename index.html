@@ -73,10 +73,7 @@
   .pill .pval{ font-family:var(--font-display); font-size:.82rem; font-weight:700; }
   .pill.streak .pval{ color:var(--gold) }
   .pill.xp .pval{ color:var(--accent-500) }
-  .adminlink{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--accent-500); text-decoration:none; padding:.35rem .7rem; border-radius:8px; }
-  .adminlink:hover{ background:var(--accent-soft) }
-  @media(max-width:520px){ .pill{ display:none } .adminlink{ display:none } }
+  @media(max-width:520px){ .pill{ display:none } }
 
   /* main tool page */
   .page{ max-width:640px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,32px) 48px;
@@ -370,66 +367,6 @@
   footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
     font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
   footer.foot a{ color:var(--accent-500); text-decoration:none }
-
-  /* admin view */
-  #adminView{ display:none; max-width:1200px; margin:0 auto; padding:clamp(28px,4vw,52px) clamp(20px,4vw,32px); }
-  #adminView.on{ display:block }
-  .adminback{ font-family:var(--font-mono); font-size:.75rem; color:var(--accent-500); text-decoration:none;
-    margin-bottom:1rem; display:inline-block; }
-  .admintop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem }
-  .admintop h1{ font-family:var(--font-display); font-size:clamp(1.5rem,3vw,1.9rem); font-weight:700 }
-  .adminmeta{ font-size:.78rem; color:var(--text-soft); }
-  .adminmeta b{ color:var(--good); font-weight:600 }
-  .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:2rem; }
-  .kpi{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.3rem;
-    display:flex; flex-direction:column; gap:.3rem; box-shadow:var(--shadow-sm); }
-  .kpi .lbl{ font-family:var(--font-mono); font-size:.64rem; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--text-soft); font-weight:600; }
-  .kpi .val{ font-family:var(--font-display); font-weight:700; font-size:1.85rem; color:var(--text); line-height:1; }
-  .kpi .delta{ font-size:.7rem; font-weight:600; color:var(--good); }
-  .kpi .delta.down{ color:var(--again) }
-  .admingrid{ display:grid; grid-template-columns:1.4fr 1fr; gap:1.4rem; margin-bottom:1.4rem; }
-  @media(max-width:900px){ .admingrid{ grid-template-columns:1fr } }
-  .adminpanel{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.4rem;
-    box-shadow:var(--shadow-sm); }
-  .adminpanel h3{ font-family:var(--font-display); font-weight:700; font-size:.98rem; margin-bottom:.9rem; }
-  .barchart{ display:flex; gap:8px; align-items:flex-end; height:170px; padding-top:1.3rem; position:relative; }
-  .bcbar{ flex:1; background:linear-gradient(180deg, var(--accent-400), var(--accent-600));
-    border-radius:5px 5px 0 0; position:relative; min-height:8px; cursor:pointer; transition:.2s; }
-  .bcbar:hover{ filter:brightness(1.15) }
-  .bcbar .v{ position:absolute; top:-1.3rem; left:50%; transform:translateX(-50%);
-    font-family:var(--font-mono); font-size:.66rem; font-weight:600; color:var(--text-soft); }
-  .bcbar .d{ position:absolute; bottom:-1.3rem; left:50%; transform:translateX(-50%);
-    font-family:var(--font-mono); font-size:.62rem; color:var(--text-soft); }
-  .chartlegend{ margin-top:2rem; font-size:.72rem; color:var(--text-soft); }
-  .mengagement{ display:flex; flex-direction:column; gap:.8rem; }
-  .mengrow{ display:flex; flex-direction:column; gap:.3rem; }
-  .mengtop{ display:flex; justify-content:space-between; font-size:.78rem; }
-  .mengtop b{ color:var(--text) }
-  .mengbar{ height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden }
-  .mengfill{ height:100%; background:var(--accent-500); border-radius:99px; }
-  .usertable{ width:100%; border-collapse:collapse; font-size:.82rem; }
-  .usertable th{ text-align:left; padding:.65rem .75rem; font-family:var(--font-mono);
-    font-size:.64rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); font-weight:600;
-    border-bottom:1px solid var(--line); }
-  .usertable td{ padding:.7rem .75rem; border-bottom:1px solid var(--line); vertical-align:middle }
-  .usertable tr:last-child td{ border-bottom:none }
-  .usertable td.email{ font-family:var(--font-mono); font-size:.76rem }
-  .usertable td.num{ font-family:var(--font-display); font-weight:600; font-variant-numeric:tabular-nums }
-  .status{ font-size:.66rem; padding:.15rem .5rem; border-radius:999px; font-weight:600; }
-  .status.active{ background:var(--good-soft); color:var(--good); }
-  .status.idle{ background:var(--again-soft); color:var(--again); }
-  .status.new{ background:var(--accent-soft); color:var(--accent-500); }
-  .tablewrap{ overflow-x:auto }
-  .demonote{ background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
-    padding:.85rem 1rem; font-size:.76rem; color:var(--text); margin-top:1.2rem; }
-  .demonote b{ color:var(--accent-600) }
-  .admintablehead{ display:flex; justify-content:space-between; align-items:center; margin-bottom:.9rem; gap:.6rem; flex-wrap:wrap }
-  .admintablehead h3{ margin:0 }
-  .csvbtn{ font-family:var(--font-body); font-size:.78rem; font-weight:600; background:var(--text); color:var(--panel-bg);
-    border:none; border-radius:8px; padding:.55rem .9rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; transition:.15s }
-  .csvbtn:hover{ background:var(--accent-500); color:var(--ink-950) }
-  .csvbtn svg{ width:14px; height:14px }
 </style>
 
 <header class="top">
