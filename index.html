@@ -547,12 +547,12 @@
 
 <footer class="foot">
   © 2026 <a href="https://www.invensislearning.com/" target="_blank" rel="noopener">Invensis Learning</a>. Free study tool for exam preparation.
-  <span style="margin-left:1rem;opacity:.55;font-size:.7rem">Demo: <a href="#" id="resetLink">reset progress</a></span>
+  <span style="margin-left:1rem;font-size:.75rem"><a href="#" id="resetLink" style="color:var(--accent-500);text-decoration:none;font-weight:600;padding:.3rem .7rem;border:1px solid var(--accent-500);border-radius:6px">↻ Reset progress (test as new user)</a></span>
 </footer>
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v15';
+  var STORAGE_KEY = 'invensis-asm-flashcards-v16';
 
   var CARDS = [
     {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
@@ -643,6 +643,14 @@
   function daysDiff(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
   function loadState(){ try{ var r=localStorage.getItem(STORAGE_KEY); return r?JSON.parse(r):null; }catch(e){return null;} }
   function saveState(){ try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); }catch(e){} }
+
+  // Testing helper: ?reset=1 in URL clears saved state and reloads clean
+  if (location.search.indexOf('reset') !== -1){
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e){}
+    if (window.history && history.replaceState){
+      history.replaceState({}, '', location.pathname + location.hash);
+    }
+  }
 
   var state = loadState() || {
     unlocked:false, email:'', name:'', cardStates:{}, streak:{count:0,lastActive:null},
