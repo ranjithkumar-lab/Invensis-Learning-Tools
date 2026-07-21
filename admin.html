@@ -427,6 +427,45 @@
   </div>
 </main>
 
+<div id="adminView">
+  <a class="adminback" href="#top" id="adminBack">← Back to flashcards</a>
+  <div class="admintop">
+    <div>
+      <span class="eyebrow">Internal · Analytics</span>
+      <h1 style="margin-top:.5rem">Admin Dashboard</h1>
+    </div>
+    <div class="adminmeta">Last updated <b>just now</b></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">Total signups</span><span class="val">4,218</span><span class="delta">+12.4% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Active this week</span><span class="val">892</span><span class="delta">+8.1% vs last week</span></div>
+    <div class="kpi"><span class="lbl">Sessions completed</span><span class="val">12,647</span><span class="delta">+18.9% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Avg mastery</span><span class="val">71%</span><span class="delta down">-2.1% vs last month</span></div>
+  </div>
+  <div class="admingrid">
+    <div class="adminpanel">
+      <h3>Daily signups, last 7 days</h3>
+      <div class="barchart" id="signupsChart"></div>
+      <div class="chartlegend">Total this week: <b style="color:var(--text)">947 signups</b></div>
+    </div>
+    <div class="adminpanel">
+      <h3>Top-studied concepts</h3>
+      <p style="font-size:.76rem;color:var(--text-soft);margin-bottom:.9rem">% of learners who studied each concept area</p>
+      <div class="mengagement" id="moduleEng"></div>
+    </div>
+  </div>
+  <div class="adminpanel">
+    <h3>Recent signups &amp; activity</h3>
+    <div class="tablewrap">
+      <table class="usertable" id="userTable">
+        <thead><tr><th>Email</th><th>Signed up</th><th>Sessions</th><th>Mastered</th><th>Streak</th><th>Last active</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="demonote"><b>Demo data.</b> Production version connects to your CRM and database. Export to CSV, HubSpot sync, and per-user drilldowns available in the paid build.</div>
+  </div>
+</div>
+
 <footer class="foot">
   © 2026 <a href="https://www.invensislearning.com/" target="_blank" rel="noopener">Invensis Learning</a>. Free study tool for exam preparation.
   <span style="margin-left:1rem;opacity:.55;font-size:.7rem">Demo: <a href="#" id="resetLink">reset progress</a></span>
@@ -515,6 +554,7 @@
   var posTotal=document.getElementById('posTotal');
   var dueNote=document.getElementById('dueNote');
   var appView=document.getElementById('appView');
+  var adminView=document.getElementById('adminView');
 
   function shuffleArray(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t;} return a; }
 
@@ -863,6 +903,68 @@
     }
   });
 
+  function showRoute(route){
+    if (route === 'admin'){
+      appView.style.display='none';
+      adminView.classList.add('on');
+      renderAdmin();
+    } else {
+      appView.style.display='';
+      adminView.classList.remove('on');
+    }
+  }
+  document.getElementById('adminBack').addEventListener('click', function(e){
+    e.preventDefault(); location.hash=''; showRoute('app');
+  });
+  document.getElementById('brandLink').addEventListener('click', function(e){
+    e.preventDefault(); location.hash=''; showRoute('app');
+  });
+  window.addEventListener('hashchange', function(){
+    if (location.hash === '#admin') showRoute('admin');
+    else if (adminView.classList.contains('on')) showRoute('app');
+  });
+
+  function renderAdmin(){
+    var chart = document.getElementById('signupsChart');
+    if (chart.children.length) return;
+    var days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    var vals = [142,158,137,165,178,89,78];
+    var max = Math.max.apply(null, vals);
+    days.forEach(function(d, i){
+      var b = document.createElement('div');
+      b.className='bcbar'; b.style.height = (vals[i]/max*100)+'%';
+      b.innerHTML = '<span class="v">'+vals[i]+'</span><span class="d">'+d+'</span>';
+      chart.appendChild(b);
+    });
+    var mods = [
+      {name:'Scrum Events', pct:94}, {name:'Scrum Roles', pct:88},
+      {name:'Agile Concepts', pct:76}, {name:'Estimation & Planning', pct:71},
+      {name:'Scrum Artifacts', pct:64}, {name:'Scaling & Adoption', pct:48}
+    ];
+    document.getElementById('moduleEng').innerHTML = mods.map(function(m){
+      return '<div class="mengrow"><div class="mengtop"><span>'+m.name+'</span><b>'+m.pct+'%</b></div>'+
+        '<div class="mengbar"><div class="mengfill" style="width:'+m.pct+'%"></div></div></div>';
+    }).join('');
+    var users = [
+      {email:'am•••@ford.com', signed:'2 hours ago', sessions:3, mastered:'24/27', streak:5, active:'Just now', status:'active'},
+      {email:'pr•••@tcs.com', signed:'5 hours ago', sessions:2, mastered:'18/27', streak:3, active:'1h ago', status:'active'},
+      {email:'ja•••@wipro.com', signed:'yesterday', sessions:4, mastered:'27/27', streak:7, active:'3h ago', status:'active'},
+      {email:'sn•••@accenture.com', signed:'yesterday', sessions:1, mastered:'9/27', streak:1, active:'yesterday', status:'idle'},
+      {email:'ra•••@infosys.com', signed:'2 days ago', sessions:5, mastered:'25/27', streak:6, active:'2h ago', status:'active'},
+      {email:'ke•••@hcl.com', signed:'2 days ago', sessions:2, mastered:'14/27', streak:2, active:'yesterday', status:'active'},
+      {email:'me•••@cognizant.com', signed:'3 days ago', sessions:1, mastered:'6/27', streak:1, active:'3 days ago', status:'idle'},
+      {email:'th•••@techm.com', signed:'3 days ago', sessions:6, mastered:'27/27', streak:8, active:'30min ago', status:'active'},
+      {email:'ne•••@capgemini.com', signed:'4 days ago', sessions:0, mastered:'3/27', streak:0, active:'4 days ago', status:'idle'},
+      {email:'vi•••@ibm.com', signed:'just now', sessions:0, mastered:'3/27', streak:1, active:'Just now', status:'new'}
+    ];
+    document.querySelector('#userTable tbody').innerHTML = users.map(function(u){
+      return '<tr><td class="email">'+u.email+'</td><td>'+u.signed+'</td>'+
+        '<td class="num">'+u.sessions+'</td><td class="num">'+u.mastered+'</td>'+
+        '<td class="num">'+u.streak+'</td><td>'+u.active+'</td>'+
+        '<td><span class="status '+u.status+'">'+(u.status==='active'?'● Active':u.status==='new'?'● New':'○ Idle')+'</span></td></tr>';
+    }).join('');
+  }
+
   var resetLink = document.getElementById('resetLink');
   if (resetLink) resetLink.addEventListener('click', function(e){
     e.preventDefault();
@@ -876,5 +978,6 @@
   buildSEO();
   buildSessionQueue();
   renderCard();
+  if (location.hash === '#admin') showRoute('admin');
 })();
 </script>
