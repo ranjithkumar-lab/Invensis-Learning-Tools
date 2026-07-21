@@ -489,7 +489,7 @@
       <ol>
         <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, then try to say the meaning in your own words.</span></div></li>
         <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
-        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Didn't Know, Almost, or Knew It.</span></div></li>
+        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Didn\'t Know, Almost, or Knew It.</span></div></li>
       </ol>
     </div>
 
@@ -823,7 +823,7 @@
       '<div class="rate">' +
         '<button class="again" data-rate="again">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
-          '<span>Didn't Know</span><span class="keyhint">1 · ←</span></button>' +
+          '<span>Didn\'t Know</span><span class="keyhint">1 · ←</span></button>' +
         '<button class="good" data-rate="good">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
           '<span>Almost</span><span class="keyhint">2 · →</span></button>' +
@@ -951,7 +951,7 @@
             '<div class="stats">' +
               '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
               '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
-              '<div class="stat again"><b>'+again+'</b><span>Didn't Know</span></div>' +
+              '<div class="stat again"><b>'+again+'</b><span>Didn\'t Know</span></div>' +
             '</div>' +
             '<p style="text-align:center;font-size:.85rem;color:var(--text-soft);margin:0">Download the full session report or share your progress.</p>' +
             '<div class="actions">' +
@@ -1275,7 +1275,7 @@
       var r = sessionRatings[cardIdx];
       var badge = r==='easy' ? '<span class="rbadge easy">KNEW IT</span>'
                 : r==='good' ? '<span class="rbadge good">ALMOST</span>'
-                : '<span class="rbadge hard">DIDN'T KNOW</span>';
+                : '<span class="rbadge hard">DIDN\'T KNOW</span>';
       return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
     }).join('');
 
@@ -1351,7 +1351,7 @@
       '<div class="split">' +
         '<div class="s e"><b>'+easy+'</b><span>Knew It</span></div>' +
         '<div class="s g"><b>'+good+'</b><span>Almost</span></div>' +
-        '<div class="s h"><b>'+again+'</b><span>Didn't Know</span></div>' +
+        '<div class="s h"><b>'+again+'</b><span>Didn\'t Know</span></div>' +
       '</div>' +
       '<h2>Concepts you studied</h2>' +
       cardsHtml +
@@ -1384,7 +1384,7 @@
     if (!tooltipDismissed){ tooltipDismissed=true; tooltip.style.display='none'; }
     flipped = !flipped;
     cardEl.classList.toggle('flipped', flipped);
-    hint.textContent = flipped ? 'Rate yourself: Didn't Know, Almost, or Knew It' : 'Try to recall, then flip';
+    hint.textContent = flipped ? 'Rate yourself: Didn\'t Know, Almost, or Knew It' : 'Try to recall, then flip';
   });
 
   var touchStart=null;
