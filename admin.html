@@ -379,7 +379,7 @@
           <span class="dot"></span>
           <span id="dueNote">All cards eligible</span>
         </div>
-        <button class="toolbtn" id="shuffleBtn">↺ Shuffle</button>
+        
       </div>
 
       <nav class="seoindex" aria-hidden="true"><h2>Deck contents</h2><ul id="seoList"></ul></nav>
@@ -549,7 +549,7 @@
   var summaryStage=document.getElementById('summaryStage');
   var summaryCard=document.getElementById('summaryCard');
   var emptyStage=document.getElementById('emptyStage');
-  var shuffleBtn=document.getElementById('shuffleBtn');
+
   var posNow=document.getElementById('posNow');
   var posTotal=document.getElementById('posTotal');
   var dueNote=document.getElementById('dueNote');
@@ -887,7 +887,6 @@
     else if (dy<0) handleRate('easy');
   }, {passive:true});
 
-  shuffleBtn.addEventListener('click', function(){ shuffleArray(queue); renderCard(); });
   document.getElementById('reviewAnyway').addEventListener('click', function(){
     var all = CARDS.map(function(_,i){return i;}); shuffleArray(all); queue=all;
     sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0;
