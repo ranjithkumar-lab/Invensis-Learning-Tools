@@ -1158,104 +1158,163 @@
     var c = document.createElement('canvas');
     c.width = W; c.height = H;
     var ctx = c.getContext('2d');
+    var easy = 0, good = 0, again = 0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
+    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+    var uniqueCards = Object.keys(sessionRatings).length;
 
-    // Rich purple gradient background
+    // BG: deep purple gradient
     var g = ctx.createLinearGradient(0, 0, W, H);
-    g.addColorStop(0, '#4F2183');
-    g.addColorStop(0.5, '#5A2E93');
-    g.addColorStop(1, '#171717');
+    g.addColorStop(0, '#2A0F5C');
+    g.addColorStop(0.55, '#4F2183');
+    g.addColorStop(1, '#0F0521');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
-    // Ambient glow center
-    var glow = ctx.createRadialGradient(W * 0.7, H * 0.3, 0, W * 0.7, H * 0.3, 600);
-    glow.addColorStop(0, 'rgba(181,146,232,0.4)');
+    // Radiant glow behind score
+    var scoreCX = W - 340, scoreCY = H / 2 + 20;
+    var glow = ctx.createRadialGradient(scoreCX, scoreCY, 40, scoreCX, scoreCY, 320);
+    glow.addColorStop(0, 'rgba(181,146,232,0.55)');
     glow.addColorStop(1, 'rgba(181,146,232,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
-    // Confetti dots scattered
-    for (var i = 0; i < 30; i++){
-      var cx = Math.random() * W;
-      var cy = Math.random() * (H * 0.35);
-      var sz = 3 + Math.random() * 5;
-      var colors = ['#B592E8', '#A574E8', '#F5B04C', '#4DA3C7', '#3E9C6F'];
-      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
-      ctx.globalAlpha = 0.3 + Math.random() * 0.5;
-      ctx.beginPath();
-      ctx.arc(cx, cy, sz, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-
-    // Brand mark top-left
+    // Subtle top strip with brand
+    ctx.fillStyle = 'rgba(255,255,255,0.04)';
+    ctx.fillRect(0, 0, W, 80);
+    // Brand tile
     ctx.fillStyle = '#FFFFFF';
     ctx.beginPath();
-    ctx.roundRect(60, 55, 52, 52, 12);
+    ctx.roundRect(48, 22, 38, 38, 8);
     ctx.fill();
     ctx.fillStyle = '#5A2E93';
-    ctx.font = 'bold 22px Arial, Helvetica, sans-serif';
+    ctx.font = 'bold 17px Arial, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('IL', 86, 90);
+    ctx.fillText('IL', 67, 47);
     ctx.textAlign = 'left';
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 18px Arial, Helvetica, sans-serif';
-    ctx.fillText('Invensis Learning', 128, 82);
-    ctx.font = '12px Arial, Helvetica, sans-serif';
-    ctx.fillStyle = 'rgba(255,255,255,0.7)';
-    ctx.fillText('ASM CERTIFICATION PREP', 128, 100);
+    ctx.font = 'bold 15px Arial, sans-serif';
+    ctx.fillText('Invensis Learning', 98, 40);
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.fillText('ASM CERTIFICATION PREP', 98, 58);
+    // Right side date
+    var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'short', day:'numeric'});
+    ctx.textAlign = 'right';
+    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    ctx.font = '13px Arial, sans-serif';
+    ctx.fillText(today, W - 48, 47);
 
-    // Big celebration
+    // LEFT column: hero text
+    ctx.textAlign = 'left';
+    var leftX = 60;
+
+    // Eyebrow
     ctx.fillStyle = '#B592E8';
-    ctx.font = 'bold 20px Arial, Helvetica, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('CONGRATULATIONS', W / 2, 195);
+    ctx.font = 'bold 15px Arial, sans-serif';
+    ctx.fillText('ACHIEVEMENT UNLOCKED', leftX, 155);
 
+    // Congrats
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 72px Arial, Helvetica, sans-serif';
-    ctx.fillText(name, W / 2, 260);
+    ctx.font = '30px Arial, sans-serif';
+    ctx.fillText('Congratulations,', leftX, 205);
 
-    ctx.fillStyle = 'rgba(255,255,255,0.75)';
-    ctx.font = '22px Arial, Helvetica, sans-serif';
-    ctx.fillText('mastered ' + masteredCount() + ' Agile Scrum Master concepts', W / 2, 295);
-
-    // Big glowing score circle
-    var scoreCX = W / 2, scoreCY = 445, scoreR = 100;
-    var scoreGrad = ctx.createRadialGradient(scoreCX, scoreCY, 20, scoreCX, scoreCY, scoreR + 40);
-    scoreGrad.addColorStop(0, 'rgba(181,146,232,0.4)');
-    scoreGrad.addColorStop(1, 'rgba(181,146,232,0)');
-    ctx.fillStyle = scoreGrad;
-    ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, scoreR + 40, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.fillStyle = 'rgba(255,255,255,0.08)';
-    ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, scoreR, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = '#B592E8';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, scoreR, 0, Math.PI * 2);
-    ctx.stroke();
-
+    // NAME — big and prominent
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 68px Arial, Helvetica, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(score + '%', scoreCX, scoreCY + 12);
-    ctx.fillStyle = '#B592E8';
-    ctx.font = 'bold 16px Arial, Helvetica, sans-serif';
-    ctx.fillText(grade.toUpperCase(), scoreCX, scoreCY + 42);
+    ctx.font = 'bold 68px Arial, sans-serif';
+    var nameDisplay = name.length > 20 ? name.substring(0, 18) + '…' : name;
+    ctx.fillText(nameDisplay, leftX, 275);
+
+    // Description line
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.font = '22px Arial, sans-serif';
+    ctx.fillText('You worked through ' + uniqueCards + ' Agile Scrum Master concepts', leftX, 320);
+
+    // Rating breakdown row (bottom of left column)
+    var pillY = 400;
+    var pills = [
+      { label: 'Knew It', val: easy, color: '#4DA3C7' },
+      { label: 'Almost', val: good, color: '#3E9C6F' },
+      { label: 'Didn\'t Know', val: again, color: '#E15A55' }
+    ];
+    var px = leftX;
+    pills.forEach(function(p){
+      var text = p.val + '  ' + p.label;
+      ctx.font = 'bold 15px Arial, sans-serif';
+      var pw = ctx.measureText(text).width + 32;
+      ctx.fillStyle = 'rgba(255,255,255,0.08)';
+      ctx.beginPath();
+      ctx.roundRect(px, pillY, pw, 40, 20);
+      ctx.fill();
+      // colored dot
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(px + 16, pillY + 20, 5, 0, Math.PI * 2);
+      ctx.fill();
+      // text
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 14px Arial, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(p.val, px + 30, pillY + 25);
+      ctx.font = '14px Arial, sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.75)';
+      ctx.fillText(p.label, px + 30 + ctx.measureText(p.val + ' ').width, pillY + 25);
+      px += pw + 10;
+    });
 
     // Bottom tagline
-    ctx.fillStyle = 'rgba(255,255,255,0.55)';
-    ctx.font = '13px Arial, Helvetica, sans-serif';
-    ctx.fillText('Free ASM flashcards · recall-based study for the Agile Scrum Master exam', W / 2, 605);
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '13px Arial, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('Free flashcards for the Agile Scrum Master certification exam', leftX, 585);
+
+    // RIGHT column: giant score circle
+    // Outer glow ring
+    ctx.strokeStyle = 'rgba(181,146,232,0.35)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(scoreCX, scoreCY, 180, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Progress arc (score visualization)
+    ctx.strokeStyle = '#B592E8';
+    ctx.lineWidth = 10;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.arc(scoreCX, scoreCY, 155, -Math.PI / 2, -Math.PI / 2 + (2 * Math.PI * score / 100));
+    ctx.stroke();
+    // Track (remainder)
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.arc(scoreCX, scoreCY, 155, -Math.PI / 2 + (2 * Math.PI * score / 100), -Math.PI / 2 + 2 * Math.PI);
+    ctx.stroke();
+
+    // Inner solid circle
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.beginPath();
+    ctx.arc(scoreCX, scoreCY, 138, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Score number
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 88px Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(score + '%', scoreCX, scoreCY + 12);
+
+    // Grade label under score
+    ctx.fillStyle = '#B592E8';
+    ctx.font = 'bold 17px Arial, sans-serif';
+    ctx.fillText(grade.toUpperCase(), scoreCX, scoreCY + 45);
+
+    ctx.font = '13px Arial, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.fillText('SESSION SCORE', scoreCX, scoreCY + 68);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-flashcards-' + name.replace(/\s+/g, '-').toLowerCase() + '.png';
+    a.download = 'asm-flashcards-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1379,12 +1438,24 @@
       '</div>' +
       '<div class="foot">Trusted by 100,000+ professionals worldwide · Ford · TCS · Wipro · Accenture</div>' +
       '</body></html>';
-    var win = window.open('', '_blank');
-    if (!win){ alert('Please allow pop-ups to download your report.'); return; }
-    win.document.open();
-    win.document.write(html);
-    win.document.close();
-    setTimeout(function(){ try{ win.print(); } catch(e){} }, 500);
+    var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+    var blobUrl = URL.createObjectURL(blob);
+    var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    var filename = 'asm-report-' + safeName + '.html';
+    var a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // Try to also open in new tab and trigger print — nice-to-have, safe if blocked
+    try {
+      var win = window.open(blobUrl, '_blank');
+      if (win){
+        win.onload = function(){ setTimeout(function(){ try { win.print(); } catch(e){} }, 400); };
+      }
+    } catch(e){}
+    setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 10000);
   }
 
   cardEl.addEventListener('click', function(e){
