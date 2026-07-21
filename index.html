@@ -317,6 +317,29 @@
     text-decoration:none; padding:.7rem 1.1rem; border:1px solid rgba(255,255,255,.18); border-radius:10px; }
   .coursecta a.golink:hover{ border-color:var(--accent-500); color:var(--accent-500) }
   .coursecta .trustline{ font-size:.72rem; color:rgba(241,245,249,.55); margin:0 }
+
+  /* Related tools section */
+  .reltools{ margin-top:1rem; padding:1.6rem clamp(1.4rem,3vw,1.8rem); background:var(--panel-bg);
+    border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-sm) }
+  .reltoolshead{ font-family:var(--font-body); font-weight:700; font-size:.9rem; color:var(--text); margin-bottom:1rem;
+    padding-bottom:.7rem; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:.5rem }
+  .reltoolshead::before{ content:""; width:3px; height:16px; background:var(--accent-500); border-radius:2px }
+  .reltoolsgrid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:.7rem }
+  .reltool{ display:flex; flex-direction:column; gap:.35rem; padding:1rem 1.1rem;
+    background:var(--page-bg); border:1px solid var(--line); border-radius:10px; text-decoration:none;
+    color:var(--text); transition:.18s; cursor:pointer }
+  .reltool:hover{ border-color:var(--accent-500); box-shadow:0 6px 20px -8px rgba(232,153,58,.25);
+    transform:translateY(-2px) }
+  .reltoolico{ display:inline-flex; align-items:center; justify-content:center;
+    width:auto; padding:.25rem .5rem; border-radius:6px; background:var(--accent-soft);
+    color:var(--accent-600); font-weight:700; font-size:.68rem; letter-spacing:.09em;
+    align-self:flex-start; margin-bottom:.2rem }
+  .reltoolt{ font-weight:700; font-size:.9rem; color:var(--text); line-height:1.3;
+    display:flex; align-items:center; gap:.4rem; flex-wrap:wrap }
+  .reltoolsoon{ font-family:var(--font-body); font-weight:600; font-size:.62rem;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--text-soft);
+    background:var(--line); padding:.15rem .4rem; border-radius:4px }
+  .reltoold{ font-size:.77rem; color:var(--text-soft); line-height:1.45 }
   .coursecta .testimonial{ background:rgba(255,255,255,.04); border-left:3px solid var(--accent-500);
     border-radius:0 8px 8px 0; padding:.9rem 1.1rem; }
   .coursecta .tquote{ font-style:italic; font-size:.9rem; line-height:1.5; color:#F1F5F9; margin:0 0 .5rem }
@@ -489,7 +512,7 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v13';
+  var STORAGE_KEY = 'invensis-asm-flashcards-v14';
 
   var CARDS = [
     {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
@@ -898,9 +921,29 @@
         '</div>' +
         '<div class="ctarow">' +
           '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
-          '<a class="golink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Talk to an advisor</a>' +
+          '<a class="golink" href="https://www.invensislearning.com/contact-us/" target="_blank" rel="noopener">Contact us</a>' +
         '</div>' +
         '<p class="trustline">Trusted by 100,000+ professionals worldwide · Ford · TCS · Wipro · Accenture</p>' +
+      '</div>' +
+      '<div class="reltools">' +
+        '<div class="reltoolshead">More free tools from Invensis Learning</div>' +
+        '<div class="reltoolsgrid">' +
+          '<a class="reltool" href="https://www.invensislearning.com/lean-six-sigma-black-belt-certification/" target="_blank" rel="noopener">' +
+            '<div class="reltoolico">LSSBB</div>' +
+            '<div class="reltoolt">Lean Six Sigma Black Belt Practice</div>' +
+            '<div class="reltoold">800+ practice questions, mock exams, analytics dashboard</div>' +
+          '</a>' +
+          '<a class="reltool" href="https://www.invensislearning.com/pmp-certification-training/" target="_blank" rel="noopener">' +
+            '<div class="reltoolico">PMP</div>' +
+            '<div class="reltoolt">PMP Flashcards <span class="reltoolsoon">Coming soon</span></div>' +
+            '<div class="reltoold">Recall-based flashcards for the PMP exam</div>' +
+          '</a>' +
+          '<a class="reltool" href="https://www.invensislearning.com/change-management-certification/" target="_blank" rel="noopener">' +
+            '<div class="reltoolico">CM</div>' +
+            '<div class="reltoolt">Change Management Flashcards <span class="reltoolsoon">Coming soon</span></div>' +
+            '<div class="reltoold">Concept flashcards for the Change Management Foundation exam</div>' +
+          '</a>' +
+        '</div>' +
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
@@ -963,55 +1006,152 @@
     el._rotator = setInterval(tick, 6000);
   }
 
+  if (!CanvasRenderingContext2D.prototype.roundRect){
+    CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r){
+      if (typeof r === 'number') r = [r,r,r,r];
+      this.beginPath();
+      this.moveTo(x + r[0], y);
+      this.lineTo(x + w - r[1], y);
+      this.quadraticCurveTo(x + w, y, x + w, y + r[1]);
+      this.lineTo(x + w, y + h - r[2]);
+      this.quadraticCurveTo(x + w, y + h, x + w - r[2], y + h);
+      this.lineTo(x + r[3], y + h);
+      this.quadraticCurveTo(x, y + h, x, y + h - r[3]);
+      this.lineTo(x, y + r[0]);
+      this.quadraticCurveTo(x, y, x + r[0], y);
+      return this;
+    };
+  }
+
   function generateShareImage(score, grade){
+    var name = state.name || 'Learner';
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
     c.width = W; c.height = H;
     var ctx = c.getContext('2d');
 
+    // Deep gradient background
     var g = ctx.createLinearGradient(0, 0, W, H);
     g.addColorStop(0, '#0A0F1A');
+    g.addColorStop(0.6, '#131A28');
     g.addColorStop(1, '#1D2637');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
-    ctx.fillStyle = 'rgba(232,153,58,0.15)';
-    ctx.beginPath();
-    ctx.ellipse(W/2, 0, W*0.4, H*0.5, 0, 0, Math.PI*2);
-    ctx.fill();
+    // Ambient amber glow top-right
+    var glow = ctx.createRadialGradient(W * 0.85, 0, 0, W * 0.85, 0, 500);
+    glow.addColorStop(0, 'rgba(232,153,58,0.35)');
+    glow.addColorStop(1, 'rgba(232,153,58,0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, W, H);
 
-    ctx.fillStyle = '#E8993A';
-    ctx.font = '600 22px Inter, "Segoe UI", sans-serif';
-    ctx.fillText('INVENSIS LEARNING · ASM FLASHCARDS', 60, 90);
-
-    ctx.fillStyle = '#F7C671';
-    ctx.font = '700 200px Georgia, serif';
-    var scoreText = score + '%';
-    ctx.fillText(scoreText, 60, 320);
-
-    ctx.fillStyle = '#F3F6FA';
-    ctx.font = '700 46px Georgia, serif';
-    ctx.fillText(grade + ' — ' + masteredCount() + ' of ' + CARDS.length + ' concepts mastered', 60, 400);
-
-    ctx.fillStyle = 'rgba(241,245,249,.65)';
-    ctx.font = '400 26px Inter, sans-serif';
-    ctx.fillText('Agile Scrum Master certification prep · recall-based flashcards', 60, 450);
-
-    ctx.strokeStyle = 'rgba(232,153,58,.35)';
+    // Subtle grid pattern (top area only)
+    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
     ctx.lineWidth = 1;
+    for (var x = 44; x < W; x += 44){
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (var y = 44; y < H; y += 44){
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+
+    // IL brand mark (top-left corner)
+    ctx.fillStyle = '#E8993A';
     ctx.beginPath();
-    ctx.moveTo(60, 530);
-    ctx.lineTo(W - 60, 530);
+    ctx.roundRect(60, 60, 56, 56, 12);
+    ctx.fill();
+    ctx.fillStyle = '#0A0F1A';
+    ctx.font = 'bold 26px Arial, Helvetica, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('IL', 88, 98);
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#F1F5F9';
+    ctx.font = 'bold 18px Arial, Helvetica, sans-serif';
+    ctx.fillText('Invensis Learning', 130, 88);
+    ctx.font = '12px Arial, Helvetica, sans-serif';
+    ctx.fillStyle = 'rgba(241,245,249,0.65)';
+    ctx.fillText('ASM CERTIFICATION PREP', 130, 108);
+
+    // Divider line
+    ctx.strokeStyle = 'rgba(232,153,58,0.4)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(60, 160);
+    ctx.lineTo(W - 60, 160);
     ctx.stroke();
 
-    ctx.fillStyle = '#F5B04C';
-    ctx.font = '600 22px Inter, sans-serif';
-    ctx.fillText('Try it: invensislearning.com/agile-scrum-master', 60, 580);
+    // Main headline: user name
+    ctx.fillStyle = '#F3F6FA';
+    ctx.font = 'bold 44px Arial, Helvetica, sans-serif';
+    ctx.fillText(name, 60, 230);
+
+    // Achievement line
+    ctx.font = '24px Arial, Helvetica, sans-serif';
+    ctx.fillStyle = 'rgba(241,245,249,0.75)';
+    ctx.fillText('mastered ' + masteredCount() + ' Agile Scrum Master concepts', 60, 268);
+
+    // Big score card with glow
+    var scoreY = 320, scoreH = 210;
+    ctx.fillStyle = 'rgba(232,153,58,0.08)';
+    ctx.beginPath();
+    ctx.roundRect(60, scoreY, 480, scoreH, 16);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(232,153,58,0.35)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.roundRect(60, scoreY, 480, scoreH, 16);
+    ctx.stroke();
+
+    ctx.font = '14px Arial, Helvetica, sans-serif';
+    ctx.fillStyle = '#E8993A';
+    ctx.fillText('SESSION SCORE', 90, scoreY + 40);
+
+    ctx.font = 'bold 140px Arial, Helvetica, sans-serif';
+    ctx.fillStyle = '#F7C671';
+    ctx.fillText(score + '%', 90, scoreY + 170);
+
+    ctx.font = 'bold 26px Arial, Helvetica, sans-serif';
+    ctx.fillStyle = '#F3F6FA';
+    ctx.fillText(grade, 90, scoreY + 200);
+
+    // Right column stats
+    var easy = 0, good = 0, again = 0;
+    for (var k in sessionRatings){
+      if (sessionRatings[k] === 'easy') easy++;
+      else if (sessionRatings[k] === 'good') good++;
+    }
+    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+
+    var stats = [
+      { label: 'EASY', val: easy, color: '#4DA3C7' },
+      { label: 'GOOD', val: good, color: '#3E9C6F' },
+      { label: 'HARD', val: again, color: '#E15A55' }
+    ];
+    stats.forEach(function(s, i){
+      var sx = 580, sy = scoreY + 15 + i * 65;
+      ctx.fillStyle = 'rgba(255,255,255,0.04)';
+      ctx.beginPath();
+      ctx.roundRect(sx, sy, W - sx - 60, 50, 8);
+      ctx.fill();
+      ctx.fillStyle = s.color;
+      ctx.font = 'bold 32px Arial, Helvetica, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(String(s.val), W - 82, sy + 34);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(241,245,249,0.7)';
+      ctx.font = 'bold 13px Arial, Helvetica, sans-serif';
+      ctx.fillText(s.label, sx + 22, sy + 32);
+    });
+
+    // Bottom brand tagline (no URL)
+    ctx.fillStyle = 'rgba(241,245,249,0.5)';
+    ctx.font = '14px Arial, Helvetica, sans-serif';
+    ctx.fillText('Free ASM flashcards — recall-based study for the Agile Scrum Master exam', 60, 590);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-flashcards-session.png';
+    a.download = 'asm-flashcards-' + name.replace(/\s+/g, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
