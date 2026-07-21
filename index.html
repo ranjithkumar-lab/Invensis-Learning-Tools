@@ -470,6 +470,12 @@
   .emailsent b{ font-weight:700; color:var(--accent-600); }
   .emailsent a{ margin-left:auto; color:var(--accent-500); text-decoration:none; font-weight:600; font-size:.75rem; }
   .emailsent a:hover{ text-decoration:underline; }
+
+  .howto{ position:relative; }
+  .howtoclose{ position:absolute; top:.55rem; right:.65rem; width:24px; height:24px; border-radius:6px;
+    border:1px solid var(--line); background:transparent; color:var(--text-soft); cursor:pointer;
+    font-size:1rem; line-height:1; padding:0; display:flex; align-items:center; justify-content:center; }
+  .howtoclose:hover{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-500); }
 </style>
 
 <header class="top">
@@ -497,7 +503,7 @@
       <ol>
         <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, then try to say the meaning in your own words.</span></div></li>
         <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
-        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Didn\'t Know, Almost, or Knew It.</span></div></li>
+        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Didn't Know, Almost, or Knew It.</span></div></li>
       </ol>
     </div>
 
@@ -662,7 +668,7 @@
 
   var state = loadState() || {
     unlocked:false, email:'', name:'', cardStates:{}, streak:{count:0,lastActive:null},
-    totalSessionsCompleted:0, xp:0, badges:{}
+    totalSessionsCompleted:0, xp:0, badges:{}, howtoDismissed:false
   };
   if (!state.badges) state.badges = {};
 
@@ -937,7 +943,7 @@
       '<div class="sbadge">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
       '</div>' +
-      '<h3 style="text-align:center">Congratulations, '+ (state.name || 'Learner') +'!</h3>' +
+      '<h3 style="text-align:center">Congratulations, '+ getDisplayName() +'!</h3>' +
       '<p class="congratsline">You worked through <b>'+Object.keys(sessionRatings).length+' concepts</b> in this session. Here is how you did.</p>' +
       '<div class="scoreblock">' +
         '<div class="scoreval">'+score+'<sup>%</sup></div>' +
@@ -1068,13 +1074,11 @@
   }
 
   function generateShareImage(score, grade){
-    var name = state.name;
-    if (!name && state.email){
-      name = state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
-    }
-    if (!name){
-      name = window.prompt('Enter your name for the share image:', '');
-      if (name){ state.name = name; saveState(); } else { name = 'ASM Learner'; }
+    var name = getDisplayName();
+    if (name === 'Learner'){
+      var entered = window.prompt('Enter your name for the certificate:', '');
+      if (entered){ state.name = entered; saveState(); name = entered; }
+      else name = 'ASM Learner';
     }
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
@@ -1199,6 +1203,14 @@
 
 
 
+  function getDisplayName(){
+    if (state.name) return state.name;
+    if (state.email){
+      return state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    }
+    return 'Learner';
+  }
+
   function maskEmail(e){
     if (!e) return 'your inbox';
     return e.replace(/^(.{2}).*(@.*)$/, '$1•••$2');
@@ -1213,11 +1225,8 @@
   // stays as a fallback (user can click "download it now" if inbox delivery fails).
 
   function downloadPDFReport(){
-    var name = state.name;
-    if (!name && state.email){
-      name = state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
-    }
-    if (!name) name = 'ASM Learner';
+    var name = getDisplayName();
+    if (name === 'Learner') name = 'ASM Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
     for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
@@ -1395,6 +1404,15 @@
       try { localStorage.removeItem(STORAGE_KEY); } catch(err){}
       location.reload();
     }
+  });
+
+  var howtoCard = document.getElementById('howtoCard');
+  var howtoClose = document.getElementById('howtoClose');
+  if (howtoCard && state.howtoDismissed){ howtoCard.style.display = 'none'; }
+  if (howtoClose) howtoClose.addEventListener('click', function(){
+    howtoCard.style.display = 'none';
+    state.howtoDismissed = true;
+    saveState();
   });
 
   updateStreak();
