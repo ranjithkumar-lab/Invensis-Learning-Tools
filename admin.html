@@ -186,10 +186,6 @@
     color:var(--text-soft); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.15s; padding:0 }
   .cardaction:hover{ color:var(--accent-500); border-color:var(--accent-500); background:var(--accent-soft) }
   .cardaction svg{ width:14px; height:14px }
-  .scen{ margin-top:.9rem; padding:.7rem .9rem; border-radius:9px; background:rgba(232,153,58,.09);
-    border-left:2px solid var(--accent-500); font-size:.85rem; line-height:1.5; color:#F1F5F9; opacity:.9 }
-  .scen .scenlbl{ display:block; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--accent-glow); font-weight:700; margin-bottom:.3rem }
 
   .card{ position:relative; width:100%; height:400px; cursor:pointer; }
   .card .face{ position:absolute; inset:0; border-radius:16px; border:1px solid var(--line);
@@ -431,7 +427,7 @@
       <ol>
         <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, then try to say the meaning in your own words.</span></div></li>
         <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
-        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Study Again, Almost, or Nailed It.</span></div></li>
+        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Hard, Good, or Easy.</span></div></li>
       </ol>
     </div>
 
@@ -539,7 +535,7 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v11';
+  var STORAGE_KEY = 'invensis-asm-flashcards-v12';
 
   var CARDS = [
     {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.',scen:'A team debating a 40-page architecture doc versus shipping a working prototype for feedback. The Manifesto answers: prototype first.'},
@@ -767,13 +763,13 @@
       '<div class="rate">' +
         '<button class="again" data-rate="again">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
-          '<span>Study Again</span><span class="keyhint">1 · ←</span></button>' +
+          '<span>Hard</span><span class="keyhint">1 · ←</span></button>' +
         '<button class="good" data-rate="good">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
-          '<span>Almost</span><span class="keyhint">2 · →</span></button>' +
+          '<span>Good</span><span class="keyhint">2 · →</span></button>' +
         '<button class="easy" data-rate="easy">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' +
-          '<span>Nailed It</span><span class="keyhint">3 · ↑</span></button>' +
+          '<span>Easy</span><span class="keyhint">3 · ↑</span></button>' +
       '</div>';
     backFace.querySelectorAll('.rate button').forEach(function(b){
       b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
@@ -850,7 +846,7 @@
     for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
     var next=null;
     CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
-    var nextMsg = next ? 'Next review due in '+daysDiff(todayISO(),next)+' day'+(daysDiff(todayISO(),next)===1?'':'s')+'.' : '';
+    var nextMsg = '';
 
     var uniqueCards = Object.keys(sessionRatings).length;
     var stillAgain = 0;
@@ -866,7 +862,7 @@
     summaryCard.innerHTML =
       '<div class="sbadge">✓</div>' +
       '<h3>Session complete</h3>' +
-      '<p>You worked through '+(easy+good+Object.keys(sessionAgainCount).length)+' concepts.</p>' +
+      '<p>You worked through '+Object.keys(sessionRatings).length+' concepts.</p>' +
       '<div class="scoreblock">' +
         '<div class="scoreval">'+score+'<sup>%</sup></div>' +
         '<div class="scoremeta">' +
@@ -876,15 +872,14 @@
         '</div>' +
       '</div>' +
       '<div class="stats">' +
-        '<div class="stat easy"><b>'+easy+'</b><span>Nailed It</span></div>' +
-        '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
-        '<div class="stat again"><b>'+again+'</b><span>Study Again</span></div>' +
+        '<div class="stat easy"><b>'+easy+'</b><span>Easy</span></div>' +
+        '<div class="stat good"><b>'+good+'</b><span>Good</span></div>' +
+        '<div class="stat again"><b>'+again+'</b><span>Hard</span></div>' +
       '</div>' +
       (nextMsg ? '<p class="nextdue">'+nextMsg+'</p>' : '') +
       '<div class="actions">' +
         '<button class="toolbtn" id="shareBtn">Share progress</button>' +
-        (again > 0 ? '<button class="toolbtn on" id="redoTough">Redo the '+Object.keys(sessionAgainCount).length+' tough one'+(Object.keys(sessionAgainCount).length===1?'':'s')+'</button>' : '') +
-        '<button class="toolbtn' + (again === 0 ? ' on' : '') + '" id="restartAll">Restart deck</button>' +
+        '<button class="toolbtn on" id="restartAll">Restart deck</button>' +
       '</div>' +
       '<div class="coursecta">' +
         '<div class="ctaeye">Ready for the real exam?</div>' +
@@ -907,10 +902,6 @@
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
-
-    var redoBtn = document.getElementById('redoTough');
-    if (redoBtn) redoBtn.addEventListener('click', function(){
-      var rev = Object.keys(sessionAgainCount).map(function(k){ return parseInt(k,10); });
       shuffleArray(rev);
       queue = rev;
       sessionShown = {}; sessionRatings = {}; sessionAgainCount = {}; sessionXpEarned = 0;
@@ -1028,7 +1019,7 @@
     if (!tooltipDismissed){ tooltipDismissed=true; tooltip.style.display='none'; }
     flipped = !flipped;
     cardEl.classList.toggle('flipped', flipped);
-    hint.textContent = flipped ? 'Rate yourself: Study Again, Almost, or Nailed It' : 'Try to recall, then flip';
+    hint.textContent = flipped ? 'Rate yourself: Hard, Good, or Easy' : 'Try to recall, then flip';
   });
 
   var touchStart=null;
