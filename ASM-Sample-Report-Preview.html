@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASM Report - Ranjith Kumar</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;padding:28px 34px;color:#171717;max-width:780px;margin:0 auto;line-height:1.55}
+.head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:16px;border-bottom:2px solid #8543D9;margin-bottom:22px}
+.head .brand{display:flex;align-items:center;gap:10px}
+.head .lmark{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#A574E8,#4F2183);color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}
+.head .brandtxt{font-weight:bold;font-size:14px;color:#171717}
+.head .brandtxt small{display:block;color:#64748B;font-weight:400;font-size:11px;margin-top:2px}
+.head .date{font-size:11px;color:#64748B;text-align:right}
+.hero{text-align:center;margin:28px 0}
+.hero .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8543D9;font-weight:bold;margin-bottom:10px}
+.hero h1{font-size:32px;margin:0 0 4px;color:#171717;font-weight:bold}
+.hero .subhero{font-size:14px;color:#64748B;margin:0}
+.scorecard{display:flex;gap:14px;align-items:center;padding:22px;background:#F3EEFC;border-radius:12px;margin:20px 0}
+.scorecircle{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#A574E8,#5A2E93);color:#FFF;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.scorecircle .n{font-size:26px;font-weight:bold;line-height:1}
+.scorecircle .u{font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:3px;opacity:.85}
+.scoremeta{flex:1}
+.scoremeta .g{font-size:20px;font-weight:bold;color:#171717;margin:0 0 4px}
+.scoremeta .d{font-size:12px;color:#475569;margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:14px 0 20px}
+.split .s{text-align:center;padding:10px 8px;background:#F8FAFC;border-radius:8px}
+.split .s b{display:block;font-size:20px;font-weight:bold;line-height:1}
+.split .s span{display:block;font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:.09em;margin-top:4px}
+.split .s.e b{color:#4DA3C7} .split .s.g b{color:#3E9C6F} .split .s.h b{color:#E15A55}
+h2{font-size:15px;margin:22px 0 10px;color:#171717;font-weight:bold;padding-bottom:6px;border-bottom:1px solid #E5E5E5}
+.q{margin-bottom:10px;padding:9px 11px;background:#FAFAFA;border-radius:6px;page-break-inside:avoid}
+.qhead{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.q h3{font-size:12px;margin:0;color:#171717;font-weight:bold;flex:1}
+.q p{font-size:11px;color:#475569;margin:0;line-height:1.5}
+.rbadge{font-size:8px;font-weight:bold;letter-spacing:.08em;padding:2px 6px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+.rbadge.easy{background:#DBEEF7;color:#2E6E8E}
+.rbadge.good{background:#D8F0E4;color:#3E9C6F}
+.rbadge.hard{background:#FCE0DE;color:#C2534A}
+.cta{background:linear-gradient(135deg,#171717,#2A2233);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.cta .ct{flex:1;min-width:220px}
+.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#B592E8;font-weight:bold;display:block;margin-bottom:4px}
+.cta .ct h3{font-size:17px;margin:0 0 4px;color:#FFF;border:none;padding:0}
+.cta .ct p{font-size:11px;color:rgba(255,255,255,.75);margin:0}
+.cta .btn{display:inline-block;background:#8543D9;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}
+.links{border-top:1px solid #E5E5E5;padding-top:16px;margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.link{padding:12px 14px;background:#F8FAFC;border-radius:8px;text-decoration:none;color:#171717;font-size:12px;display:flex;gap:12px;align-items:flex-start;transition:.15s}
+.link:hover{background:#F3EEFC}
+.link .licon{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:#F3EEFC;color:#8543D9;display:inline-flex;align-items:center;justify-content:center}
+.link .licon svg{width:16px;height:16px}
+.link .lbody{flex:1;min-width:0;color:#8543D9;font-weight:bold;font-size:12px}
+.link .lbody b{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#64748B;margin-bottom:3px;font-weight:bold}
+.foot{margin-top:18px;padding-top:12px;text-align:center;font-size:10px;color:#94A3B8;letter-spacing:.05em}
+@page{size:A4;margin:12mm}
+@media print{body{padding:0}}
+</style></head><body>
+<div class="head">
+<div class="brand">
+<div class="lmark">IL</div>
+<div class="brandtxt">Invensis Learning<small>ASM Flashcards · Session Report</small></div>
+</div>
+<div class="date">July 21, 2026</div>
+</div>
+<div class="hero">
+<div class="lbl">Congratulations</div>
+<h1>Ranjith Kumar</h1>
+<p class="subhero">You completed a study session with 15 concepts.</p>
+</div>
+<div class="scorecard">
+<div class="scorecircle"><div class="n">87%</div><div class="u">Score</div></div>
+<div class="scoremeta">
+<p class="g">Strong</p>
+<p class="d">Solid grasp of the concepts. A few more sessions will lock it in.</p>
+</div>
+</div>
+<div class="split">
+<div class="s e"><b>9</b><span>Knew It</span></div>
+<div class="s g"><b>4</b><span>Almost</span></div>
+<div class="s h"><b>2</b><span>Didn't Know</span></div>
+</div>
+<h2>Concepts you studied</h2>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Sprint</h3></div><p>A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Scrum Master</h3></div><p>A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>User story</h3></div><p>A short, plain-language description of a feature from the user's perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Product Owner</h3></div><p>Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Sprint Planning</h3></div><p>The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Daily Scrum</h3></div><p>A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Sprint Retrospective</h3></div><p>An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Definition of Done (DoD)</h3></div><p>A shared checklist of what "complete" means for any Increment. Consistent across the team, evolves over time.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge easy">KNEW IT</span><h3>Empiricism</h3></div><p>The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge good">ALMOST</span><h3>Velocity</h3></div><p>The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge good">ALMOST</span><h3>Burndown chart</h3></div><p>A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge good">ALMOST</span><h3>Story points</h3></div><p>A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge good">ALMOST</span><h3>Backlog Refinement</h3></div><p>Ongoing activity where the Scrum Team clarifies, splits, and estimates upcoming Product Backlog items so they are Ready for a future Sprint.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge hard">DIDN'T KNOW</span><h3>WSJF</h3></div><p>Weighted Shortest Job First. Prioritises by dividing (business value + urgency + risk reduction) by job size. Common in SAFe.</p></div>
+<div class="q"><div class="qhead"><span class="rbadge hard">DIDN'T KNOW</span><h3>Little's Law</h3></div><p>Average cycle time = WIP / Throughput. Mathematical foundation for why WIP limits improve delivery speed.</p></div>
+<div class="cta">
+<div class="ct">
+<b>READY FOR THE REAL EXAM?</b>
+<h3>Get instructor-led ASM certification</h3>
+<p>16 hours live training, 2 mock exams, 100% pass guarantee.</p>
+</div>
+<a class="btn" href="https://www.invensislearning.com/agile-scrum-master/">Explore course</a>
+</div>
+<div class="links">
+<a class="link" href="mailto:contact@invensislearning.com">
+  <span class="licon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+  <span class="lbody"><b>Email</b>contact@invensislearning.com</span>
+</a>
+<a class="link" href="tel:+14702600084">
+  <span class="licon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+  <span class="lbody"><b>Phone</b>+1 470-260-0084</span>
+</a>
+<a class="link" href="https://www.invensislearning.com/contact-us/">
+  <span class="licon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+  <span class="lbody"><b>Contact form</b>invensislearning.com/contact-us</span>
+</a>
+<a class="link" href="https://www.invensislearning.com/blog/">
+  <span class="licon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+  <span class="lbody"><b>Blog &amp; resources</b>invensislearning.com/blog</span>
+</a>
+</div>
+<div class="foot">Trusted by 100,000+ professionals worldwide · Ford · TCS · Wipro · Accenture</div>
+</body></html>
