@@ -17,11 +17,18 @@
     --again:#E15A55; --again-soft:rgba(225,90,85,.14);
     --easy:#4DA3C7; --easy-soft:rgba(77,163,199,.16);
     --lock:#7C6394; --lock-soft:rgba(124,99,148,.12);
-    --page-bg:#F4F6FA; --panel-bg:#FFFFFF; --text:#0F1A2B; --text-soft:#475569; --line:rgba(15,23,42,.12);
-    --shadow-sm:0 1px 2px rgba(15,23,42,.05);
-    --shadow-md:0 12px 32px -14px rgba(15,23,42,.20);
+    --page-bg:#F1F4F9; --panel-bg:#FFFFFF; --text:#0F1A2B; --text-soft:#475569; --line:rgba(15,23,42,.10);
+    --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+    --shadow-md:0 14px 36px -14px rgba(15,26,43,.22), 0 2px 6px -1px rgba(15,26,43,.06);
   }
   html{ color-scheme: light; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(232,153,58,.09), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 30%, rgba(77,163,199,.05), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 0% 60%, rgba(212,168,90,.05), transparent 55%);
+  }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{ background:var(--page-bg); color:var(--text); min-height:100vh;
@@ -29,7 +36,10 @@
 
   /* header */
   header.top{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px);
-    background:rgba(255,255,255,.85); border-bottom:1px solid var(--line); }
+    background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
+  header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+    background:linear-gradient(90deg, transparent 0%, rgba(232,153,58,.35) 50%, transparent 100%); }
   .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
     height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
@@ -39,7 +49,14 @@
   .brand .btxt{ line-height:1.1 }
   .brand .btxt .n{ display:block; font-family:'DisplaySerif',serif; font-weight:700; font-size:.92rem }
   .brand .btxt .s{ display:block; font-family:'SF Mono',monospace; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
-  .topright{ display:flex; align-items:center; gap:.5rem }
+  .topright{ display:flex; align-items:center; gap:.7rem }
+  .topmeta{ font-family:'SF Mono',monospace; font-size:.68rem; letter-spacing:.06em;
+    color:var(--text-soft); padding:.3rem 0; }
+  @media(max-width:640px){ .topmeta{ display:none } }
+  .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
+    padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
+    transition:.15s; box-shadow:0 0 16px -6px rgba(232,153,58,.55); border:1px solid var(--accent-500); }
+  .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
   .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
     font-family:'SF Mono',monospace; font-weight:600; font-size:.7rem; letter-spacing:.04em;
     border:1px solid var(--line); }
@@ -55,13 +72,15 @@
   /* main tool page */
   .page{ max-width:640px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,32px) 48px;
     display:flex; flex-direction:column; gap:1.5rem; }
-  .pagehead{ text-align:center; padding-bottom:.2rem; }
+  .pagehead{ text-align:center; padding:.4rem 0 .2rem; }
   .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-family:'SF Mono',monospace;
     font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-500); font-weight:600; }
   .eyebrow::before{ content:""; width:22px; height:1px; background:var(--accent-500); }
+  .eyebrow::after{ content:""; width:22px; height:1px; background:var(--accent-500); }
   .eyebrow.center{ justify-content:center }
-  .pagehead h1{ font-family:'DisplaySerif',serif; font-weight:700; letter-spacing:-.01em;
-    font-size:clamp(1.15rem,2.4vw,1.35rem); margin:.55rem 0 0; text-wrap:balance; }
+  .pagehead h1{ font-family:'DisplaySerif',serif; font-weight:700; letter-spacing:-.015em;
+    font-size:clamp(1.4rem,2.8vw,1.65rem); margin:.7rem 0 .35rem; text-wrap:balance; }
+  .pagehead .sub{ font-size:.82rem; color:var(--text-soft); max-width:44ch; margin:0 auto; }
 
   /* how-to card */
   .howto{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
@@ -311,7 +330,10 @@
       <span class="logo">AS</span>
       <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Invensis Learning</span></span>
     </a>
-    <div class="topright"></div>
+    <div class="topright">
+      <span class="topmeta">Free · No signup for 3 cards</span>
+      <a class="topcta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Full course →</a>
+    </div>
   </div>
 </header>
 
