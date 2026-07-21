@@ -172,14 +172,6 @@
   .cardwrap::after{ transform:translate(6px,-3px) rotate(1.2deg); opacity:.5 }
 
   /* progress dot grid */
-  .pdots{ display:flex; gap:4px; flex-wrap:wrap; padding-top:.4rem }
-  .pdot{ width:16px; height:6px; border-radius:2px; background:var(--slate-200); transition:.2s; flex:1; max-width:22px; min-width:8px; }
-  .pdot.shown{ background:var(--slate-300); }
-  .pdot.again{ background:var(--again); }
-  .pdot.good{ background:var(--good); }
-  .pdot.easy{ background:var(--easy); }
-  .pdot.free{ background:var(--slate-300); position:relative }
-  .pdot.free::after{ content:""; position:absolute; inset:0; border-radius:2px; box-shadow:inset 0 0 0 1px var(--accent-line); }
   .tooltip{ position:absolute; top:-40px; left:50%; transform:translateX(-50%);
     background:var(--text); color:var(--page-bg); font-size:.72rem; font-weight:600;
     padding:.4rem .75rem; border-radius:8px; white-space:nowrap; z-index:5;
@@ -460,7 +452,7 @@
           <span class="pR">To Review <b id="pReview">0</b></span>
           <span>In this session <b id="pLeft">28</b></span>
         </div>
-        <div class="pdots" id="pDots"></div>
+        <div class="barrow"><div class="barfill mastered" id="barMastered" style="width:0%"></div><div class="barfill review" id="barReview" style="width:0%"></div></div>
       </div>
 
       <div class="stage" id="stage">
@@ -584,7 +576,8 @@
   var pMastered=document.getElementById('pMastered');
   var pReview=document.getElementById('pReview');
   var pLeft=document.getElementById('pLeft');
-  var pDotsEl=document.getElementById('pDots');
+  var barMastered=document.getElementById('barMastered');
+  var barReview=document.getElementById('barReview');
   var stageEl=document.getElementById('stage');
   var gateStage=document.getElementById('gateStage');
   var gateCard=document.getElementById('gateCard');
@@ -637,19 +630,10 @@
     var total = sM + queue.length + sR; if (total===0) total=1;
     pMastered.textContent = sM; pReview.textContent = sR; pLeft.textContent = queue.length;
     posNow.textContent = Math.min(sM+sR+1, CARDS.length);
-
-    var dotsHtml = '';
-    for (var di = 0; di < CARDS.length; di++){
-      var card = CARDS[di], stored = state.cardStates[card.id];
-      var cls = 'pdot';
-      if (sessionRatings[di] === 'easy' || (stored && stored.lastRating === 'easy')) cls += ' easy';
-      else if (sessionRatings[di] === 'good' || (stored && stored.lastRating === 'good')) cls += ' good';
-      else if (sessionAgainCount[di]) cls += ' again';
-      else if (sessionShown[di]) cls += ' shown';
-      else if (card.free) cls += ' free';
-      dotsHtml += '<span class="'+cls+'" title="'+(card.term)+'"></span>';
-    }
-    pDotsEl.innerHTML = dotsHtml;
+    var barM = document.getElementById('barMastered');
+    var barR = document.getElementById('barReview');
+    if (barM) barM.style.width = (sM/total*100)+'%';
+    if (barR) barR.style.width = (sR/total*100)+'%';
     var scheduled = 0;
     var t = todayISO();
     CARDS.forEach(function(c){
