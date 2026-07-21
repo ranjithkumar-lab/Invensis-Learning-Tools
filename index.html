@@ -386,16 +386,16 @@
   .emptystate p{ font-size:.85rem; color:var(--text-soft); margin:0 }
 
   /* course cta (inside summary) */
-  .coursecta{ background:linear-gradient(135deg, var(--ink-950), var(--ink-850)); color:#F1F5F9;
-    padding:1.6rem 1.7rem; border-radius:14px; margin-top:1rem; text-align:left;
-    display:flex; flex-direction:column; gap:1rem; position:relative; overflow:hidden; }
+  .coursecta{ background:linear-gradient(135deg, #171717, #2A2233); color:#F1F5F9;
+    padding:1.2rem 1.4rem; border-radius:12px; margin-top:.9rem; text-align:left;
+    display:flex; flex-direction:column; gap:.7rem; position:relative; overflow:hidden; }
   .coursecta::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.4;
     background:radial-gradient(ellipse 70% 55% at 100% 0%, rgba(133,67,217,.28), transparent 60%); }
   .coursecta > *{ position:relative }
   .coursecta .ctaeye{ font-family:var(--font-mono); font-size:.64rem; letter-spacing:.14em;
     text-transform:uppercase; color:var(--accent-500); font-weight:700; }
-  .coursecta h4{ font-family:var(--font-display); font-weight:700; font-size:1.2rem; color:#FFF; margin:.35rem 0 0; text-wrap:balance }
-  .coursecta .ctadesc{ font-size:.85rem; color:rgba(241,245,249,.78); line-height:1.5; margin:0 }
+  .coursecta h4{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:#FFF; margin:.2rem 0 0; text-wrap:balance }
+  .coursecta .ctadesc{ font-size:.8rem; color:rgba(241,245,249,.7); line-height:1.5; margin:0 }
   .coursecta .ctabullets{ display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:.6rem;
     padding:.8rem 0; border-top:1px solid rgba(255,255,255,.09); border-bottom:1px solid rgba(255,255,255,.09); }
   .coursecta .ctabullets div{ display:flex; flex-direction:column; gap:.15rem; font-size:.75rem; color:rgba(241,245,249,.75) }
@@ -950,7 +950,6 @@
       '<div class="emailsent">' +
         '<svg class="esicoinline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' +
         '<span>Report sent to <b>'+ maskEmail(state.email) +'</b></span>' +
-        '<a href="#" id="downloadFallback">Download instead</a>' +
       '</div>' +
       '<div class="stats">' +
         '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
@@ -968,29 +967,17 @@
         '</button>' +
       '</div>' +
       '<div class="coursecta">' +
-        '<div class="ctaeye">READY FOR THE REAL EXAM?</div>' +
-        '<h4>Get instructor-led Agile Scrum Master certification</h4>' +
-        '<p class="ctadesc">These flashcards get the terminology into memory. The full course pairs live instructor sessions, real Scrum project work, and exam vouchers to get you officially certified.</p>' +
-        '<div class="ctabullets">' +
-          '<div><b>16 hrs</b><span>Live training</span></div>' +
-          '<div><b>2</b><span>Mock exams</span></div>' +
-          '<div><b>100%</b><span>Pass guarantee</span></div>' +
-        '</div>' +
-        '<div class="testimonial" style="transition:opacity .3s ease">' +
-          '<p class="tquote">"'+TESTIMONIALS[0].quote+'"</p>' +
-          '<p class="tattr"><b class="tname">'+TESTIMONIALS[0].name+'</b> · <span class="trole">'+TESTIMONIALS[0].role+'</span></p>' +
-        '</div>' +
+        '<div class="ctaeye">Take the next step</div>' +
+        '<h4>Get certified as an Agile Scrum Master</h4>' +
+        '<p class="ctadesc">Live instructor training, mock exams, and a pass guarantee. Trusted by 100,000+ professionals.</p>' +
         '<div class="ctarow">' +
-          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
+          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the course</a>' +
           '<a class="golink" href="https://www.invensislearning.com/contact-us/" target="_blank" rel="noopener">Contact us</a>' +
         '</div>' +
-        '<p class="trustline">Trusted by 100,000+ professionals · Ford · TCS · Wipro · Accenture</p>' +
-      '</div>' +
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
-    var dlFallback = document.getElementById('downloadFallback');
-    if (dlFallback) dlFallback.addEventListener('click', function(e){ e.preventDefault(); downloadPDFReport(); });
+
     document.getElementById('restartAll').addEventListener('click', function(){
       state.cardStates = {}; saveState(); buildSessionQueue();
       summaryStage.style.display = 'none';
@@ -1093,163 +1080,118 @@
     var c = document.createElement('canvas');
     c.width = W; c.height = H;
     var ctx = c.getContext('2d');
-    var easy = 0, good = 0, again = 0;
-    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
-    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
     var uniqueCards = Object.keys(sessionRatings).length;
+    var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
 
-    // BG: deep purple gradient
-    var g = ctx.createLinearGradient(0, 0, W, H);
-    g.addColorStop(0, '#2A0F5C');
-    g.addColorStop(0.55, '#4F2183');
-    g.addColorStop(1, '#0F0521');
+    // Clean deep gradient (professional, not gamey)
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#0F0521');
+    g.addColorStop(1, '#2A0F5C');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
-    // Radiant glow behind score
-    var scoreCX = W - 340, scoreCY = H / 2 + 20;
-    var glow = ctx.createRadialGradient(scoreCX, scoreCY, 40, scoreCX, scoreCY, 320);
-    glow.addColorStop(0, 'rgba(181,146,232,0.55)');
+    // Elegant single glow
+    var glow = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 500);
+    glow.addColorStop(0, 'rgba(181,146,232,0.14)');
     glow.addColorStop(1, 'rgba(181,146,232,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
-    // Subtle top strip with brand
-    ctx.fillStyle = 'rgba(255,255,255,0.04)';
-    ctx.fillRect(0, 0, W, 80);
-    // Brand tile
-    ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath();
-    ctx.roundRect(48, 22, 38, 38, 8);
-    ctx.fill();
-    ctx.fillStyle = '#5A2E93';
-    ctx.font = 'bold 17px Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('IL', 67, 47);
-    ctx.textAlign = 'left';
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 15px Arial, sans-serif';
-    ctx.fillText('Invensis Learning', 98, 40);
-    ctx.font = '11px Arial, sans-serif';
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.fillText('ASM CERTIFICATION PREP', 98, 58);
-    // Right side date
-    var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'short', day:'numeric'});
-    ctx.textAlign = 'right';
-    ctx.fillStyle = 'rgba(255,255,255,0.55)';
-    ctx.font = '13px Arial, sans-serif';
-    ctx.fillText(today, W - 48, 47);
+    // Ornamental top and bottom hairlines
+    ctx.strokeStyle = 'rgba(181,146,232,0.35)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(80, 80); ctx.lineTo(W-80, 80); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(80, H-80); ctx.lineTo(W-80, H-80); ctx.stroke();
 
-    // LEFT column: hero text
+    // Top-left brand (small, professional)
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.textAlign = 'left';
-    var leftX = 60;
+    ctx.font = 'bold 12px Arial, sans-serif';
+    ctx.fillText('INVENSIS LEARNING', 90, 55);
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText('Agile Scrum Master · Certification Prep', 90, 72);
+
+    // Top-right date
+    ctx.textAlign = 'right';
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText(today, W-90, 62);
+
+    // Center composition: eyebrow, name, achievement, score
+    ctx.textAlign = 'center';
+    var cx = W / 2;
 
     // Eyebrow
     ctx.fillStyle = '#B592E8';
-    ctx.font = 'bold 15px Arial, sans-serif';
-    ctx.fillText('ACHIEVEMENT UNLOCKED', leftX, 155);
+    ctx.font = 'bold 14px Arial, sans-serif';
+    ctx.fillText('CERTIFICATE OF ACCOMPLISHMENT', cx, 145);
 
-    // Congrats
+    // Presented-to line
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.font = '15px Arial, sans-serif';
+    ctx.fillText('Presented to', cx, 185);
+
+    // NAME — the hero
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = '30px Arial, sans-serif';
-    ctx.fillText('Congratulations,', leftX, 205);
+    ctx.font = 'bold 62px Arial, sans-serif';
+    var nameDisplay = name.length > 26 ? name.substring(0, 24) + '…' : name;
+    ctx.fillText(nameDisplay, cx, 245);
 
-    // NAME — big and prominent
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 68px Arial, sans-serif';
-    var nameDisplay = name.length > 20 ? name.substring(0, 18) + '…' : name;
-    ctx.fillText(nameDisplay, leftX, 275);
-
-    // Description line
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
-    ctx.font = '22px Arial, sans-serif';
-    ctx.fillText('You worked through ' + uniqueCards + ' Agile Scrum Master concepts', leftX, 320);
-
-    // Rating breakdown row (bottom of left column)
-    var pillY = 400;
-    var pills = [
-      { label: 'Knew It', val: easy, color: '#4DA3C7' },
-      { label: 'Almost', val: good, color: '#3E9C6F' },
-      { label: 'Didn\'t Know', val: again, color: '#E15A55' }
-    ];
-    var px = leftX;
-    pills.forEach(function(p){
-      var text = p.val + '  ' + p.label;
-      ctx.font = 'bold 15px Arial, sans-serif';
-      var pw = ctx.measureText(text).width + 32;
-      ctx.fillStyle = 'rgba(255,255,255,0.08)';
-      ctx.beginPath();
-      ctx.roundRect(px, pillY, pw, 40, 20);
-      ctx.fill();
-      // colored dot
-      ctx.fillStyle = p.color;
-      ctx.beginPath();
-      ctx.arc(px + 16, pillY + 20, 5, 0, Math.PI * 2);
-      ctx.fill();
-      // text
-      ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 14px Arial, sans-serif';
-      ctx.textAlign = 'left';
-      ctx.fillText(p.val, px + 30, pillY + 25);
-      ctx.font = '14px Arial, sans-serif';
-      ctx.fillStyle = 'rgba(255,255,255,0.75)';
-      ctx.fillText(p.label, px + 30 + ctx.measureText(p.val + ' ').width, pillY + 25);
-      px += pw + 10;
-    });
-
-    // Bottom tagline
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.font = '13px Arial, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText('Free flashcards for the Agile Scrum Master certification exam', leftX, 585);
-
-    // RIGHT column: giant score circle
-    // Outer glow ring
-    ctx.strokeStyle = 'rgba(181,146,232,0.35)';
-    ctx.lineWidth = 2;
+    // Underline under name
+    var nameW = ctx.measureText(nameDisplay).width;
+    ctx.strokeStyle = 'rgba(181,146,232,0.5)';
+    ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, 180, 0, Math.PI * 2);
+    ctx.moveTo(cx - nameW/2 - 20, 265);
+    ctx.lineTo(cx + nameW/2 + 20, 265);
     ctx.stroke();
 
-    // Progress arc (score visualization)
+    // Achievement line
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.font = '19px Arial, sans-serif';
+    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile Scrum Master concepts', cx, 300);
+
+    // Score badge (center bottom)
+    var scoreY = 435;
+    // Outer soft ring
+    ctx.strokeStyle = 'rgba(181,146,232,0.2)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(cx, scoreY, 105, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Progress arc
     ctx.strokeStyle = '#B592E8';
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 6;
     ctx.lineCap = 'round';
     ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, 155, -Math.PI / 2, -Math.PI / 2 + (2 * Math.PI * score / 100));
+    ctx.arc(cx, scoreY, 92, -Math.PI/2, -Math.PI/2 + (2 * Math.PI * score / 100));
     ctx.stroke();
-    // Track (remainder)
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
-    ctx.lineWidth = 10;
+    // Track
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
     ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, 155, -Math.PI / 2 + (2 * Math.PI * score / 100), -Math.PI / 2 + 2 * Math.PI);
+    ctx.arc(cx, scoreY, 92, -Math.PI/2 + (2 * Math.PI * score / 100), -Math.PI/2 + 2 * Math.PI);
     ctx.stroke();
-
-    // Inner solid circle
-    ctx.fillStyle = 'rgba(255,255,255,0.05)';
-    ctx.beginPath();
-    ctx.arc(scoreCX, scoreCY, 138, 0, Math.PI * 2);
-    ctx.fill();
 
     // Score number
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 88px Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(score + '%', scoreCX, scoreCY + 12);
-
-    // Grade label under score
+    ctx.font = 'bold 52px Arial, sans-serif';
+    ctx.fillText(score + '%', cx, scoreY + 8);
+    // Grade
     ctx.fillStyle = '#B592E8';
-    ctx.font = 'bold 17px Arial, sans-serif';
-    ctx.fillText(grade.toUpperCase(), scoreCX, scoreCY + 45);
+    ctx.font = 'bold 12px Arial, sans-serif';
+    ctx.fillText(grade.toUpperCase(), cx, scoreY + 32);
 
-    ctx.font = '13px Arial, sans-serif';
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.fillText('SESSION SCORE', scoreCX, scoreCY + 68);
+    // Bottom seal line
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText('invensislearning.com  ·  ASM Flashcards', cx, H - 55);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-flashcards-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+    a.download = 'asm-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
