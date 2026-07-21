@@ -182,7 +182,7 @@
   .cardaction:hover{ color:var(--accent-500); border-color:var(--accent-500); background:var(--accent-soft) }
   .cardaction svg{ width:14px; height:14px }
 
-  .card{ position:relative; width:100%; height:300px; cursor:pointer; }
+  .card{ position:relative; width:100%; height:360px; cursor:pointer; }
   .card .face{ position:absolute; inset:0; border-radius:16px; border:1px solid var(--line);
     box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
     display:flex; flex-direction:column; padding:2rem 2.2rem;
@@ -473,17 +473,13 @@
   .reltools-mini .rtmlink:hover{ background:var(--accent-soft); }
   .reltools-mini .rtmsep{ color:var(--text-soft); opacity:.5; }
 
-  .emailsent{ display:flex; gap:.85rem; align-items:flex-start; padding:1rem 1.2rem;
-    background:linear-gradient(135deg, rgba(133,67,217,.08), rgba(133,67,217,.03));
-    border:1px solid var(--accent-line); border-radius:12px; }
-  .emailsent .esico{ flex-shrink:0; width:36px; height:36px; border-radius:50%;
-    background:var(--accent-500); color:#FFF; display:flex; align-items:center; justify-content:center; }
-  .emailsent .esico svg{ width:18px; height:18px; }
-  .emailsent .estext{ flex:1; display:flex; flex-direction:column; gap:.2rem; }
-  .emailsent .estext b{ font-size:.9rem; color:var(--text); font-weight:700; }
-  .emailsent .estext span{ font-size:.78rem; color:var(--text-soft); line-height:1.5; }
-  .emailsent .estext a{ font-size:.72rem; color:var(--accent-500); text-decoration:none; font-weight:600; margin-top:.25rem; }
-  .emailsent .estext a:hover{ text-decoration:underline; }
+  .emailsent{ display:flex; gap:.55rem; align-items:center; padding:.65rem .9rem;
+    background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
+    font-size:.82rem; color:var(--text); flex-wrap:wrap; }
+  .emailsent .esicoinline{ width:16px; height:16px; color:var(--accent-500); flex-shrink:0; }
+  .emailsent b{ font-weight:700; color:var(--accent-600); }
+  .emailsent a{ margin-left:auto; color:var(--accent-500); text-decoration:none; font-weight:600; font-size:.75rem; }
+  .emailsent a:hover{ text-decoration:underline; }
 </style>
 
 <header class="top">
@@ -578,7 +574,7 @@
 
   var CARDS = [
     {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
-    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The set of guidelines behind the Manifesto. Covers customer satisfaction, welcoming change, frequent delivery of working software, close daily collaboration, motivated teams, sustainable pace, technical excellence, simplicity, and self-organising teams.'},
+    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The 12 guidelines behind the Manifesto. Cover customer satisfaction, welcoming change, frequent delivery, close daily collaboration, motivated teams, sustainable pace, technical excellence, and self-organising teams.'},
     {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
     {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
     {id:'iterative-dev',cat:'Agile Concepts',term:'Iterative development',def:'Building in small cycles, each producing a working piece, refining based on feedback rather than trying to build everything upfront.'},
@@ -962,14 +958,9 @@
         '</div>' +
       '</div>' +
       '<div class="emailsent">' +
-        '<div class="esico">' +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' +
-        '</div>' +
-        '<div class="estext">' +
-          '<b>Detailed report sent to '+ maskEmail(state.email) +'</b>' +
-          '<span>Check your inbox in a few minutes for the full PDF with all concepts, your ratings, and a session breakdown.</span>' +
-          '<a href="#" id="downloadFallback">Did not get it? Download the report instead</a>' +
-        '</div>' +
+        '<svg class="esicoinline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' +
+        '<span>Report sent to <b>'+ maskEmail(state.email) +'</b></span>' +
+        '<a href="#" id="downloadFallback">Download instead</a>' +
       '</div>' +
       '<div class="stats">' +
         '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
