@@ -559,11 +559,6 @@
   </div>
 </main>
 
-<footer class="foot">
-  © 2026 <a href="https://www.invensislearning.com/" target="_blank" rel="noopener">Invensis Learning</a>. Free study tool for exam preparation.
-  <span style="margin-left:1rem;font-size:.75rem"><a href="#" id="resetLink" style="color:var(--accent-500);text-decoration:none;font-weight:600;padding:.3rem .7rem;border:1px solid var(--accent-500);border-radius:6px">↻ Reset progress (test as new user)</a></span>
-</footer>
-
 <script>
 (function(){
   var STORAGE_KEY = 'invensis-asm-flashcards-v16';
@@ -1412,15 +1407,6 @@
     }
   });
 
-
-  var resetLink = document.getElementById('resetLink');
-  if (resetLink) resetLink.addEventListener('click', function(e){
-    e.preventDefault();
-    if (confirm('Clear all progress and start fresh? (Email unlock, ratings)')) {
-      try { localStorage.removeItem(STORAGE_KEY); } catch(err){}
-      location.reload();
-    }
-  });
 
   var howtoCard = document.getElementById('howtoCard');
   var howtoClose = document.getElementById('howtoClose');
