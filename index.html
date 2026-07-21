@@ -580,7 +580,7 @@
     {id:'sustainable-pace',cat:'Agile Concepts',term:'Sustainable pace',def:'The Agile principle that a team should be able to maintain its output indefinitely. Sprints do not include heroic all-nighters or crunch weeks.'},
     {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true},
     {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.'},
-    {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.'},
+    {id:'developers',cat:'Scrum Roles',term:'Developers (Scrum role)',def:'The Scrum Team accountability held by the people who create the Increment each Sprint. Not just coders. Includes testers, designers, analysts — anyone contributing to a Done Increment. Self-managing and cross-functional as a group.'},
     {id:'stakeholders',cat:'Scrum Roles',term:'Stakeholders',def:'Anyone outside the Scrum Team affected by the product: customers, users, sponsors, business leaders, other teams. Consulted at the Sprint Review.'},
     {id:'agile-coach',cat:'Scrum Roles',term:'Agile Coach',def:'A more senior role than Scrum Master. Coaches multiple teams and the wider organisation on Agile mindset, practices, and transformation.'},
     {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
@@ -602,12 +602,9 @@
     {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
     {id:'story-points',cat:'Estimation & Planning',term:'Story points',def:'A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.'},
     {id:'relative-sizing',cat:'Estimation & Planning',term:'Relative sizing',def:'Estimating backlog items by comparing them to each other (bigger, smaller, roughly the same) rather than trying to fix an absolute time to each one.'},
-    {id:'velocity',cat:'Estimation & Planning',term:'Velocity',def:'The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.'},
+    {id:'velocity',cat:'Estimation & Planning',term:'Team velocity',def:'The average number of story points a Scrum Team completes per Sprint. Used to forecast how much work fits in future Sprints, not as a productivity target or team-to-team benchmark.'},
     {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
     {id:'agile-estimation',cat:'Estimation & Planning',term:'Agile estimation',def:'Collaborative techniques the team uses to size backlog items, commonly Planning Poker or T-shirt sizing. Surfaces shared understanding, not just numbers.'},
-    {id:'fibonacci',cat:'Estimation & Planning',term:'Fibonacci sequence',def:'The estimation scale 1, 2, 3, 5, 8, 13, 21. Gaps between numbers reflect increasing uncertainty at higher effort levels.'},
-    {id:'planning-poker',cat:'Estimation & Planning',term:'Planning Poker',def:'Estimation game where all team members reveal cards simultaneously. Reduces anchoring bias and surfaces divergent understanding.'},
-    {id:'tshirt-sizing',cat:'Estimation & Planning',term:'T-shirt sizing',def:'Estimation using S, M, L, XL sizes when precise story points are premature. Common for coarse initial backlog sizing.'},
     {id:'moscow',cat:'Estimation & Planning',term:'MoSCoW prioritisation',def:'Categorising backlog items as Must have, Should have, Could have, Won\'t have. Used for release scope decisions.'},
     {id:'wsjf',cat:'Estimation & Planning',term:'WSJF',def:'Weighted Shortest Job First. Prioritises by dividing (business value + urgency + risk reduction) by job size. Common in SAFe.'},
     {id:'invest',cat:'Estimation & Planning',term:'INVEST criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable.'},
@@ -643,7 +640,10 @@
     {id:'prime-directive',cat:'Facilitation & Team Dynamics',term:'Prime Directive',def:'The Retrospective ground rule: "Regardless of what we discover, we understand and truly believe that everyone did the best job they could." Sets a blameless tone.'},
     {id:'refactoring',cat:'Technical Practices',term:'Refactoring',def:'Improving code structure without changing behaviour. Continuous refactoring keeps technical debt low so future velocity stays predictable.'},
     {id:'spike',cat:'Estimation & Planning',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty. Example: spike a proof of concept for the payment API integration before committing to build it.'},
-    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'}
+    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'},
+    {id:'estimation-techniques',cat:'Estimation & Planning',term:'Estimation techniques',def:'Common methods a Scrum Team uses to size Product Backlog items: Planning Poker (all reveal cards simultaneously to avoid anchoring), T-shirt sizing (S/M/L/XL for early rough sizing), Fibonacci scale (1, 2, 3, 5, 8, 13, 21 — gaps widen as effort grows).'},
+    {id:'product-roadmap',cat:'Estimation & Planning',term:'Product Roadmap',def:'A time-based view of upcoming Product Backlog themes or features across quarters or releases. Communicates direction to stakeholders without committing to detailed dates.'},
+    {id:'story-mapping',cat:'Estimation & Planning',term:'Story mapping',def:'A backlog visualisation technique. User activities are arranged left-to-right along the top (the user journey), with detailed stories stacked vertically below in priority order. Reveals gaps and slices for release planning.'}
   ];
 
   var SESSION_SIZE = 15;
