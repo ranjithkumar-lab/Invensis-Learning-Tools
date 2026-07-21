@@ -462,6 +462,16 @@
   footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
     font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
   footer.foot a{ color:var(--accent-500); text-decoration:none }
+
+  .reltools-mini{ margin-top:.8rem; padding:.7rem 1rem; text-align:center;
+    font-size:.75rem; color:var(--text-soft); display:flex; flex-wrap:wrap; justify-content:center;
+    align-items:center; gap:.35rem; border-top:1px solid var(--line); }
+  .reltools-mini .rtmlabel{ font-family:var(--font-body); font-weight:700; font-size:.68rem;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); margin-right:.35rem; }
+  .reltools-mini .rtmlink{ color:var(--accent-500); text-decoration:none; font-weight:600; font-size:.78rem;
+    padding:.15rem .3rem; border-radius:4px; transition:.15s; }
+  .reltools-mini .rtmlink:hover{ background:var(--accent-soft); }
+  .reltools-mini .rtmsep{ color:var(--text-soft); opacity:.5; }
 </style>
 
 <header class="top">
@@ -567,12 +577,8 @@
     {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true},
     {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.'},
     {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.'},
-    {id:'facilitation',cat:'Scrum Roles',term:'Facilitation',def:'The Scrum Master skill of helping the team hold effective conversations and reach shared decisions without dictating content or outcome.'},
-    {id:'coaching',cat:'Scrum Roles',term:'Coaching',def:'The Scrum Master practice of helping individuals and the team grow in self-management, an agile mindset, and continuous improvement over time.'},
-    {id:'servant-leadership',cat:'Scrum Roles',term:'Servant leadership',def:'Leading by removing obstacles and enabling others rather than by directing. The Scrum Master\'s default operating mode.'},
     {id:'stakeholders',cat:'Scrum Roles',term:'Stakeholders',def:'Anyone outside the Scrum Team affected by the product: customers, users, sponsors, business leaders, other teams. Consulted at the Sprint Review.'},
     {id:'agile-coach',cat:'Scrum Roles',term:'Agile Coach',def:'A more senior role than Scrum Master. Coaches multiple teams and the wider organisation on Agile mindset, practices, and transformation.'},
-    {id:'cross-functional-team',cat:'Scrum Roles',term:'Cross-functional team',def:'A team that collectively holds all the skills needed to deliver an Increment. No hand-offs to other teams should be required for the core work.'},
     {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
     {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
     {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
@@ -580,7 +586,6 @@
     {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
     {id:'backlog-refinement',cat:'Scrum Events',term:'Backlog Refinement',def:'Ongoing activity where the Scrum Team clarifies, splits, and estimates upcoming Product Backlog items so they are Ready for a future Sprint.'},
     {id:'sprint-goal',cat:'Scrum Events',term:'Sprint Goal',def:'A single objective for the Sprint that gives coherence to the Sprint Backlog. If work has to be dropped, the Sprint Goal is the priority.'},
-    {id:'timeboxing',cat:'Scrum Events',term:'Timeboxing',def:'Fixing a maximum duration for an event or activity. Keeps meetings focused and forces decisions to be made rather than deferred.'},
     {id:'working-agreement',cat:'Scrum Events',term:'Working agreement',def:'A team-created list of behaviours and norms the team commits to. Reviewed and updated at Retrospectives.'},
     {id:'sprint-cancellation',cat:'Scrum Events',term:'Sprint cancellation',def:'The Product Owner has the sole authority to cancel a Sprint if the Sprint Goal becomes obsolete. Rare, but a real option.'},
     {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
@@ -629,7 +634,12 @@
     {id:'pull-system',cat:'Kanban & Complementary',term:'Pull system',def:'Work is pulled into the next stage only when there is capacity, rather than pushed. Prevents overload and reveals bottlenecks.'},
     {id:'scrumban',cat:'Kanban & Complementary',term:'ScrumBan',def:'Hybrid approach: Scrum\'s rhythm (Sprints, Retros) combined with Kanban\'s flow (WIP limits, continuous pull). Common in maintenance teams.'},
     {id:'littles-law',cat:'Kanban & Complementary',term:'Little\'s Law',def:'Average cycle time = WIP / Throughput. Mathematical foundation for why WIP limits improve delivery speed.'},
-    {id:'tdd',cat:'Technical Practices',term:'Test-Driven Development (TDD)',def:'Write a failing test first, then write minimal code to pass it, then refactor. Produces well-tested code by construction.'}
+    {id:'tdd',cat:'Technical Practices',term:'Test-Driven Development (TDD)',def:'Write a failing test first, then write minimal code to pass it, then refactor. Produces well-tested code by construction.'},
+    {id:'product-goal',cat:'Scrum Artifacts',term:'Product Goal',def:'The single long-term objective the Scrum Team commits to. Set by the Product Owner, lives in the Product Backlog, gives coherence to a series of Sprint Goals.'},
+    {id:'prime-directive',cat:'Facilitation & Team Dynamics',term:'Prime Directive',def:'The Retrospective ground rule: "Regardless of what we discover, we understand and truly believe that everyone did the best job they could." Sets a blameless tone.'},
+    {id:'refactoring',cat:'Technical Practices',term:'Refactoring',def:'Improving code structure without changing behaviour. Continuous refactoring keeps technical debt low so future velocity stays predictable.'},
+    {id:'spike',cat:'Estimation & Planning',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty. Example: spike a proof of concept for the payment API integration before committing to build it.'},
+    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'}
   ];
 
   var SESSION_SIZE = 15;
@@ -924,151 +934,76 @@
     else { grade = 'Keep practicing'; desc = 'Early days. Spaced repetition compounds fast, come back tomorrow.'; }
 
     summaryCard.innerHTML =
-      '<div class="wizard">' +
-        '<div class="wizardnav">' +
-          '<button class="wnav prev" data-nav="prev" disabled>' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
-            '<span>Back</span>' +
-          '</button>' +
-          '<div class="wdots"><span class="wdot active" data-goto="0"></span><span class="wdot" data-goto="1"></span><span class="wdot" data-goto="2"></span></div>' +
-          '<button class="wnav next" data-nav="next">' +
-            '<span>Continue</span>' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
-          '</button>' +
+      '<div class="sbadge">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+      '</div>' +
+      '<h3 style="text-align:center">Congratulations, '+ (state.name || 'Learner') +'!</h3>' +
+      '<p class="congratsline">You worked through <b>'+Object.keys(sessionRatings).length+' concepts</b> in this session. Here is how you did.</p>' +
+      '<div class="scoreblock">' +
+        '<div class="scoreval">'+score+'<sup>%</sup></div>' +
+        '<div class="scoremeta">' +
+          '<div class="scorelbl">Session score</div>' +
+          '<h4 class="scoregrade">'+grade+'</h4>' +
+          '<p class="scoredesc">'+desc+'</p>' +
         '</div>' +
-        '<div class="wslides">' +
-
-          '<div class="wslide active" data-slide="0">' +
-            '<div class="sbadge">' +
-              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
-            '</div>' +
-            '<h3 style="text-align:center">Congratulations, '+ (state.name || 'Learner') +'!</h3>' +
-            '<p class="congratsline">You worked through <b>'+Object.keys(sessionRatings).length+' concepts</b> in this session. Here is your score.</p>' +
-            '<div class="scoreblock">' +
-              '<div class="scoreval">'+score+'<sup>%</sup></div>' +
-              '<div class="scoremeta">' +
-                '<div class="scorelbl">Session score</div>' +
-                '<h4 class="scoregrade">'+grade+'</h4>' +
-                '<p class="scoredesc">'+desc+'</p>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-
-          '<div class="wslide" data-slide="1">' +
-            '<div class="slidehead"><span class="sheye">Your session</span><h3>How you rated each card</h3></div>' +
-            '<div class="stats">' +
-              '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
-              '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
-              '<div class="stat again"><b>'+again+'</b><span>Didn\'t Know</span></div>' +
-            '</div>' +
-            '<p style="text-align:center;font-size:.85rem;color:var(--text-soft);margin:0">Download the full session report or share your progress.</p>' +
-            '<div class="actions">' +
-              '<button class="toolbtn on iconbtn" id="pdfBtn">' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-                '<span>Download PDF</span>' +
-              '</button>' +
-              '<button class="toolbtn iconbtn" id="shareBtn">' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
-                '<span>Share image</span>' +
-              '</button>' +
-            '</div>' +
-          '</div>' +
-
-          '<div class="wslide" data-slide="2">' +
-            '<div class="slidehead"><span class="sheye">What is next</span><h3>Take the leap</h3></div>' +
-            '<div class="coursecta">' +
-              '<div class="ctaeye">READY FOR THE REAL EXAM?</div>' +
-              '<h4>Get instructor-led Agile Scrum Master certification</h4>' +
-              '<p class="ctadesc">These flashcards get the terminology into memory. The full course pairs live instructor sessions, real Scrum project work, and exam vouchers to get you officially certified.</p>' +
-              '<div class="ctabullets">' +
-                '<div><b>16 hrs</b><span>Live instructor training</span></div>' +
-                '<div><b>2</b><span>Full mock exams</span></div>' +
-                '<div><b>100%</b><span>Pass guarantee</span></div>' +
-              '</div>' +
-              '<div class="testimonial" style="transition:opacity .3s ease">' +
-                '<p class="tquote">"'+TESTIMONIALS[0].quote+'"</p>' +
-                '<p class="tattr"><b class="tname">'+TESTIMONIALS[0].name+'</b> · <span class="trole">'+TESTIMONIALS[0].role+'</span></p>' +
-              '</div>' +
-              '<div class="ctarow">' +
-                '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
-                '<a class="golink" href="https://www.invensislearning.com/contact-us/" target="_blank" rel="noopener">Contact us</a>' +
-              '</div>' +
-              '<p class="trustline">Trusted by 100,000+ professionals · Ford · TCS · Wipro · Accenture</p>' +
-            '</div>' +
-            '<div class="contactstrip">' +
-              '<div class="contactitem">' +
-                '<b><svg class="cicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</b>' +
-                '<a href="mailto:contact@invensislearning.com">contact@invensislearning.com</a>' +
-              '</div>' +
-              '<div class="contactitem">' +
-                '<b><svg class="cicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>Phone</b>' +
-                '<a href="tel:+14702600084">+1 470-260-0084</a>' +
-              '</div>' +
-              '<div class="contactitem">' +
-                '<b><svg class="cicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Blog</b>' +
-                '<a href="https://www.invensislearning.com/blog/" target="_blank" rel="noopener">Read our articles</a>' +
-              '</div>' +
-            '</div>' +
-            '<div class="reltools">' +
-              '<div class="reltoolshead">Free tools for other certifications</div>' +
-              '<div class="reltoolsgrid">' +
-                '<a class="reltool" href="https://www.invensislearning.com/lean-six-sigma-black-belt-certification/" target="_blank" rel="noopener">' +
-                  '<div class="reltoolico">LSSBB</div>' +
-                  '<div class="reltoolt">Six Sigma Black Belt Practice</div>' +
-                  '<div class="reltoold">800+ questions, mock exams, analytics</div>' +
-                '</a>' +
-                '<a class="reltool" href="https://www.invensislearning.com/pmp-certification-training/" target="_blank" rel="noopener">' +
-                  '<div class="reltoolico">PMP</div>' +
-                  '<div class="reltoolt">PMP Flashcards</div>' +
-                  '<div class="reltoold">Recall-based flashcards for the PMP exam</div>' +
-                '</a>' +
-                '<a class="reltool" href="https://www.invensislearning.com/change-management-certification/" target="_blank" rel="noopener">' +
-                  '<div class="reltoolico">CM</div>' +
-                  '<div class="reltoolt">Change Management Flashcards</div>' +
-                  '<div class="reltoold">Concept flashcards for the Change Management exam</div>' +
-                '</a>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-
+      '</div>' +
+      '<div class="stats">' +
+        '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
+        '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
+        '<div class="stat again"><b>'+again+'</b><span>Didn\'t Know</span></div>' +
+      '</div>' +
+      '<div class="actions">' +
+        '<button class="toolbtn on iconbtn" id="pdfBtn">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+          '<span>Download report</span>' +
+        '</button>' +
+        '<button class="toolbtn iconbtn" id="shareBtn">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
+          '<span>Share image</span>' +
+        '</button>' +
+        '<button class="toolbtn iconbtn" id="restartAll">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
+          '<span>Restart</span>' +
+        '</button>' +
+      '</div>' +
+      '<div class="coursecta">' +
+        '<div class="ctaeye">READY FOR THE REAL EXAM?</div>' +
+        '<h4>Get instructor-led Agile Scrum Master certification</h4>' +
+        '<p class="ctadesc">These flashcards get the terminology into memory. The full course pairs live instructor sessions, real Scrum project work, and exam vouchers to get you officially certified.</p>' +
+        '<div class="ctabullets">' +
+          '<div><b>16 hrs</b><span>Live training</span></div>' +
+          '<div><b>2</b><span>Mock exams</span></div>' +
+          '<div><b>100%</b><span>Pass guarantee</span></div>' +
         '</div>' +
+        '<div class="testimonial" style="transition:opacity .3s ease">' +
+          '<p class="tquote">"'+TESTIMONIALS[0].quote+'"</p>' +
+          '<p class="tattr"><b class="tname">'+TESTIMONIALS[0].name+'</b> · <span class="trole">'+TESTIMONIALS[0].role+'</span></p>' +
+        '</div>' +
+        '<div class="ctarow">' +
+          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
+          '<a class="golink" href="https://www.invensislearning.com/contact-us/" target="_blank" rel="noopener">Contact us</a>' +
+        '</div>' +
+        '<p class="trustline">Trusted by 100,000+ professionals · Ford · TCS · Wipro · Accenture</p>' +
+      '</div>' +
+      '<div class="reltools-mini">' +
+        '<span class="rtmlabel">Also explore</span>' +
+        '<a class="rtmlink" href="https://www.invensislearning.com/lean-six-sigma-black-belt-certification/" target="_blank" rel="noopener">LSSBB Practice</a>' +
+        '<span class="rtmsep">·</span>' +
+        '<a class="rtmlink" href="https://www.invensislearning.com/pmp-certification-training/" target="_blank" rel="noopener">PMP Prep</a>' +
+        '<span class="rtmsep">·</span>' +
+        '<a class="rtmlink" href="https://www.invensislearning.com/change-management-certification/" target="_blank" rel="noopener">Change Management</a>' +
+        '<span class="rtmsep">·</span>' +
+        '<a class="rtmlink" href="https://www.invensislearning.com/blog/" target="_blank" rel="noopener">Blog</a>' +
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
     document.getElementById('pdfBtn').addEventListener('click', downloadPDFReport);
-
-    // Wizard slide navigation
-    var slides = summaryCard.querySelectorAll('.wslide');
-    var dots = summaryCard.querySelectorAll('.wdot');
-    var prevBtn = summaryCard.querySelector('[data-nav="prev"]');
-    var nextBtn = summaryCard.querySelector('[data-nav="next"]');
-    var currentSlide = 0;
-    function goToSlide(idx){
-      currentSlide = Math.max(0, Math.min(slides.length - 1, idx));
-      slides.forEach(function(s, i){ s.classList.toggle('active', i === currentSlide); });
-      dots.forEach(function(d, i){ d.classList.toggle('active', i === currentSlide); });
-      prevBtn.disabled = currentSlide === 0;
-      var lastSlide = currentSlide === slides.length - 1;
-      nextBtn.querySelector('span').textContent = lastSlide ? 'Restart deck' : 'Continue';
-      // Re-trigger celebration on slide 1
-      if (currentSlide === 0){
-        summaryCard.classList.remove('celebrate');
-        void summaryCard.offsetWidth;
-        summaryCard.classList.add('celebrate');
-      }
-    }
-    if (prevBtn) prevBtn.addEventListener('click', function(){ goToSlide(currentSlide - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function(){
-      if (currentSlide === slides.length - 1){
-        state.cardStates = {}; saveState(); buildSessionQueue();
-        summaryStage.style.display = 'none';
-        stageEl.style.display = 'flex';
-        renderCard();
-      } else {
-        goToSlide(currentSlide + 1);
-      }
+    document.getElementById('restartAll').addEventListener('click', function(){
+      state.cardStates = {}; saveState(); buildSessionQueue();
+      summaryStage.style.display = 'none';
+      stageEl.style.display = 'flex';
+      renderCard();
     });
-    dots.forEach(function(d){ d.addEventListener('click', function(){ goToSlide(parseInt(d.dataset.goto, 10)); }); });
 
 
     state.totalSessionsCompleted++;
@@ -1153,7 +1088,14 @@
   }
 
   function generateShareImage(score, grade){
-    var name = state.name || 'Learner';
+    var name = state.name;
+    if (!name && state.email){
+      name = state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    }
+    if (!name){
+      name = window.prompt('Enter your name for the share image:', '');
+      if (name){ state.name = name; saveState(); } else { name = 'ASM Learner'; }
+    }
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
     c.width = W; c.height = H;
@@ -1322,7 +1264,11 @@
 
 
   function downloadPDFReport(){
-    var name = state.name || 'Learner';
+    var name = state.name;
+    if (!name && state.email){
+      name = state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    }
+    if (!name) name = 'ASM Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
     for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
