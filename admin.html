@@ -340,6 +340,14 @@
     letter-spacing:.06em; text-transform:uppercase; color:var(--text-soft);
     background:var(--line); padding:.15rem .4rem; border-radius:4px }
   .reltoold{ font-size:.77rem; color:var(--text-soft); line-height:1.45 }
+
+  .contactstrip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:.7rem;
+    margin-top:.8rem; padding:1rem 1.2rem; background:var(--panel-bg); border:1px solid var(--line);
+    border-radius:12px; box-shadow:var(--shadow-sm) }
+  .contactitem{ display:flex; flex-direction:column; gap:.15rem }
+  .contactitem b{ font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); font-weight:700 }
+  .contactitem a{ font-size:.85rem; color:var(--text); text-decoration:none; font-weight:600 }
+  .contactitem a:hover{ color:var(--accent-500) }
   .coursecta .testimonial{ background:rgba(255,255,255,.04); border-left:3px solid var(--accent-500);
     border-radius:0 8px 8px 0; padding:.9rem 1.1rem; }
   .coursecta .tquote{ font-style:italic; font-size:.9rem; line-height:1.5; color:#F1F5F9; margin:0 0 .5rem }
@@ -558,7 +566,7 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v14';
+  var STORAGE_KEY = 'invensis-asm-flashcards-v15';
 
   var CARDS = [
     {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
@@ -991,6 +999,11 @@
             '<div class="reltoold">Concept flashcards for the Change Management Foundation exam</div>' +
           '</a>' +
         '</div>' +
+      '</div>' +
+      '<div class="contactstrip">' +
+        '<div class="contactitem"><b>Email</b><a href="mailto:info@invensislearning.com">info@invensislearning.com</a></div>' +
+        '<div class="contactitem"><b>Phone</b><a href="tel:+919912003183">+91 9912 003 183</a></div>' +
+        '<div class="contactitem"><b>Blog</b><a href="https://www.invensislearning.com/blog/" target="_blank" rel="noopener">Read our articles</a></div>' +
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
@@ -1215,16 +1228,32 @@
     for (var kk in sessionRatings){ if (sessionRatings[kk]==='again') stillAgain++; }
     var score = uniqueCards > 0 ? Math.round((easy*100 + good*70 + stillAgain*30) / uniqueCards) : 0;
     var grade = score>=90?'Excellent':score>=75?'Strong':score>=60?'Building up':'Keep practicing';
-    var cardsHtml = CARDS.map(function(c, i){
-      return '<div class="q"><h3>' + (i+1) + '. ' + c.term + '</h3><p>' + c.def + '</p></div>';
+
+    // Only the 15 (or fewer) cards from THIS session, sorted by rating quality
+    var ratedIdx = Object.keys(sessionRatings).map(function(k){ return parseInt(k,10); });
+    var order = { easy: 3, good: 2, again: 1 };
+    ratedIdx.sort(function(a, b){ return (order[sessionRatings[b]]||0) - (order[sessionRatings[a]]||0); });
+
+    var cardsHtml = ratedIdx.map(function(cardIdx, i){
+      var c = CARDS[cardIdx];
+      var r = sessionRatings[cardIdx];
+      var again = sessionAgainCount[cardIdx] || 0;
+      var badge = r==='easy' ? '<span class="rbadge easy">EASY</span>'
+                : r==='good' ? '<span class="rbadge good">GOOD</span>'
+                : '<span class="rbadge hard">HARD ('+again+' attempts)</span>';
+      return '<div class="q"><div class="qhead"><h3>' + (i+1) + '. ' + c.term + '</h3>' + badge + '</div><p>' + c.def + '</p></div>';
     }).join('');
+
     var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASM Flashcards Report - '+name+'</title>' +
       '<style>' +
       'body{font-family:Arial,Helvetica,sans-serif;padding:32px 40px;color:#0F1A2B;max-width:800px;margin:0 auto;line-height:1.5}' +
       '.rhead{text-align:center;padding-bottom:20px;border-bottom:3px solid #E8993A;margin-bottom:24px}' +
+      '.rhead .brand{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}' +
+      '.rhead .lmark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#F5B04C,#A6631E);color:#0A0F1A;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}' +
+      '.rhead .blbl{font-weight:700;color:#0F1A2B;font-size:14px}' +
       '.rhead h1{font-size:28px;margin:0 0 6px;color:#0F1A2B}' +
       '.rhead p{margin:0;color:#64748B;font-size:14px}' +
-      '.rname{font-size:18px;color:#0F1A2B;margin-top:16px;font-weight:bold}' +
+      '.rname{font-size:20px;color:#0F1A2B;margin-top:16px;font-weight:bold}' +
       '.rscore{display:flex;gap:18px;justify-content:center;padding:22px;margin:20px 0;background:#FFF7E9;border-radius:12px}' +
       '.rscore .sitem{text-align:center}' +
       '.rscore b{display:block;font-size:44px;color:#E8993A;font-weight:bold;line-height:1}' +
@@ -1237,22 +1266,57 @@
       '.sess span{display:block;font-size:11px;color:#64748B;text-transform:uppercase;letter-spacing:.09em;margin-top:4px}' +
       '.sess.easy b{color:#4DA3C7} .sess.good b{color:#3E9C6F} .sess.hard b{color:#E15A55}' +
       'h2{font-size:18px;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid #E8993A}' +
-      '.q{margin-bottom:14px;padding:10px 14px;background:#F8FAFC;border-radius:6px;page-break-inside:avoid}' +
-      '.q h3{font-size:13px;margin:0 0 4px;color:#0F1A2B}' +
-      '.q p{font-size:12px;color:#475569;margin:0;line-height:1.5}' +
-      '.rfoot{margin-top:32px;padding-top:16px;border-top:1px solid #ccc;text-align:center;font-size:11px;color:#64748B}' +
-      '.rfoot a{color:#E8993A;text-decoration:none;font-weight:bold}' +
+      '.q{margin-bottom:14px;padding:12px 14px;background:#F8FAFC;border-radius:6px;page-break-inside:avoid}' +
+      '.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}' +
+      '.q h3{font-size:13px;margin:0;color:#0F1A2B;font-weight:bold}' +
+      '.q p{font-size:12px;color:#475569;margin:0;line-height:1.55}' +
+      '.rbadge{font-size:9px;font-weight:bold;letter-spacing:.08em;padding:3px 7px;border-radius:99px;white-space:nowrap}' +
+      '.rbadge.easy{background:#DBEEF7;color:#2E6E8E}' +
+      '.rbadge.good{background:#D8F0E4;color:#3E9C6F}' +
+      '.rbadge.hard{background:#FCE0DE;color:#C2534A}' +
+      '.rcta{background:linear-gradient(135deg,#0A0F1A,#1D2637);color:#F3F6FA;padding:24px 28px;border-radius:12px;margin:28px 0 20px}' +
+      '.rcta .ctatop{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#F5B04C;font-weight:bold;margin-bottom:6px}' +
+      '.rcta h3{font-size:20px;margin:0 0 8px;color:#F3F6FA;border:none;padding:0}' +
+      '.rcta p{font-size:13px;color:rgba(243,246,250,.75);margin:0 0 14px;line-height:1.55}' +
+      '.rcta .btn{display:inline-block;background:#E8993A;color:#0A0F1A;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:13px}' +
+      '.rcontact{border-top:1px solid #ccc;padding-top:18px;margin-top:26px}' +
+      '.rcontact h4{font-size:13px;margin:0 0 10px;color:#0F1A2B;letter-spacing:.06em;text-transform:uppercase;font-weight:bold}' +
+      '.rcontact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;font-size:12px}' +
+      '.rcontact-grid div{padding:10px;background:#F4F6FA;border-radius:6px}' +
+      '.rcontact-grid b{display:block;color:#64748B;font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}' +
+      '.rcontact-grid a{color:#0F1A2B;text-decoration:none;font-weight:bold}' +
+      '.rfoot{margin-top:22px;padding-top:14px;text-align:center;font-size:10px;color:#64748B}' +
       '@page{size:A4;margin:15mm}' +
       '@media print{body{padding:0}}' +
       '</style></head><body>' +
-      '<div class="rhead"><h1>Agile Scrum Master Flashcards</h1><p>Study Session Report</p><div class="rname">'+name+'</div></div>' +
-      '<div class="rscore"><div class="sitem"><b>'+score+'%</b><span>Session score</span></div><div class="sitem"><b>'+grade+'</b><span>Grade</span></div></div>' +
-      '<div class="rcongrats"><strong>Congratulations, '+name+'!</strong>You completed a study session and scored '+score+'%. Keep the daily habit going — spaced repetition compounds fast.</div>' +
+      '<div class="rhead">' +
+        '<div class="brand"><div class="lmark">IL</div><div class="blbl">Invensis Learning</div></div>' +
+        '<h1>Agile Scrum Master Flashcards</h1>' +
+        '<p>Study Session Report</p>' +
+        '<div class="rname">'+name+'</div>' +
+      '</div>' +
+      '<div class="rscore"><div class="sitem"><b>'+score+'%</b><span>Session score</span></div><div class="sitem"><b>'+grade+'</b><span>Grade</span></div><div class="sitem"><b>'+uniqueCards+'</b><span>Cards studied</span></div></div>' +
+      '<div class="rcongrats"><strong>Congratulations, '+name+'!</strong>You worked through '+uniqueCards+' concepts this session and scored '+score+'%. Keep the daily habit going — spaced repetition compounds fast, and each session brings you closer to certification-ready.</div>' +
       '<h2>Session breakdown</h2>' +
       '<div class="rsession"><div class="sess easy"><b>'+easy+'</b><span>Easy</span></div><div class="sess good"><b>'+good+'</b><span>Good</span></div><div class="sess hard"><b>'+again+'</b><span>Hard</span></div></div>' +
-      '<h2>All '+CARDS.length+' concepts</h2>' +
+      '<h2>Concepts you studied this session</h2>' +
       cardsHtml +
-      '<div class="rfoot">Invensis Learning · Ready for certification? <a href="https://www.invensislearning.com/agile-scrum-master/">Explore the full ASM course</a></div>' +
+      '<div class="rcta">' +
+        '<div class="ctatop">READY FOR THE EXAM?</div>' +
+        '<h3>Get instructor-led Agile Scrum Master certification</h3>' +
+        '<p>Live instructor training, real Scrum project work, 2 full mock exams, and a 100% money-back pass guarantee.</p>' +
+        '<a class="btn" href="https://www.invensislearning.com/agile-scrum-master/">Explore the ASM Course →</a>' +
+      '</div>' +
+      '<div class="rcontact">' +
+        '<h4>Contact Invensis Learning</h4>' +
+        '<div class="rcontact-grid">' +
+          '<div><b>Email</b><a href="mailto:info@invensislearning.com">info@invensislearning.com</a></div>' +
+          '<div><b>Phone (India)</b><a href="tel:+919912003183">+91 9912 003 183</a></div>' +
+          '<div><b>Contact form</b><a href="https://www.invensislearning.com/contact-us/">invensislearning.com/contact-us</a></div>' +
+          '<div><b>Blog &amp; resources</b><a href="https://www.invensislearning.com/blog/">invensislearning.com/blog</a></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="rfoot">Invensis Learning · Trusted by 100,000+ professionals worldwide · Ford · TCS · Wipro · Accenture</div>' +
       '</body></html>';
     var win = window.open('', '_blank');
     if (!win){ alert('Please allow pop-ups to download your report.'); return; }
