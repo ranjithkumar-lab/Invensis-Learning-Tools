@@ -665,7 +665,7 @@
 
   var state = loadState() || {
     unlocked:false, email:'', name:'', cardStates:{}, streak:{count:0,lastActive:null},
-    totalSessionsCompleted:0, xp:0, badges:{}, howtoDismissed:false
+    totalSessionsCompleted:0, xp:0, badges:{}, howtoDismissed:false, hasStudied:false
   };
   if (!state.badges) state.badges = {};
 
@@ -961,12 +961,12 @@
       '</div>' +
       '<div class="actions">' +
         '<button class="toolbtn on iconbtn" id="shareBtn">' +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
-          '<span>Share image</span>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>' +
+          '<span>Share achievement</span>' +
         '</button>' +
         '<button class="toolbtn iconbtn" id="restartAll">' +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
-          '<span>Restart deck</span>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' +
+          '<span>New session</span>' +
         '</button>' +
       '</div>' +
       '<div class="coursecta">' +
@@ -1203,6 +1203,13 @@
     return 'Learner';
   }
 
+  function hideIntro(){
+    var pageHead = document.querySelector('.pagehead');
+    var howto = document.getElementById('howtoCard');
+    if (pageHead) pageHead.style.display = 'none';
+    if (howto) howto.style.display = 'none';
+  }
+
   function maskEmail(e){
     if (!e) return 'your inbox';
     return e.replace(/^(.{2}).*(@.*)$/, '$1•••$2');
@@ -1405,6 +1412,7 @@
   });
 
 
+  if (state.hasStudied){ hideIntro(); }
   var howtoCard = document.getElementById('howtoCard');
   var howtoClose = document.getElementById('howtoClose');
   if (howtoCard && state.howtoDismissed){ howtoCard.style.display = 'none'; }
