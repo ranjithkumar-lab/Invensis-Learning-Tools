@@ -463,16 +463,6 @@
     font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
   footer.foot a{ color:var(--accent-500); text-decoration:none }
 
-  .reltools-mini{ margin-top:.8rem; padding:.7rem 1rem; text-align:center;
-    font-size:.75rem; color:var(--text-soft); display:flex; flex-wrap:wrap; justify-content:center;
-    align-items:center; gap:.35rem; border-top:1px solid var(--line); }
-  .reltools-mini .rtmlabel{ font-family:var(--font-body); font-weight:700; font-size:.68rem;
-    letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); margin-right:.35rem; }
-  .reltools-mini .rtmlink{ color:var(--accent-500); text-decoration:none; font-weight:600; font-size:.78rem;
-    padding:.15rem .3rem; border-radius:4px; transition:.15s; }
-  .reltools-mini .rtmlink:hover{ background:var(--accent-soft); }
-  .reltools-mini .rtmsep{ color:var(--text-soft); opacity:.5; }
-
   .emailsent{ display:flex; gap:.55rem; align-items:center; padding:.65rem .9rem;
     background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
     font-size:.82rem; color:var(--text); flex-wrap:wrap; }
@@ -996,15 +986,6 @@
         '</div>' +
         '<p class="trustline">Trusted by 100,000+ professionals · Ford · TCS · Wipro · Accenture</p>' +
       '</div>' +
-      '<div class="reltools-mini">' +
-        '<span class="rtmlabel">Also explore</span>' +
-        '<a class="rtmlink" href="https://www.invensislearning.com/lean-six-sigma-black-belt-certification/" target="_blank" rel="noopener">LSSBB Practice</a>' +
-        '<span class="rtmsep">·</span>' +
-        '<a class="rtmlink" href="https://www.invensislearning.com/pmp-certification-training/" target="_blank" rel="noopener">PMP Prep</a>' +
-        '<span class="rtmsep">·</span>' +
-        '<a class="rtmlink" href="https://www.invensislearning.com/change-management-certification/" target="_blank" rel="noopener">Change Management</a>' +
-        '<span class="rtmsep">·</span>' +
-        '<a class="rtmlink" href="https://www.invensislearning.com/blog/" target="_blank" rel="noopener">Blog</a>' +
       '</div>';
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
