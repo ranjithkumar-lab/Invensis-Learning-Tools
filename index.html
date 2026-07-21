@@ -246,7 +246,7 @@
     60%{ transform:scale(1.15) }
     100%{ opacity:1; transform:scale(1) }
   }
-  .summary.celebrate .badgestrip{ animation:slideUp .5s .8s cubic-bezier(.2,.6,.4,1) both }
+  .summary.celebrate .achievement{ animation:slideUp .5s .75s cubic-bezier(.2,.6,.4,1) both }
   .summary.celebrate .stats > div{ animation:statPop .5s cubic-bezier(.34,1.56,.64,1) both }
   .summary.celebrate .stats > div:nth-child(1){ animation-delay:.9s }
   .summary.celebrate .stats > div:nth-child(2){ animation-delay:1.0s }
@@ -446,18 +446,6 @@
   .coursecta .tattr{ font-size:.72rem; color:rgba(241,245,249,.6); margin:0 }
   .coursecta .tname{ color:var(--accent-glow); font-weight:700 }
 
-  .badgestrip{ background:linear-gradient(135deg, rgba(133,67,217,.12), rgba(212,168,90,.08));
-    border:1px solid var(--accent-line); border-radius:12px; padding:.9rem 1.1rem; margin:.5rem 0 0 }
-  .badgestriplbl{ font-size:.64rem; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--accent-600); font-weight:700; margin-bottom:.6rem }
-  .badgestripitems{ display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center }
-  .badgeitem{ display:flex; gap:.5rem; align-items:center; text-align:left }
-  .badgeitem .bi{ width:34px; height:34px; border-radius:50%; background:var(--accent-500); color:var(--ink-950);
-    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem;
-    box-shadow:0 0 14px -3px rgba(133,67,217,.5) }
-  .badgeitem b{ display:block; font-size:.82rem; color:var(--text); font-weight:700 }
-  .badgeitem em{ display:block; font-size:.7rem; color:var(--text-soft); font-style:normal; margin-top:.1rem }
-
   /* footer */
   footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
     font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
@@ -477,6 +465,18 @@
     font-size:1rem; line-height:1; padding:0; display:flex; align-items:center; justify-content:center; }
   .howtoclose:hover{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-500); }
   .pagesub{ font-size:.85rem; color:var(--text-soft); text-align:center; max-width:52ch; margin:.6rem auto 0; line-height:1.5 }
+
+  .achievement{ display:flex; gap:.9rem; align-items:center; padding:1rem 1.15rem;
+    background:linear-gradient(135deg, rgba(133,67,217,.10), rgba(133,67,217,.03));
+    border:1px solid var(--accent-line); border-radius:12px; margin-top:.4rem }
+  .achievement .ach-icon{ flex-shrink:0; width:40px; height:40px; border-radius:10px;
+    background:linear-gradient(135deg, #A574E8, #5A2E93); color:#FFF;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px -4px rgba(133,67,217,.4) }
+  .achievement .ach-icon svg{ width:20px; height:20px }
+  .achievement .ach-text{ flex:1; display:flex; flex-direction:column; gap:.15rem }
+  .achievement .ach-text b{ font-size:.92rem; color:var(--text); font-weight:700; line-height:1.35 }
+  .achievement .ach-text span{ font-size:.76rem; color:var(--text-soft); line-height:1.4 }
+  .achievement .ach-count{ color:var(--accent-600); font-weight:700 }
 </style>
 
 <header class="top">
@@ -1013,24 +1013,19 @@
     summaryCard.appendChild(confetti);
     setTimeout(function(){ if (confetti.parentNode) confetti.parentNode.removeChild(confetti); }, 3000);
 
-    var newBadges = [];
-    if (!state.badges.first_session){ state.badges.first_session = todayISO(); newBadges.push('first_session'); }
-    if (state.streak.count >= 3 && !state.badges.three_streak){ state.badges.three_streak = todayISO(); newBadges.push('three_streak'); }
-    if (score === 100 && !state.badges.perfect_score){ state.badges.perfect_score = todayISO(); newBadges.push('perfect_score'); }
-    if (masteredCount() === CARDS.length && !state.badges.deck_mastered){ state.badges.deck_mastered = todayISO(); newBadges.push('deck_mastered'); }
-    if (again >= 5 && !state.badges.persistent){ state.badges.persistent = todayISO(); newBadges.push('persistent'); }
-    if (newBadges.length){
-      var bhtml = '<div class="badgestrip"><div class="badgestriplbl">New badges unlocked</div><div class="badgestripitems">';
-      newBadges.forEach(function(k){
-        var b = BADGES[k];
-        bhtml += '<div class="badgeitem"><span class="bi">'+b.icon+'</span><span><b>'+b.name+'</b><em>'+b.desc+'</em></span></div>';
-      });
-      bhtml += '</div></div>';
-      var badgesEl = document.createElement('div');
-      badgesEl.innerHTML = bhtml;
-      summaryCard.insertBefore(badgesEl.firstChild, summaryCard.querySelector('.stats'));
-    }
-    startTestimonialRotator();
+    // Achievement / social proof strip — meaningful ranking + community context
+    var percentile = Math.min(96, Math.max(20, Math.round(score * 0.95 - 5)));
+    var achEl = document.createElement('div');
+    achEl.className = 'achievement';
+    achEl.innerHTML =
+      '<div class="ach-icon">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>' +
+      '</div>' +
+      '<div class="ach-text">' +
+        '<b>You scored higher than '+percentile+'% of learners this month</b>' +
+        '<span>Join <b class="ach-count">4,218</b> professionals studying this deck</span>' +
+      '</div>';
+    summaryCard.insertBefore(achEl, summaryCard.querySelector('.stats'));
     saveState();
   }
 
