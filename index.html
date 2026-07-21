@@ -86,6 +86,31 @@
   /* main tool page */
   .page{ max-width:640px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,32px) 48px;
     display:flex; flex-direction:column; gap:1.5rem; }
+  /* HERO */
+  .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
+  .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
+    width:800px; height:600px; pointer-events:none;
+    background:radial-gradient(ellipse, rgba(232,153,58,.16), transparent 60%);
+    filter:blur(8px); }
+  .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
+    display:flex; flex-direction:column; align-items:center; gap:1.1rem }
+  .hero-title{ font-family:var(--font-display); font-weight:600; letter-spacing:-.025em;
+    font-size:clamp(2rem,5vw,3rem); line-height:1.08; margin:.5rem 0 0; text-wrap:balance;
+    font-variation-settings:'opsz' 144; }
+  .hero-title em{ font-style:italic; font-weight:500; color:var(--accent-600);
+    background:linear-gradient(120deg, var(--accent-600), var(--accent-500));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    font-variation-settings:'opsz' 144; }
+  .hero-desc{ font-size:1rem; line-height:1.6; color:var(--text-soft); max-width:52ch; margin:0; }
+  .hero-stats{ display:flex; align-items:center; gap:.9rem; margin-top:.3rem; padding:.9rem 1.4rem;
+    background:var(--panel-bg); border:1px solid var(--line); border-radius:99px; box-shadow:var(--shadow-sm) }
+  .hstat{ display:flex; flex-direction:column; gap:.05rem; align-items:center; min-width:60px }
+  .hstat b{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; color:var(--text);
+    font-variation-settings:'opsz' 48; }
+  .hstat span{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft) }
+  .hstatsep{ width:1px; height:22px; background:var(--line) }
+  @media(max-width:520px){ .hero-stats{ flex-wrap:wrap; border-radius:14px } }
+
   .pagehead{ text-align:center; padding:.4rem 0 .2rem; }
   .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-mono);
     font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-500); font-weight:600; }
@@ -143,7 +168,23 @@
   .stage{ display:flex; flex-direction:column; align-items:center; gap:.9rem; }
   .stagetop{ display:flex; align-items:center; justify-content:space-between; width:100%; gap:.5rem; flex-wrap:wrap; }
   .hint{ font-size:.76rem; color:var(--text-soft); flex:1; text-align:center; min-width:150px; }
-  .cardwrap{ width:100%; perspective:1400px; position:relative; touch-action:pan-y; user-select:none; }
+  .cardwrap{ width:100%; perspective:1400px; position:relative; touch-action:pan-y; user-select:none;
+    padding:6px 8px 10px; }
+  .cardwrap::before, .cardwrap::after{ content:""; position:absolute; inset:6px 8px 10px;
+    border-radius:16px; background:var(--panel-bg); border:1px solid var(--line);
+    z-index:-1; box-shadow:var(--shadow-sm); }
+  .cardwrap::before{ transform:translate(-6px,-6px) rotate(-1.5deg); opacity:.7 }
+  .cardwrap::after{ transform:translate(6px,-3px) rotate(1.2deg); opacity:.5 }
+
+  /* progress dot grid */
+  .pdots{ display:flex; gap:4px; flex-wrap:wrap; padding-top:.4rem }
+  .pdot{ width:16px; height:6px; border-radius:2px; background:var(--slate-200); transition:.2s; flex:1; max-width:22px; min-width:8px; }
+  .pdot.shown{ background:var(--slate-300); }
+  .pdot.again{ background:var(--again); }
+  .pdot.good{ background:var(--good); }
+  .pdot.easy{ background:var(--easy); }
+  .pdot.free{ background:var(--slate-300); position:relative }
+  .pdot.free::after{ content:""; position:absolute; inset:0; border-radius:2px; box-shadow:inset 0 0 0 1px var(--accent-line); }
   .tooltip{ position:absolute; top:-40px; left:50%; transform:translateX(-50%);
     background:var(--text); color:var(--page-bg); font-size:.72rem; font-weight:600;
     padding:.4rem .75rem; border-radius:8px; white-space:nowrap; z-index:5;
@@ -176,11 +217,12 @@
     font-family:var(--font-mono); letter-spacing:.04em; }
   .card .back .flipcue{ color:rgba(236,239,244,.7); align-self:flex-start; }
 
-  .rate{ display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:1rem; }
-  .rate button{ font-family:inherit; font-weight:700; font-size:.82rem; padding:.7rem .5rem;
-    border-radius:10px; border:1px solid transparent; cursor:pointer; transition:.15s;
-    display:flex; flex-direction:column; gap:.15rem; align-items:center; }
-  .rate button .keyhint{ font-family:var(--font-mono); font-size:.6rem; font-weight:400; opacity:.7 }
+  .rate{ display:grid; grid-template-columns:repeat(3,1fr); gap:.55rem; margin-top:1rem; }
+  .rate button{ font-family:inherit; font-weight:700; font-size:.83rem; padding:.8rem .5rem;
+    border-radius:11px; border:1px solid transparent; cursor:pointer; transition:.18s;
+    display:flex; flex-direction:column; gap:.35rem; align-items:center; }
+  .rate button svg{ width:22px; height:22px; stroke-width:2; opacity:.9 }
+  .rate button .keyhint{ font-family:var(--font-mono); font-size:.6rem; font-weight:400; opacity:.7; letter-spacing:.03em }
   .rate .again{ background:var(--again-soft); color:var(--again); border-color:var(--again); }
   .rate .good{ background:var(--good-soft); color:var(--good); border-color:var(--good); }
   .rate .easy{ background:var(--easy-soft); color:var(--easy); border-color:var(--easy); }
@@ -358,10 +400,21 @@
 
 <main id="appView">
   <div class="page">
-    <div class="pagehead">
-      <span class="eyebrow center">Agile Scrum Master · Free Study Tool</span>
-      <h1>ASM Concept Flashcards</h1>
-    </div>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-inner">
+        <span class="eyebrow center">Agile Scrum Master · Free Study Tool</span>
+        <h1 class="hero-title">Master the <em>ASM syllabus</em>,<br>one flashcard at a time.</h1>
+        <p class="hero-desc">28 recall-first flashcards covering every concept in the Agile Scrum Master certification. Spaced-repetition scheduling means you review each card exactly when your brain is about to forget it.</p>
+        <div class="hero-stats">
+          <div class="hstat"><b>28</b><span>Concepts</span></div>
+          <div class="hstatsep"></div>
+          <div class="hstat"><b>5</b><span>Modules</span></div>
+          <div class="hstatsep"></div>
+          <div class="hstat"><b>3 free</b><span>Preview</span></div>
+        </div>
+      </div>
+    </section>
 
     <div class="howto">
       <div class="htitle"><span class="ico">i</span>How to use these flashcards</div>
@@ -390,10 +443,7 @@
           <span class="pR">To Review <b id="pReview">0</b></span>
           <span>In this session <b id="pLeft">28</b></span>
         </div>
-        <div class="barrow">
-          <div class="barfill mastered" id="barMastered" style="width:0%"></div>
-          <div class="barfill review" id="barReview" style="width:0%"></div>
-        </div>
+        <div class="pdots" id="pDots"></div>
       </div>
 
       <div class="stage" id="stage">
@@ -502,8 +552,7 @@
   var pMastered=document.getElementById('pMastered');
   var pReview=document.getElementById('pReview');
   var pLeft=document.getElementById('pLeft');
-  var barMastered=document.getElementById('barMastered');
-  var barReview=document.getElementById('barReview');
+  var pDotsEl=document.getElementById('pDots');
   var stageEl=document.getElementById('stage');
   var gateStage=document.getElementById('gateStage');
   var gateCard=document.getElementById('gateCard');
@@ -556,8 +605,19 @@
     var total = sM + queue.length + sR; if (total===0) total=1;
     pMastered.textContent = sM; pReview.textContent = sR; pLeft.textContent = queue.length;
     posNow.textContent = Math.min(sM+sR+1, CARDS.length);
-    barMastered.style.width = (sM/total*100)+'%';
-    barReview.style.width = (sR/total*100)+'%';
+
+    var dotsHtml = '';
+    for (var di = 0; di < CARDS.length; di++){
+      var card = CARDS[di], stored = state.cardStates[card.id];
+      var cls = 'pdot';
+      if (sessionRatings[di] === 'easy' || (stored && stored.lastRating === 'easy')) cls += ' easy';
+      else if (sessionRatings[di] === 'good' || (stored && stored.lastRating === 'good')) cls += ' good';
+      else if (sessionAgainCount[di]) cls += ' again';
+      else if (sessionShown[di]) cls += ' shown';
+      else if (card.free) cls += ' free';
+      dotsHtml += '<span class="'+cls+'" title="'+(card.term)+'"></span>';
+    }
+    pDotsEl.innerHTML = dotsHtml;
     var scheduled = 0;
     var t = todayISO();
     CARDS.forEach(function(c){
@@ -633,9 +693,15 @@
       '<div class="prompt">Definition</div>' +
       '<div class="def">'+card.def+'</div>' +
       '<div class="rate">' +
-        '<button class="again" data-rate="again">Study Again<span class="keyhint">1 · ← swipe</span></button>' +
-        '<button class="good" data-rate="good">Almost<span class="keyhint">2 · → swipe</span></button>' +
-        '<button class="easy" data-rate="easy">Nailed It<span class="keyhint">3 · ↑ swipe</span></button>' +
+        '<button class="again" data-rate="again">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
+          '<span>Study Again</span><span class="keyhint">1 · ←</span></button>' +
+        '<button class="good" data-rate="good">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+          '<span>Almost</span><span class="keyhint">2 · →</span></button>' +
+        '<button class="easy" data-rate="easy">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' +
+          '<span>Nailed It</span><span class="keyhint">3 · ↑</span></button>' +
       '</div>';
     backFace.querySelectorAll('.rate button').forEach(function(b){
       b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
