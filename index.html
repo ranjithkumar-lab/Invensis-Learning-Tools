@@ -897,14 +897,6 @@
 
     document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
     document.getElementById('pdfBtn').addEventListener('click', downloadPDFReport);
-      shuffleArray(rev);
-      queue = rev;
-      sessionShown = {}; sessionRatings = {}; sessionAgainCount = {}; sessionXpEarned = 0;
-      rev.forEach(function(i){ sessionShown[i] = true; });
-      summaryStage.style.display = 'none';
-      stageEl.style.display = 'flex';
-      renderCard();
-    });
 
     document.getElementById('restartAll').addEventListener('click', function(){
       state.cardStates = {};
