@@ -1,0 +1,942 @@
+<title>ASM Concept Flashcards | Invensis Learning</title>
+<meta name="description" content="Master the Agile Scrum Master certification with 28 recall-based flashcards. Spaced-repetition scheduling, streaks, and progress analytics. Free.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"ASM Concept Flashcards","description":"28 recall-based flashcards covering the Agile Scrum Master certification syllabus with spaced-repetition study.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Scrum Master (ASM) Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
+</script>
+
+<style>
+  @font-face { font-family:'DisplaySerif'; src: local('Charter'), local('Iowan Old Style'), local('Georgia'); }
+
+  :root{
+    --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
+    --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
+    --accent-400:#F5B04C; --accent-500:#E8993A; --accent-600:#C77B22; --accent-700:#A6631E; --accent-glow:#F7C671;
+    --accent-soft:rgba(232,153,58,.12); --accent-line:rgba(232,153,58,.32);
+    --gold:#D4A85A;
+    --good:#3E9C6F; --good-soft:rgba(62,156,111,.14);
+    --again:#E15A55; --again-soft:rgba(225,90,85,.14);
+    --easy:#4DA3C7; --easy-soft:rgba(77,163,199,.16);
+    --lock:#7C6394; --lock-soft:rgba(124,99,148,.12);
+    --page-bg:#F4F6FA; --panel-bg:#FFFFFF; --text:#0F1A2B; --text-soft:#475569; --line:rgba(15,23,42,.12);
+    --shadow-sm:0 1px 2px rgba(15,23,42,.05);
+    --shadow-md:0 12px 32px -14px rgba(15,23,42,.20);
+  }
+  html{ color-scheme: light; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{ background:var(--page-bg); color:var(--text); min-height:100vh;
+    font-family:'Inter','Segoe UI',system-ui,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5; }
+
+  /* header */
+  header.top{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.85); border-bottom:1px solid var(--line); }
+  .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
+    height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
+  .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
+    box-shadow:0 0 20px -4px rgba(232,153,58,.5); }
+  .brand .btxt{ line-height:1.1 }
+  .brand .btxt .n{ display:block; font-family:'DisplaySerif',serif; font-weight:700; font-size:.92rem }
+  .brand .btxt .s{ display:block; font-family:'SF Mono',monospace; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
+  .topright{ display:flex; align-items:center; gap:.5rem }
+  .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
+    font-family:'SF Mono',monospace; font-weight:600; font-size:.7rem; letter-spacing:.04em;
+    border:1px solid var(--line); }
+  .pill .plbl{ font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-soft); }
+  .pill .pval{ font-family:'DisplaySerif',serif; font-size:.82rem; font-weight:700; }
+  .pill.streak .pval{ color:var(--gold) }
+  .pill.xp .pval{ color:var(--accent-500) }
+  .adminlink{ font-family:'SF Mono',monospace; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-500); text-decoration:none; padding:.35rem .7rem; border-radius:8px; }
+  .adminlink:hover{ background:var(--accent-soft) }
+  @media(max-width:520px){ .pill{ display:none } .adminlink{ display:none } }
+
+  /* main tool page */
+  .page{ max-width:640px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,32px) 48px;
+    display:flex; flex-direction:column; gap:1.5rem; }
+  .pagehead{ text-align:center; padding-bottom:.2rem; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-family:'SF Mono',monospace;
+    font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-500); font-weight:600; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--accent-500); }
+  .eyebrow.center{ justify-content:center }
+  .pagehead h1{ font-family:'DisplaySerif',serif; font-weight:700; letter-spacing:-.01em;
+    font-size:clamp(1.15rem,2.4vw,1.35rem); margin:.55rem 0 0; text-wrap:balance; }
+
+  /* how-to card */
+  .howto{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.2rem 1.4rem; box-shadow:var(--shadow-sm); }
+  .howto .htitle{ font-family:'DisplaySerif',serif; font-weight:700; font-size:.95rem; color:var(--text);
+    margin-bottom:.85rem; display:flex; align-items:center; gap:.5rem; }
+  .howto .htitle .ico{ width:24px; height:24px; border-radius:50%; background:var(--accent-soft);
+    color:var(--accent-500); display:flex; align-items:center; justify-content:center; font-size:.74rem; font-weight:800; }
+  .howto ol{ display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:.8rem; padding:0; margin:0; list-style:none; }
+  .howto li{ display:flex; gap:.55rem; align-items:flex-start; }
+  .howto .step-n{ flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+    background:var(--panel-bg); border:1px solid var(--accent-500);
+    color:var(--accent-500); font-family:'DisplaySerif',serif; font-weight:700; font-size:.78rem;
+    display:flex; align-items:center; justify-content:center; }
+  .howto .step-body{ display:flex; flex-direction:column; gap:.15rem }
+  .howto .step-t{ font-size:.82rem; color:var(--text); font-weight:600; }
+  .howto .step-d{ font-size:.75rem; color:var(--text-soft); line-height:1.45 }
+
+  /* study panel */
+  .studypanel{ background:var(--panel-bg); border:1px solid var(--line);
+    border-radius:18px; padding:1.6rem clamp(1.2rem,3vw,1.8rem); box-shadow:var(--shadow-md);
+    display:flex; flex-direction:column; gap:1.2rem; }
+  .paneltop{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; }
+  .panelmeta{ display:flex; gap:.8rem; align-items:baseline; font-size:.78rem; color:var(--text-soft); flex-wrap:wrap }
+  .panelmeta b{ color:var(--text); font-family:'DisplaySerif',serif; font-weight:700; font-size:.88rem }
+  .panelmeta .dot{ width:4px; height:4px; border-radius:50%; background:var(--slate-300); display:inline-block; margin:0 .1rem }
+  .toolbtn{ font-family:'SF Mono',monospace; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--line); color:var(--text-soft); border-radius:99px;
+    padding:.35rem .7rem; cursor:pointer; transition:.15s; }
+  .toolbtn:hover{ border-color:var(--accent-500); color:var(--accent-500) }
+  .toolbtn.on{ background:var(--text); color:var(--page-bg); border-color:var(--text) }
+  .seoindex{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+  .progress{ display:flex; flex-direction:column; gap:.4rem }
+  .progresslabel{ display:flex; justify-content:space-between; font-family:'SF Mono',monospace; font-size:.7rem;
+    color:var(--text-soft); font-variant-numeric:tabular-nums; }
+  .progresslabel span b{ color:var(--text); }
+  .progresslabel .pM b{ color:var(--good) }
+  .progresslabel .pR b{ color:var(--again) }
+  .barrow{ height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden; display:flex }
+  .barfill{ height:100%; transition:width .3s ease }
+  .barfill.mastered{ background:var(--good) }
+  .barfill.review{ background:var(--again) }
+
+  .stage{ display:flex; flex-direction:column; align-items:center; gap:.9rem; }
+  .stagetop{ display:flex; align-items:center; justify-content:space-between; width:100%; gap:.5rem; flex-wrap:wrap; }
+  .hint{ font-size:.76rem; color:var(--text-soft); flex:1; text-align:center; min-width:150px; }
+  .cardwrap{ width:100%; perspective:1400px; position:relative; touch-action:pan-y; user-select:none; }
+  .tooltip{ position:absolute; top:-40px; left:50%; transform:translateX(-50%);
+    background:var(--text); color:var(--page-bg); font-size:.72rem; font-weight:600;
+    padding:.4rem .75rem; border-radius:8px; white-space:nowrap; z-index:5;
+    animation:bob 1.6s ease-in-out infinite; }
+  .tooltip::after{ content:""; position:absolute; bottom:-4px; left:50%; transform:translateX(-50%);
+    width:8px; height:8px; background:var(--text); rotate:45deg; }
+  @keyframes bob{ 0%,100%{ transform:translateX(-50%) translateY(0) } 50%{ transform:translateX(-50%) translateY(3px) } }
+  @media (prefers-reduced-motion:reduce){ .tooltip{ animation:none } }
+
+  .card{ position:relative; width:100%; height:330px; cursor:pointer; }
+  .card .face{ position:absolute; inset:0; border-radius:14px; border:1px solid var(--line);
+    box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
+    display:flex; flex-direction:column; padding:1.8rem 2rem;
+    transition:transform .5s cubic-bezier(.4,.2,.2,1); overflow:hidden; }
+  .card .back{ transform:rotateY(180deg);
+    background:linear-gradient(160deg, var(--ink-900), var(--ink-850)); color:#ECEFF4; border-color:transparent; }
+  .card.flipped .face.front{ transform:rotateY(-180deg) }
+  .card.flipped .face.back{ transform:rotateY(0deg) }
+  @media (prefers-reduced-motion:reduce){ .card .face{ transition:none } }
+  .prompt{ font-family:'SF Mono',monospace; font-size:.62rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent-500); margin-bottom:1.1rem; font-weight:600; }
+  .card .back .prompt{ color:var(--accent-glow); }
+  .term{ font-family:'DisplaySerif',serif; font-weight:700; font-size:clamp(1.3rem,3.4vw,1.65rem);
+    line-height:1.2; text-wrap:balance; margin-top:auto; margin-bottom:auto; color:inherit; }
+  .def{ font-size:.96rem; line-height:1.55; margin-top:auto; margin-bottom:1rem; color:inherit; }
+  .flipcue{ align-self:flex-end; font-size:.66rem; color:var(--text-soft);
+    font-family:'SF Mono',monospace; letter-spacing:.04em; }
+  .card .back .flipcue{ color:rgba(236,239,244,.7); align-self:flex-start; }
+
+  .rate{ display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:1rem; }
+  .rate button{ font-family:inherit; font-weight:700; font-size:.82rem; padding:.7rem .5rem;
+    border-radius:10px; border:1px solid transparent; cursor:pointer; transition:.15s;
+    display:flex; flex-direction:column; gap:.15rem; align-items:center; }
+  .rate button .keyhint{ font-family:'SF Mono',monospace; font-size:.6rem; font-weight:400; opacity:.7 }
+  .rate .again{ background:var(--again-soft); color:var(--again); border-color:var(--again); }
+  .rate .good{ background:var(--good-soft); color:var(--good); border-color:var(--good); }
+  .rate .easy{ background:var(--easy-soft); color:var(--easy); border-color:var(--easy); }
+  .rate button:hover{ transform:translateY(-1px); filter:brightness(1.05) }
+
+  .spark-burst{ position:fixed; pointer-events:none; z-index:999; }
+  .spark{ position:absolute; left:0; top:0; color:var(--accent-500); font-size:1rem; font-weight:900;
+    animation:sparkOut .8s cubic-bezier(.2,.6,.4,1) forwards; will-change:transform,opacity; text-shadow:0 0 8px currentColor; }
+  .spark.gold{ color:var(--gold); }
+  .spark.big{ font-size:1.3rem; }
+  @keyframes sparkOut{
+    0%{ transform:translate(0,0) scale(.3); opacity:0 }
+    20%{ opacity:1; transform:translate(calc(var(--dx)*.35), calc(var(--dy)*.35)) scale(1.1) rotate(60deg); }
+    100%{ transform:translate(var(--dx), var(--dy)) scale(.5) rotate(280deg); opacity:0 }
+  }
+  @media (prefers-reduced-motion:reduce){ .spark{ animation:none; opacity:0 } }
+
+  .scoreblock{ background:linear-gradient(135deg, var(--ink-950), var(--ink-850)); color:#F1F5F9;
+    padding:1.3rem 1.5rem; border-radius:14px; display:flex; align-items:center; gap:1.2rem; text-align:left; }
+  .scoreblock .scoreval{ font-family:'DisplaySerif',serif; font-weight:700; font-size:3rem; line-height:1;
+    color:var(--accent-glow); text-shadow:0 0 24px rgba(247,198,113,.4); font-variant-numeric:tabular-nums; }
+  .scoreblock .scoreval sup{ font-size:1.2rem; opacity:.7; margin-left:.05em }
+  .scoreblock .scoremeta{ flex:1; }
+  .scoreblock .scorelbl{ font-family:'SF Mono',monospace; font-size:.62rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-500); font-weight:700; margin-bottom:.25rem; }
+  .scoreblock .scoregrade{ font-family:'DisplaySerif',serif; font-size:1.05rem; font-weight:700; margin:0 0 .15rem }
+  .scoreblock .scoredesc{ font-size:.78rem; color:rgba(241,245,249,.7); margin:0; line-height:1.4 }
+
+  /* gate */
+  .gatecard{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem 1.8rem; display:flex; flex-direction:column; gap:.9rem; width:100%; box-shadow:var(--shadow-md); }
+  .gatecard h3{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.15rem; margin:0; text-wrap:balance }
+  .gatecard .lossline{ font-size:.87rem; color:var(--text); margin:0; line-height:1.55; }
+  .gatecard .lossline b{ color:var(--accent-500) }
+  .gatecard .socialproof{ display:flex; align-items:center; gap:.5rem;
+    font-size:.73rem; color:var(--text-soft); border:1px dashed var(--line); border-radius:8px;
+    padding:.55rem .8rem; margin:0; }
+  .gatecard .socialproof b{ color:var(--text) }
+  .gatecard .peek{ font-size:.66rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:.09em; margin:0; font-weight:600; }
+  .peektiles{ display:flex; flex-wrap:wrap; gap:.35rem; }
+  .peektile{ font-size:.72rem; padding:.28rem .55rem; border-radius:6px; background:var(--lock-soft);
+    color:var(--lock); border:1px solid rgba(124,99,148,.28); filter:blur(.4px); }
+  .peektile.more{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-line); filter:none; font-weight:600; }
+  .gatecard form{ display:flex; gap:.5rem; margin-top:.2rem; flex-wrap:wrap; }
+  .gatecard input[type="email"]{ flex:1; min-width:180px; font-family:inherit; font-size:.88rem;
+    padding:.65rem .85rem; border-radius:9px; border:1px solid var(--line); background:var(--page-bg);
+    color:var(--text); outline:none; }
+  .gatecard input[type="email"]:focus{ border-color:var(--accent-500) }
+  .gatecard button.submit{ font-family:inherit; font-weight:700; font-size:.85rem; background:var(--accent-500);
+    color:var(--ink-950); border:none; border-radius:9px; padding:.65rem 1.1rem; cursor:pointer; }
+  .gatecard .fine{ font-size:.68rem; color:var(--text-soft); margin:0; }
+  .gatecard .sentmsg{ background:var(--good-soft); color:var(--good); font-weight:600; font-size:.85rem;
+    padding:.7rem .9rem; border-radius:10px; }
+
+  /* summary */
+  .summary{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.7rem; display:flex; flex-direction:column; gap:.9rem; text-align:center; width:100%; box-shadow:var(--shadow-md); }
+  .summary .sbadge{ align-self:center; width:48px; height:48px; border-radius:50%; background:var(--good-soft);
+    color:var(--good); font-size:1.3rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .summary h3{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.3rem; margin:0 }
+  .summary p{ font-size:.85rem; color:var(--text-soft); margin:0; line-height:1.5 }
+  .summary .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:.55rem; margin-top:.3rem; }
+  .summary .stat{ background:var(--page-bg); border:1px solid var(--line); border-radius:11px;
+    padding:.85rem .5rem; display:flex; flex-direction:column; gap:.15rem; }
+  .summary .stat b{ font-family:'DisplaySerif',serif; font-size:1.5rem; font-variant-numeric:tabular-nums; }
+  .summary .stat.easy b{ color:var(--easy) } .summary .stat.good b{ color:var(--good) } .summary .stat.again b{ color:var(--again) }
+  .summary .stat span{ font-size:.64rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:.09em; font-weight:600 }
+  .summary .actions{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:.4rem }
+  .summary .xpearned{ background:var(--accent-soft); color:var(--accent-500); font-weight:700; font-size:.84rem;
+    padding:.45rem .85rem; border-radius:99px; align-self:center; }
+  .summary .nextdue{ font-size:.76rem; color:var(--text-soft); font-style:italic; }
+  .emptystate{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem; text-align:center; display:flex; flex-direction:column; gap:.7rem; box-shadow:var(--shadow-sm) }
+  .emptystate h3{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.15rem; margin:0 }
+  .emptystate p{ font-size:.85rem; color:var(--text-soft); margin:0 }
+
+  /* course cta (inside summary) */
+  .coursecta{ background:linear-gradient(135deg, var(--ink-950), var(--ink-850)); color:#F1F5F9;
+    padding:1.6rem 1.7rem; border-radius:14px; margin-top:1rem; text-align:left;
+    display:flex; flex-direction:column; gap:1rem; position:relative; overflow:hidden; }
+  .coursecta::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.4;
+    background:radial-gradient(ellipse 70% 55% at 100% 0%, rgba(232,153,58,.35), transparent 60%); }
+  .coursecta > *{ position:relative }
+  .coursecta .ctaeye{ font-family:'SF Mono',monospace; font-size:.64rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-500); font-weight:700; }
+  .coursecta h4{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.2rem; color:#FFF; margin:.35rem 0 0; text-wrap:balance }
+  .coursecta .ctadesc{ font-size:.85rem; color:rgba(241,245,249,.78); line-height:1.5; margin:0 }
+  .coursecta .ctabullets{ display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:.6rem;
+    padding:.8rem 0; border-top:1px solid rgba(255,255,255,.09); border-bottom:1px solid rgba(255,255,255,.09); }
+  .coursecta .ctabullets div{ display:flex; flex-direction:column; gap:.15rem; font-size:.75rem; color:rgba(241,245,249,.75) }
+  .coursecta .ctabullets b{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.15rem; color:var(--accent-glow) }
+  .coursecta .ctarow{ display:flex; gap:.6rem; flex-wrap:wrap; align-items:center }
+  .coursecta a.gobtn{ font-family:inherit; font-weight:700; font-size:.9rem; background:var(--accent-500);
+    color:var(--ink-950); border-radius:10px; padding:.75rem 1.3rem; text-decoration:none; white-space:nowrap;
+    box-shadow:0 0 22px -5px rgba(232,153,58,.5); }
+  .coursecta a.gobtn:hover{ background:var(--accent-400) }
+  .coursecta a.golink{ font-family:inherit; font-weight:600; font-size:.82rem; color:#F1F5F9;
+    text-decoration:none; padding:.7rem 1.1rem; border:1px solid rgba(255,255,255,.18); border-radius:10px; }
+  .coursecta a.golink:hover{ border-color:var(--accent-500); color:var(--accent-500) }
+  .coursecta .trustline{ font-size:.72rem; color:rgba(241,245,249,.55); margin:0 }
+
+  /* footer */
+  footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
+    font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
+  footer.foot a{ color:var(--accent-500); text-decoration:none }
+
+  /* admin view */
+  #adminView{ display:none; max-width:1200px; margin:0 auto; padding:clamp(28px,4vw,52px) clamp(20px,4vw,32px); }
+  #adminView.on{ display:block }
+  .adminback{ font-family:'SF Mono',monospace; font-size:.75rem; color:var(--accent-500); text-decoration:none;
+    margin-bottom:1rem; display:inline-block; }
+  .admintop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem }
+  .admintop h1{ font-family:'DisplaySerif',serif; font-size:clamp(1.5rem,3vw,1.9rem); font-weight:700 }
+  .adminmeta{ font-size:.78rem; color:var(--text-soft); }
+  .adminmeta b{ color:var(--good); font-weight:600 }
+  .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:2rem; }
+  .kpi{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.3rem;
+    display:flex; flex-direction:column; gap:.3rem; box-shadow:var(--shadow-sm); }
+  .kpi .lbl{ font-family:'SF Mono',monospace; font-size:.64rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--text-soft); font-weight:600; }
+  .kpi .val{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.85rem; color:var(--text); line-height:1; }
+  .kpi .delta{ font-size:.7rem; font-weight:600; color:var(--good); }
+  .kpi .delta.down{ color:var(--again) }
+  .admingrid{ display:grid; grid-template-columns:1.4fr 1fr; gap:1.4rem; margin-bottom:1.4rem; }
+  @media(max-width:900px){ .admingrid{ grid-template-columns:1fr } }
+  .adminpanel{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.4rem;
+    box-shadow:var(--shadow-sm); }
+  .adminpanel h3{ font-family:'DisplaySerif',serif; font-weight:700; font-size:.98rem; margin-bottom:.9rem; }
+  .barchart{ display:flex; gap:8px; align-items:flex-end; height:170px; padding-top:1.3rem; position:relative; }
+  .bcbar{ flex:1; background:linear-gradient(180deg, var(--accent-400), var(--accent-600));
+    border-radius:5px 5px 0 0; position:relative; min-height:8px; cursor:pointer; transition:.2s; }
+  .bcbar:hover{ filter:brightness(1.15) }
+  .bcbar .v{ position:absolute; top:-1.3rem; left:50%; transform:translateX(-50%);
+    font-family:'SF Mono',monospace; font-size:.66rem; font-weight:600; color:var(--text-soft); }
+  .bcbar .d{ position:absolute; bottom:-1.3rem; left:50%; transform:translateX(-50%);
+    font-family:'SF Mono',monospace; font-size:.62rem; color:var(--text-soft); }
+  .chartlegend{ margin-top:2rem; font-size:.72rem; color:var(--text-soft); }
+  .mengagement{ display:flex; flex-direction:column; gap:.8rem; }
+  .mengrow{ display:flex; flex-direction:column; gap:.3rem; }
+  .mengtop{ display:flex; justify-content:space-between; font-size:.78rem; }
+  .mengtop b{ color:var(--text) }
+  .mengbar{ height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden }
+  .mengfill{ height:100%; background:var(--accent-500); border-radius:99px; }
+  .usertable{ width:100%; border-collapse:collapse; font-size:.82rem; }
+  .usertable th{ text-align:left; padding:.65rem .75rem; font-family:'SF Mono',monospace;
+    font-size:.64rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); font-weight:600;
+    border-bottom:1px solid var(--line); }
+  .usertable td{ padding:.7rem .75rem; border-bottom:1px solid var(--line); vertical-align:middle }
+  .usertable tr:last-child td{ border-bottom:none }
+  .usertable td.email{ font-family:'SF Mono',monospace; font-size:.76rem }
+  .usertable td.num{ font-family:'DisplaySerif',serif; font-weight:600; font-variant-numeric:tabular-nums }
+  .status{ font-size:.66rem; padding:.15rem .5rem; border-radius:999px; font-weight:600; }
+  .status.active{ background:var(--good-soft); color:var(--good); }
+  .status.idle{ background:var(--again-soft); color:var(--again); }
+  .status.new{ background:var(--accent-soft); color:var(--accent-500); }
+  .tablewrap{ overflow-x:auto }
+  .demonote{ background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
+    padding:.85rem 1rem; font-size:.76rem; color:var(--text); margin-top:1.2rem; }
+  .demonote b{ color:var(--accent-600) }
+</style>
+
+<header class="top">
+  <div class="topinner">
+    <a class="brand" id="brandLink">
+      <span class="logo">AS</span>
+      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Invensis Learning</span></span>
+    </a>
+    <div class="topright"></div>
+  </div>
+</header>
+
+<main id="appView">
+  <div class="page">
+    <div class="pagehead">
+      <span class="eyebrow center">Agile Scrum Master · Free Study Tool</span>
+      <h1>ASM Concept Flashcards</h1>
+    </div>
+
+    <div class="howto">
+      <div class="htitle"><span class="ico">i</span>How to use these flashcards</div>
+      <ol>
+        <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, then try to say the meaning in your own words.</span></div></li>
+        <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
+        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Study Again, Almost, or Nailed It.</span></div></li>
+      </ol>
+    </div>
+
+    <div class="studypanel">
+      <div class="paneltop">
+        <div class="panelmeta">
+          <span>Card <b id="posNow">1</b> / <b id="posTotal">28</b></span>
+          <span class="dot"></span>
+          <span id="dueNote">All cards eligible</span>
+        </div>
+        <button class="toolbtn" id="shuffleBtn">↺ Shuffle</button>
+      </div>
+
+      <nav class="seoindex" aria-hidden="true"><h2>Deck contents</h2><ul id="seoList"></ul></nav>
+
+      <div class="progress">
+        <div class="progresslabel">
+          <span class="pM">Mastered <b id="pMastered">0</b></span>
+          <span class="pR">To Review <b id="pReview">0</b></span>
+          <span>In this session <b id="pLeft">28</b></span>
+        </div>
+        <div class="barrow">
+          <div class="barfill mastered" id="barMastered" style="width:0%"></div>
+          <div class="barfill review" id="barReview" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="stagetop"><div class="hint" id="hint">Try to recall, then flip</div></div>
+        <div class="cardwrap" id="cardWrap">
+          <div class="tooltip" id="tooltip">Try to recall, then tap ↻</div>
+          <div class="card" id="card">
+            <div class="face front"></div>
+            <div class="face back"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="gateStage" style="display:none">
+        <div class="gatecard" id="gateCard"></div>
+      </div>
+
+      <div class="stage" id="summaryStage" style="display:none">
+        <div class="summary" id="summaryCard"></div>
+      </div>
+
+      <div class="stage" id="emptyStage" style="display:none">
+        <div class="emptystate">
+          <h3>You are all caught up</h3>
+          <p id="emptyMsg">Nothing is due for review today. Come back tomorrow, or work the deck now.</p>
+          <button class="toolbtn on" id="reviewAnyway" style="align-self:center">Review deck anyway</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="adminView">
+  <a class="adminback" href="#top" id="adminBack">← Back to flashcards</a>
+  <div class="admintop">
+    <div>
+      <span class="eyebrow">Internal · Analytics</span>
+      <h1 style="margin-top:.5rem">Admin Dashboard</h1>
+    </div>
+    <div class="adminmeta">Last updated <b>just now</b></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">Total signups</span><span class="val">4,218</span><span class="delta">+12.4% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Active this week</span><span class="val">892</span><span class="delta">+8.1% vs last week</span></div>
+    <div class="kpi"><span class="lbl">Sessions completed</span><span class="val">12,647</span><span class="delta">+18.9% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Avg mastery</span><span class="val">71%</span><span class="delta down">-2.1% vs last month</span></div>
+  </div>
+  <div class="admingrid">
+    <div class="adminpanel">
+      <h3>Daily signups, last 7 days</h3>
+      <div class="barchart" id="signupsChart"></div>
+      <div class="chartlegend">Total this week: <b style="color:var(--text)">947 signups</b></div>
+    </div>
+    <div class="adminpanel">
+      <h3>Top-studied concepts</h3>
+      <p style="font-size:.76rem;color:var(--text-soft);margin-bottom:.9rem">% of learners who studied each concept area</p>
+      <div class="mengagement" id="moduleEng"></div>
+    </div>
+  </div>
+  <div class="adminpanel">
+    <h3>Recent signups &amp; activity</h3>
+    <div class="tablewrap">
+      <table class="usertable" id="userTable">
+        <thead><tr><th>Email</th><th>Signed up</th><th>Sessions</th><th>Mastered</th><th>Streak</th><th>Last active</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="demonote"><b>Demo data.</b> Production version connects to your CRM and database. Export to CSV, HubSpot sync, and per-user drilldowns available in the paid build.</div>
+  </div>
+</div>
+
+<footer class="foot">
+  © 2026 <a href="https://www.invensislearning.com/" target="_blank" rel="noopener">Invensis Learning</a>. Free study tool for exam preparation.
+  <span style="margin-left:1rem;opacity:.55;font-size:.7rem">Demo: <a href="#" id="resetLink">reset progress</a></span>
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'invensis-asm-flashcards-v10';
+
+  var CARDS = [
+    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
+    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The set of guidelines behind the Manifesto. Covers customer satisfaction, welcoming change, frequent delivery of working software, close daily collaboration, motivated teams, sustainable pace, technical excellence, simplicity, and self-organising teams.'},
+    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
+    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
+    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true},
+    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.'},
+    {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.'},
+    {id:'facilitation',cat:'Scrum Roles',term:'Facilitation',def:'The Scrum Master skill of helping the team hold effective conversations and reach shared decisions without dictating content or outcome.'},
+    {id:'coaching',cat:'Scrum Roles',term:'Coaching',def:'The Scrum Master practice of helping individuals and the team grow in self-management, an agile mindset, and continuous improvement over time.'},
+    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
+    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
+    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
+    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
+    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
+    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
+    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
+    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
+    {id:'story-points',cat:'Estimation & Planning',term:'Story points',def:'A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.'},
+    {id:'relative-sizing',cat:'Estimation & Planning',term:'Relative sizing',def:'Estimating backlog items by comparing them to each other (bigger, smaller, roughly the same) rather than trying to fix an absolute time to each one.'},
+    {id:'velocity',cat:'Estimation & Planning',term:'Velocity',def:'The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.'},
+    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
+    {id:'agile-estimation',cat:'Estimation & Planning',term:'Agile estimation',def:'Collaborative techniques the team uses to size backlog items, commonly Planning Poker or T-shirt sizing. Surfaces shared understanding, not just numbers.'},
+    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
+    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
+    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
+    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
+    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
+    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'}
+  ];
+
+  var FREE_LIMIT = 3;
+  var INTERVAL = { again:0, good:3, easy:7 };
+  var XP_GAIN = { again:2, good:5, easy:10 };
+
+  function todayISO(){ return new Date().toISOString().slice(0,10); }
+  function addDays(d){ var x=new Date(); x.setDate(x.getDate()+d); return x.toISOString().slice(0,10); }
+  function daysDiff(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+  function loadState(){ try{ var r=localStorage.getItem(STORAGE_KEY); return r?JSON.parse(r):null; }catch(e){return null;} }
+  function saveState(){ try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); }catch(e){} }
+
+  var state = loadState() || {
+    unlocked:false, email:'', cardStates:{}, streak:{count:0,lastActive:null},
+    totalSessionsCompleted:0, xp:0
+  };
+
+  function updateStreak(){
+    var today = todayISO();
+    if (state.streak.lastActive === today) return;
+    if (state.streak.lastActive === addDays(-1)) state.streak.count += 1;
+    else state.streak.count = 1;
+    state.streak.lastActive = today;
+    saveState();
+  }
+
+  var queue=[], sessionShown={}, sessionRatings={}, sessionAgainCount={}, sessionXpEarned=0;
+  var flipped=false, tooltipDismissed=false;
+
+  var cardEl=document.getElementById('card');
+  var frontFace=cardEl.querySelector('.face.front');
+  var backFace=cardEl.querySelector('.face.back');
+  var hint=document.getElementById('hint');
+  var tooltip=document.getElementById('tooltip');
+  var pMastered=document.getElementById('pMastered');
+  var pReview=document.getElementById('pReview');
+  var pLeft=document.getElementById('pLeft');
+  var barMastered=document.getElementById('barMastered');
+  var barReview=document.getElementById('barReview');
+  var stageEl=document.getElementById('stage');
+  var gateStage=document.getElementById('gateStage');
+  var gateCard=document.getElementById('gateCard');
+  var summaryStage=document.getElementById('summaryStage');
+  var summaryCard=document.getElementById('summaryCard');
+  var emptyStage=document.getElementById('emptyStage');
+  var shuffleBtn=document.getElementById('shuffleBtn');
+  var posNow=document.getElementById('posNow');
+  var posTotal=document.getElementById('posTotal');
+  var dueNote=document.getElementById('dueNote');
+  var appView=document.getElementById('appView');
+  var adminView=document.getElementById('adminView');
+
+  function shuffleArray(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t;} return a; }
+
+
+  function buildSEO(){
+    var seo = document.getElementById('seoList');
+    seo.innerHTML = CARDS.map(function(c){ return '<li><strong>'+c.term+'</strong>: '+c.def+'</li>'; }).join('');
+  }
+
+  function buildSessionQueue(){
+    var today = todayISO();
+    var freeIdx=[], dueIdx=[], newIdx=[];
+    CARDS.forEach(function(c, i){
+      var s = state.cardStates[c.id];
+      if (!s || !s.dueDate){
+        if (c.free) freeIdx.push(i);
+        else newIdx.push(i);
+      } else if (s.dueDate <= today){ dueIdx.push(i); }
+    });
+    shuffleArray(newIdx); shuffleArray(dueIdx); shuffleArray(freeIdx);
+    queue = state.unlocked ? dueIdx.concat(freeIdx).concat(newIdx) : freeIdx.concat(newIdx);
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0;
+  }
+
+  function distinctShown(){ var n=0; for(var k in sessionShown) if (sessionShown.hasOwnProperty(k)) n++; return n; }
+  function isAtGate(){
+    if (queue.length===0 || state.unlocked) return false;
+    if (CARDS[queue[0]].free) return false;
+    return distinctShown() >= FREE_LIMIT;
+  }
+  function masteredCount(){ var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s && (s.lastRating==='good'||s.lastRating==='easy')) n++; }); return n; }
+  function dueCount(){ var t=todayISO(); var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate<=t) n++; }); return n; }
+
+  function updateStats(){
+    posTotal.textContent = CARDS.length;
+    var sM=0,sR=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='good'||sessionRatings[k]==='easy') sM++; }
+    for (var k2 in sessionAgainCount){ if (!(sessionRatings[k2]==='good'||sessionRatings[k2]==='easy')) sR++; }
+    var total = sM + queue.length + sR; if (total===0) total=1;
+    pMastered.textContent = sM; pReview.textContent = sR; pLeft.textContent = queue.length;
+    posNow.textContent = Math.min(sM+sR+1, CARDS.length);
+    barMastered.style.width = (sM/total*100)+'%';
+    barReview.style.width = (sR/total*100)+'%';
+    var scheduled = 0;
+    var t = todayISO();
+    CARDS.forEach(function(c){
+      var s = state.cardStates[c.id];
+      if (s && s.dueDate && s.dueDate > t) scheduled++;
+    });
+    if (state.unlocked){
+      var parts = [];
+      var qlen = queue.length;
+      if (qlen > 0) parts.push(qlen+' due today');
+      if (scheduled > 0) parts.push(scheduled+' scheduled later');
+      if (masteredCount() === CARDS.length) { dueNote.textContent = 'Deck mastered · '+CARDS.length+' cards'; }
+      else if (parts.length) { dueNote.textContent = parts.join(' · ')+' · '+CARDS.length+' total'; }
+      else { dueNote.textContent = CARDS.length+' cards total'; }
+    } else {
+      dueNote.textContent = (FREE_LIMIT-distinctShown() > 0)
+        ? (FREE_LIMIT-distinctShown())+' free previews left · '+CARDS.length+' cards total'
+        : 'Email to continue · '+CARDS.length+' cards total';
+    }
+  }
+
+  function renderGate(){
+    stageEl.style.display='none'; gateStage.style.display='flex'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    var locked = CARDS.filter(function(c){return !c.free;}).slice(0,10);
+    var tiles = locked.map(function(c){ return '<span class="peektile">'+c.term+'</span>'; }).join('')
+      + '<span class="peektile more">+'+(CARDS.length-FREE_LIMIT-locked.length)+' more</span>';
+    gateCard.innerHTML =
+      '<span class="eyebrow">Unlock the rest</span>' +
+      '<h3>Get all '+(CARDS.length-FREE_LIMIT)+' remaining flashcards</h3>' +
+      '<p class="peek">What is inside:</p>' +
+      '<div class="peektiles">'+tiles+'</div>' +
+      '<form id="gateForm">' +
+        '<input type="email" id="gateEmail" placeholder="you@company.com" required autocomplete="email">' +
+        '<button type="submit" class="submit">Unlock the deck</button>' +
+      '</form>' +
+      '<p class="fine">Progress saves to your device. No spam, unsubscribe anytime.</p>';
+    document.getElementById('gateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      state.unlocked=true; state.email=document.getElementById('gateEmail').value; saveState();
+      gateCard.innerHTML =
+        '<div class="sentmsg">✓ Unlocked. All '+(CARDS.length-FREE_LIMIT)+' remaining cards are available.</div>' +
+        '<button class="submit" style="align-self:flex-start" id="continueBtn">Continue studying</button>';
+      document.getElementById('continueBtn').addEventListener('click', function(){
+        buildSessionQueue();
+        gateStage.style.display='none'; stageEl.style.display='flex';
+        renderCard();
+      });
+    });
+    hint.textContent='Unlock to continue'; tooltip.style.display='none';
+  }
+
+  function renderCard(){
+    updateStats();
+    if (queue.length===0){
+      if (Object.keys(sessionRatings).length > 0){ showSummary(); return; }
+      stageEl.style.display='none'; gateStage.style.display='none'; summaryStage.style.display='none';
+      emptyStage.style.display='flex';
+      var next=null;
+      CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+      if (next){ var d=daysDiff(todayISO(),next); document.getElementById('emptyMsg').textContent='Next card is due in '+d+' day'+(d===1?'':'s')+'.'; }
+      return;
+    }
+    if (isAtGate()){ renderGate(); return; }
+    stageEl.style.display='flex'; gateStage.style.display='none'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    var i = queue[0], card = CARDS[i];
+    sessionShown[i] = true;
+    cardEl.classList.remove('flipped'); flipped=false;
+    frontFace.innerHTML =
+      '<div class="prompt">Try to recall</div>' +
+      '<div class="term">'+card.term+'</div>' +
+      '<div class="flipcue">Tap to reveal definition ↻</div>';
+    backFace.innerHTML =
+      '<div class="prompt">Definition</div>' +
+      '<div class="def">'+card.def+'</div>' +
+      '<div class="rate">' +
+        '<button class="again" data-rate="again">Study Again<span class="keyhint">1 · ← swipe</span></button>' +
+        '<button class="good" data-rate="good">Almost<span class="keyhint">2 · → swipe</span></button>' +
+        '<button class="easy" data-rate="easy">Nailed It<span class="keyhint">3 · ↑ swipe</span></button>' +
+      '</div>';
+    backFace.querySelectorAll('.rate button').forEach(function(b){
+      b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
+    });
+    hint.textContent='Try to recall, then flip';
+    tooltip.style.display = (distinctShown()===1 && !tooltipDismissed) ? 'block' : 'none';
+  }
+
+  function sparkBurst(button, kind){
+    var rect = button.getBoundingClientRect();
+    var container = document.createElement('div');
+    container.className = 'spark-burst';
+    container.style.left = (rect.left + rect.width/2) + 'px';
+    container.style.top = (rect.top + rect.height/2) + 'px';
+    document.body.appendChild(container);
+    var count = kind === 'easy' ? 12 : 6;
+    var chars = kind === 'easy' ? ['★','✦','✧','•'] : ['•','✦'];
+    for (var i = 0; i < count; i++){
+      var s = document.createElement('span');
+      s.className = 'spark' + (kind === 'easy' ? ' gold' : '') + (kind === 'easy' && i%3===0 ? ' big' : '');
+      var angle = (Math.PI * 2 * i) / count + (Math.random()*.3);
+      var dist = kind === 'easy' ? 70 + Math.random()*30 : 45 + Math.random()*15;
+      s.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+      s.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+      s.style.animationDelay = (Math.random()*.1) + 's';
+      s.textContent = chars[i % chars.length];
+      container.appendChild(s);
+    }
+    setTimeout(function(){ if (container.parentNode) container.parentNode.removeChild(container); }, 1000);
+  }
+
+  function handleRate(r){
+    var i = queue[0]; if (i===undefined) return;
+    var card = CARDS[i];
+    var btn = backFace.querySelector('.rate button.' + r);
+    if (btn && r === 'easy') sparkBurst(btn, r);
+    queue.shift();
+    state.xp = (state.xp || 0) + XP_GAIN[r];
+    sessionXpEarned += XP_GAIN[r];
+    if (r === 'again'){
+      sessionAgainCount[i] = (sessionAgainCount[i]||0)+1;
+      sessionRatings[i] = 'again';
+      queue.splice(Math.min(3, queue.length), 0, i);
+    } else {
+      sessionRatings[i] = r;
+      state.cardStates[card.id] = {
+        lastRating: r, dueDate: addDays(INTERVAL[r]),
+        seenCount: ((state.cardStates[card.id]&&state.cardStates[card.id].seenCount)||0)+1
+      };
+    }
+    saveState();
+    renderCard();
+  }
+
+  function showSummary(){
+    stageEl.style.display='none'; gateStage.style.display='none'; emptyStage.style.display='none'; summaryStage.style.display='flex';
+    var easy=0,good=0,again=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
+    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+    var next=null;
+    CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+    var nextMsg = next ? 'Next review due in '+daysDiff(todayISO(),next)+' day'+(daysDiff(todayISO(),next)===1?'':'s')+'.' : '';
+
+    var uniqueCards = Object.keys(sessionRatings).length;
+    var stillAgain = 0;
+    for (var kk in sessionRatings){ if (sessionRatings[kk]==='again') stillAgain++; }
+    var weightedSum = easy*100 + good*70 + stillAgain*30;
+    var score = uniqueCards > 0 ? Math.round(weightedSum / uniqueCards) : 0;
+    var grade, desc;
+    if (score >= 90){ grade = 'Excellent'; desc = 'You have this material down cold. Ready to sit the exam.'; }
+    else if (score >= 75){ grade = 'Strong'; desc = 'Solid grasp of the concepts. A few more sessions will lock it in.'; }
+    else if (score >= 60){ grade = 'Building up'; desc = 'You are getting there. Keep the streak going for a few more days.'; }
+    else { grade = 'Keep practicing'; desc = 'Early days. Spaced repetition compounds fast, come back tomorrow.'; }
+
+    summaryCard.innerHTML =
+      '<div class="sbadge">✓</div>' +
+      '<h3>Session complete</h3>' +
+      '<p>You worked through '+(easy+good+Object.keys(sessionAgainCount).length)+' concepts.</p>' +
+      '<div class="scoreblock">' +
+        '<div class="scoreval">'+score+'<sup>%</sup></div>' +
+        '<div class="scoremeta">' +
+          '<div class="scorelbl">Session score</div>' +
+          '<h4 class="scoregrade">'+grade+'</h4>' +
+          '<p class="scoredesc">'+desc+'</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="stats">' +
+        '<div class="stat easy"><b>'+easy+'</b><span>Nailed It</span></div>' +
+        '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
+        '<div class="stat again"><b>'+again+'</b><span>Study Again</span></div>' +
+      '</div>' +
+      (nextMsg ? '<p class="nextdue">'+nextMsg+'</p>' : '') +
+      '<div class="actions">' +
+        '<button class="toolbtn" id="shareBtn">Share progress</button>' +
+        (again > 0 ? '<button class="toolbtn on" id="redoTough">Redo the '+Object.keys(sessionAgainCount).length+' tough one'+(Object.keys(sessionAgainCount).length===1?'':'s')+'</button>' : '') +
+        '<button class="toolbtn' + (again === 0 ? ' on' : '') + '" id="restartAll">Restart deck</button>' +
+      '</div>' +
+      '<div class="coursecta">' +
+        '<div class="ctaeye">Ready for the real exam?</div>' +
+        '<h4>Get instructor-led Agile Scrum Master certification</h4>' +
+        '<p class="ctadesc">These flashcards get the terminology into memory. The full course pairs live instructor sessions, real Scrum project work, and exam vouchers to get you officially certified.</p>' +
+        '<div class="ctabullets">' +
+          '<div><b>16 hrs</b><span>Live instructor-led training</span></div>' +
+          '<div><b>2</b><span>Full-length mock exams</span></div>' +
+          '<div><b>100%</b><span>Money-back pass guarantee</span></div>' +
+        '</div>' +
+        '<div class="ctarow">' +
+          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>' +
+          '<a class="golink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Talk to an advisor</a>' +
+        '</div>' +
+        '<p class="trustline">Trusted by 100,000+ professionals worldwide · Ford · TCS · Wipro · Accenture</p>' +
+      '</div>';
+
+    document.getElementById('shareBtn').addEventListener('click', function(){ generateShareImage(score, grade); });
+
+    var redoBtn = document.getElementById('redoTough');
+    if (redoBtn) redoBtn.addEventListener('click', function(){
+      var rev = Object.keys(sessionAgainCount).map(function(k){ return parseInt(k,10); });
+      shuffleArray(rev);
+      queue = rev;
+      sessionShown = {}; sessionRatings = {}; sessionAgainCount = {}; sessionXpEarned = 0;
+      rev.forEach(function(i){ sessionShown[i] = true; });
+      summaryStage.style.display = 'none';
+      stageEl.style.display = 'flex';
+      renderCard();
+    });
+
+    document.getElementById('restartAll').addEventListener('click', function(){
+      state.cardStates = {};
+      saveState();
+      buildSessionQueue();
+      summaryStage.style.display = 'none';
+      stageEl.style.display = 'flex';
+      renderCard();
+    });
+    state.totalSessionsCompleted++; saveState();
+  }
+
+  function generateShareImage(score, grade){
+    var W = 1200, H = 630;
+    var c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    var ctx = c.getContext('2d');
+
+    var g = ctx.createLinearGradient(0, 0, W, H);
+    g.addColorStop(0, '#0A0F1A');
+    g.addColorStop(1, '#1D2637');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = 'rgba(232,153,58,0.15)';
+    ctx.beginPath();
+    ctx.ellipse(W/2, 0, W*0.4, H*0.5, 0, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.fillStyle = '#E8993A';
+    ctx.font = '600 22px Inter, "Segoe UI", sans-serif';
+    ctx.fillText('INVENSIS LEARNING · ASM FLASHCARDS', 60, 90);
+
+    ctx.fillStyle = '#F7C671';
+    ctx.font = '700 200px Georgia, serif';
+    var scoreText = score + '%';
+    ctx.fillText(scoreText, 60, 320);
+
+    ctx.fillStyle = '#F3F6FA';
+    ctx.font = '700 46px Georgia, serif';
+    ctx.fillText(grade + ' — ' + masteredCount() + ' of ' + CARDS.length + ' concepts mastered', 60, 400);
+
+    ctx.fillStyle = 'rgba(241,245,249,.65)';
+    ctx.font = '400 26px Inter, sans-serif';
+    ctx.fillText('Agile Scrum Master certification prep · recall-based flashcards', 60, 450);
+
+    ctx.strokeStyle = 'rgba(232,153,58,.35)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(60, 530);
+    ctx.lineTo(W - 60, 530);
+    ctx.stroke();
+
+    ctx.fillStyle = '#F5B04C';
+    ctx.font = '600 22px Inter, sans-serif';
+    ctx.fillText('Try it: invensislearning.com/agile-scrum-master', 60, 580);
+
+    var url = c.toDataURL('image/png');
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'asm-flashcards-session.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  cardEl.addEventListener('click', function(e){
+    if (e.target.closest('.rate')) return;
+    if (!tooltipDismissed){ tooltipDismissed=true; tooltip.style.display='none'; }
+    flipped = !flipped;
+    cardEl.classList.toggle('flipped', flipped);
+    hint.textContent = flipped ? 'Rate yourself: Study Again, Almost, or Nailed It' : 'Try to recall, then flip';
+  });
+
+  var touchStart=null;
+  cardEl.addEventListener('touchstart', function(e){ touchStart={x:e.touches[0].clientX, y:e.touches[0].clientY}; }, {passive:true});
+  cardEl.addEventListener('touchend', function(e){
+    if (!touchStart || !flipped){ touchStart=null; return; }
+    var dx=e.changedTouches[0].clientX-touchStart.x, dy=e.changedTouches[0].clientY-touchStart.y;
+    var absDx=Math.abs(dx), absDy=Math.abs(dy); touchStart=null;
+    if (absDx<60 && absDy<60) return;
+    if (absDx>absDy) handleRate(dx<0?'again':'good');
+    else if (dy<0) handleRate('easy');
+  }, {passive:true});
+
+  shuffleBtn.addEventListener('click', function(){ shuffleArray(queue); renderCard(); });
+  document.getElementById('reviewAnyway').addEventListener('click', function(){
+    var all = CARDS.map(function(_,i){return i;}); shuffleArray(all); queue=all;
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0;
+    emptyStage.style.display='none'; stageEl.style.display='flex'; renderCard();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (gateStage.style.display!=='none'||summaryStage.style.display!=='none'||emptyStage.style.display!=='none') return;
+    if (e.target && (e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA')) return;
+    if (e.key===' '||e.key==='Enter'){ e.preventDefault(); cardEl.click(); }
+    else if (flipped){
+      if (e.key==='1') handleRate('again'); else if (e.key==='2') handleRate('good'); else if (e.key==='3') handleRate('easy');
+    }
+  });
+
+  function showRoute(route){
+    if (route === 'admin'){
+      appView.style.display='none';
+      adminView.classList.add('on');
+      renderAdmin();
+    } else {
+      appView.style.display='';
+      adminView.classList.remove('on');
+    }
+  }
+  document.getElementById('adminBack').addEventListener('click', function(e){
+    e.preventDefault(); location.hash=''; showRoute('app');
+  });
+  document.getElementById('brandLink').addEventListener('click', function(e){
+    e.preventDefault(); location.hash=''; showRoute('app');
+  });
+  window.addEventListener('hashchange', function(){
+    if (location.hash === '#admin') showRoute('admin');
+    else if (adminView.classList.contains('on')) showRoute('app');
+  });
+
+  function renderAdmin(){
+    var chart = document.getElementById('signupsChart');
+    if (chart.children.length) return;
+    var days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    var vals = [142,158,137,165,178,89,78];
+    var max = Math.max.apply(null, vals);
+    days.forEach(function(d, i){
+      var b = document.createElement('div');
+      b.className='bcbar'; b.style.height = (vals[i]/max*100)+'%';
+      b.innerHTML = '<span class="v">'+vals[i]+'</span><span class="d">'+d+'</span>';
+      chart.appendChild(b);
+    });
+    var mods = [
+      {name:'Scrum Events', pct:94}, {name:'Scrum Roles', pct:88},
+      {name:'Agile Concepts', pct:76}, {name:'Estimation & Planning', pct:71},
+      {name:'Scrum Artifacts', pct:64}, {name:'Scaling & Adoption', pct:48}
+    ];
+    document.getElementById('moduleEng').innerHTML = mods.map(function(m){
+      return '<div class="mengrow"><div class="mengtop"><span>'+m.name+'</span><b>'+m.pct+'%</b></div>'+
+        '<div class="mengbar"><div class="mengfill" style="width:'+m.pct+'%"></div></div></div>';
+    }).join('');
+    var users = [
+      {email:'am•••@ford.com', signed:'2 hours ago', sessions:3, mastered:'24/27', streak:5, active:'Just now', status:'active'},
+      {email:'pr•••@tcs.com', signed:'5 hours ago', sessions:2, mastered:'18/27', streak:3, active:'1h ago', status:'active'},
+      {email:'ja•••@wipro.com', signed:'yesterday', sessions:4, mastered:'27/27', streak:7, active:'3h ago', status:'active'},
+      {email:'sn•••@accenture.com', signed:'yesterday', sessions:1, mastered:'9/27', streak:1, active:'yesterday', status:'idle'},
+      {email:'ra•••@infosys.com', signed:'2 days ago', sessions:5, mastered:'25/27', streak:6, active:'2h ago', status:'active'},
+      {email:'ke•••@hcl.com', signed:'2 days ago', sessions:2, mastered:'14/27', streak:2, active:'yesterday', status:'active'},
+      {email:'me•••@cognizant.com', signed:'3 days ago', sessions:1, mastered:'6/27', streak:1, active:'3 days ago', status:'idle'},
+      {email:'th•••@techm.com', signed:'3 days ago', sessions:6, mastered:'27/27', streak:8, active:'30min ago', status:'active'},
+      {email:'ne•••@capgemini.com', signed:'4 days ago', sessions:0, mastered:'3/27', streak:0, active:'4 days ago', status:'idle'},
+      {email:'vi•••@ibm.com', signed:'just now', sessions:0, mastered:'3/27', streak:1, active:'Just now', status:'new'}
+    ];
+    document.querySelector('#userTable tbody').innerHTML = users.map(function(u){
+      return '<tr><td class="email">'+u.email+'</td><td>'+u.signed+'</td>'+
+        '<td class="num">'+u.sessions+'</td><td class="num">'+u.mastered+'</td>'+
+        '<td class="num">'+u.streak+'</td><td>'+u.active+'</td>'+
+        '<td><span class="status '+u.status+'">'+(u.status==='active'?'● Active':u.status==='new'?'● New':'○ Idle')+'</span></td></tr>';
+    }).join('');
+  }
+
+  var resetLink = document.getElementById('resetLink');
+  if (resetLink) resetLink.addEventListener('click', function(e){
+    e.preventDefault();
+    if (confirm('Clear all progress and start fresh? (Email unlock, ratings)')) {
+      try { localStorage.removeItem(STORAGE_KEY); } catch(err){}
+      location.reload();
+    }
+  });
+
+  updateStreak();
+  buildSEO();
+  buildSessionQueue();
+  renderCard();
+  if (location.hash === '#admin') showRoute('admin');
+})();
+</script>

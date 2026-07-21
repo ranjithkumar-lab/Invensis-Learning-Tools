@@ -1,0 +1,922 @@
+<title>What Does a Scrum Master Actually Do? A 2026 Guide | Invensis Learning</title>
+<meta name="description" content="A complete guide to the Agile Scrum Master role: responsibilities, ceremonies, and how they support the team. Includes a free 27-card flashcard tool to test your recall.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"What Does a Scrum Master Actually Do? A 2026 Guide","author":{"@type":"Organization","name":"Invensis Learning"},"publisher":{"@type":"Organization","name":"Invensis Learning"},"datePublished":"2026-07-01","description":"A complete guide to the Agile Scrum Master role, with a free 27-card flashcard study tool."}
+</script>
+
+<style>
+  @font-face { font-family:'DisplaySerif'; src: local('Charter'), local('Iowan Old Style'), local('Georgia'); }
+
+  :root{
+    --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
+    --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
+    --accent-400:#F5B04C; --accent-500:#E8993A; --accent-600:#C77B22; --accent-700:#A6631E; --accent-glow:#F7C671;
+    --accent-soft:rgba(232,153,58,.12); --accent-line:rgba(232,153,58,.32);
+    --gold:#D4A85A;
+    --good:#3E9C6F; --good-soft:rgba(62,156,111,.14);
+    --again:#E15A55; --again-soft:rgba(225,90,85,.14);
+    --easy:#4DA3C7; --easy-soft:rgba(77,163,199,.16);
+    --lock:#7C6394; --lock-soft:rgba(124,99,148,.12);
+    --page-bg:#FAFBF7; --panel-bg:#FFFFFF; --text:#0F172A; --text-soft:#475569; --line:rgba(15,23,42,.10);
+    --shadow-sm:0 1px 2px rgba(15,23,42,.05);
+    --shadow-md:0 8px 24px -12px rgba(15,23,42,.18);
+  }
+  :root[data-theme="dark"]{
+    --page-bg:var(--ink-900); --panel-bg:var(--ink-850); --text:#ECEFF4; --text-soft:#A0AEC0; --line:rgba(255,255,255,.08);
+    --shadow-md:0 8px 30px -8px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:var(--page-bg); color:var(--text); min-height:100vh;
+    font-family:'Inter','Segoe UI',system-ui,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5; }
+  html{scroll-behavior:smooth}
+
+  /* --- host blog page shell (represents the Invensis Learning blog site) --- */
+  .siteheader{ border-bottom:1px solid var(--line); background:var(--panel-bg); }
+  .siteheaderinner{ max-width:1200px; margin:0 auto; padding:.9rem clamp(16px,3vw,32px);
+    display:flex; align-items:center; justify-content:space-between; }
+  .sitelogo{ display:flex; align-items:center; gap:.55rem; color:var(--text); text-decoration:none; }
+  .sitelogo .lgo{ width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.68rem; }
+  .sitelogo .tt{ font-family:'DisplaySerif',serif; font-weight:700; font-size:.94rem }
+  .sitenav{ display:flex; gap:1.2rem; font-size:.85rem; }
+  .sitenav a{ color:var(--text-soft); text-decoration:none; font-weight:500; }
+  .sitenav a:hover{ color:var(--accent-500) }
+  @media(max-width:640px){ .sitenav{ display:none } }
+
+  /* --- article container --- */
+  article.post{ max-width:760px; margin:0 auto; padding:clamp(24px,4vw,48px) clamp(20px,4vw,32px) clamp(32px,5vw,64px); }
+
+  .breadcrumb{ font-family:'SF Mono',monospace; font-size:.7rem; letter-spacing:.06em; color:var(--text-soft); margin-bottom:1.2rem; }
+  .breadcrumb a{ color:var(--text-soft); text-decoration:none; }
+  .breadcrumb a:hover{ color:var(--accent-500) }
+  .breadcrumb .sep{ margin:0 .3rem; opacity:.5 }
+
+  article h1.title{ font-family:'DisplaySerif',serif; font-weight:700;
+    font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.15; letter-spacing:-.015em; margin-bottom:1rem; text-wrap:balance; }
+  .byline{ display:flex; gap:1rem; align-items:center; font-size:.83rem; color:var(--text-soft);
+    margin-bottom:1.8rem; padding-bottom:1.4rem; border-bottom:1px solid var(--line); flex-wrap:wrap }
+  .byline .who{ display:flex; align-items:center; gap:.55rem; }
+  .byline .avatar{ width:32px; height:32px; border-radius:50%;
+    background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); }
+  .byline .name{ color:var(--text); font-weight:600 }
+  .byline .meta{ display:flex; gap:.7rem; flex-wrap:wrap; }
+  .byline .meta span::before{ content:"·"; margin-right:.7rem; color:var(--slate-400) }
+  .byline .meta span:first-child::before{ content:none; margin:0 }
+
+  .hero-img{ width:100%; aspect-ratio: 16/8; border-radius:12px; margin-bottom:1.8rem;
+    background:linear-gradient(135deg, #0F1521 0%, #1A2233 50%, #C77B22 100%);
+    display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .hero-img::before{ content:""; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  }
+  .hero-img .emoji{ position:relative; font-size:4rem; opacity:.85 }
+
+  article p, article ul, article ol{ font-size:1rem; line-height:1.75; color:var(--text); margin-bottom:1.2rem; }
+  article p{ max-width:66ch; }
+  article ul, article ol{ padding-left:1.3rem; }
+  article ul li, article ol li{ margin-bottom:.5rem }
+  article h2{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.5rem;
+    margin:2.5rem 0 .9rem; letter-spacing:-.01em; text-wrap:balance }
+  article h3{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.15rem;
+    margin:1.8rem 0 .7rem; }
+  article strong{ color:var(--text); font-weight:700 }
+  article a.inlink{ color:var(--accent-600); text-decoration:underline; text-underline-offset:2px }
+  :root[data-theme="dark"] article a.inlink{ color:var(--accent-glow) }
+
+  .pullquote{ margin:2rem 0; padding:1.2rem 1.6rem; border-left:3px solid var(--accent-500);
+    background:var(--accent-soft); border-radius:0 10px 10px 0; }
+  .pullquote p{ font-family:'DisplaySerif',serif; font-style:italic; font-size:1.1rem; margin:0; color:var(--text) }
+
+  /* --- widget embed --- */
+  .widget-leadin{ margin:2.5rem 0 1.2rem; padding:1.2rem 1.4rem; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+  .widget-leadin .eyebrow{ font-family:'SF Mono',monospace; font-size:.66rem; letter-spacing:.14em;
+    color:var(--accent-500); font-weight:700; text-transform:uppercase; }
+  .widget-leadin p{ font-size:.9rem; color:var(--text-soft); margin:0; font-style:italic; }
+
+  .flashcard-widget{ background:var(--panel-bg); border:1px solid var(--line); border-radius:18px;
+    padding:clamp(1.4rem,3vw,2rem); box-shadow:var(--shadow-md); margin:1.5rem 0; display:flex; flex-direction:column; gap:1.2rem; }
+  .widget-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap; padding-bottom:1rem; border-bottom:1px solid var(--line); }
+  .widget-head .title{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.1rem; margin:0 0 .25rem; }
+  .widget-head .sub{ font-size:.78rem; color:var(--text-soft); }
+  .widget-head .badges{ display:flex; gap:.4rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.3rem; padding:.3rem .65rem; border-radius:99px;
+    font-family:'DisplaySerif',serif; font-weight:700; font-size:.72rem; }
+  .badge.streak{ background:rgba(212,168,90,.14); color:var(--gold) }
+  .badge.xp{ background:var(--accent-soft); color:var(--accent-500) }
+
+  .howto{ background:var(--slate-100); border-radius:12px; padding:1rem 1.2rem; }
+  :root[data-theme="dark"] .howto{ background:var(--ink-800) }
+  .howto .htitle{ font-family:'DisplaySerif',serif; font-weight:700; font-size:.9rem; color:var(--text); margin-bottom:.7rem; display:flex; align-items:center; gap:.5rem; }
+  .howto .htitle .ico{ width:22px; height:22px; border-radius:50%; background:var(--accent-soft);
+    color:var(--accent-500); display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; }
+  .howto ol{ display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:.8rem; padding:0; margin:0; list-style:none; }
+  .howto li{ display:flex; gap:.5rem; align-items:flex-start; }
+  .howto .step-n{ flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+    background:var(--panel-bg); border:1px solid var(--accent-500);
+    color:var(--accent-500); font-family:'DisplaySerif',serif; font-weight:700; font-size:.78rem;
+    display:flex; align-items:center; justify-content:center; }
+  .howto .step-body{ display:flex; flex-direction:column; gap:.15rem }
+  .howto .step-t{ font-size:.8rem; color:var(--text); font-weight:600; }
+  .howto .step-d{ font-size:.74rem; color:var(--text-soft); line-height:1.45 }
+
+  .paneltop{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; }
+  .panelmeta{ display:flex; gap:.9rem; align-items:baseline; font-size:.78rem; color:var(--text-soft); flex-wrap:wrap }
+  .panelmeta b{ color:var(--text); font-family:'DisplaySerif',serif; font-weight:700; font-size:.88rem }
+  .panelmeta .dot{ width:4px; height:4px; border-radius:50%; background:var(--slate-300); display:inline-block; margin:0 .1rem }
+  .toolbtn{ font-family:'SF Mono',monospace; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--line); color:var(--text-soft); border-radius:99px;
+    padding:.35rem .7rem; cursor:pointer; transition:.15s; }
+  .toolbtn:hover{ border-color:var(--accent-500); color:var(--accent-500) }
+  .toolbtn.on{ background:var(--text); color:var(--page-bg); border-color:var(--text) }
+  .seoindex{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+  .progress{ display:flex; flex-direction:column; gap:.35rem }
+  .progresslabel{ display:flex; justify-content:space-between; font-family:'SF Mono',monospace; font-size:.7rem;
+    color:var(--text-soft); font-variant-numeric:tabular-nums; }
+  .progresslabel span b{ color:var(--text); }
+  .progresslabel .pM b{ color:var(--good) }
+  .progresslabel .pR b{ color:var(--again) }
+  .barrow{ height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden; display:flex }
+  :root[data-theme="dark"] .barrow{ background:var(--ink-800) }
+  .barfill{ height:100%; transition:width .3s ease }
+  .barfill.mastered{ background:var(--good) }
+  .barfill.review{ background:var(--again) }
+
+  .stage{ display:flex; flex-direction:column; align-items:center; gap:.9rem; }
+  .stagetop{ display:flex; align-items:center; justify-content:space-between; width:100%; gap:.5rem; flex-wrap:wrap; }
+  .hint{ font-size:.76rem; color:var(--text-soft); flex:1; text-align:center; min-width:150px; }
+
+  .cardwrap{ width:100%; perspective:1400px; position:relative; touch-action:pan-y; user-select:none; }
+  .tooltip{ position:absolute; top:-40px; left:50%; transform:translateX(-50%);
+    background:var(--text); color:var(--page-bg); font-size:.72rem; font-weight:600;
+    padding:.4rem .7rem; border-radius:8px; white-space:nowrap; z-index:5;
+    animation:bob 1.6s ease-in-out infinite; }
+  .tooltip::after{ content:""; position:absolute; bottom:-4px; left:50%; transform:translateX(-50%);
+    width:8px; height:8px; background:var(--text); rotate:45deg; }
+  @keyframes bob{ 0%,100%{ transform:translateX(-50%) translateY(0) } 50%{ transform:translateX(-50%) translateY(3px) } }
+  @media (prefers-reduced-motion:reduce){ .tooltip{ animation:none } }
+
+  .card{ position:relative; width:100%; height:320px; cursor:pointer; }
+  .card .face{ position:absolute; inset:0; border-radius:14px; border:1px solid var(--line);
+    box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
+    display:flex; flex-direction:column; padding:1.6rem 1.8rem;
+    transition:transform .5s cubic-bezier(.4,.2,.2,1); overflow:hidden; }
+  .card .back{ transform:rotateY(180deg);
+    background:linear-gradient(160deg, var(--ink-900), var(--ink-850)); color:#ECEFF4; border-color:transparent; }
+  .card.flipped .face.front{ transform:rotateY(-180deg) }
+  .card.flipped .face.back{ transform:rotateY(0deg) }
+  @media (prefers-reduced-motion:reduce){ .card .face{ transition:none } }
+  .prompt{ font-family:'SF Mono',monospace; font-size:.62rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent-500); margin-bottom:.4rem; font-weight:600; }
+  .card .back .prompt{ color:var(--accent-glow); }
+  .tag{ font-size:.7rem; color:var(--text-soft); margin-bottom:1rem; opacity:.75 }
+  .card .back .tag{ color:rgba(236,239,244,.55) }
+  .term{ font-family:'DisplaySerif',serif; font-weight:700; font-size:clamp(1.3rem,3vw,1.55rem);
+    line-height:1.2; text-wrap:balance; margin-top:auto; margin-bottom:auto; color:inherit; }
+  .def{ font-size:.94rem; line-height:1.55; margin-top:auto; margin-bottom:1rem; color:inherit; }
+  .flipcue{ align-self:flex-end; font-size:.66rem; color:var(--text-soft);
+    font-family:'SF Mono',monospace; letter-spacing:.04em; }
+  .card .back .flipcue{ color:rgba(236,239,244,.5); align-self:flex-start; }
+
+  .rate{ display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:.9rem; }
+  .rate button{ font-family:inherit; font-weight:700; font-size:.8rem; padding:.65rem .4rem;
+    border-radius:9px; border:1px solid transparent; cursor:pointer; transition:.15s;
+    display:flex; flex-direction:column; gap:.15rem; align-items:center; }
+  .rate button .keyhint{ font-family:'SF Mono',monospace; font-size:.58rem; font-weight:400; opacity:.7 }
+  .rate .again{ background:var(--again-soft); color:var(--again); border-color:var(--again); }
+  .rate .good{ background:var(--good-soft); color:var(--good); border-color:var(--good); }
+  .rate .easy{ background:var(--easy-soft); color:var(--easy); border-color:var(--easy); }
+  .rate button:hover{ transform:translateY(-1px); filter:brightness(1.05) }
+
+  .gatecard{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.5rem 1.7rem; display:flex; flex-direction:column; gap:.9rem; width:100%; box-shadow:var(--shadow-md); }
+  .gatecard .eyebrow{ font-family:'SF Mono',monospace; font-size:.65rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-500); font-weight:700 }
+  .gatecard h4{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.1rem; margin:0; text-wrap:balance }
+  .gatecard .lossline{ font-size:.87rem; color:var(--text); margin:0; line-height:1.55; }
+  .gatecard .lossline b{ color:var(--accent-500) }
+  .gatecard .socialproof{ display:flex; align-items:center; gap:.5rem;
+    font-size:.73rem; color:var(--text-soft); border:1px dashed var(--line); border-radius:8px;
+    padding:.5rem .75rem; margin:0; }
+  .gatecard .socialproof b{ color:var(--text) }
+  .gatecard .peek{ font-size:.66rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:.09em; margin:0; font-weight:600; }
+  .peektiles{ display:flex; flex-wrap:wrap; gap:.35rem; }
+  .peektile{ font-size:.72rem; padding:.28rem .55rem; border-radius:6px; background:var(--lock-soft);
+    color:var(--lock); border:1px solid rgba(124,99,148,.28); filter:blur(.4px); }
+  .peektile.more{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-line); filter:none; font-weight:600; }
+  .gatecard form{ display:flex; gap:.5rem; margin-top:.2rem; flex-wrap:wrap; }
+  .gatecard input[type="email"]{ flex:1; min-width:180px; font-family:inherit; font-size:.88rem;
+    padding:.65rem .85rem; border-radius:9px; border:1px solid var(--line); background:var(--page-bg);
+    color:var(--text); outline:none; }
+  .gatecard input[type="email"]:focus{ border-color:var(--accent-500) }
+  .gatecard button.submit{ font-family:inherit; font-weight:700; font-size:.85rem; background:var(--accent-500);
+    color:var(--ink-950); border:none; border-radius:9px; padding:.65rem 1.1rem; cursor:pointer; }
+  .gatecard .fine{ font-size:.68rem; color:var(--text-soft); margin:0; }
+  .gatecard .sentmsg{ background:var(--good-soft); color:var(--good); font-weight:600; font-size:.85rem;
+    padding:.7rem .9rem; border-radius:10px; }
+
+  .summary{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem; display:flex; flex-direction:column; gap:.9rem; text-align:center; width:100%; box-shadow:var(--shadow-md); }
+  .summary .sbadge{ align-self:center; width:46px; height:46px; border-radius:50%; background:var(--good-soft);
+    color:var(--good); font-size:1.3rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .summary h4{ font-family:'DisplaySerif',serif; font-size:1.25rem; margin:0 }
+  .summary p{ font-size:.85rem; color:var(--text-soft); margin:0 }
+  .summary .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:.3rem; }
+  .summary .stat{ background:var(--page-bg); border:1px solid var(--line); border-radius:10px;
+    padding:.8rem .4rem; display:flex; flex-direction:column; gap:.15rem; }
+  .summary .stat b{ font-family:'DisplaySerif',serif; font-size:1.4rem; font-variant-numeric:tabular-nums; }
+  .summary .stat.easy b{ color:var(--easy) } .summary .stat.good b{ color:var(--good) } .summary .stat.again b{ color:var(--again) }
+  .summary .stat span{ font-size:.64rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:.09em; font-weight:600 }
+  .summary .actions{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+  .summary .xpearned{ background:var(--accent-soft); color:var(--accent-500); font-weight:700; font-size:.82rem;
+    padding:.4rem .8rem; border-radius:99px; align-self:center; }
+  .summary .nextdue{ font-size:.76rem; color:var(--text-soft); font-style:italic; }
+  .emptystate{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.5rem; text-align:center; display:flex; flex-direction:column; gap:.7rem; box-shadow:var(--shadow-sm) }
+
+  .widget-cta{ background:linear-gradient(135deg, var(--ink-950), var(--ink-850)); color:#F1F5F9;
+    padding:1.2rem 1.5rem; border-radius:12px; display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; flex-wrap:wrap; }
+  .widget-cta .txt strong{ display:block; font-family:'DisplaySerif',serif; font-size:1rem; margin-bottom:.15rem }
+  .widget-cta .txt span{ font-size:.78rem; color:rgba(241,245,249,.7) }
+  .widget-cta a.gobtn{ font-family:inherit; font-weight:600; font-size:.85rem; background:var(--accent-500);
+    color:var(--ink-950); border-radius:9px; padding:.6rem 1.1rem; text-decoration:none; white-space:nowrap; }
+  .widget-cta a.gobtn:hover{ background:var(--accent-400) }
+
+  /* --- article bottom (author, related) --- */
+  .authorbox{ margin-top:2.5rem; padding:1.4rem; background:var(--panel-bg); border:1px solid var(--line);
+    border-radius:12px; display:flex; gap:1rem; align-items:flex-start; }
+  .authorbox .avatar{ flex:0 0 auto; width:52px; height:52px; border-radius:50%;
+    background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); }
+  .authorbox h4{ font-family:'DisplaySerif',serif; font-size:1rem; margin-bottom:.2rem; }
+  .authorbox p{ font-size:.85rem; color:var(--text-soft); margin:0; line-height:1.5; }
+
+  .related{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  .related h3{ font-family:'DisplaySerif',serif; font-size:1.1rem; margin-bottom:1rem; }
+  .rellist{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
+  .relitem{ background:var(--panel-bg); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem;
+    text-decoration:none; color:var(--text); transition:.15s; cursor:pointer }
+  .relitem:hover{ border-color:var(--accent-500) }
+  .relitem .tag{ font-family:'SF Mono',monospace; font-size:.66rem; letter-spacing:.09em; color:var(--accent-500); text-transform:uppercase; font-weight:600; margin-bottom:.4rem }
+  .relitem .t{ font-family:'DisplaySerif',serif; font-weight:700; font-size:.94rem; line-height:1.3 }
+
+  .sitefooter{ border-top:1px solid var(--line); background:var(--panel-bg); margin-top:2.5rem;
+    padding:1.4rem clamp(20px,4vw,32px); text-align:center; font-size:.78rem; color:var(--text-soft); }
+  .sitefooter a{ color:var(--accent-500); text-decoration:none; }
+
+  /* admin (only shown via #admin URL) */
+  #adminView{ display:none; max-width:1200px; margin:0 auto; padding:clamp(24px,4vw,48px) clamp(20px,4vw,32px); }
+  #adminView.on{ display:block }
+  .adminback{ font-family:'SF Mono',monospace; font-size:.78rem; color:var(--accent-500); text-decoration:none; margin-bottom:1rem; display:inline-block; }
+  .admintop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem }
+  .admintop h1{ font-family:'DisplaySerif',serif; font-size:clamp(1.5rem,3vw,2rem) }
+  .adminmeta{ font-size:.78rem; color:var(--text-soft); }
+  .adminmeta b{ color:var(--good); font-weight:600 }
+  .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:2rem; }
+  .kpi{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.3rem;
+    display:flex; flex-direction:column; gap:.3rem; box-shadow:var(--shadow-sm); }
+  .kpi .lbl{ font-family:'SF Mono',monospace; font-size:.64rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--text-soft); font-weight:600; }
+  .kpi .val{ font-family:'DisplaySerif',serif; font-weight:700; font-size:1.8rem; color:var(--text); line-height:1; }
+  .kpi .delta{ font-size:.7rem; font-weight:600; color:var(--good); }
+  .kpi .delta.down{ color:var(--again) }
+  .admingrid{ display:grid; grid-template-columns:1.4fr 1fr; gap:1.4rem; margin-bottom:1.4rem; }
+  @media(max-width:900px){ .admingrid{ grid-template-columns:1fr } }
+  .adminpanel{ background:var(--panel-bg); border:1px solid var(--line); border-radius:12px; padding:1.4rem;
+    box-shadow:var(--shadow-sm); }
+  .adminpanel h3{ font-family:'DisplaySerif',serif; font-size:.95rem; margin-bottom:.9rem; }
+  .barchart{ display:flex; gap:8px; align-items:flex-end; height:170px; padding-top:1.3rem; position:relative; }
+  .bcbar{ flex:1; background:linear-gradient(180deg, var(--accent-400), var(--accent-600));
+    border-radius:5px 5px 0 0; position:relative; min-height:8px; cursor:pointer; transition:.2s; }
+  .bcbar:hover{ filter:brightness(1.15) }
+  .bcbar .v{ position:absolute; top:-1.3rem; left:50%; transform:translateX(-50%);
+    font-family:'SF Mono',monospace; font-size:.66rem; font-weight:600; color:var(--text-soft); }
+  .bcbar .d{ position:absolute; bottom:-1.3rem; left:50%; transform:translateX(-50%);
+    font-family:'SF Mono',monospace; font-size:.62rem; color:var(--text-soft); }
+  .chartlegend{ margin-top:2rem; font-size:.72rem; color:var(--text-soft); }
+  .mengagement{ display:flex; flex-direction:column; gap:.8rem; }
+  .mengrow{ display:flex; flex-direction:column; gap:.3rem; }
+  .mengtop{ display:flex; justify-content:space-between; font-size:.78rem; }
+  .mengtop b{ color:var(--text) }
+  .mengbar{ height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden }
+  :root[data-theme="dark"] .mengbar{ background:var(--ink-800) }
+  .mengfill{ height:100%; background:var(--accent-500); border-radius:99px; }
+  .usertable{ width:100%; border-collapse:collapse; font-size:.82rem; }
+  .usertable th{ text-align:left; padding:.65rem .75rem; font-family:'SF Mono',monospace;
+    font-size:.64rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); font-weight:600;
+    border-bottom:1px solid var(--line); }
+  .usertable td{ padding:.7rem .75rem; border-bottom:1px solid var(--line); vertical-align:middle }
+  .usertable tr:last-child td{ border-bottom:none }
+  .usertable td.email{ font-family:'SF Mono',monospace; font-size:.76rem }
+  .usertable td.num{ font-family:'DisplaySerif',serif; font-weight:600; font-variant-numeric:tabular-nums }
+  .status{ font-size:.66rem; padding:.15rem .5rem; border-radius:999px; font-weight:600; }
+  .status.active{ background:var(--good-soft); color:var(--good); }
+  .status.idle{ background:var(--again-soft); color:var(--again); }
+  .status.new{ background:var(--accent-soft); color:var(--accent-500); }
+  .tablewrap{ overflow-x:auto }
+  .demonote{ background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
+    padding:.85rem 1rem; font-size:.76rem; color:var(--text); margin-top:1.2rem; }
+  .demonote b{ color:var(--accent-600) }
+</style>
+
+<header class="siteheader">
+  <div class="siteheaderinner">
+    <a class="sitelogo" href="#top">
+      <span class="lgo">IL</span>
+      <span class="tt">Invensis Learning · Blog</span>
+    </a>
+    <nav class="sitenav">
+      <a href="#">Courses</a>
+      <a href="#">Categories</a>
+      <a href="#">Resources</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="hostView">
+  <article class="post" id="top">
+    <div class="breadcrumb">
+      <a href="#">Home</a><span class="sep">/</span>
+      <a href="#">Blog</a><span class="sep">/</span>
+      <a href="#">Agile</a><span class="sep">/</span>
+      Scrum Master role
+    </div>
+
+    <h1 class="title">What Does a Scrum Master Actually Do? A 2026 Guide</h1>
+
+    <div class="byline">
+      <div class="who">
+        <div class="avatar"></div>
+        <div><div class="name">Invensis Learning Team</div><div style="font-size:.74rem">Certified Scrum trainers</div></div>
+      </div>
+      <div class="meta">
+        <span>Updated July 2026</span>
+        <span>8 min read</span>
+        <span>Agile · ASM</span>
+      </div>
+    </div>
+
+    <div class="hero-img"><span class="emoji">🌀</span></div>
+
+    <p>"Scrum Master" is one of the most misunderstood roles in a software team. Some people picture a project manager with a new title. Others assume it is just the person who runs the daily stand-up. The reality is more interesting, and knowing exactly what the role covers is essential for anyone preparing for the <strong>Agile Scrum Master (ASM) certification</strong>.</p>
+
+    <p>In this guide we will walk through the responsibilities, ceremonies, and mindset that define a real Scrum Master. At the end you can test your recall on the key ASM concepts with our free flashcard tool.</p>
+
+    <h2>1. A servant leader, not a boss</h2>
+    <p>A Scrum Master does not assign tasks or approve holidays. They serve the team. Their job is to make the team more effective by facilitating conversations, removing obstacles, and shielding the team from outside pressure. Good Scrum Masters lead through influence and coaching, not authority.</p>
+
+    <div class="pullquote"><p>"The Scrum Master is accountable for the effectiveness of Scrum itself, not the delivery of the product."</p></div>
+
+    <h2>2. Facilitating the Scrum events</h2>
+    <p>Every Sprint runs through four core events, and the Scrum Master ensures each one happens well:</p>
+    <ul>
+      <li><strong>Sprint Planning:</strong> the team commits to a Sprint Goal and picks work from the backlog.</li>
+      <li><strong>Daily Scrum:</strong> a 15-minute daily sync where the team inspects progress toward the goal.</li>
+      <li><strong>Sprint Review:</strong> the team shows the Increment to stakeholders and gathers feedback.</li>
+      <li><strong>Sprint Retrospective:</strong> the team reflects on how it worked and plans improvements.</li>
+    </ul>
+
+    <h2>3. Coaching the team, the Product Owner, and the organisation</h2>
+    <p>The role expands outward in three concentric circles. Coach the team on self-management and technical practices. Support the Product Owner in backlog refinement and stakeholder communication. Help the wider organisation understand and embrace empirical, Agile ways of working.</p>
+
+    <!-- --- INLINE FLASHCARD WIDGET STARTS HERE --- -->
+    <div class="widget-leadin">
+      <div>
+        <div class="eyebrow">Try it yourself</div>
+        <p style="margin-top:.3rem">Reading is one thing. Recall is what makes it stick. Try 3 free cards below.</p>
+      </div>
+    </div>
+
+    <div class="flashcard-widget" id="widget">
+      <div class="widget-head">
+        <div>
+          <div class="title">ASM Concept Flashcards</div>
+          <div class="sub">27 cards · recall-first study · your progress saves</div>
+        </div>
+        <div class="badges">
+          <div class="badge streak">🔥 <span id="streakCount">0</span></div>
+          <div class="badge xp">⚡ <span id="xpCount">0</span></div>
+        </div>
+      </div>
+
+      <div class="howto">
+        <div class="htitle"><span class="ico">i</span>How to use these flashcards</div>
+        <ol>
+          <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, try to say the meaning in your own words.</span></div></li>
+          <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
+          <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Study Again, Almost, or Nailed It.</span></div></li>
+        </ol>
+      </div>
+
+      <div class="paneltop">
+        <div class="panelmeta">
+          <span>Card <b id="posNow">1</b> / <b id="posTotal">27</b></span>
+          <span class="dot"></span>
+          <span id="dueNote">All cards eligible</span>
+        </div>
+        <button class="toolbtn" id="shuffleBtn">↺ Shuffle</button>
+      </div>
+
+      <nav class="seoindex" aria-hidden="true"><h2>Deck contents</h2><ul id="seoList"></ul></nav>
+
+      <div class="progress">
+        <div class="progresslabel">
+          <span class="pM">Mastered <b id="pMastered">0</b></span>
+          <span class="pR">To Review <b id="pReview">0</b></span>
+          <span>Left <b id="pLeft">27</b></span>
+        </div>
+        <div class="barrow">
+          <div class="barfill mastered" id="barMastered" style="width:0%"></div>
+          <div class="barfill review" id="barReview" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="stagetop"><div class="hint" id="hint">Try to recall, then flip</div></div>
+        <div class="cardwrap" id="cardWrap">
+          <div class="tooltip" id="tooltip">Try to recall, then tap ↻</div>
+          <div class="card" id="card">
+            <div class="face front"></div>
+            <div class="face back"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="gateStage" style="display:none">
+        <div class="gatecard" id="gateCard"></div>
+      </div>
+
+      <div class="stage" id="summaryStage" style="display:none">
+        <div class="summary" id="summaryCard"></div>
+      </div>
+
+      <div class="stage" id="emptyStage" style="display:none">
+        <div class="emptystate">
+          <h4 style="font-family:'DisplaySerif',serif;margin:0">You are all caught up 🎉</h4>
+          <p id="emptyMsg" style="font-size:.85rem;color:var(--text-soft);margin:0">Nothing is due for review today. Come back tomorrow, or work the deck now.</p>
+          <button class="toolbtn on" id="reviewAnyway" style="align-self:center">Review deck anyway</button>
+        </div>
+      </div>
+
+      <div class="widget-cta">
+        <div class="txt">
+          <strong>Ready to take the ASM exam?</strong>
+          <span>Get instructor-led training, mock exams, and a pass guarantee.</span>
+        </div>
+        <a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Explore the ASM Course</a>
+      </div>
+    </div>
+    <!-- --- INLINE FLASHCARD WIDGET ENDS HERE --- -->
+
+    <h2>4. What a Scrum Master is not</h2>
+    <p>A Scrum Master is not a Project Manager. They do not commit to dates on the team's behalf, they do not assign tasks, and they do not report on individual performance. If you find yourself doing those things, you have drifted out of the role. Come back to the question: <em>How can I make this team more effective at Scrum?</em></p>
+
+    <h2>Ready to certify?</h2>
+    <p>If this walkthrough resonated with you, the <a class="inlink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Agile Scrum Master certification course from Invensis Learning</a> pairs live instructor sessions, real project work, and exam vouchers. Trained teams at Ford, TCS, Wipro, and 100,000+ professionals worldwide.</p>
+
+    <div class="authorbox">
+      <div class="avatar"></div>
+      <div>
+        <h4>Invensis Learning Team</h4>
+        <p>Certified Scrum trainers with 15+ years teaching Agile to enterprise teams across 60 countries. Follow our blog for practical guides on ASM, PMP, ITIL, and Six Sigma certifications.</p>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related reading</h3>
+      <div class="rellist">
+        <a class="relitem" href="#">
+          <div class="tag">Agile</div>
+          <div class="t">Sprint Planning: A Practical Walkthrough</div>
+        </a>
+        <a class="relitem" href="#">
+          <div class="tag">Agile</div>
+          <div class="t">Product Owner vs Scrum Master: The Key Differences</div>
+        </a>
+        <a class="relitem" href="#">
+          <div class="tag">Certification</div>
+          <div class="t">ASM vs CSM vs PSM: Which Should You Take?</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<div id="adminView">
+  <a class="adminback" href="#top">← Back to blog</a>
+  <div class="admintop">
+    <div>
+      <div class="eyebrow" style="font-family:'SF Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:var(--accent-500);font-weight:700;text-transform:uppercase;margin-bottom:.4rem">Internal · Analytics</div>
+      <h1>ASM Flashcards Dashboard</h1>
+    </div>
+    <div class="adminmeta">Last updated <b>just now</b></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">Total signups</span><span class="val">4,218</span><span class="delta">+12.4% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Active this week</span><span class="val">892</span><span class="delta">+8.1% vs last week</span></div>
+    <div class="kpi"><span class="lbl">Sessions completed</span><span class="val">12,647</span><span class="delta">+18.9% vs last month</span></div>
+    <div class="kpi"><span class="lbl">Avg mastery</span><span class="val">71%</span><span class="delta down">-2.1% vs last month</span></div>
+  </div>
+  <div class="admingrid">
+    <div class="adminpanel">
+      <h3>Daily signups, last 7 days</h3>
+      <div class="barchart" id="signupsChart"></div>
+      <div class="chartlegend">Total this week: <b style="color:var(--text)">947 signups</b></div>
+    </div>
+    <div class="adminpanel">
+      <h3>Top-studied concepts</h3>
+      <p style="font-size:.76rem;color:var(--text-soft);margin-bottom:.9rem">% of learners who studied each concept area</p>
+      <div class="mengagement" id="moduleEng"></div>
+    </div>
+  </div>
+  <div class="adminpanel">
+    <h3>Recent signups &amp; activity</h3>
+    <div class="tablewrap">
+      <table class="usertable" id="userTable">
+        <thead><tr><th>Email</th><th>Signed up</th><th>Sessions</th><th>Mastered</th><th>Streak</th><th>Last active</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="demonote"><b>Demo data.</b> Production version connects to your CRM and database. Export to CSV, HubSpot sync, and per-user drilldowns available in the paid build.</div>
+  </div>
+</div>
+
+<footer class="sitefooter">
+  © 2026 <a href="#">Invensis Learning</a>. Blog post for educational purposes.
+  <span style="margin-left:1rem;opacity:.5;font-size:.7rem">Admin: <a href="#admin">dashboard</a></span>
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'invensis-asm-flashcards-v7';
+
+  var CARDS = [
+    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
+    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The set of guidelines behind the Manifesto. Covers customer satisfaction, welcoming change, frequent delivery of working software, close daily collaboration, motivated teams, sustainable pace, technical excellence, simplicity, and self-organising teams.'},
+    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
+    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
+    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master',def:'A servant-leader for the Scrum Team who facilitates the events, coaches self-management, removes impediments, and protects the team from outside disruption. Accountable for the effectiveness of Scrum itself.',free:true},
+    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner',def:'Accountable for maximising the value of the product. Owns and orders the Product Backlog and is the single voice on what the team builds next.'},
+    {id:'developers',cat:'Scrum Roles',term:'Developers',def:'The people in the Scrum Team committed to creating any usable aspect of the Increment each Sprint. Self-managing and cross-functional.'},
+    {id:'facilitation',cat:'Scrum Roles',term:'Facilitation',def:'The Scrum Master skill of helping the team hold effective conversations and reach shared decisions without dictating content or outcome.'},
+    {id:'coaching',cat:'Scrum Roles',term:'Coaching',def:'The Scrum Master practice of helping individuals and the team grow in self-management, an agile mindset, and continuous improvement over time.'},
+    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
+    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
+    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
+    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
+    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
+    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
+    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
+    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
+    {id:'story-points',cat:'Estimation & Planning',term:'Story points',def:'A relative unit of estimation reflecting effort, complexity, and uncertainty of a backlog item. Deliberately not tied to hours or days.'},
+    {id:'relative-sizing',cat:'Estimation & Planning',term:'Relative sizing',def:'Estimating backlog items by comparing them to each other (bigger, smaller, roughly the same) rather than trying to fix an absolute time to each one.'},
+    {id:'velocity',cat:'Estimation & Planning',term:'Velocity',def:'The average amount of work, typically in story points, a team completes per Sprint. Used as a forecasting input rather than a productivity target.'},
+    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
+    {id:'agile-estimation',cat:'Estimation & Planning',term:'Agile estimation',def:'Collaborative techniques the team uses to size backlog items, commonly Planning Poker or T-shirt sizing. Surfaces shared understanding, not just numbers.'},
+    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
+    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
+    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
+    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
+    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
+    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'}
+  ];
+
+  var FREE_LIMIT = 3;
+  var INTERVAL = { again:0, good:3, easy:7 };
+  var XP_GAIN = { again:2, good:5, easy:10 };
+
+  function todayISO(){ return new Date().toISOString().slice(0,10); }
+  function addDays(d){ var x=new Date(); x.setDate(x.getDate()+d); return x.toISOString().slice(0,10); }
+  function daysDiff(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+  function loadState(){ try{ var r=localStorage.getItem(STORAGE_KEY); return r?JSON.parse(r):null; }catch(e){return null;} }
+  function saveState(){ try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); }catch(e){} }
+
+  var state = loadState() || {
+    unlocked:false, email:'', cardStates:{}, streak:{count:0,lastActive:null},
+    totalSessionsCompleted:0, xp:0
+  };
+
+  function updateStreak(){
+    var today = todayISO();
+    if (state.streak.lastActive === today) return;
+    if (state.streak.lastActive === addDays(-1)) state.streak.count += 1;
+    else state.streak.count = 1;
+    state.streak.lastActive = today;
+    saveState();
+  }
+
+  var queue=[], sessionShown={}, sessionRatings={}, sessionAgainCount={}, sessionXpEarned=0;
+  var flipped=false, tooltipDismissed=false;
+
+  var cardEl=document.getElementById('card');
+  var frontFace=cardEl.querySelector('.face.front');
+  var backFace=cardEl.querySelector('.face.back');
+  var hint=document.getElementById('hint');
+  var tooltip=document.getElementById('tooltip');
+  var pMastered=document.getElementById('pMastered');
+  var pReview=document.getElementById('pReview');
+  var pLeft=document.getElementById('pLeft');
+  var barMastered=document.getElementById('barMastered');
+  var barReview=document.getElementById('barReview');
+  var stageEl=document.getElementById('stage');
+  var gateStage=document.getElementById('gateStage');
+  var gateCard=document.getElementById('gateCard');
+  var summaryStage=document.getElementById('summaryStage');
+  var summaryCard=document.getElementById('summaryCard');
+  var emptyStage=document.getElementById('emptyStage');
+  var shuffleBtn=document.getElementById('shuffleBtn');
+  var streakEl=document.getElementById('streakCount');
+  var xpEl=document.getElementById('xpCount');
+  var posNow=document.getElementById('posNow');
+  var posTotal=document.getElementById('posTotal');
+  var dueNote=document.getElementById('dueNote');
+  var hostView=document.getElementById('hostView');
+  var adminView=document.getElementById('adminView');
+
+  function shuffleArray(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t;} return a; }
+
+  function buildSEO(){
+    var seo = document.getElementById('seoList');
+    seo.innerHTML = CARDS.map(function(c){ return '<li><strong>'+c.term+'</strong>: '+c.def+'</li>'; }).join('');
+  }
+
+  function buildSessionQueue(){
+    var today = todayISO();
+    var freeIdx=[], dueIdx=[], newIdx=[];
+    CARDS.forEach(function(c, i){
+      var s = state.cardStates[c.id];
+      if (!s || !s.dueDate){
+        if (c.free) freeIdx.push(i);
+        else newIdx.push(i);
+      } else if (s.dueDate <= today){ dueIdx.push(i); }
+    });
+    shuffleArray(newIdx); shuffleArray(dueIdx);
+    queue = state.unlocked ? dueIdx.concat(newIdx) : freeIdx.concat(newIdx);
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0;
+  }
+
+  function distinctShown(){ var n=0; for(var k in sessionShown) if (sessionShown.hasOwnProperty(k)) n++; return n; }
+  function isAtGate(){
+    if (queue.length===0 || state.unlocked) return false;
+    if (CARDS[queue[0]].free) return false;
+    return distinctShown() >= FREE_LIMIT;
+  }
+  function masteredCount(){ var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s && (s.lastRating==='good'||s.lastRating==='easy')) n++; }); return n; }
+  function dueCount(){ var t=todayISO(); var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate<=t) n++; }); return n; }
+
+  function updateStats(){
+    streakEl.textContent = state.streak.count;
+    xpEl.textContent = state.xp;
+    posTotal.textContent = CARDS.length;
+    var sM=0,sR=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='good'||sessionRatings[k]==='easy') sM++; }
+    for (var k2 in sessionAgainCount){ if (!(sessionRatings[k2]==='good'||sessionRatings[k2]==='easy')) sR++; }
+    var total = sM + queue.length + sR; if (total===0) total=1;
+    pMastered.textContent = sM; pReview.textContent = sR; pLeft.textContent = queue.length;
+    posNow.textContent = Math.min(sM+sR+1, CARDS.length);
+    barMastered.style.width = (sM/total*100)+'%';
+    barReview.style.width = (sR/total*100)+'%';
+    var d = dueCount();
+    dueNote.textContent = state.unlocked
+      ? (d>0 ? d+' card'+(d===1?'':'s')+' due today' : (masteredCount()===CARDS.length ? 'Deck mastered' : 'New cards available'))
+      : (FREE_LIMIT-distinctShown() > 0 ? (FREE_LIMIT-distinctShown())+' free previews left' : 'Email to continue');
+  }
+
+  function renderGate(){
+    stageEl.style.display='none'; gateStage.style.display='flex'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    var locked = CARDS.filter(function(c){return !c.free;}).slice(0,10);
+    var tiles = locked.map(function(c){ return '<span class="peektile">'+c.term+'</span>'; }).join('')
+      + '<span class="peektile more">+'+(CARDS.length-FREE_LIMIT-locked.length)+' more</span>';
+    var pct = Math.round((FREE_LIMIT/CARDS.length)*100);
+    gateCard.innerHTML =
+      '<span class="eyebrow">Continue studying</span>' +
+      '<h4>You are '+pct+'% through. Keep your progress and unlock the rest.</h4>' +
+      '<p class="lossline">Your <b>ratings, streak, and next-review dates</b> stay saved. '+(CARDS.length-FREE_LIMIT)+' cards left in the deck.</p>' +
+      '<p class="socialproof">★ Joined by <b>4,218 ASM candidates</b> this month. Average <b>+34% recall</b> after 3 sessions.</p>' +
+      '<p class="peek">Coming up:</p>' +
+      '<div class="peektiles">'+tiles+'</div>' +
+      '<form id="gateForm">' +
+        '<input type="email" id="gateEmail" placeholder="you@company.com" required autocomplete="email">' +
+        '<button type="submit" class="submit">Get the flashcards</button>' +
+      '</form>' +
+      '<p class="fine">One email. We will also send the deck as a PDF for offline study. No spam.</p>';
+    document.getElementById('gateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = document.getElementById('gateEmail').value;
+      state.unlocked=true; state.email=email; saveState();
+      var masked = email.replace(/^(.{2}).*(@.*)$/,'$1•••$2');
+      gateCard.innerHTML =
+        '<div class="sentmsg">✓ Sent to '+masked+'. Check your inbox for the PDF backup.</div>' +
+        '<p style="font-size:.85rem;color:var(--text-soft);margin:0;line-height:1.55">All '+(CARDS.length-FREE_LIMIT)+' cards are unlocked. Progress saves automatically.</p>' +
+        '<button class="submit" style="align-self:flex-start" id="continueBtn">Continue studying</button>';
+      document.getElementById('continueBtn').addEventListener('click', function(){
+        buildSessionQueue();
+        gateStage.style.display='none'; stageEl.style.display='flex';
+        renderCard();
+      });
+    });
+    hint.textContent='Unlock to continue'; tooltip.style.display='none';
+  }
+
+  function renderCard(){
+    updateStats();
+    if (queue.length===0){
+      if (Object.keys(sessionRatings).length > 0){ showSummary(); return; }
+      stageEl.style.display='none'; gateStage.style.display='none'; summaryStage.style.display='none';
+      emptyStage.style.display='flex';
+      var next=null;
+      CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+      if (next){ var d=daysDiff(todayISO(),next); document.getElementById('emptyMsg').textContent='Next card is due in '+d+' day'+(d===1?'':'s')+'.'; }
+      return;
+    }
+    if (isAtGate()){ renderGate(); return; }
+    stageEl.style.display='flex'; gateStage.style.display='none'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    var i = queue[0], card = CARDS[i];
+    sessionShown[i] = true;
+    cardEl.classList.remove('flipped'); flipped=false;
+    frontFace.innerHTML =
+      '<div class="prompt">Try to recall</div>' +
+      '<div class="tag">'+card.cat+'</div>' +
+      '<div class="term">'+card.term+'</div>' +
+      '<div class="flipcue">Tap to reveal definition ↻</div>';
+    backFace.innerHTML =
+      '<div class="prompt">Definition</div>' +
+      '<div class="tag">'+card.cat+'</div>' +
+      '<div class="def">'+card.def+'</div>' +
+      '<div class="rate">' +
+        '<button class="again" data-rate="again">Study Again<span class="keyhint">1 · ← swipe</span></button>' +
+        '<button class="good" data-rate="good">Almost<span class="keyhint">2 · → swipe</span></button>' +
+        '<button class="easy" data-rate="easy">Nailed It<span class="keyhint">3 · ↑ swipe</span></button>' +
+      '</div>';
+    backFace.querySelectorAll('.rate button').forEach(function(b){
+      b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
+    });
+    hint.textContent='Try to recall, then flip';
+    tooltip.style.display = (distinctShown()===1 && !tooltipDismissed) ? 'block' : 'none';
+  }
+
+  function handleRate(r){
+    var i = queue[0]; if (i===undefined) return;
+    var card = CARDS[i];
+    queue.shift();
+    state.xp = (state.xp || 0) + XP_GAIN[r];
+    sessionXpEarned += XP_GAIN[r];
+    if (r === 'again'){
+      sessionAgainCount[i] = (sessionAgainCount[i]||0)+1;
+      sessionRatings[i] = 'again';
+      queue.splice(Math.min(3, queue.length), 0, i);
+    } else {
+      sessionRatings[i] = r;
+      state.cardStates[card.id] = {
+        lastRating: r, dueDate: addDays(INTERVAL[r]),
+        seenCount: ((state.cardStates[card.id]&&state.cardStates[card.id].seenCount)||0)+1
+      };
+    }
+    saveState();
+    renderCard();
+  }
+
+  function showSummary(){
+    stageEl.style.display='none'; gateStage.style.display='none'; emptyStage.style.display='none'; summaryStage.style.display='flex';
+    var easy=0,good=0,again=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
+    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+    var next=null;
+    CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+    var nextMsg = next ? 'Next review due in '+daysDiff(todayISO(),next)+' day'+(daysDiff(todayISO(),next)===1?'':'s')+'.' : '';
+    summaryCard.innerHTML =
+      '<div class="sbadge">✓</div>' +
+      '<h4>Session complete</h4>' +
+      '<p>You worked through '+(easy+good+Object.keys(sessionAgainCount).length)+' concepts.</p>' +
+      '<div class="xpearned">⚡ +'+sessionXpEarned+' XP earned</div>' +
+      '<div class="stats">' +
+        '<div class="stat easy"><b>'+easy+'</b><span>Nailed It</span></div>' +
+        '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
+        '<div class="stat again"><b>'+again+'</b><span>Study Again</span></div>' +
+      '</div>' +
+      (nextMsg ? '<p class="nextdue">'+nextMsg+'</p>' : '') +
+      '<div class="actions">' +
+        '<button class="toolbtn on" id="redoTough">Redo tough ones</button>' +
+        '<button class="toolbtn" id="restartAll">Restart deck</button>' +
+      '</div>';
+    document.getElementById('redoTough').addEventListener('click', function(){
+      var rev=[]; for (var k in sessionAgainCount) rev.push(parseInt(k,10));
+      if (rev.length===0) buildSessionQueue();
+      else { shuffleArray(rev); queue=rev; sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0; rev.forEach(function(i){sessionShown[i]=true;}); }
+      summaryStage.style.display='none'; stageEl.style.display='flex'; renderCard();
+    });
+    document.getElementById('restartAll').addEventListener('click', function(){
+      state.cardStates={}; saveState(); buildSessionQueue();
+      summaryStage.style.display='none'; stageEl.style.display='flex'; renderCard();
+    });
+    state.totalSessionsCompleted++; saveState();
+  }
+
+  cardEl.addEventListener('click', function(e){
+    if (e.target.closest('.rate')) return;
+    if (!tooltipDismissed){ tooltipDismissed=true; tooltip.style.display='none'; }
+    flipped = !flipped;
+    cardEl.classList.toggle('flipped', flipped);
+    hint.textContent = flipped ? 'Rate yourself: Study Again, Almost, or Nailed It' : 'Try to recall, then flip';
+  });
+
+  var touchStart=null;
+  cardEl.addEventListener('touchstart', function(e){ touchStart={x:e.touches[0].clientX, y:e.touches[0].clientY}; }, {passive:true});
+  cardEl.addEventListener('touchend', function(e){
+    if (!touchStart || !flipped){ touchStart=null; return; }
+    var dx=e.changedTouches[0].clientX-touchStart.x, dy=e.changedTouches[0].clientY-touchStart.y;
+    var absDx=Math.abs(dx), absDy=Math.abs(dy); touchStart=null;
+    if (absDx<60 && absDy<60) return;
+    if (absDx>absDy) handleRate(dx<0?'again':'good');
+    else if (dy<0) handleRate('easy');
+  }, {passive:true});
+
+  shuffleBtn.addEventListener('click', function(){ shuffleArray(queue); renderCard(); });
+  document.getElementById('reviewAnyway').addEventListener('click', function(){
+    var all = CARDS.map(function(_,i){return i;}); shuffleArray(all); queue=all;
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0;
+    emptyStage.style.display='none'; stageEl.style.display='flex'; renderCard();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (gateStage.style.display!=='none'||summaryStage.style.display!=='none'||emptyStage.style.display!=='none') return;
+    if (e.target && (e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA')) return;
+    if (e.key===' '||e.key==='Enter'){
+      var w=document.getElementById('widget'); var r=w.getBoundingClientRect();
+      if (r.top<window.innerHeight && r.bottom>0){ e.preventDefault(); cardEl.click(); }
+    } else if (flipped){
+      if (e.key==='1') handleRate('again'); else if (e.key==='2') handleRate('good'); else if (e.key==='3') handleRate('easy');
+    }
+  });
+
+  // routing (blog article <-> admin dashboard, via URL hash only)
+  function showRoute(route){
+    if (route === 'admin'){
+      hostView.style.display='none';
+      adminView.classList.add('on');
+      renderAdmin();
+    } else {
+      hostView.style.display='';
+      adminView.classList.remove('on');
+    }
+  }
+  window.addEventListener('hashchange', function(){
+    if (location.hash === '#admin') showRoute('admin');
+    else if (adminView.classList.contains('on')) showRoute('app');
+  });
+
+  function renderAdmin(){
+    var chart = document.getElementById('signupsChart');
+    if (chart.children.length) return;
+    var days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    var vals = [142,158,137,165,178,89,78];
+    var max = Math.max.apply(null, vals);
+    days.forEach(function(d, i){
+      var b = document.createElement('div');
+      b.className='bcbar'; b.style.height = (vals[i]/max*100)+'%';
+      b.innerHTML = '<span class="v">'+vals[i]+'</span><span class="d">'+d+'</span>';
+      chart.appendChild(b);
+    });
+    var mods = [
+      {name:'Scrum Events', pct:94}, {name:'Scrum Roles', pct:88},
+      {name:'Agile Concepts', pct:76}, {name:'Estimation & Planning', pct:71},
+      {name:'Scrum Artifacts', pct:64}, {name:'Scaling & Adoption', pct:48}
+    ];
+    document.getElementById('moduleEng').innerHTML = mods.map(function(m){
+      return '<div class="mengrow"><div class="mengtop"><span>'+m.name+'</span><b>'+m.pct+'%</b></div>'+
+        '<div class="mengbar"><div class="mengfill" style="width:'+m.pct+'%"></div></div></div>';
+    }).join('');
+    var users = [
+      {email:'am•••@ford.com', signed:'2 hours ago', sessions:3, mastered:'24/27', streak:5, active:'Just now', status:'active'},
+      {email:'pr•••@tcs.com', signed:'5 hours ago', sessions:2, mastered:'18/27', streak:3, active:'1h ago', status:'active'},
+      {email:'ja•••@wipro.com', signed:'yesterday', sessions:4, mastered:'27/27', streak:7, active:'3h ago', status:'active'},
+      {email:'sn•••@accenture.com', signed:'yesterday', sessions:1, mastered:'9/27', streak:1, active:'yesterday', status:'idle'},
+      {email:'ra•••@infosys.com', signed:'2 days ago', sessions:5, mastered:'25/27', streak:6, active:'2h ago', status:'active'},
+      {email:'ke•••@hcl.com', signed:'2 days ago', sessions:2, mastered:'14/27', streak:2, active:'yesterday', status:'active'},
+      {email:'me•••@cognizant.com', signed:'3 days ago', sessions:1, mastered:'6/27', streak:1, active:'3 days ago', status:'idle'},
+      {email:'th•••@techm.com', signed:'3 days ago', sessions:6, mastered:'27/27', streak:8, active:'30min ago', status:'active'},
+      {email:'ne•••@capgemini.com', signed:'4 days ago', sessions:0, mastered:'3/27', streak:0, active:'4 days ago', status:'idle'},
+      {email:'vi•••@ibm.com', signed:'just now', sessions:0, mastered:'3/27', streak:1, active:'Just now', status:'new'}
+    ];
+    document.querySelector('#userTable tbody').innerHTML = users.map(function(u){
+      return '<tr><td class="email">'+u.email+'</td><td>'+u.signed+'</td>'+
+        '<td class="num">'+u.sessions+'</td><td class="num">'+u.mastered+'</td>'+
+        '<td class="num">🔥 '+u.streak+'</td><td>'+u.active+'</td>'+
+        '<td><span class="status '+u.status+'">'+(u.status==='active'?'● Active':u.status==='new'?'● New':'○ Idle')+'</span></td></tr>';
+    }).join('');
+  }
+
+  updateStreak();
+  buildSEO();
+  buildSessionQueue();
+  renderCard();
+  if (location.hash === '#admin') showRoute('admin');
+})();
+</script>
