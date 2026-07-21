@@ -14,8 +14,8 @@
   :root{
     --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
     --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
-    --accent-400:#A574E8; --accent-500:#8543D9; --accent-600:#5A2E93; --accent-700:#4F2183; --accent-glow:#B592E8;
-    --accent-soft:rgba(133,67,217,.10); --accent-line:rgba(133,67,217,.28);
+    --accent-400:#6C3BAA; --accent-500:#5A2E93; --accent-600:#421E70; --accent-700:#331556; --accent-glow:#B592E8;
+    --accent-soft:rgba(90,46,147,.10); --accent-line:rgba(90,46,147,.28);
     --gold:#D4A85A;
     --good:#3E9C6F; --good-soft:rgba(62,156,111,.14);
     --again:#E15A55; --again-soft:rgba(225,90,85,.14);
@@ -29,7 +29,7 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(133,67,217,.06), transparent 60%);
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(90,46,147,.06), transparent 60%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -46,13 +46,13 @@
     background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
     box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
   header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
-    background:linear-gradient(90deg, transparent 0%, rgba(133,67,217,.28) 50%, transparent 100%); }
+    background:linear-gradient(90deg, transparent 0%, rgba(90,46,147,.28) 50%, transparent 100%); }
   .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
     height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
   .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
-    box-shadow:0 0 20px -4px rgba(133,67,217,.42); }
+    box-shadow:0 0 20px -4px rgba(90,46,147,.42); }
   .brand .btxt{ line-height:1.1 }
   .brand .btxt .n{ display:block; font-family:var(--font-display); font-weight:700; font-size:.92rem }
   .brand .btxt .s{ display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
@@ -62,7 +62,7 @@
   @media(max-width:640px){ .topmeta{ display:none } }
   .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
     padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
-    transition:.15s; box-shadow:0 0 16px -6px rgba(133,67,217,.45); border:1px solid var(--accent-500); }
+    transition:.15s; box-shadow:0 0 16px -6px rgba(90,46,147,.45); border:1px solid var(--accent-500); }
   .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
   .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
     font-family:var(--font-mono); font-weight:600; font-size:.7rem; letter-spacing:.04em;
@@ -80,7 +80,7 @@
   .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
   .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
     width:800px; height:600px; pointer-events:none;
-    background:radial-gradient(ellipse, rgba(133,67,217,.14), transparent 60%);
+    background:radial-gradient(ellipse, rgba(90,46,147,.14), transparent 60%);
     filter:blur(8px); }
   .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
     display:flex; flex-direction:column; align-items:center; gap:1.1rem }
@@ -225,10 +225,10 @@
   }
   .summary.celebrate .sbadge::after{
     content:''; position:absolute; inset:-6px; border-radius:50%;
-    box-shadow:0 0 0 0 rgba(133,67,217,.45); animation:badgeRing 1.4s ease-out both;
+    box-shadow:0 0 0 0 rgba(90,46,147,.45); animation:badgeRing 1.4s ease-out both;
   }
   @keyframes badgeRing{
-    0%{ box-shadow:0 0 0 0 rgba(133,67,217,.45), 0 0 0 0 rgba(133,67,217,.35) }
+    0%{ box-shadow:0 0 0 0 rgba(90,46,147,.45), 0 0 0 0 rgba(133,67,217,.35) }
     100%{ box-shadow:0 0 0 22px rgba(133,67,217,0), 0 0 0 44px rgba(133,67,217,0) }
   }
   .summary.celebrate h3{ animation:slideUp .5s .2s cubic-bezier(.2,.6,.4,1) both }
@@ -390,7 +390,7 @@
     padding:1.2rem 1.4rem; border-radius:12px; margin-top:.9rem; text-align:left;
     display:flex; flex-direction:column; gap:.7rem; position:relative; overflow:hidden; }
   .coursecta::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.4;
-    background:radial-gradient(ellipse 70% 55% at 100% 0%, rgba(133,67,217,.28), transparent 60%); }
+    background:radial-gradient(ellipse 70% 55% at 100% 0%, rgba(90,46,147,.28), transparent 60%); }
   .coursecta > *{ position:relative }
   .coursecta .ctaeye{ font-family:var(--font-mono); font-size:.64rem; letter-spacing:.14em;
     text-transform:uppercase; color:var(--accent-500); font-weight:700; }
@@ -403,7 +403,7 @@
   .coursecta .ctarow{ display:flex; gap:.6rem; flex-wrap:wrap; align-items:center }
   .coursecta a.gobtn{ font-family:inherit; font-weight:700; font-size:.9rem; background:var(--accent-500);
     color:var(--ink-950); border-radius:10px; padding:.75rem 1.3rem; text-decoration:none; white-space:nowrap;
-    box-shadow:0 0 22px -5px rgba(133,67,217,.42); }
+    box-shadow:0 0 22px -5px rgba(90,46,147,.42); }
   .coursecta a.gobtn:hover{ background:var(--accent-400) }
   .coursecta a.golink{ font-family:inherit; font-weight:600; font-size:.82rem; color:#F1F5F9;
     text-decoration:none; padding:.7rem 1.1rem; border:1px solid rgba(255,255,255,.18); border-radius:10px; }
@@ -481,9 +481,10 @@
 
 <header class="top">
   <div class="topinner">
-    <a class="brand" id="brandLink">
-      <span class="logo">AS</span>
-      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Invensis Learning</span></span>
+    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">
+      <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="brandlogo" width="140" height="34">
+      <span class="brandsep"></span>
+      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Certification Exam Prep</span></span>
     </a>
     <div class="topright">
       <span class="topmeta">Free · No signup for 3 cards</span>
@@ -997,7 +998,7 @@
     summaryCard.classList.add('celebrate');
     var confetti = document.createElement('div');
     confetti.className = 'confetti';
-    var COLORS = ['#8543D9','#B592E8','#5A2E93','#4DA3C7','#3E9C6F','#E8993A','#E15A55'];
+    var COLORS = ['#5A2E93','#B592E8','#5A2E93','#4DA3C7','#3E9C6F','#E8993A','#E15A55'];
     for (var ci = 0; ci < 40; ci++){
       var s = document.createElement('span');
       var angle = (Math.random() * Math.PI) - (Math.PI/2);
