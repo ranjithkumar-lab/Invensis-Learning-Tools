@@ -918,7 +918,7 @@
     stageEl.style.display='none'; gateStage.style.display='none'; emptyStage.style.display='none'; summaryStage.style.display='flex';
     var easy=0,good=0,again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
-    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+    again = Object.keys(sessionAgainCount).length;
     var next=null;
     CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
     var nextMsg = '';
@@ -1224,7 +1224,7 @@
     if (name === 'Learner') name = 'ASM Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; }
-    for (var k2 in sessionAgainCount){ again += sessionAgainCount[k2]; }
+    again = Object.keys(sessionAgainCount).length;
     var uniqueCards = Object.keys(sessionRatings).length;
     var stillAgain = 0;
     for (var kk in sessionRatings){ if (sessionRatings[kk]==='again') stillAgain++; }
