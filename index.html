@@ -182,7 +182,7 @@
   .cardaction:hover{ color:var(--accent-500); border-color:var(--accent-500); background:var(--accent-soft) }
   .cardaction svg{ width:14px; height:14px }
 
-  .card{ position:relative; width:100%; height:400px; cursor:pointer; }
+  .card{ position:relative; width:100%; height:300px; cursor:pointer; }
   .card .face{ position:absolute; inset:0; border-radius:16px; border:1px solid var(--line);
     box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
     display:flex; flex-direction:column; padding:2rem 2.2rem;
@@ -489,7 +489,7 @@
       <ol>
         <li><span class="step-n">1</span><div class="step-body"><span class="step-t">See the term</span><span class="step-d">Read it, then try to say the meaning in your own words.</span></div></li>
         <li><span class="step-n">2</span><div class="step-body"><span class="step-t">Tap to flip</span><span class="step-d">See the real answer. Check how close you got.</span></div></li>
-        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Hard, Good, or Easy.</span></div></li>
+        <li><span class="step-n">3</span><div class="step-body"><span class="step-t">Say how you did</span><span class="step-d">Pick Didn't Know, Almost, or Knew It.</span></div></li>
       </ol>
     </div>
 
@@ -823,13 +823,13 @@
       '<div class="rate">' +
         '<button class="again" data-rate="again">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>' +
-          '<span>Hard</span><span class="keyhint">1 · ←</span></button>' +
+          '<span>Didn't Know</span><span class="keyhint">1 · ←</span></button>' +
         '<button class="good" data-rate="good">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
-          '<span>Good</span><span class="keyhint">2 · →</span></button>' +
+          '<span>Almost</span><span class="keyhint">2 · →</span></button>' +
         '<button class="easy" data-rate="easy">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' +
-          '<span>Easy</span><span class="keyhint">3 · ↑</span></button>' +
+          '<span>Knew It</span><span class="keyhint">3 · ↑</span></button>' +
       '</div>';
     backFace.querySelectorAll('.rate button').forEach(function(b){
       b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
@@ -949,9 +949,9 @@
           '<div class="wslide" data-slide="1">' +
             '<div class="slidehead"><span class="sheye">Your session</span><h3>How you rated each card</h3></div>' +
             '<div class="stats">' +
-              '<div class="stat easy"><b>'+easy+'</b><span>Easy</span></div>' +
-              '<div class="stat good"><b>'+good+'</b><span>Good</span></div>' +
-              '<div class="stat again"><b>'+again+'</b><span>Hard</span></div>' +
+              '<div class="stat easy"><b>'+easy+'</b><span>Knew It</span></div>' +
+              '<div class="stat good"><b>'+good+'</b><span>Almost</span></div>' +
+              '<div class="stat again"><b>'+again+'</b><span>Didn't Know</span></div>' +
             '</div>' +
             '<p style="text-align:center;font-size:.85rem;color:var(--text-soft);margin:0">Download the full session report or share your progress.</p>' +
             '<div class="actions">' +
@@ -1273,9 +1273,9 @@
     var cardsHtml = ratedIdx.map(function(cardIdx, i){
       var c = CARDS[cardIdx];
       var r = sessionRatings[cardIdx];
-      var badge = r==='easy' ? '<span class="rbadge easy">EASY</span>'
-                : r==='good' ? '<span class="rbadge good">GOOD</span>'
-                : '<span class="rbadge hard">HARD</span>';
+      var badge = r==='easy' ? '<span class="rbadge easy">KNEW IT</span>'
+                : r==='good' ? '<span class="rbadge good">ALMOST</span>'
+                : '<span class="rbadge hard">DIDN'T KNOW</span>';
       return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
     }).join('');
 
@@ -1349,9 +1349,9 @@
         '</div>' +
       '</div>' +
       '<div class="split">' +
-        '<div class="s e"><b>'+easy+'</b><span>Easy</span></div>' +
-        '<div class="s g"><b>'+good+'</b><span>Good</span></div>' +
-        '<div class="s h"><b>'+again+'</b><span>Hard</span></div>' +
+        '<div class="s e"><b>'+easy+'</b><span>Knew It</span></div>' +
+        '<div class="s g"><b>'+good+'</b><span>Almost</span></div>' +
+        '<div class="s h"><b>'+again+'</b><span>Didn't Know</span></div>' +
       '</div>' +
       '<h2>Concepts you studied</h2>' +
       cardsHtml +
@@ -1384,7 +1384,7 @@
     if (!tooltipDismissed){ tooltipDismissed=true; tooltip.style.display='none'; }
     flipped = !flipped;
     cardEl.classList.toggle('flipped', flipped);
-    hint.textContent = flipped ? 'Rate yourself: Hard, Good, or Easy' : 'Try to recall, then flip';
+    hint.textContent = flipped ? 'Rate yourself: Didn't Know, Almost, or Knew It' : 'Try to recall, then flip';
   });
 
   var touchStart=null;
