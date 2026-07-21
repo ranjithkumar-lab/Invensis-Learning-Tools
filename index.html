@@ -794,12 +794,14 @@
 
   function renderGate(){
     stageEl.style.display='none'; gateStage.style.display='flex'; summaryStage.style.display='none'; emptyStage.style.display='none';
-    var locked = CARDS.filter(function(c){return !c.free;}).slice(0,10);
-    var tiles = locked.map(function(c){ return '<span class="peektile">'+c.term+'</span>'; }).join('')
-      + '<span class="peektile more">+'+(CARDS.length-FREE_LIMIT-locked.length)+' more</span>';
+    // Show up to 8 sample locked concepts from THIS session queue as preview tiles
+    var lockedInSession = queue.map(function(i){ return CARDS[i]; }).filter(function(c){ return !c.free; }).slice(0, 8);
+    var extraCount = Math.max(0, queue.length - lockedInSession.length);
+    var tiles = lockedInSession.map(function(c){ return '<span class="peektile">'+c.term+'</span>'; }).join('')
+      + (extraCount > 0 ? '<span class="peektile more">+'+extraCount+' more</span>' : '');
     gateCard.innerHTML =
       '<span class="eyebrow">Unlock the rest</span>' +
-      '<h3>Get all '+(CARDS.length-FREE_LIMIT)+' remaining flashcards</h3>' +
+      '<h3>Continue with '+queue.length+' more flashcard'+(queue.length===1?'':'s')+' in this session</h3>' +
       '<p class="peek">What is inside:</p>' +
       '<div class="peektiles">'+tiles+'</div>' +
       '<form id="gateForm">' +
@@ -812,7 +814,7 @@
       e.preventDefault();
       state.unlocked=true; state.email=document.getElementById('gateEmail').value; saveState();
       gateCard.innerHTML =
-        '<div class="sentmsg">✓ Unlocked. All '+(CARDS.length-FREE_LIMIT)+' remaining cards are available.</div>' +
+        '<div class="sentmsg">✓ Welcome, '+ name +'! Continue with the rest of your session.</div>' +
         '<button class="submit" style="align-self:flex-start" id="continueBtn">Continue studying</button>';
       document.getElementById('continueBtn').addEventListener('click', function(){
         gateStage.style.display='none'; stageEl.style.display='flex';
