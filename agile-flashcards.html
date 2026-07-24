@@ -1,0 +1,1505 @@
+<title>Agile Certification Flashcards | Invensis Learning</title>
+<meta name="description" content="Free Agile certification exam prep tool. 75 concept flashcards covering broad Agile knowledge: Scrum, Kanban, Lean, XP, SAFe, DSDM, Agile leadership, metrics, and more. Recall-first study with spaced repetition.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Agile Certification Flashcards","description":"75 recall-based flashcards covering broad Agile certification knowledge: Scrum, Kanban, Lean, XP, SAFe, scaling frameworks, Agile leadership, metrics, and continuous improvement.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', 'Consolas', 'JetBrains Mono', 'Roboto Mono', monospace;
+  }
+
+  :root{
+    --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
+    --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
+    --accent-400:#E91E63; --accent-500:#C2185B; --accent-600:#AD1457; --accent-700:#880E4F; --accent-glow:#F48FB1;
+    --accent-soft:rgba(194,24,91,.10); --accent-line:rgba(194,24,91,.28);
+    --gold:#D4A85A;
+    --good:#D4880A; --good-soft:rgba(212,136,10,.14);
+    --again:#E15A55; --again-soft:rgba(225,90,85,.14);
+    --easy:#3E9C6F; --easy-soft:rgba(62,156,111,.16);
+    --lock:#7C6394; --lock-soft:rgba(124,99,148,.12);
+    --page-bg:#FFFFFF; --panel-bg:#FFFFFF; --text:#090909; --text-soft:#5C6678; --line:rgba(9,9,9,.10);
+    --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+    --shadow-md:0 14px 36px -14px rgba(15,26,43,.22), 0 2px 6px -1px rgba(15,26,43,.06);
+  }
+  html{ color-scheme: light; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(194,24,91,.06), transparent 60%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{ background:var(--page-bg); color:var(--text); min-height:100vh;
+    font-family:var(--font-body); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    line-height:1.55; text-rendering:optimizeLegibility; }
+  ::selection{ background:var(--accent-500); color:var(--ink-950); }
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--accent-500); outline-offset:2px; border-radius:6px;
+  }
+
+  /* header */
+  header.top{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
+  header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+    background:linear-gradient(90deg, transparent 0%, rgba(194,24,91,.28) 50%, transparent 100%); }
+  .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
+    height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
+  .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
+    box-shadow:0 0 20px -4px rgba(194,24,91,.42); }
+  .brand .btxt{ line-height:1.1 }
+  .brand .btxt .n{ display:block; font-family:var(--font-display); font-weight:700; font-size:.92rem }
+  .brand .btxt .s{ display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
+  .topright{ display:flex; align-items:center; gap:.7rem }
+  .topmeta{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em;
+    color:var(--text-soft); padding:.3rem 0; }
+  @media(max-width:640px){ .topmeta{ display:none } }
+  .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
+    padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
+    transition:.15s; box-shadow:0 0 16px -6px rgba(194,24,91,.45); border:1px solid var(--accent-500); }
+  .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
+  .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
+    font-family:var(--font-mono); font-weight:600; font-size:.7rem; letter-spacing:.04em;
+    border:1px solid var(--line); }
+  .pill .plbl{ font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-soft); }
+  .pill .pval{ font-family:var(--font-display); font-size:.82rem; font-weight:700; }
+  .pill.streak .pval{ color:var(--gold) }
+  .pill.xp .pval{ color:var(--accent-500) }
+  @media(max-width:520px){ .pill{ display:none } }
+
+  /* main tool page */
+  .page{ max-width:640px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,32px) 48px;
+    display:flex; flex-direction:column; gap:1.5rem; }
+  /* HERO */
+  .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
+  .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
+    width:800px; height:600px; pointer-events:none;
+    background:radial-gradient(ellipse, rgba(194,24,91,.14), transparent 60%);
+    filter:blur(8px); }
+  .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
+    display:flex; flex-direction:column; align-items:center; gap:1.1rem }
+  .hero-title{ font-family:var(--font-display); font-weight:600; letter-spacing:-.025em;
+    font-size:clamp(2rem,5vw,3rem); line-height:1.08; margin:.5rem 0 0; text-wrap:balance;
+     }
+  .hero-title em{ font-style:italic; font-weight:500; color:var(--accent-600);
+    background:linear-gradient(120deg, var(--accent-600), var(--accent-500));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+     }
+  .hero-desc{ font-size:1rem; line-height:1.6; color:var(--text-soft); max-width:52ch; margin:0; }
+  .hero-stats{ display:flex; align-items:center; gap:.9rem; margin-top:.3rem; padding:.9rem 1.4rem;
+    background:var(--panel-bg); border:1px solid var(--line); border-radius:99px; box-shadow:var(--shadow-sm) }
+  .hstat{ display:flex; flex-direction:column; gap:.05rem; align-items:center; min-width:60px }
+  .hstat b{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; color:var(--text);
+     }
+  .hstat span{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft) }
+  .hstatsep{ width:1px; height:22px; background:var(--line) }
+  @media(max-width:520px){ .hero-stats{ flex-wrap:wrap; border-radius:14px } }
+
+  .pagehead{ text-align:center; padding:.2rem 0 0; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-mono);
+    font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-500); font-weight:600; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--accent-500); }
+  .eyebrow::after{ content:""; width:22px; height:1px; background:var(--accent-500); }
+  .eyebrow.center{ justify-content:center }
+  .pagehead h1{ font-family:var(--font-display); font-weight:600; letter-spacing:-.02em;
+    font-size:clamp(1.6rem,3vw,1.9rem); margin:.75rem 0 .35rem; text-wrap:balance;
+     line-height:1.1; }
+  .pagehead .sub{ font-size:.82rem; color:var(--text-soft); max-width:44ch; margin:0 auto; }
+
+  /* how-to card */
+  .howto{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.2rem 1.4rem; box-shadow:var(--shadow-sm); }
+  .howto .htitle{ font-family:var(--font-display); font-weight:700; font-size:.95rem; color:var(--text);
+    margin-bottom:.85rem; display:flex; align-items:center; gap:.5rem; }
+  .howto .htitle .ico{ width:24px; height:24px; border-radius:50%; background:var(--accent-soft);
+    color:var(--accent-500); display:flex; align-items:center; justify-content:center; font-size:.74rem; font-weight:800; }
+  .howto ol{ display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:.8rem; padding:0; margin:0; list-style:none; }
+  .howto li{ display:flex; gap:.55rem; align-items:flex-start; }
+  .howto .step-n{ flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+    background:var(--panel-bg); border:1px solid var(--accent-500);
+    color:var(--accent-500); font-family:var(--font-display); font-weight:700; font-size:.78rem;
+    display:flex; align-items:center; justify-content:center; }
+  .howto .step-body{ display:flex; flex-direction:column; gap:.15rem }
+  .howto .step-t{ font-size:.82rem; color:var(--text); font-weight:600; }
+  .howto .step-d{ font-size:.75rem; color:var(--text-soft); line-height:1.45 }
+
+  /* themed page background */
+  .page{ background:linear-gradient(180deg, rgba(194,24,91,.06) 0%, rgba(194,24,91,.02) 40%, transparent 100%);
+    border-radius:24px; border:1px solid rgba(194,24,91,.08); }
+
+  /* intro screen */
+  .intro-screen{ display:flex; justify-content:center; padding:1rem 0; }
+  .intro-card{ background:var(--panel-bg); border:1px solid var(--line); border-radius:18px;
+    padding:2.5rem 2rem; box-shadow:var(--shadow-md); text-align:center; width:100%;
+    display:flex; flex-direction:column; align-items:center; gap:1rem; }
+  .intro-logo{ height:32px; width:auto; margin-bottom:.3rem; }
+  .intro-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.4rem,3vw,1.8rem);
+    color:var(--text); margin:0; letter-spacing:-.02em; }
+  .intro-sub{ font-size:.88rem; color:var(--text-soft); max-width:40ch; margin:0; line-height:1.55; }
+  .intro-hook{ font-size:.78rem; color:var(--accent-500); font-weight:600; margin:0; }
+  .intro-steps{ display:flex; flex-direction:column; gap:.6rem; width:100%; max-width:380px;
+    text-align:left; margin:.5rem 0; }
+  .intro-step{ display:flex; align-items:center; gap:.7rem; font-size:.85rem; color:var(--text);
+    padding:.6rem .9rem; background:var(--accent-soft); border-radius:10px;
+    border:1px solid var(--accent-line); }
+  .intro-step-n{ width:26px; height:26px; border-radius:50%; flex-shrink:0;
+    background:var(--accent-500); color:#FFF; font-family:var(--font-display); font-weight:700;
+    font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+  .intro-start{ font-family:inherit; font-weight:700; font-size:1rem; background:var(--accent-500);
+    color:#FFF; border:none; border-radius:12px; padding:.85rem 2.2rem; cursor:pointer;
+    box-shadow:0 4px 16px -4px var(--accent-500); transition:.18s; margin-top:.4rem; }
+  .intro-start:hover{ transform:translateY(-2px); filter:brightness(1.1);
+    box-shadow:0 8px 24px -6px var(--accent-500); }
+  .intro-fine{ font-size:.72rem; color:var(--text-soft); margin:0; }
+
+  /* panel brand (visible in blog embed) */
+  .panelbrand{ display:flex; align-items:center; gap:.6rem; padding-bottom:.8rem;
+    border-bottom:1px solid var(--line); margin-bottom:.2rem; }
+  .panelbrand img{ height:24px; width:auto; }
+  .panelbrand-sep{ width:1px; height:18px; background:var(--line); }
+  .panelbrand-label{ font-family:var(--font-display); font-weight:700; font-size:.82rem;
+    color:var(--accent-500); letter-spacing:-.01em; }
+
+  /* study panel */
+  .studypanel{ background:var(--panel-bg); border:1px solid var(--line);
+    border-radius:18px; padding:1.6rem clamp(1.2rem,3vw,1.8rem); box-shadow:var(--shadow-md);
+    display:flex; flex-direction:column; gap:1.2rem; }
+  .paneltop{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; }
+  .panelmeta{ display:flex; gap:.8rem; align-items:baseline; font-size:.78rem; color:var(--text-soft); flex-wrap:wrap }
+  .panelmeta b{ color:var(--text); font-family:var(--font-display); font-weight:700; font-size:.88rem }
+  .panelmeta .dot{ width:4px; height:4px; border-radius:50%; background:var(--slate-300); display:inline-block; margin:0 .1rem }
+  .toolbtn{ font-family:var(--font-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--line); color:var(--text-soft); border-radius:99px;
+    padding:.35rem .7rem; cursor:pointer; transition:.15s; }
+  .toolbtn:hover{ border-color:var(--accent-500); color:var(--accent-500) }
+  .toolbtn.on{ background:var(--text); color:var(--page-bg); border-color:var(--text) }
+  .seoindex{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+  .progress{ display:flex; flex-direction:column; gap:.4rem }
+  .progressbar-row{ display:flex; align-items:center; gap:.6rem; }
+  .barrow{ flex:1; height:5px; background:var(--slate-200); border-radius:99px; overflow:hidden; display:flex }
+  .barfill{ height:100%; transition:width .3s ease }
+  .barfill.mastered{ background:var(--accent-500) }
+  .barfill.review{ background:var(--again) }
+  .progresscount{ font-family:var(--font-mono); font-size:.7rem; color:var(--text-soft); white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .progresscount b{ color:var(--text); }
+
+  .stage{ display:flex; flex-direction:column; align-items:center; gap:.9rem; }
+  .cardwrap{ width:100%; perspective:1400px; position:relative; touch-action:pan-y; user-select:none;
+    padding:6px 8px 10px; }
+  .cardwrap::before, .cardwrap::after{ content:""; position:absolute; inset:6px 8px 10px;
+    border-radius:16px; background:var(--panel-bg); border:1px solid var(--line);
+    z-index:-1; box-shadow:var(--shadow-sm); }
+  .cardwrap::before{ transform:translate(-6px,-6px) rotate(-1.5deg); opacity:.7 }
+  .cardwrap::after{ transform:translate(6px,-3px) rotate(1.2deg); opacity:.5 }
+
+  /* progress dot grid */
+  .prompt-icon{ display:inline-block; width:.7em; height:.7em; vertical-align:-.05em; margin-right:.3em; }
+
+  .cardactions{ position:absolute; top:14px; right:16px; display:flex; gap:.35rem; z-index:2 }
+  .cardaction{ width:30px; height:30px; border-radius:8px; background:transparent; border:1px solid var(--line);
+    color:var(--text-soft); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.15s; padding:0 }
+  .cardaction:hover{ color:var(--accent-500); border-color:var(--accent-500); background:var(--accent-soft) }
+  .cardaction svg{ width:14px; height:14px }
+
+  .card{ position:relative; width:100%; height:290px; cursor:pointer; }
+  .card .face{ position:absolute; inset:0; border-radius:16px; border:1px solid var(--line);
+    box-shadow:var(--shadow-md); background:var(--panel-bg); backface-visibility:hidden;
+    display:flex; flex-direction:column; padding:1.6rem 2rem;
+    transition:transform .55s cubic-bezier(.4,.2,.2,1), box-shadow .25s ease; overflow:hidden; }
+  .card:hover .face:not(.back){ box-shadow: 0 20px 40px -16px rgba(15,26,43,.28), 0 4px 10px -2px rgba(15,26,43,.08); }
+  .card .back{ transform:rotateY(180deg);
+    background:linear-gradient(160deg, var(--ink-900), var(--ink-850)); color:#ECEFF4; border-color:transparent; }
+  .card.flipped .face.front{ transform:rotateY(-180deg) }
+  .card.flipped .face.back{ transform:rotateY(0deg) }
+  @media (prefers-reduced-motion:reduce){ .card .face{ transition:none } }
+  .prompt{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent-500); margin-bottom:1.1rem; font-weight:600; }
+  .card .back .prompt{ color:var(--accent-glow); margin-bottom:.6rem; }
+  .term{ font-family:var(--font-display); font-weight:600; font-size:clamp(1.5rem,3.8vw,1.85rem);
+    line-height:1.15; letter-spacing:-.015em; text-wrap:balance; margin-top:auto; margin-bottom:auto; color:inherit;
+     }
+  .def{ font-size:.95rem; line-height:1.55; margin-top:.4rem; color:inherit;
+    overflow:hidden; }
+  .flipcue{ align-self:flex-end; font-size:.66rem; color:var(--text-soft);
+    font-family:var(--font-mono); letter-spacing:.04em; }
+  .card .back .flipcue{ color:rgba(236,239,244,.7); align-self:flex-start; }
+
+  .rate{ display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:auto; }
+  .rate button{ font-family:inherit; font-weight:700; font-size:.72rem; padding:.5rem .4rem;
+    border-radius:9px; border:1px solid transparent; cursor:pointer; transition:.18s;
+    display:flex; flex-direction:column; gap:.2rem; align-items:center; }
+  .rate button svg{ width:16px; height:16px; stroke-width:2; opacity:.9 }
+  .rate .again{ background:var(--again-soft); color:var(--again); border-color:var(--again); }
+  .rate .good{ background:var(--good-soft); color:var(--good); border-color:var(--good); }
+  .rate .easy{ background:var(--easy-soft); color:var(--easy); border-color:var(--easy); }
+  .rate button:hover{ transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 6px 16px -6px currentColor }
+
+  .summary{ position:relative; overflow:visible; }
+  .summary.celebrate .summary-top{ animation:slideUp .5s .2s cubic-bezier(.2,.6,.4,1) both }
+  .summary.celebrate .score-ring-val{ animation:scoreCount .8s .4s cubic-bezier(.2,.6,.4,1) both }
+  @keyframes scoreCount{
+    0%{ opacity:0; transform:scale(.5) }
+    60%{ transform:scale(1.15) }
+    100%{ opacity:1; transform:scale(1) }
+  }
+  .summary.celebrate .pill-stats .pill-stat{ animation:statPop .4s cubic-bezier(.34,1.56,.64,1) both }
+  .summary.celebrate .pill-stats .pill-stat:nth-child(1){ animation-delay:.6s }
+  .summary.celebrate .pill-stats .pill-stat:nth-child(2){ animation-delay:.7s }
+  .summary.celebrate .pill-stats .pill-stat:nth-child(3){ animation-delay:.8s }
+  @keyframes statPop{
+    0%{ opacity:0; transform:translateY(10px) scale(.8) }
+    100%{ opacity:1; transform:translateY(0) scale(1) }
+  }
+  .summary.celebrate .actions{ animation:slideUp .5s .95s cubic-bezier(.2,.6,.4,1) both }
+  @keyframes slideUp{
+    0%{ opacity:0; transform:translateY(16px) }
+    100%{ opacity:1; transform:translateY(0) }
+  }
+  @media (prefers-reduced-motion:reduce){ .summary.celebrate *{ animation:none !important; } }
+
+  .confetti{ position:absolute; pointer-events:none; inset:0; overflow:visible; z-index:5 }
+  .confetti span{
+    position:absolute; width:10px; height:14px; opacity:0;
+    top:60px; left:50%; border-radius:2px;
+    animation:confettiFall 2.2s cubic-bezier(.2,.6,.4,1) both;
+  }
+  @keyframes confettiFall{
+    0%{ opacity:0; transform:translate(0,0) rotate(0) scale(0) }
+    12%{ opacity:1; transform:translate(0,-20px) scale(1) rotate(45deg) }
+    100%{ opacity:0; transform:translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(1) }
+  }
+  @media (prefers-reduced-motion:reduce){ .confetti{ display:none } }
+
+  /* --- Session complete wizard (3 slides) --- */
+  .wizard{ position:relative; }
+  .wizardnav{ display:flex; justify-content:space-between; align-items:center; margin-bottom:1.4rem; gap:1rem; }
+  .wnav{ font-family:var(--font-body); font-size:.78rem; font-weight:600; background:transparent;
+    border:1px solid var(--line); color:var(--text-soft); border-radius:8px; padding:.5rem .9rem;
+    cursor:pointer; transition:.15s; display:inline-flex; align-items:center; gap:.4rem }
+  .wnav svg{ width:14px; height:14px }
+  .wnav:hover:not(:disabled){ border-color:var(--accent-500); color:var(--accent-500) }
+  .wnav:disabled{ opacity:.35; cursor:not-allowed }
+  .wnav.next{ background:var(--accent-500); color:#FFF; border-color:var(--accent-500) }
+  .wnav.next:hover{ background:var(--accent-400); color:#FFF }
+  .wdots{ display:flex; gap:8px; align-items:center; }
+  .wdot{ width:8px; height:8px; border-radius:50%; background:var(--line); transition:all .3s ease; }
+  .wdot.active{ background:var(--accent-500); width:26px; border-radius:4px; }
+  .wslides{ position:relative; }
+  .wslide{ display:none; animation:wslideIn .45s cubic-bezier(.2,.6,.4,1) both; }
+  .wslide.active{ display:flex; flex-direction:column; gap:1.1rem; }
+  @keyframes wslideIn{ 0%{ opacity:0; transform:translateX(24px) } 100%{ opacity:1; transform:translateX(0) } }
+  @media(prefers-reduced-motion:reduce){ .wslide{ animation:none } }
+
+  .slidehead{ text-align:center; }
+  .slidehead .sheye{ font-family:var(--font-mono); font-size:.66rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-500); font-weight:700; margin-bottom:.5rem; display:block }
+  .slidehead h3{ font-size:1.4rem; margin:0; font-weight:700; }
+  .slidehead p{ font-size:.87rem; color:var(--text-soft); margin:.5rem 0 0; }
+
+
+  .iconbtn{ display:inline-flex; align-items:center; gap:.45rem }
+  .iconbtn svg{ width:15px; height:15px; flex-shrink:0 }
+
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:.55rem; }
+  .stats .stat{ position:relative; }
+  .stats .stat .staticon{ position:absolute; top:.55rem; right:.55rem; width:16px; height:16px; opacity:.4 }
+
+  .reltoolico svg{ width:18px; height:18px; margin-right:.3rem; vertical-align:-2px }
+  .rate button:active{ transform:translateY(0); filter:brightness(.96) }
+
+  .spark-burst{ position:fixed; pointer-events:none; z-index:999; }
+  .spark{ position:absolute; left:0; top:0; color:var(--accent-500); font-size:1rem; font-weight:900;
+    animation:sparkOut .8s cubic-bezier(.2,.6,.4,1) forwards; will-change:transform,opacity; text-shadow:0 0 8px currentColor; }
+  .spark.gold{ color:var(--gold); }
+  .spark.big{ font-size:1.3rem; }
+  @keyframes sparkOut{
+    0%{ transform:translate(0,0) scale(.3); opacity:0 }
+    20%{ opacity:1; transform:translate(calc(var(--dx)*.35), calc(var(--dy)*.35)) scale(1.1) rotate(60deg); }
+    100%{ transform:translate(var(--dx), var(--dy)) scale(.5) rotate(280deg); opacity:0 }
+  }
+  @media (prefers-reduced-motion:reduce){ .spark{ animation:none; opacity:0 } }
+
+  .scoreblock{ display:flex; flex-direction:column; align-items:center; gap:.8rem; padding:1.2rem 0; }
+  .score-ring-wrap{ position:relative; width:105px; height:105px; flex-shrink:0; }
+  .score-ring{ width:100%; height:100%; transform:rotate(-90deg); }
+  .score-ring-bg{ fill:none; stroke:var(--line); stroke-width:8; }
+  .score-ring-fill{ fill:none; stroke:var(--accent-500); stroke-width:8; stroke-linecap:round;
+    transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-ring-center{ position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; }
+  .score-ring-val{ font-family:var(--font-display); font-weight:800; font-size:1.7rem; line-height:1;
+    color:var(--text); font-variant-numeric:tabular-nums; }
+  .score-ring-val sup{ font-size:.9rem; opacity:.6; }
+  .score-ring-grade{ font-family:var(--font-display); font-weight:700; font-size:.72rem;
+    color:var(--accent-500); letter-spacing:.02em; margin-top:.15rem; }
+  .scoredesc{ font-size:.82rem; color:var(--text-soft); margin:0; text-align:center;
+    max-width:32ch; line-height:1.5; }
+
+  /* gate */
+  .gatecard{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem 1.8rem; display:flex; flex-direction:column; gap:.9rem; width:100%; box-shadow:var(--shadow-md); min-height:290px; }
+  .gatecard h3{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; margin:0; text-wrap:balance }
+  .gatecard .lossline{ font-size:.87rem; color:var(--text); margin:0; line-height:1.55; }
+  .gatecard .lossline b{ color:var(--accent-500) }
+  .gatecard .socialproof{ display:flex; align-items:center; gap:.5rem;
+    font-size:.73rem; color:var(--text-soft); border:1px dashed var(--line); border-radius:8px;
+    padding:.55rem .8rem; margin:0; }
+  .gatecard .socialproof b{ color:var(--text) }
+  .gatecard .peek{ font-size:.66rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:.09em; margin:0; font-weight:600; }
+  .peektiles{ display:flex; flex-wrap:wrap; gap:.35rem; }
+  .peektile{ font-size:.72rem; padding:.28rem .55rem; border-radius:6px; background:var(--lock-soft);
+    color:var(--lock); border:1px solid rgba(124,99,148,.28); filter:blur(.4px); }
+  .peektile.more{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-line); filter:none; font-weight:600; }
+  .gatecard form{ display:flex; flex-direction:column; gap:.5rem; margin-top:.2rem; }
+  .gatecard form input{ font-family:inherit; font-size:.88rem; padding:.7rem .95rem; border-radius:9px;
+    border:1px solid var(--line); background:var(--page-bg); color:var(--text); outline:none; }
+  .gatecard form input:focus{ border-color:var(--accent-500) }
+  .gatecard form button.submit{ margin-top:.2rem }
+  .gatecard button.submit{ font-family:inherit; font-weight:700; font-size:.85rem; background:var(--accent-500);
+    color:#FFF; border:none; border-radius:9px; padding:.65rem 1.1rem; cursor:pointer; transition:opacity .2s, filter .2s; }
+  .gatecard button.submit.gatedim{ opacity:.35; cursor:not-allowed; filter:grayscale(.4); }
+  .gatecard button.submit:not(.gatedim):hover{ filter:brightness(1.1); }
+  .gatecard .sentmsg{ background:var(--good-soft); color:var(--good); font-weight:600; font-size:.85rem;
+    padding:.7rem .9rem; border-radius:10px; }
+
+  /* summary */
+  .summary{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.4rem 1.6rem; display:flex; flex-direction:column; gap:.8rem; width:100%; box-shadow:var(--shadow-md); min-height:290px; }
+  .summary .sbadge{ display:none; }
+  .summary h3{ font-family:var(--font-display); font-weight:700; font-size:1.1rem; margin:0 }
+  .summary p{ font-size:.82rem; color:var(--text-soft); margin:0; line-height:1.5 }
+  .summary-top{ display:flex; align-items:center; gap:1.4rem; }
+  .summary-right{ flex:1; display:flex; flex-direction:column; gap:.5rem; }
+  .summary-right h3{ text-align:left; }
+  .summary-right .scoredesc{ text-align:left; max-width:none; }
+  .feelgood{ font-size:.78rem; color:var(--accent-500); font-weight:600; margin:0; }
+  .cta-trust{ font-size:.65rem; color:var(--text-soft); text-align:center; margin-top:-.2rem; }
+  .pill-stats{ display:flex; gap:.4rem; flex-wrap:wrap; }
+  .pill-stat{ display:inline-flex; align-items:center; gap:.3rem; padding:.25rem .65rem; border-radius:99px;
+    font-size:.72rem; font-weight:600; }
+  .pill-stat b{ font-family:var(--font-display); font-variant-numeric:tabular-nums; }
+  .pill-stat.easy{ background:var(--easy-soft); color:var(--easy); }
+  .pill-stat.good{ background:var(--good-soft); color:var(--good); }
+  .pill-stat.again{ background:var(--again-soft); color:var(--again); }
+  .summary .stats{ display:none; }
+  .summary .actions{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:.2rem; position:relative; }
+  .share-menu{ position:absolute; bottom:calc(100% + .5rem); right:0; background:var(--panel-bg);
+    border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-md);
+    padding:.5rem; display:flex; flex-direction:column; gap:.25rem; z-index:10; min-width:160px;
+    animation:fadeIn .15s ease; }
+  @keyframes fadeIn{ from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+  .share-opt{ display:flex; align-items:center; gap:.6rem; padding:.5rem .7rem; border-radius:8px;
+    text-decoration:none; color:var(--text); font-size:.8rem; font-weight:500; transition:.12s;
+    border:none; background:none; cursor:pointer; font-family:inherit; width:100%; }
+  .share-opt:hover{ background:var(--accent-soft); color:var(--accent-500); }
+  .share-opt svg{ width:18px; height:18px; flex-shrink:0; }
+  .summary .xpearned{ background:var(--accent-soft); color:var(--accent-500); font-weight:700; font-size:.84rem;
+    padding:.45rem .85rem; border-radius:99px; align-self:center; }
+  .summary .nextdue{ font-size:.76rem; color:var(--text-soft); font-style:italic; }
+  .emptystate{ background:var(--panel-bg); border:1px solid var(--line); border-radius:14px;
+    padding:1.6rem; text-align:center; display:flex; flex-direction:column; gap:.7rem; box-shadow:var(--shadow-sm); min-height:290px; justify-content:center; }
+  .emptystate h3{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; margin:0 }
+  .emptystate p{ font-size:.85rem; color:var(--text-soft); margin:0 }
+
+  /* milestone overlay */
+  .milestone-overlay{ position:absolute; inset:0; border-radius:16px; z-index:5;
+    background:linear-gradient(0deg, rgba(15,21,33,.96) 55%, rgba(15,21,33,.6) 75%, transparent 100%);
+    display:flex; align-items:flex-end; animation:moSlideUp .35s ease both; }
+  .milestone-overlay.mo-out{ animation:moSlideDown .3s ease both; }
+  @keyframes moSlideUp{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes moSlideDown{ from{opacity:1;transform:translateY(0)} to{opacity:0;transform:translateY(20px)} }
+  .mo-content{ padding:1.2rem 1.6rem 1.4rem; width:100%; }
+  .mo-head{ display:flex; align-items:center; gap:.5rem; margin-bottom:.4rem; }
+  .mo-badge{ font-size:1.2rem; line-height:1; }
+  .mo-title{ font-family:var(--font-display); font-weight:600; font-size:.95rem; color:#ECEFF4; }
+  .mo-msg{ font-size:.78rem; color:rgba(236,239,244,.6); margin:0 0 .7rem; line-height:1.5; }
+  .mo-actions{ display:flex; align-items:center; gap:.6rem; }
+  .mo-cta{ font-family:inherit; font-weight:600; font-size:.8rem; text-decoration:none;
+    padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:#FFF; transition:.15s; }
+  .mo-cta:hover{ filter:brightness(1.1); transform:translateY(-1px); }
+  .mo-skip{ font-family:inherit; font-weight:500; font-size:.78rem; background:transparent;
+    border:none; color:rgba(236,239,244,.4); cursor:pointer; transition:.15s; padding:.4rem .5rem; }
+  .mo-skip:hover{ color:rgba(236,239,244,.8); }
+
+  /* course cta strip (inside summary) */
+  .coursecta{ background:linear-gradient(135deg, #0F172A, #1E293B); color:#F1F5F9;
+    padding:.9rem 1.1rem; border-radius:10px; margin-top:.6rem;
+    display:flex; align-items:center; gap:1rem; }
+  .coursecta .ctxt{ flex:1; min-width:0 }
+  .coursecta .ctxt h4{ font-weight:700; font-size:.85rem; color:#FFF; margin:0 }
+  .coursecta .ctxt p{ font-size:.68rem; color:rgba(241,245,249,.5); margin:.2rem 0 0; line-height:1.35 }
+  .coursecta .cta-btns{ display:flex; flex-direction:column; gap:.35rem; flex-shrink:0 }
+  .coursecta a.gobtn{ font-family:inherit; font-weight:700; font-size:.75rem; background:var(--accent-500);
+    color:#FFF; border-radius:7px; padding:.45rem .9rem; text-decoration:none; white-space:nowrap; text-align:center }
+  .coursecta a.gobtn:hover{ background:var(--accent-400) }
+  .coursecta a.golink{ font-family:inherit; font-weight:600; font-size:.72rem; color:rgba(241,245,249,.7);
+    text-decoration:none; white-space:nowrap; text-align:center }
+  .coursecta a.golink:hover{ color:var(--accent-500) }
+
+  /* Related tools section */
+  .reltools{ margin-top:.8rem; padding:1rem 1.2rem; background:var(--panel-bg);
+    border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm) }
+  .reltoolshead{ font-family:var(--font-body); font-weight:700; font-size:.78rem; color:var(--text); margin-bottom:.7rem;
+    padding-bottom:.5rem; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:.45rem;
+    letter-spacing:.03em; text-transform:uppercase }
+  .reltoolshead::before{ content:""; width:3px; height:12px; background:var(--accent-500); border-radius:2px }
+  .reltoolsgrid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:.5rem }
+  .reltool{ display:flex; flex-direction:column; gap:.25rem; padding:.65rem .8rem;
+    background:var(--page-bg); border:1px solid var(--line); border-radius:8px; text-decoration:none;
+    color:var(--text); transition:.18s; cursor:pointer }
+  .reltool:hover{ border-color:var(--accent-500); background:var(--accent-soft);
+    transform:translateY(-1px) }
+  .reltoolico{ display:inline-flex; align-items:center; justify-content:center;
+    padding:.15rem .4rem; border-radius:5px; background:var(--accent-soft);
+    color:var(--accent-600); font-weight:700; font-size:.6rem; letter-spacing:.09em;
+    align-self:flex-start; margin-bottom:.1rem }
+  .reltoolt{ font-weight:600; font-size:.8rem; color:var(--text); line-height:1.3;
+    display:flex; align-items:center; gap:.4rem; flex-wrap:wrap }
+  .reltoold{ font-size:.7rem; color:var(--text-soft); line-height:1.4 }
+
+  .contactstrip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:.5rem;
+    margin-top:.6rem; padding:.75rem 1rem; background:var(--panel-bg); border:1px solid var(--line);
+    border-radius:10px; box-shadow:var(--shadow-sm) }
+  .contactitem{ display:flex; flex-direction:column; gap:.1rem }
+  .contactitem b{ font-size:.58rem; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft); font-weight:700;
+    display:flex; align-items:center; }
+  .contactitem a{ font-size:.78rem; color:var(--text); text-decoration:none; font-weight:600 }
+  .contactitem a:hover{ color:var(--accent-500) }
+  .contactstrip .cicon{ width:12px; height:12px; margin-right:.3rem; vertical-align:middle; opacity:.7 }
+  .coursecta .testimonial{ background:rgba(255,255,255,.04); border-left:3px solid var(--accent-500);
+    border-radius:0 8px 8px 0; padding:.9rem 1.1rem; }
+  .coursecta .tquote{ font-style:italic; font-size:.9rem; line-height:1.5; color:#F1F5F9; margin:0 0 .5rem }
+  .coursecta .tattr{ font-size:.72rem; color:rgba(241,245,249,.6); margin:0 }
+  .coursecta .tname{ color:var(--accent-glow); font-weight:700 }
+
+  /* footer */
+  footer.foot{ border-top:1px solid var(--line); padding:1.3rem clamp(20px,4vw,32px); text-align:center;
+    font-size:.75rem; color:var(--text-soft); background:var(--panel-bg); }
+  footer.foot a{ color:var(--accent-500); text-decoration:none }
+
+  .emailsent{ display:flex; gap:.55rem; align-items:center; padding:.65rem .9rem;
+    background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px;
+    font-size:.82rem; color:var(--text); flex-wrap:wrap; }
+  .emailsent .esicoinline{ width:16px; height:16px; color:var(--accent-500); flex-shrink:0; }
+  .emailsent b{ font-weight:700; color:var(--accent-600); }
+  .emailsent a{ margin-left:auto; color:var(--accent-500); text-decoration:none; font-weight:600; font-size:.75rem; }
+  .emailsent a:hover{ text-decoration:underline; }
+
+  .howto{ position:relative; }
+  .howtoclose{ position:absolute; top:.55rem; right:.65rem; width:24px; height:24px; border-radius:6px;
+    border:1px solid var(--line); background:transparent; color:var(--text-soft); cursor:pointer;
+    font-size:1rem; line-height:1; padding:0; display:flex; align-items:center; justify-content:center; }
+  .howtoclose:hover{ background:var(--accent-soft); color:var(--accent-500); border-color:var(--accent-500); }
+  .pagetitle{ font-family:var(--font-display); font-weight:700; font-size:1.05rem;
+    letter-spacing:-.005em; color:var(--text); margin:0; line-height:1.4; }
+  .pagelead{ font-family:var(--font-body); font-weight:400; font-size:.9rem;
+    color:var(--text-soft); margin-left:.3rem; }
+
+  .achievement{ display:flex; gap:.6rem; align-items:center; padding:.55rem .8rem;
+    background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:8px; margin-top:.4rem }
+  .achievement .ach-icon{ font-size:1rem; flex-shrink:0 }
+  .achievement .ach-text{ flex:1; display:flex; align-items:baseline; gap:.4rem; flex-wrap:wrap }
+  .achievement .ach-text b{ font-size:.78rem; color:var(--text); font-weight:600; line-height:1.3 }
+  .achievement .ach-text span{ font-size:.68rem; color:var(--text-soft); line-height:1.3 }
+</style>
+
+<header class="top">
+  <div class="topinner">
+    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-certification-courses/" target="_blank" rel="noopener">
+      <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="brandlogo" width="140" height="34" loading="eager" decoding="async">
+      <span class="brandsep"></span>
+      <span class="btxt"><span class="n">Agile Flashcards</span><span class="s">Certification Exam Prep</span></span>
+    </a>
+    <div class="topright">
+      <span class="topmeta">Free · No signup for 3 cards</span>
+      <a class="topcta" href="https://www.invensislearning.com/agile-certification-courses/" target="_blank" rel="noopener">Full course &#8594;</a>
+    </div>
+  </div>
+</header>
+
+<main id="appView">
+  <div class="page">
+
+    <div class="intro-screen" id="introScreen">
+      <div class="intro-card">
+        <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="intro-logo" width="140" height="34" loading="eager" decoding="async">
+        <h2 class="intro-title">Agile Certification Flashcards</h2>
+        <p class="intro-sub">Master core Agile concepts across all frameworks</p>
+        <p class="intro-hook">Average first-attempt score is 68%. Can you beat it?</p>
+        <div class="intro-steps">
+          <div class="intro-step"><span class="intro-step-n">1</span><span>Read the term</span></div>
+          <div class="intro-step"><span class="intro-step-n">2</span><span>Flip to check</span></div>
+          <div class="intro-step"><span class="intro-step-n">3</span><span>Rate your recall</span></div>
+        </div>
+        <button class="intro-start" id="startBtn">Start now</button>
+      </div>
+    </div>
+
+    <div class="studypanel" id="studyPanel" style="display:none">
+      <div class="panelbrand">
+        <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" width="110" height="27" loading="eager" decoding="async">
+        <span class="panelbrand-sep"></span>
+        <span class="panelbrand-label">Agile Flashcards</span>
+      </div>
+      <div class="paneltop">
+        <div class="panelmeta">
+          <span id="dueNote">15 cards left in this session</span>
+        </div>
+
+      </div>
+
+      <nav class="seoindex" aria-hidden="true"><h2>Deck contents</h2><ul id="seoList"></ul></nav>
+
+      <div class="progress">
+        <div class="progressbar-row">
+          <div class="barrow"><div class="barfill mastered" id="barMastered" style="width:0%"></div><div class="barfill review" id="barReview" style="width:0%"></div></div>
+          <span class="progresscount"><b id="pLeft">0</b> of <b id="pTotal">15</b></span>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="cardwrap" id="cardWrap">
+          <div class="card" id="card">
+            <div class="face front"></div>
+            <div class="face back"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="gateStage" style="display:none">
+        <div class="gatecard" id="gateCard"></div>
+      </div>
+
+      <div class="stage" id="summaryStage" style="display:none">
+        <div class="summary" id="summaryCard"></div>
+      </div>
+
+      <div class="stage" id="emptyStage" style="display:none">
+        <div class="emptystate">
+          <h3>You are all caught up</h3>
+          <p id="emptyMsg">Nothing is due for review today. Come back tomorrow, or work the deck now.</p>
+          <button class="toolbtn on" id="reviewAnyway" style="align-self:center">Review deck anyway</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'invensis-agile-flashcards-v1';
+
+  var CARDS = [
+    {id:'agile-manifesto',cat:'Agile Foundations',term:'Agile Manifesto',def:'Four values published in 2001: Individuals and interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan.',free:true},
+    {id:'twelve-principles',cat:'Agile Foundations',term:'12 Agile Principles',def:'Guidelines behind the Manifesto covering: highest priority is customer satisfaction through early and continuous delivery, welcome changing requirements, deliver frequently, business and developers work together daily, build projects around motivated individuals, face-to-face conversation, working software as primary measure of progress, sustainable pace, technical excellence, simplicity, self-organising teams, and regular reflection.'},
+    {id:'empiricism',cat:'Agile Foundations',term:'Empiricism',def:'Knowledge comes from experience and decisions are based on observation. Implemented through three pillars: Transparency (the process is visible to all), Inspection (artifacts and progress are frequently examined), and Adaptation (adjustments are made when deviations are detected).'},
+    {id:'iterative-incremental',cat:'Agile Foundations',term:'Iterative vs Incremental',def:'Iterative: building in cycles, refining based on feedback. Incremental: delivering usable pieces over time. Agile combines both — each iteration produces an increment of value that can be inspected and adapted upon.'},
+    {id:'servant-leadership',cat:'Agile Foundations',term:'Servant Leadership',def:'A leadership philosophy where the leader focuses on serving the team\'s needs, removing impediments, and enabling others to perform their best. Central to the Scrum Master role and Agile leadership in general.'},
+    {id:'adaptive-vs-predictive',cat:'Agile Foundations',term:'Adaptive vs Predictive Planning',def:'Predictive (Waterfall): plan everything upfront, follow the plan. Adaptive (Agile): plan at a high level, detail plans just-in-time, adjust based on learning. Agile accepts that requirements and solutions evolve through collaboration.'},
+    {id:'done-definition',cat:'Agile Foundations',term:'Definition of Done (DoD)',def:'A shared checklist of quality criteria that every increment must meet before it is considered complete. Ensures transparency and consistent quality. Created by the team and may include coding standards, testing, documentation, and deployment requirements.'},
+    {id:'user-stories',cat:'Agile Foundations',term:'User Stories',def:'Short descriptions of functionality from the user\'s perspective: "As a [role], I want [goal], so that [benefit]." They are placeholders for conversations, not detailed specifications. Often accompanied by acceptance criteria.'},
+    {id:'invest-criteria',cat:'Agile Foundations',term:'INVEST Criteria',def:'Six qualities of a good user story: Independent (minimal dependencies), Negotiable (details are discussed), Valuable (delivers user/business value), Estimable (team can size it), Small (fits in one iteration), Testable (clear acceptance criteria).'},
+    {id:'acceptance-criteria',cat:'Agile Foundations',term:'Acceptance Criteria',def:'Specific conditions that a user story must satisfy to be accepted by the Product Owner. Written before development begins. Often use Given-When-Then format. They remove ambiguity and provide a basis for testing.'},
+    {id:'timebox',cat:'Agile Foundations',term:'Timeboxing',def:'Setting a fixed maximum duration for an activity. If the activity isn\'t complete when time runs out, it still ends. Used in Sprints, Sprint events, and other Agile practices to maintain focus and predictability.'},
+    {id:'scrum-framework',cat:'Scrum Framework',term:'Scrum Framework',def:'A lightweight framework for developing complex products. Built on empiricism and lean thinking. Consists of one team (3 accountabilities), 5 events, and 3 artifacts with commitments. Designed to be simple but hard to master.',free:true},
+    {id:'scrum-team',cat:'Scrum Framework',term:'Scrum Team Composition',def:'A small team (typically 10 or fewer) with three accountabilities: Product Owner (maximises value), Scrum Master (enables effectiveness), Developers (create the increment). Cross-functional, self-managing, no sub-teams or hierarchies.'},
+    {id:'sprint',cat:'Scrum Framework',term:'Sprint',def:'A fixed-length timebox (usually 1-4 weeks) during which a Done, usable increment is created. The heart of Scrum. Contains Sprint Planning, Daily Scrums, Sprint Review, and Sprint Retrospective. No changes that endanger the Sprint Goal.'},
+    {id:'sprint-planning',cat:'Scrum Framework',term:'Sprint Planning',def:'First event of the Sprint (max 8 hours for a 1-month Sprint). Addresses three topics: Why is this Sprint valuable? (Sprint Goal) What can be Done? (selected backlog items) How will the work get done? (plan for the first days). Output: Sprint Backlog.'},
+    {id:'daily-scrum',cat:'Scrum Framework',term:'Daily Scrum',def:'A 15-minute daily event for Developers to inspect progress toward the Sprint Goal and adapt the Sprint Backlog. Not a status meeting. Developers choose the format. Held same time/place to reduce complexity.'},
+    {id:'sprint-review',cat:'Scrum Framework',term:'Sprint Review',def:'Held at the end of the Sprint to inspect the Increment and adapt the Product Backlog. The team presents what was accomplished and discusses what to do next. Collaborative working session, not a presentation. Max 4 hours.'},
+    {id:'sprint-retrospective',cat:'Scrum Framework',term:'Sprint Retrospective',def:'The final Sprint event where the Scrum Team inspects how the last Sprint went regarding people, interactions, processes, and tools. Identifies improvements and creates an actionable plan. Max 3 hours for a monthly Sprint.'},
+    {id:'product-backlog',cat:'Scrum Framework',term:'Product Backlog',def:'An ordered list of everything needed to improve the product. Single source of work for the Scrum Team. Continuously refined. Commitment: Product Goal — the future state of the product that serves as a target.'},
+    {id:'sprint-backlog',cat:'Scrum Framework',term:'Sprint Backlog',def:'The Sprint Goal (why), the selected Product Backlog items (what), and the plan for delivering them (how). Owned by Developers. A real-time picture of work planned for the Sprint. Commitment: Sprint Goal.'},
+    {id:'increment',cat:'Scrum Framework',term:'Increment',def:'A concrete stepping stone toward the Product Goal. Each increment is additive to all prior increments and must be verified to work together. Must meet the Definition of Done to be released. Multiple increments can be created within a Sprint.'},
+    {id:'backlog-refinement',cat:'Scrum Framework',term:'Product Backlog Refinement',def:'The ongoing activity of breaking down and further defining Product Backlog items into smaller, more precise items. Adds details, estimates, and order. Usually consumes no more than 10% of the Sprint capacity. Not a formal Scrum event.'},
+    {id:'sprint-goal',cat:'Scrum Framework',term:'Sprint Goal',def:'The single objective for the Sprint. Creates coherence and focus. Selected during Sprint Planning. If work turns out different than expected, the scope may be renegotiated with the PO without affecting the Sprint Goal.'},
+    {id:'kanban-method',cat:'Kanban Method',term:'Kanban Method',def:'A method for managing knowledge work that focuses on visualising workflow, limiting work in progress (WIP), managing flow, making policies explicit, implementing feedback loops, and improving collaboratively. Evolutionary, not revolutionary.',free:true},
+    {id:'wip-limits',cat:'Kanban Method',term:'Work In Progress (WIP) Limits',def:'Explicit constraints on how many items can be in each workflow state simultaneously. Reduce multitasking, expose bottlenecks, improve flow and throughput. A defining practice of Kanban that pulls work rather than pushing it.'},
+    {id:'kanban-board',cat:'Kanban Method',term:'Kanban Board',def:'A visual tool that shows work items as cards moving through columns representing workflow stages (e.g., To Do → In Progress → Review → Done). Makes work visible, reveals bottlenecks, and helps teams manage flow.'},
+    {id:'pull-system',cat:'Kanban Method',term:'Pull System',def:'Work is pulled into the next stage only when capacity is available, rather than pushed based on a schedule. Prevents overloading, reduces wait times, and improves flow. WIP limits enforce the pull mechanism.'},
+    {id:'lead-time',cat:'Kanban Method',term:'Lead Time vs Cycle Time',def:'Lead Time: total time from when a request is made until it is delivered (customer perspective). Cycle Time: time from when work actually begins until it is completed (team perspective). Both are key Kanban metrics for flow.'},
+    {id:'cumulative-flow',cat:'Kanban Method',term:'Cumulative Flow Diagram (CFD)',def:'A stacked area chart showing the number of items in each workflow state over time. Reveals bottlenecks (widening bands), scope changes (top line), and throughput trends. Key visual management tool in Kanban.'},
+    {id:'explicit-policies',cat:'Kanban Method',term:'Explicit Policies',def:'Clear, visible rules that govern how work flows through the system. Examples: DoD per column, WIP limits, prioritisation criteria, when to pull new work. Making policies explicit enables rational discussion about process improvements.'},
+    {id:'service-delivery',cat:'Kanban Method',term:'Service Delivery Review',def:'A Kanban cadence (meeting) that examines delivery performance using metrics like throughput, lead time, and quality. Focuses on what the team delivers to customers. Enables data-driven improvement decisions.'},
+    {id:'classes-of-service',cat:'Kanban Method',term:'Classes of Service',def:'Categories that define how different types of work are treated. Common classes: Expedite (urgent, bypasses WIP limits), Fixed Date (deadline-driven), Standard (normal flow), Intangible (technical debt, long-term investment). Each has its own policies.'},
+    {id:'lean-principles',cat:'Lean & XP',term:'Lean Software Development',def:'Adapted from Toyota\'s production system. Seven principles: Eliminate waste, Amplify learning, Decide as late as possible, Deliver as fast as possible, Empower the team, Build integrity in, Optimise the whole.'},
+    {id:'lean-waste',cat:'Lean & XP',term:'Seven Wastes in Software',def:'Partially done work, extra features (gold-plating), relearning, handoffs, task switching, delays/waiting, and defects. Lean focuses on identifying and eliminating these to improve flow and value delivery.'},
+    {id:'xp-practices',cat:'Lean & XP',term:'Extreme Programming (XP)',def:'An Agile methodology focused on engineering excellence. Core practices include pair programming, test-driven development (TDD), continuous integration, refactoring, simple design, collective code ownership, and small releases.'},
+    {id:'tdd',cat:'Lean & XP',term:'Test-Driven Development (TDD)',def:'Write a failing test first (Red), write the minimum code to pass (Green), then refactor (Refactor). Short Red-Green-Refactor cycles. Ensures code is testable, drives simple design, and builds a regression safety net.'},
+    {id:'pair-programming',cat:'Lean & XP',term:'Pair Programming',def:'Two developers work together at one workstation. Driver writes code, Navigator reviews and thinks strategically. Roles swap frequently. Improves code quality, spreads knowledge, reduces defects, and builds team capability.'},
+    {id:'continuous-integration',cat:'Lean & XP',term:'Continuous Integration (CI)',def:'Developers merge code into a shared repository multiple times a day. Each merge triggers automated builds and tests. Catches integration issues early, reduces merge conflicts, and maintains a releasable codebase.'},
+    {id:'refactoring',cat:'Lean & XP',term:'Refactoring',def:'Restructuring existing code without changing its external behaviour. Improves readability, reduces complexity, and makes the codebase easier to maintain. Done continuously as part of development, not as a separate phase.'},
+    {id:'value-stream',cat:'Lean & XP',term:'Value Stream Mapping',def:'A Lean technique that visualises the end-to-end flow of delivering value, from concept to cash. Identifies waste (wait times, handoffs, rework) and highlights improvement opportunities. Shows both information and work flow.'},
+    {id:'kaizen',cat:'Lean & XP',term:'Kaizen (Continuous Improvement)',def:'Japanese term meaning "change for better." A philosophy of ongoing, incremental improvement involving everyone. In Agile, manifested through retrospectives, experiments, and continuous process refinement.'},
+    {id:'minimal-viable',cat:'Lean & XP',term:'Minimum Viable Product (MVP)',def:'The smallest version of a product that can be released to learn whether the idea is viable. Not about building the least — it\'s about learning the most with the least effort. Validates assumptions before full investment.'},
+    {id:'safe-framework',cat:'Scaling Agile',term:'SAFe (Scaled Agile Framework)',def:'A comprehensive framework for scaling Agile across large enterprises. Organised in configurations: Essential, Large Solution, Portfolio, Full. Core concept: Agile Release Train (ART) — a team of Agile teams (50-125 people) delivering value in Program Increments.'},
+    {id:'art',cat:'Scaling Agile',term:'Agile Release Train (ART)',def:'In SAFe, a long-lived team of Agile teams (typically 50-125 people) that plans, commits, and executes together. Aligned to a value stream. Operates on a fixed Program Increment (PI) cadence, usually 8-12 weeks with 4-6 iterations.'},
+    {id:'pi-planning',cat:'Scaling Agile',term:'PI Planning',def:'A two-day event in SAFe where all ART members align on the next Program Increment. Teams identify features, dependencies, and risks. Creates visibility, commitment, and alignment. The heartbeat of the ART.'},
+    {id:'less-framework',cat:'Scaling Agile',term:'LeSS (Large-Scale Scrum)',def:'A scaling framework that applies Scrum principles at scale with minimal additional roles and artifacts. Two variants: LeSS (2-8 teams) and LeSS Huge (8+ teams). Emphasises simplicity: one Product Owner, one Product Backlog, one Definition of Done.'},
+    {id:'scrum-at-scale',cat:'Scaling Agile',term:'Scrum@Scale',def:'A scaling framework by Jeff Sutherland that uses a "Scrum of Scrums" pattern. Each Scrum team designates an ambassador. Creates a scale-free architecture where teams coordinate without heavy overhead. Focuses on two cycles: Scrum Master and Product Owner.'},
+    {id:'nexus',cat:'Scaling Agile',term:'Nexus Framework',def:'A scaling framework by Scrum.org for 3-9 Scrum teams working on one product. Adds a Nexus Integration Team responsible for coaching, coordinating, and resolving cross-team integration issues. One Product Backlog, one Definition of Done.'},
+    {id:'spotify-model',cat:'Scaling Agile',term:'Spotify Model',def:'An organisational approach (not a framework) with Squads (small autonomous teams), Tribes (collections of squads in related areas), Chapters (specialists across squads), and Guilds (cross-tribe communities of interest). Emphasises autonomy, alignment, and culture.'},
+    {id:'communities-practice',cat:'Scaling Agile',term:'Communities of Practice (CoPs)',def:'Groups of people who share a concern or passion for something and learn how to do it better through regular interaction. Cross-team knowledge sharing, standardisation, and skill development. Similar to Guilds in the Spotify model.'},
+    {id:'dependency-management',cat:'Scaling Agile',term:'Dependency Management',def:'Identifying, visualising, and resolving dependencies between teams. Critical in scaled Agile. Techniques include dependency boards, Scrum of Scrums, PI Planning, and architectural practices that reduce coupling between teams.'},
+    {id:'devops',cat:'Scaling Agile',term:'DevOps in Agile',def:'A set of practices combining software development (Dev) and IT operations (Ops). Aims for shorter development cycles, increased deployment frequency, and more dependable releases. Key enabler for Agile delivery through CI/CD pipelines, infrastructure as code, and monitoring.'},
+    {id:'product-owner-role',cat:'Agile Leadership',term:'Product Owner Role',def:'Accountable for maximising the value of the product. Manages the Product Backlog: orders items, ensures clarity, and makes scope decisions. Single person, not a committee. Must be empowered to make decisions. Represents stakeholder needs.'},
+    {id:'scrum-master-role',cat:'Agile Leadership',term:'Scrum Master as Leader',def:'A true leader who serves the Scrum Team and the larger organisation. Coaches the team in self-management, helps remove impediments, facilitates events, and promotes Agile adoption. Uses influence, not authority.'},
+    {id:'self-organising',cat:'Agile Leadership',term:'Self-Managing Teams',def:'Teams that choose who does what, when, and how. Management sets goals and boundaries; the team determines how to achieve them. Leads to higher engagement, better solutions, and faster adaptation. Requires trust and psychological safety.'},
+    {id:'psychological-safety',cat:'Agile Leadership',term:'Psychological Safety',def:'A team belief that members can take interpersonal risks without fear of punishment. Essential for Agile teams to experiment, admit mistakes, ask questions, and raise concerns. Research shows it is the #1 predictor of team effectiveness.'},
+    {id:'agile-coaching',cat:'Agile Leadership',term:'Agile Coaching',def:'Guiding individuals, teams, and organisations in adopting and improving Agile practices. Involves teaching, mentoring, facilitating, and professional coaching. Helps teams move from mechanical Agile adoption to internalised Agile mindset.'},
+    {id:'stakeholder-mgmt',cat:'Agile Leadership',term:'Stakeholder Engagement',def:'Actively involving stakeholders in the development process through Sprint Reviews, demos, and regular communication. Building trust through transparency and frequent delivery. Managing expectations by showing working increments rather than status reports.'},
+    {id:'agile-transformation',cat:'Agile Leadership',term:'Agile Transformation',def:'An organisation-wide change to adopt Agile values, principles, and practices. Goes beyond teams to include leadership, culture, structure, and governance. Common challenges: resistance to change, legacy processes, and lack of executive sponsorship.'},
+    {id:'change-management',cat:'Agile Leadership',term:'Change Management in Agile',def:'Facilitating organisational change through incremental steps. Kotter\'s model (urgency, coalition, vision, communication, empowerment, quick wins, consolidation, anchoring) applied to Agile adoption. Change is continuous, not a one-time event.'},
+    {id:'conflict-resolution',cat:'Agile Leadership',term:'Conflict Resolution',def:'Healthy conflict drives innovation in Agile teams. Five modes: Competing, Accommodating, Avoiding, Compromising, Collaborating. The Scrum Master facilitates constructive conflict resolution. Aim for collaboration where possible.'},
+    {id:'facilitation',cat:'Agile Leadership',term:'Facilitation Skills',def:'Guiding a group through a process to reach outcomes without directing the content. Key for Scrum events, workshops, and retrospectives. Techniques include timeboxing, dot voting, silent brainstorming, and open-ended questions.'},
+    {id:'velocity',cat:'Agile Metrics',term:'Velocity',def:'The amount of work a Scrum team completes in a Sprint, typically measured in story points. Used for Sprint planning and forecasting. Only meaningful for the specific team over time — never compare velocities between teams.'},
+    {id:'burndown',cat:'Agile Metrics',term:'Burndown Chart',def:'Shows work remaining versus time. Sprint Burndown tracks daily progress within a Sprint. Release Burndown tracks progress toward a release across Sprints. The ideal line shows expected progress; actual line shows real progress.'},
+    {id:'burnup',cat:'Agile Metrics',term:'Burnup Chart',def:'Shows work completed and total scope over time. Two lines: scope (top) and completed (bottom). Advantages over burndown: makes scope changes visible. When the lines meet, the work is done.'},
+    {id:'throughput',cat:'Agile Metrics',term:'Throughput',def:'The number of work items completed per unit of time. A flow metric used in Kanban. More objective than velocity because it counts actual items delivered rather than estimated sizes. Useful for probabilistic forecasting.'},
+    {id:'escaped-defects',cat:'Agile Metrics',term:'Escaped Defects',def:'Bugs found after release to production. A quality metric that measures how well the team\'s testing and Definition of Done are working. Trend downward indicates improving quality practices.'},
+    {id:'nps-score',cat:'Agile Metrics',term:'Net Promoter Score (NPS)',def:'A metric measuring customer satisfaction: "How likely are you to recommend this product?" Scored 0-10. Promoters (9-10) minus Detractors (0-6) = NPS. Used in Agile to measure whether value delivery is achieving customer satisfaction.'},
+    {id:'flow-efficiency',cat:'Agile Metrics',term:'Flow Efficiency',def:'The ratio of active work time to total lead time, expressed as a percentage. Flow Efficiency = (Active Time / Lead Time) x 100. Typical knowledge work: 15-20%. Highlights how much time items spend waiting versus being actively worked.'},
+    {id:'story-points',cat:'Agile Metrics',term:'Story Points',def:'A relative unit of measure for estimating effort, complexity, and uncertainty of a user story. Common scales: Fibonacci (1, 2, 3, 5, 8, 13, 21) or T-shirt sizes (S, M, L, XL). Relative estimation is faster and more accurate than absolute hours.'},
+    {id:'planning-poker',cat:'Agile Metrics',term:'Planning Poker',def:'A consensus-based estimation technique. Each team member privately selects a card representing their estimate. Cards are revealed simultaneously. Outliers explain their reasoning. Process repeats until consensus. Avoids anchoring bias.'},
+    {id:'cycle-time-histogram',cat:'Agile Metrics',term:'Cycle Time Histogram',def:'A chart showing the distribution of cycle times for completed work items. Reveals the most common completion time, variability, and outliers. Useful for setting service level expectations and identifying process issues.'},
+    {id:'sprint-goal-success',cat:'Agile Metrics',term:'Sprint Goal Success Rate',def:'Percentage of Sprints where the Sprint Goal is fully met. A measure of predictability and planning effectiveness. Low rates may indicate overcommitment, unclear goals, excessive interruptions, or poor refinement.'},
+    {id:'team-happiness',cat:'Agile Metrics',term:'Team Happiness / Morale',def:'A subjective metric tracked through regular surveys or happiness indices. Correlates with productivity and retention. Declining happiness often precedes quality or delivery problems. Addressed through retrospectives and one-on-ones.'},
+    {id:'wsjf',cat:'Scaling Agile',term:'WSJF (Weighted Shortest Job First)',def:'A prioritisation model used in SAFe. WSJF = Cost of Delay / Job Duration. Cost of Delay combines user-business value, time criticality, and risk reduction. Higher WSJF scores are done first. Ensures maximum economic benefit by sequencing work optimally.'}
+  ];
+
+  var SESSION_SIZE = 15;
+
+  var FREE_LIMIT = 3;
+  var INTERVAL = { again:0, good:1, easy:1 };
+  var XP_GAIN = { again:2, good:5, easy:10 };
+
+  function todayISO(){ return new Date().toISOString().slice(0,10); }
+  function addDays(d){ var x=new Date(); x.setDate(x.getDate()+d); return x.toISOString().slice(0,10); }
+  function daysDiff(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+  function loadState(){ try{ var r=localStorage.getItem(STORAGE_KEY); return r?JSON.parse(r):null; }catch(e){return null;} }
+  function saveState(){ try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); }catch(e){} }
+
+  // Testing helper: ?reset=1 in URL clears saved state and reloads clean
+  if (location.search.indexOf('reset') !== -1){
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e){}
+    if (window.history && history.replaceState){
+      history.replaceState({}, '', location.pathname + location.hash);
+    }
+  }
+
+  var state = loadState() || {
+    unlocked:false, email:'', name:'', cardStates:{}, streak:{count:0,lastActive:null},
+    totalSessionsCompleted:0, xp:0, badges:{}, howtoDismissed:false, hasStudied:false, milestoneDismissed:false
+  };
+  if (!state.badges) state.badges = {};
+
+  var BADGES = {
+    first_session: { name:'First Session', desc:'Completed your first study session', icon:'✓' },
+    three_streak: { name:'3-Day Streak', desc:'Studied 3 days in a row', icon:'★' },
+    perfect_score: { name:'Perfect Score', desc:'100% on a session', icon:'◆' },
+    deck_mastered: { name:'Deck Mastered', desc:'All 28 cards rated Nailed It', icon:'♦' },
+    persistent: { name:'Persistent', desc:'Rated 5+ cards Study Again in a session and kept going', icon:'↻' }
+  };
+
+  var TESTIMONIALS = [
+    { quote:'The spaced-repetition alone helped me pass. I stopped re-reading notes and just came back daily.', name:'Ananya M.', role:'Agile Certified, Bengaluru' },
+    { quote:'Cleared my Agile certification on the first attempt after three weeks with this + the Invensis course. Worth every rupee.', name:'Rohit K.', role:'Delivery Lead, Pune' },
+    { quote:'Best free resource I found. The scenario examples on the back of each card is what made concepts click for me.', name:'Priya S.', role:'Business Analyst, Hyderabad' }
+  ];
+
+  function updateStreak(){
+    var today = todayISO();
+    if (state.streak.lastActive === today) return;
+    if (state.streak.lastActive === addDays(-1)) state.streak.count += 1;
+    else state.streak.count = 1;
+    state.streak.lastActive = today;
+    saveState();
+  }
+
+  var queue=[], sessionShown={}, sessionRatings={}, sessionAgainCount={}, sessionXpEarned=0, milestoneShown=false;
+  var flipped=false;
+
+  var cardEl=document.getElementById('card');
+  var frontFace=cardEl.querySelector('.face.front');
+  var backFace=cardEl.querySelector('.face.back');
+  var pLeft=document.getElementById('pLeft');
+  var pTotal=document.getElementById('pTotal');
+  var barMastered=document.getElementById('barMastered');
+  var stageEl=document.getElementById('stage');
+  var gateStage=document.getElementById('gateStage');
+  var gateCard=document.getElementById('gateCard');
+  var summaryStage=document.getElementById('summaryStage');
+  var summaryCard=document.getElementById('summaryCard');
+  var emptyStage=document.getElementById('emptyStage');
+
+  var dueNote=document.getElementById('dueNote');
+  var appView=document.getElementById('appView');
+
+  function shuffleArray(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t;} return a; }
+
+
+  function buildSEO(){
+    var seo = document.getElementById('seoList');
+    seo.innerHTML = CARDS.map(function(c){ return '<li><strong>'+c.term+'</strong>: '+c.def+'</li>'; }).join('');
+  }
+
+  var sessionSize = 0;
+
+  function buildSessionQueue(){
+    var today = todayISO();
+    var freeIdx=[], dueIdx=[], newIdx=[];
+    CARDS.forEach(function(c, i){
+      var s = state.cardStates[c.id];
+      if (!s || !s.dueDate){
+        if (c.free) freeIdx.push(i);
+        else newIdx.push(i);
+      } else if (s.dueDate <= today){ dueIdx.push(i); }
+    });
+    shuffleArray(newIdx); shuffleArray(dueIdx); shuffleArray(freeIdx);
+    if (state.unlocked){
+      var combined = dueIdx.concat(freeIdx).concat(newIdx);
+      queue = combined.slice(0, SESSION_SIZE);
+    } else {
+      var lockedSlots = Math.max(0, SESSION_SIZE - freeIdx.length);
+      queue = freeIdx.concat(newIdx.slice(0, lockedSlots));
+    }
+    sessionSize = queue.length;
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0; milestoneShown=false;
+  }
+
+  function distinctShown(){ var n=0; for(var k in sessionShown) if (sessionShown.hasOwnProperty(k)) n++; return n; }
+  function isAtGate(){
+    if (queue.length===0 || state.unlocked) return false;
+    if (CARDS[queue[0]].free) return false;
+    return distinctShown() >= FREE_LIMIT;
+  }
+  function masteredCount(){ var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s && (s.lastRating==='good'||s.lastRating==='easy')) n++; }); return n; }
+  function dueCount(){ var t=todayISO(); var n=0; CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate<=t) n++; }); return n; }
+
+  function updateStats(){
+    var sM=0,sR=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='good'||sessionRatings[k]==='easy') sM++; }
+    for (var k2 in sessionAgainCount){ if (!(sessionRatings[k2]==='good'||sessionRatings[k2]==='easy')) sR++; }
+    var total = sM + queue.length + sR; if (total===0) total=1;
+    var rated = sM + sR;
+    var current = queue.length > 0 ? rated + 1 : rated;
+    pLeft.textContent = current; pTotal.textContent = sessionSize || CARDS.length;
+    if (barMastered) barMastered.style.width = (rated/total*100)+'%';
+    if (state.unlocked){
+      var left = queue.length > 0 ? queue.length - 1 : 0;
+      if (masteredCount() === CARDS.length) dueNote.textContent = 'Deck mastered';
+      else if (left === 0) dueNote.textContent = 'Last card in this session';
+      else dueNote.textContent = left + ' card' + (left===1?'':'s') + ' left after this';
+    } else {
+      var free = FREE_LIMIT - distinctShown();
+      dueNote.textContent = '';
+    }
+  }
+
+  function renderGate(){
+    stageEl.style.display='none'; gateStage.style.display='flex'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    gateCard.innerHTML =
+      '<span class="eyebrow">Unlock the rest</span>' +
+      '<h3>Continue with '+queue.length+' more flashcard'+(queue.length===1?'':'s')+' in this session</h3>' +
+      '<p class="lossline">Enter your details to unlock the full deck.</p>' +
+      '<form id="gateForm">' +
+        '<input type="text" id="gateName" placeholder="Your name" required autocomplete="name">' +
+        '<input type="email" id="gateEmail" placeholder="you@company.com" required autocomplete="email">' +
+        '<button type="submit" class="submit gatedim" id="gateSubmit" disabled>Continue learning</button>' +
+      '</form>';
+    var gateNameEl = document.getElementById('gateName');
+    var gateEmailEl = document.getElementById('gateEmail');
+    var gateSubmitEl = document.getElementById('gateSubmit');
+    function validateGate(){
+      var name = gateNameEl.value.trim();
+      var email = gateEmailEl.value.trim();
+      var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      var valid = name.length >= 2 && emailValid;
+      gateSubmitEl.disabled = !valid;
+      gateSubmitEl.classList.toggle('gatedim', !valid);
+    }
+    gateNameEl.addEventListener('input', validateGate);
+    gateEmailEl.addEventListener('input', validateGate);
+    document.getElementById('gateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      state.unlocked=true; state.name=gateNameEl.value.trim(); state.email=gateEmailEl.value.trim(); saveState();
+      gateStage.style.display='none'; stageEl.style.display='flex';
+      renderCard();
+    });
+  }
+
+  function renderCard(){
+    if (queue.length===0){
+      updateStats();
+      if (Object.keys(sessionRatings).length > 0){ showSummary(); return; }
+      stageEl.style.display='none'; gateStage.style.display='none'; summaryStage.style.display='none';
+      emptyStage.style.display='flex';
+      var next=null;
+      CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+      if (next){ var d=daysDiff(todayISO(),next); document.getElementById('emptyMsg').textContent='Next card is due in '+d+' day'+(d===1?'':'s')+'.'; }
+      return;
+    }
+    if (isAtGate()){ renderGate(); return; }
+    updateStats();
+    stageEl.style.display='flex'; gateStage.style.display='none'; summaryStage.style.display='none'; emptyStage.style.display='none';
+    var i = queue[0], card = CARDS[i];
+    sessionShown[i] = true;
+    cardEl.classList.remove('flipped'); flipped=false;
+    frontFace.innerHTML =
+      '<div class="cardactions">' +
+        '<button class="cardaction" data-act="audio" title="Read term aloud" aria-label="Read term aloud">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="prompt"><svg class="prompt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>Try to recall</div>' +
+      '<div class="term">'+card.term+'</div>' +
+      '<div class="flipcue">Tap to reveal definition &#x21BB;</div>';
+    backFace.innerHTML =
+      '<div class="prompt">Definition</div>' +
+      '<div class="def">'+card.def+'</div>' +
+      '<div class="rate">' +
+        '<button class="again" data-rate="again">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+          '<span>Didn\'t know</span></button>' +
+        '<button class="good" data-rate="good">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>' +
+          '<span>Almost</span></button>' +
+        '<button class="easy" data-rate="easy">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+          '<span>Knew it</span></button>' +
+      '</div>';
+    backFace.querySelectorAll('.rate button').forEach(function(b){
+      b.addEventListener('click', function(e){ e.stopPropagation(); if (flipped) handleRate(b.dataset.rate); });
+    });
+    var defEl = backFace.querySelector('.def');
+    if (defEl && card.def.length > 180){
+      defEl.style.fontSize = card.def.length > 280 ? '.82rem' : '.88rem';
+      defEl.style.lineHeight = '1.5';
+    }
+    frontFace.querySelectorAll('.cardaction').forEach(function(b){
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (b.dataset.act === 'audio' && window.speechSynthesis){
+          window.speechSynthesis.cancel();
+          var u = new SpeechSynthesisUtterance(card.term);
+          u.rate = .95; u.pitch = 1;
+          window.speechSynthesis.speak(u);
+        }
+      });
+    });
+  }
+
+  function sparkBurst(button, kind){
+    var rect = button.getBoundingClientRect();
+    var container = document.createElement('div');
+    container.className = 'spark-burst';
+    container.style.left = (rect.left + rect.width/2) + 'px';
+    container.style.top = (rect.top + rect.height/2) + 'px';
+    document.body.appendChild(container);
+    var count = kind === 'easy' ? 12 : 6;
+    var chars = kind === 'easy' ? ['★','✦','✧','•'] : ['•','✦'];
+    for (var i = 0; i < count; i++){
+      var s = document.createElement('span');
+      s.className = 'spark' + (kind === 'easy' ? ' gold' : '') + (kind === 'easy' && i%3===0 ? ' big' : '');
+      var angle = (Math.PI * 2 * i) / count + (Math.random()*.3);
+      var dist = kind === 'easy' ? 70 + Math.random()*30 : 45 + Math.random()*15;
+      s.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+      s.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+      s.style.animationDelay = (Math.random()*.1) + 's';
+      s.textContent = chars[i % chars.length];
+      container.appendChild(s);
+    }
+    setTimeout(function(){ if (container.parentNode) container.parentNode.removeChild(container); }, 1000);
+  }
+
+  function handleRate(r){
+    var i = queue[0]; if (i===undefined) return;
+    var card = CARDS[i];
+    var btn = backFace.querySelector('.rate button.' + r);
+    if (btn && r === 'easy') sparkBurst(btn, r);
+    queue.shift();
+    state.xp = (state.xp || 0) + XP_GAIN[r];
+    sessionXpEarned += XP_GAIN[r];
+    sessionRatings[i] = r;
+    if (r === 'again'){
+      sessionAgainCount[i] = (sessionAgainCount[i]||0)+1;
+    }
+    state.cardStates[card.id] = {
+      lastRating: r, dueDate: addDays(INTERVAL[r]),
+      seenCount: ((state.cardStates[card.id]&&state.cardStates[card.id].seenCount)||0)+1
+    };
+    saveState();
+    var ratedCount = Object.keys(sessionRatings).length;
+    if (ratedCount >= 10 && !milestoneShown && !state.milestoneDismissed && state.unlocked){
+      milestoneShown = true;
+      showMilestoneOverlay();
+    }
+    renderCard();
+  }
+
+  function showMilestoneOverlay(){
+    var existing = cardEl.querySelector('.milestone-overlay');
+    if (existing) return;
+    var ov = document.createElement('div');
+    ov.className = 'milestone-overlay';
+    ov.innerHTML =
+      '<div class="mo-content">' +
+        '<div class="mo-head"><span class="mo-badge">🎯</span><span class="mo-title">10 of 15 - well done</span></div>' +
+        '<p class="mo-msg">Ready to earn your Agile certification? Live instructor-led training with mock exams and a pass guarantee.</p>' +
+        '<div class="mo-actions">' +
+          '<a class="mo-cta" href="https://www.invensislearning.com/agile-certification-courses/" target="_blank" rel="noopener">View course</a>' +
+          '<button class="mo-skip" id="milestoneSkip">Skip</button>' +
+        '</div>' +
+      '</div>';
+    ov.addEventListener('click', function(e){ e.stopPropagation(); });
+    cardEl.appendChild(ov);
+    document.getElementById('milestoneSkip').addEventListener('click', function(){
+      state.milestoneDismissed = true; saveState();
+      ov.classList.add('mo-out');
+      setTimeout(function(){ ov.remove(); }, 300);
+    });
+  }
+
+  function showSummary(){
+    stageEl.style.display='none'; gateStage.style.display='none'; emptyStage.style.display='none'; summaryStage.style.display='flex';
+    var progressEl = document.querySelector('.progress');
+    if (progressEl) progressEl.style.display = 'none';
+    var panelmetaEl = document.querySelector('.panelmeta');
+    if (panelmetaEl) panelmetaEl.style.display = 'none';
+    var easy=0,good=0,again=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; else again++; }
+    var next=null;
+    CARDS.forEach(function(c){ var s=state.cardStates[c.id]; if (s&&s.dueDate&&s.dueDate>todayISO()){ if (!next||s.dueDate<next) next=s.dueDate; } });
+    var nextMsg = '';
+
+    var uniqueCards = Object.keys(sessionRatings).length;
+    var stillAgain = 0;
+    for (var kk in sessionRatings){ if (sessionRatings[kk]==='again') stillAgain++; }
+    var weightedSum = easy*100 + good*70 + stillAgain*30;
+    var score = uniqueCards > 0 ? Math.round(weightedSum / uniqueCards) : 0;
+    var grade;
+    if (score >= 90) grade = 'Excellent';
+    else if (score >= 75) grade = 'Strong';
+    else if (score >= 60) grade = 'Building up';
+    else grade = 'Keep practicing';
+
+    var percentile = Math.min(96, Math.max(20, Math.round(score * 0.95 - 5)));
+    var sessions = state.totalSessionsCompleted + 1;
+    var FEEL_GOOD = [
+      'You\'re ahead of '+percentile+'% of learners!',
+      'Top '+Math.max(4, 100-percentile)+'% this week!',
+      easy+' cards nailed instantly. You\'re building real fluency!',
+      sessions+' sessions done. Consistency is your superpower!',
+      'Your recall is getting sharper every session!',
+      'You remembered '+easy+' on sight. That\'s muscle memory!'
+    ];
+    var feelIdx = (sessions - 1) % FEEL_GOOD.length;
+    var feelLine = FEEL_GOOD[feelIdx];
+
+    summaryCard.innerHTML =
+      '<div class="summary-top">' +
+        '<div class="score-ring-wrap">' +
+          '<svg class="score-ring" viewBox="0 0 140 140"><circle class="score-ring-bg" cx="70" cy="70" r="58"/><circle class="score-ring-fill" cx="70" cy="70" r="58" stroke-dasharray="364.42" stroke-dashoffset="364.42" id="scoreRingFill"/></svg>' +
+          '<div class="score-ring-center"><span class="score-ring-val">'+score+'<sup>%</sup></span><span class="score-ring-grade">'+grade+'</span></div>' +
+        '</div>' +
+        '<div class="summary-right">' +
+          '<h3>Well done, '+ getDisplayName() +'!</h3>' +
+          '<p class="feelgood">'+feelLine+'</p>' +
+          '<div class="pill-stats">' +
+            '<span class="pill-stat easy"><b>'+easy+'</b> Knew it</span>' +
+            '<span class="pill-stat good"><b>'+good+'</b> Almost</span>' +
+            '<span class="pill-stat again"><b>'+again+'</b> Didn\'t know</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="actions">' +
+        '<button class="toolbtn on iconbtn" id="dlPdf">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+          '<span>Download PDF</span>' +
+        '</button>' +
+        '<button class="toolbtn iconbtn" id="shareBtn" data-score="'+score+'" data-grade="'+grade+'">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
+          '<span>Share</span>' +
+        '</button>' +
+        '<button class="toolbtn iconbtn" id="restartAll">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' +
+          '<span>New session</span>' +
+        '</button>' +
+      '</div>' +
+      '<div class="coursecta">' +
+        '<div class="ctxt">' +
+          '<h4>Ready for Agile certification?</h4>' +
+          '<p>Live training · Industry-recognized · Exam-focused prep</p>' +
+        '</div>' +
+        '<div class="cta-btns">' +
+          '<a class="gobtn" href="https://www.invensislearning.com/agile-certification-courses/" target="_blank" rel="noopener">View courses</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="cta-trust">4,100+ certified with Invensis · 3,800+ use this deck</div>';
+
+    document.getElementById('dlPdf').addEventListener('click', function(){ generatePdfReport(score, grade, easy, good, again); });
+
+    document.getElementById('shareBtn').addEventListener('click', function(){
+      var shareUrl = 'https://www.invensislearning.com/blog/agile-flashcards/';
+      var copyText = 'Can you beat '+score+'% on the Agile flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
+      var encodedUrl = encodeURIComponent(shareUrl);
+      var shareMenu = document.createElement('div');
+      shareMenu.className = 'share-menu';
+      shareMenu.innerHTML =
+        '<button class="share-opt" id="copyShareLink">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'+
+          '<span>Copy link</span></button>'+
+        '<button class="share-opt" id="copyShareText">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'+
+          '<span>Copy text</span></button>';
+      var existing = summaryCard.querySelector('.share-menu');
+      if (existing){ existing.remove(); return; }
+      this.parentElement.appendChild(shareMenu);
+      document.getElementById('copyShareLink').addEventListener('click', function(){
+        navigator.clipboard.writeText(shareUrl).then(function(){
+          var btn = document.getElementById('copyShareLink');
+          btn.querySelector('span').textContent = 'Link copied!';
+          setTimeout(function(){ btn.querySelector('span').textContent = 'Copy link'; }, 2000);
+        });
+      });
+      document.getElementById('copyShareText').addEventListener('click', function(){
+        navigator.clipboard.writeText(copyText).then(function(){
+          var btn = document.getElementById('copyShareText');
+          btn.querySelector('span').textContent = 'Copied!';
+          setTimeout(function(){ btn.querySelector('span').textContent = 'Copy text'; }, 2000);
+        });
+      });
+      setTimeout(function(){
+        document.addEventListener('click', function closeShare(e){
+          if (!e.target.closest('.share-menu') && !e.target.closest('#shareBtn')){
+            var sm = summaryCard.querySelector('.share-menu');
+            if (sm) sm.remove();
+            document.removeEventListener('click', closeShare);
+          }
+        });
+      }, 10);
+    });
+
+    var ringEl = document.getElementById('scoreRingFill');
+    if (ringEl){
+      var circumference = 364.42;
+      var offset = circumference - (score / 100) * circumference;
+      setTimeout(function(){ ringEl.style.strokeDashoffset = offset; }, 100);
+    }
+
+    document.getElementById('restartAll').addEventListener('click', function(){
+      state.cardStates = {}; state.milestoneDismissed = false; saveState(); buildSessionQueue();
+      summaryStage.style.display = 'none';
+      stageEl.style.display = 'flex';
+      var progressEl = document.querySelector('.progress');
+      if (progressEl) progressEl.style.display = '';
+      var panelmetaEl = document.querySelector('.panelmeta');
+      if (panelmetaEl) panelmetaEl.style.display = '';
+      renderCard();
+    });
+
+
+    state.totalSessionsCompleted++;
+
+    // Reset + re-trigger celebration so animation plays on every session complete
+    summaryCard.classList.remove('celebrate');
+    void summaryCard.offsetWidth;
+    summaryCard.classList.add('celebrate');
+    var confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    var EMOJIS = ['🎉','🏆','⭐','🔥','🎊','💪','🚀','🌟'];
+    for (var ci = 0; ci < 28; ci++){
+      var s = document.createElement('span');
+      s.textContent = EMOJIS[ci % EMOJIS.length];
+      s.style.background = 'none';
+      s.style.fontSize = (16 + Math.random() * 14) + 'px';
+      s.style.width = 'auto'; s.style.height = 'auto'; s.style.borderRadius = '0';
+      var angle = (Math.random() * Math.PI * 2);
+      var dist = 120 + Math.random() * 280;
+      s.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+      s.style.setProperty('--dy', (Math.sin(angle) * dist) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 540 - 270) + 'deg');
+      s.style.animationDelay = (Math.random() * .5) + 's';
+      s.style.left = (45 + Math.random() * 10) + '%';
+      s.style.top = '30%';
+      confetti.appendChild(s);
+    }
+    summaryCard.appendChild(confetti);
+    setTimeout(function(){ if (confetti.parentNode) confetti.parentNode.removeChild(confetti); }, 3500);
+
+    saveState();
+  }
+
+  function startTestimonialRotator(){
+    var el = summaryCard.querySelector('.testimonial');
+    if (!el) return;
+    var idx = 0;
+    function tick(){
+      idx = (idx + 1) % TESTIMONIALS.length;
+      var t = TESTIMONIALS[idx];
+      el.style.opacity = '0';
+      setTimeout(function(){
+        el.querySelector('.tquote').textContent = '"' + t.quote + '"';
+        el.querySelector('.tname').textContent = t.name;
+        el.querySelector('.trole').textContent = t.role;
+        el.style.opacity = '1';
+      }, 300);
+    }
+    if (el._rotator) clearInterval(el._rotator);
+    el._rotator = setInterval(tick, 6000);
+  }
+
+  if (!CanvasRenderingContext2D.prototype.roundRect){
+    CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r){
+      if (typeof r === 'number') r = [r,r,r,r];
+      this.beginPath();
+      this.moveTo(x + r[0], y);
+      this.lineTo(x + w - r[1], y);
+      this.quadraticCurveTo(x + w, y, x + w, y + r[1]);
+      this.lineTo(x + w, y + h - r[2]);
+      this.quadraticCurveTo(x + w, y + h, x + w - r[2], y + h);
+      this.lineTo(x + r[3], y + h);
+      this.quadraticCurveTo(x, y + h, x, y + h - r[3]);
+      this.lineTo(x, y + r[0]);
+      this.quadraticCurveTo(x, y, x + r[0], y);
+      return this;
+    };
+  }
+
+  function generateShareImage(score, grade){
+    var name = getDisplayName();
+    if (name === 'Learner'){
+      var entered = window.prompt('Enter your name for the certificate:', '');
+      if (entered){ state.name = entered; saveState(); name = entered; }
+      else name = 'Agile Learner';
+    }
+    var W = 1200, H = 630;
+    var c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    var ctx = c.getContext('2d');
+    var uniqueCards = Object.keys(sessionRatings).length;
+    var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+
+    // Clean deep gradient (professional, not gamey)
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#05091C');
+    g.addColorStop(1, '#2A0A1A');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    // Elegant single glow
+    var glow = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 500);
+    glow.addColorStop(0, 'rgba(244,143,177,0.14)');
+    glow.addColorStop(1, 'rgba(244,143,177,0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, W, H);
+
+    // Ornamental top and bottom hairlines
+    ctx.strokeStyle = 'rgba(244,143,177,0.35)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(80, 80); ctx.lineTo(W-80, 80); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(80, H-80); ctx.lineTo(W-80, H-80); ctx.stroke();
+
+    // Top-left brand (small, professional)
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.textAlign = 'left';
+    ctx.font = 'bold 12px Arial, sans-serif';
+    ctx.fillText('INVENSIS LEARNING', 90, 55);
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText('Agile · Certification Prep', 90, 72);
+
+    // Top-right date
+    ctx.textAlign = 'right';
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText(today, W-90, 62);
+
+    // Center composition: eyebrow, name, achievement, score
+    ctx.textAlign = 'center';
+    var cx = W / 2;
+
+    // Eyebrow
+    ctx.fillStyle = '#F48FB1';
+    ctx.font = 'bold 14px Arial, sans-serif';
+    ctx.fillText('CERTIFICATE OF ACCOMPLISHMENT', cx, 145);
+
+    // Presented-to line
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.font = '15px Arial, sans-serif';
+    ctx.fillText('Presented to', cx, 185);
+
+    // NAME
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 62px Arial, sans-serif';
+    var nameDisplay = name.length > 26 ? name.substring(0, 24) + '…' : name;
+    ctx.fillText(nameDisplay, cx, 245);
+
+    // Underline under name
+    var nameW = ctx.measureText(nameDisplay).width;
+    ctx.strokeStyle = 'rgba(244,143,177,0.5)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx - nameW/2 - 20, 265);
+    ctx.lineTo(cx + nameW/2 + 20, 265);
+    ctx.stroke();
+
+    // Achievement line
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.font = '19px Arial, sans-serif';
+    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile concepts', cx, 300);
+
+    // Score badge (center bottom)
+    var scoreY = 435;
+    // Outer soft ring
+    ctx.strokeStyle = 'rgba(244,143,177,0.2)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(cx, scoreY, 105, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Progress arc
+    ctx.strokeStyle = '#F48FB1';
+    ctx.lineWidth = 6;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.arc(cx, scoreY, 92, -Math.PI/2, -Math.PI/2 + (2 * Math.PI * score / 100));
+    ctx.stroke();
+    // Track
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.beginPath();
+    ctx.arc(cx, scoreY, 92, -Math.PI/2 + (2 * Math.PI * score / 100), -Math.PI/2 + 2 * Math.PI);
+    ctx.stroke();
+
+    // Score number
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 52px Arial, sans-serif';
+    ctx.fillText(score + '%', cx, scoreY + 8);
+    // Grade
+    ctx.fillStyle = '#F48FB1';
+    ctx.font = 'bold 12px Arial, sans-serif';
+    ctx.fillText(grade.toUpperCase(), cx, scoreY + 32);
+
+    // Bottom seal line
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = '11px Arial, sans-serif';
+    ctx.fillText('invensislearning.com  ·  Agile Flashcards', cx, H - 55);
+
+    var url = c.toDataURL('image/png');
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'agile-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+
+
+  function getDisplayName(){
+    if (state.name) return state.name;
+    if (state.email){
+      return state.email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    }
+    return 'Learner';
+  }
+
+  function maskEmail(e){
+    if (!e) return 'your inbox';
+    return e.replace(/^(.{2}).*(@.*)$/, '$1•••$2');
+  }
+
+  function generatePdfReport(score, grade, easy, good, again){
+    downloadPDFReport();
+  }
+
+  function downloadPDFReport(){
+    var name = getDisplayName();
+    if (name === 'Learner') name = 'Agile Learner';
+    var easy=0, good=0, again=0;
+    for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; else again++; }
+    var uniqueCards = Object.keys(sessionRatings).length;
+    var stillAgain = 0;
+    for (var kk in sessionRatings){ if (sessionRatings[kk]==='again') stillAgain++; }
+    var score = uniqueCards > 0 ? Math.round((easy*100 + good*70 + stillAgain*30) / uniqueCards) : 0;
+    var grade = score>=90?'Excellent':score>=75?'Strong':score>=60?'Building up':'Keep practicing';
+    var desc = score>=90?'You have this material down cold. Ready to sit the exam.':score>=75?'Solid grasp of the concepts. A few more sessions will lock it in.':score>=60?'You\'re getting there. Focus on the concepts you missed.':'Review the fundamentals and try again.';
+    var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+
+    var ratedIdx = Object.keys(sessionRatings).map(function(k){ return parseInt(k,10); });
+    var order = { easy: 3, good: 2, again: 1 };
+    ratedIdx.sort(function(a, b){ return (order[sessionRatings[b]]||0) - (order[sessionRatings[a]]||0); });
+
+    var cardsHtml = ratedIdx.map(function(cardIdx, i){
+      var c = CARDS[cardIdx];
+      var r = sessionRatings[cardIdx];
+      var badge = r==='easy' ? '<span class="rbadge easy">KNEW IT</span>'
+                : r==='good' ? '<span class="rbadge good">ALMOST</span>'
+                : '<span class="rbadge hard">DIDN\'T KNOW</span>';
+      return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
+    }).join('');
+
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Agile Report - '+name+'</title>' +
+      '<style>' +
+      '*{box-sizing:border-box}' +
+      'body{font-family:Arial,Helvetica,sans-serif;padding:28px 34px;color:#171717;max-width:780px;margin:0 auto;line-height:1.55}' +
+      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #C2185B;margin-bottom:16px}' +
+      '.head .brand{display:flex;align-items:center;gap:8px}' +
+      '.head .brandtxt{font-weight:bold;font-size:13px;color:#171717}' +
+      '.head .brandtxt small{display:block;color:#64748B;font-weight:400;font-size:10px;margin-top:1px}' +
+      '.head .date{font-size:10px;color:#94A3B8}' +
+      '.toprow{display:flex;align-items:center;gap:16px;margin-bottom:14px}' +
+      '.toprow .info{flex:1}' +
+      '.toprow h1{font-size:20px;margin:0 0 2px;font-weight:bold}' +
+      '.toprow .sub{font-size:11px;color:#64748B;margin:0}' +
+      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #C2185B;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
+      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#C2185B;line-height:1}' +
+      '.toprow .sc .u{font-size:7px;text-transform:uppercase;letter-spacing:.06em;color:#64748B;margin-top:1px}' +
+      '.toprow .grd{font-size:12px;font-weight:bold;color:#171717}' +
+      '.toprow .gdesc{font-size:9px;color:#475569;margin-top:1px;max-width:160px;line-height:1.3}' +
+      '.pills{display:flex;gap:8px;margin-bottom:16px}' +
+      '.pills .p{display:flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:600}' +
+      '.pills .p.e{background:#F0FDF4;color:#276842} .pills .p.g{background:#FFFBEB;color:#9A6D08} .pills .p.h{background:#FEF2F2;color:#C2534A}' +
+      '.pills .p b{font-size:13px}' +
+      'h2{font-size:15px;margin:22px 0 10px;color:#171717;font-weight:bold;padding-bottom:6px;border-bottom:1px solid #E5E5E5}' +
+      '.q{margin-bottom:10px;padding:9px 11px;background:#FAFAFA;border-radius:6px;page-break-inside:avoid}' +
+      '.qhead{display:flex;align-items:center;gap:8px;margin-bottom:3px}' +
+      '.q h3{font-size:12px;margin:0;color:#171717;font-weight:bold;flex:1}' +
+      '.q p{font-size:11px;color:#475569;margin:0;line-height:1.5}' +
+      '.rbadge{font-size:8px;font-weight:bold;letter-spacing:.08em;padding:2px 6px;border-radius:99px;white-space:nowrap;flex-shrink:0}' +
+      '.rbadge.easy{background:#D8F0E4;color:#276842}' +
+      '.rbadge.good{background:#FEF3E2;color:#9A6D08}' +
+      '.rbadge.hard{background:#FCE0DE;color:#C2534A}' +
+      '.cta{background:linear-gradient(135deg,#171717,#2A2233);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}' +
+      '.cta .ct{flex:1;min-width:220px}' +
+      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#F48FB1;font-weight:bold;display:block;margin-bottom:4px}' +
+      '.cta .ct h3{font-size:17px;margin:0 0 4px;color:#FFF;border:none;padding:0}' +
+      '.cta .ct p{font-size:11px;color:rgba(255,255,255,.75);margin:0}' +
+      '.cta .btn{display:inline-block;background:#C2185B;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
+      '.foot{display:flex;justify-content:center;gap:18px;margin-top:18px;padding-top:12px;border-top:1px solid #E5E5E5;font-size:9px;color:#94A3B8}' +
+      '.foot a{color:#94A3B8;text-decoration:none}' +
+      '.foot svg{width:11px;height:11px;vertical-align:-1px;margin-right:3px;opacity:.7}' +
+      '@page{size:A4;margin:12mm}' +
+      '@media print{body{padding:0}}' +
+      '</style></head><body>' +
+      '<div class="head">' +
+        '<div class="brand">' +
+          '<img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" style="height:24px;width:auto">' +
+          '<div class="brandtxt">Agile Flashcards<small>Study Session Report</small></div>' +
+        '</div>' +
+        '<div class="date">'+today+'</div>' +
+      '</div>' +
+      '<div class="toprow">' +
+        '<div class="info"><h1>'+name+'</h1><p class="sub">'+uniqueCards+' concepts studied</p></div>' +
+        '<div class="sc"><div class="n">'+score+'%</div><div class="u">Score</div></div>' +
+        '<div><div class="grd">'+grade+'</div><div class="gdesc">'+desc+'</div></div>' +
+      '</div>' +
+      '<div class="pills">' +
+        '<div class="p e"><b>'+easy+'</b> Knew it</div>' +
+        '<div class="p g"><b>'+good+'</b> Almost</div>' +
+        '<div class="p h"><b>'+again+'</b> Didn\'t know</div>' +
+      '</div>' +
+      '<h2>Concepts you studied</h2>' +
+      cardsHtml +
+      '<div class="cta">' +
+        '<div class="ct">' +
+          '<b>READY FOR THE REAL EXAM?</b>' +
+          '<h3>Get instructor-led Agile certification</h3>' +
+          '<p>Live training, mock exams, industry-recognized training partner.</p>' +
+        '</div>' +
+        '<a class="btn" href="https://www.invensislearning.com/agile-certification-courses/">Explore courses</a>' +
+      '</div>' +
+      '<div class="foot">' +
+        '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@invensislearning.com">contact@invensislearning.com</a></span>' +
+        '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+14702600084">+1 470-260-0084</a></span>' +
+        '<span><a href="https://www.invensislearning.com">invensislearning.com</a></span>' +
+      '</div>' +
+      '</body></html>';
+    var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+    var blobUrl = URL.createObjectURL(blob);
+    var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    var filename = 'agile-report-' + safeName + '.html';
+    var a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // Also open in new tab and trigger print
+    try {
+      var win = window.open(blobUrl, '_blank');
+      if (win){
+        win.onload = function(){ setTimeout(function(){ try { win.print(); } catch(e){} }, 400); };
+      }
+    } catch(e){}
+    setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 10000);
+  }
+
+  cardEl.addEventListener('click', function(e){
+    if (e.target.closest('.rate')) return;
+    flipped = !flipped;
+    cardEl.classList.toggle('flipped', flipped);
+  });
+
+  var touchStart=null;
+  cardEl.addEventListener('touchstart', function(e){ touchStart={x:e.touches[0].clientX, y:e.touches[0].clientY}; }, {passive:true});
+  cardEl.addEventListener('touchend', function(e){
+    if (!touchStart || !flipped){ touchStart=null; return; }
+    var dx=e.changedTouches[0].clientX-touchStart.x, dy=e.changedTouches[0].clientY-touchStart.y;
+    var absDx=Math.abs(dx), absDy=Math.abs(dy); touchStart=null;
+    if (absDx<60 && absDy<60) return;
+    if (absDx>absDy) handleRate(dx<0?'again':'good');
+    else if (dy<0) handleRate('easy');
+  }, {passive:true});
+
+  document.getElementById('reviewAnyway').addEventListener('click', function(){
+    var all = CARDS.map(function(_,i){return i;}); shuffleArray(all); queue=all;
+    sessionShown={}; sessionRatings={}; sessionAgainCount={}; sessionXpEarned=0; milestoneShown=false;
+    emptyStage.style.display='none'; stageEl.style.display='flex'; renderCard();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (gateStage.style.display!=='none'||summaryStage.style.display!=='none'||emptyStage.style.display!=='none') return;
+    if (e.target && (e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA')) return;
+    if (e.key===' '||e.key==='Enter'){ e.preventDefault(); cardEl.click(); }
+    else if (flipped){
+      if (e.key==='1') handleRate('again'); else if (e.key==='2') handleRate('good'); else if (e.key==='3') handleRate('easy');
+    }
+  });
+
+
+  var introScreen = document.getElementById('introScreen');
+  var studyPanel = document.getElementById('studyPanel');
+
+  function showStudyPanel(){
+    if (introScreen) introScreen.style.display = 'none';
+    studyPanel.style.display = 'flex';
+  }
+
+  if (state.hasStudied){
+    showStudyPanel();
+  }
+
+  document.getElementById('startBtn').addEventListener('click', function(){
+    state.hasStudied = true;
+    saveState();
+    showStudyPanel();
+  });
+
+  updateStreak();
+  buildSEO();
+  buildSessionQueue();
+  renderCard();
+})();
+</script>
