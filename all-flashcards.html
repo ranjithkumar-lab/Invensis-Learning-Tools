@@ -1,0 +1,269 @@
+<title>Agile Flashcard Tools — Invensis Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFBFC; --surface:#FFFFFF; --text:#1A1A2E; --text-soft:#64748B;
+  --line:#E2E8F0; --brand:#5A2E93; --brand-soft:rgba(90,46,147,.08);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --shadow:0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+  --shadow-hover:0 4px 12px rgba(0,0,0,.08), 0 8px 32px rgba(0,0,0,.06);
+  --radius:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0F1219; --surface:#1A1F2E; --text:#E8ECF1; --text-soft:#8B95A8;
+    --line:#2A3348; --brand:#B07CFF; --brand-soft:rgba(176,124,255,.10);
+    --shadow:0 1px 3px rgba(0,0,0,.2), 0 4px 16px rgba(0,0,0,.15);
+    --shadow-hover:0 4px 12px rgba(0,0,0,.25), 0 8px 32px rgba(0,0,0,.2);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1219; --surface:#1A1F2E; --text:#E8ECF1; --text-soft:#8B95A8;
+  --line:#2A3348; --brand:#B07CFF; --brand-soft:rgba(176,124,255,.10);
+  --shadow:0 1px 3px rgba(0,0,0,.2), 0 4px 16px rgba(0,0,0,.15);
+  --shadow-hover:0 4px 12px rgba(0,0,0,.25), 0 8px 32px rgba(0,0,0,.2);
+}
+:root[data-theme="light"]{
+  --bg:#FAFBFC; --surface:#FFFFFF; --text:#1A1A2E; --text-soft:#64748B;
+  --line:#E2E8F0; --brand:#5A2E93; --brand-soft:rgba(90,46,147,.08);
+  --shadow:0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+  --shadow-hover:0 4px 12px rgba(0,0,0,.08), 0 8px 32px rgba(0,0,0,.06);
+}
+body{
+  font-family:var(--font); background:var(--bg); color:var(--text);
+  min-height:100vh; line-height:1.5;
+}
+.wrap{
+  max-width:960px; margin:0 auto; padding:2.5rem 1.5rem 4rem;
+}
+.header{
+  display:flex; align-items:center; gap:1rem; margin-bottom:.5rem;
+}
+.header img{
+  height:32px; width:auto;
+}
+.header-sep{
+  width:1px; height:28px; background:var(--line);
+}
+.header-label{
+  font-weight:700; font-size:1.1rem; color:var(--brand);
+  letter-spacing:-.02em;
+}
+.subtitle{
+  color:var(--text-soft); font-size:.88rem; margin-bottom:2.5rem;
+  max-width:520px; line-height:1.6;
+}
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1rem;
+}
+.card{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); padding:1.25rem 1.25rem 1.25rem 1.25rem;
+  text-decoration:none; color:var(--text);
+  display:flex; flex-direction:column; gap:.6rem;
+  position:relative; overflow:hidden;
+  box-shadow:var(--shadow); transition:box-shadow .2s, border-color .2s, transform .2s;
+}
+.card:hover{
+  box-shadow:var(--shadow-hover); transform:translateY(-2px);
+  border-color:var(--accent);
+}
+.card::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--accent);
+}
+.card-top{
+  display:flex; align-items:center; gap:.65rem;
+}
+.card-dot{
+  width:36px; height:36px; border-radius:8px; flex-shrink:0;
+  background:var(--accent); display:flex; align-items:center; justify-content:center;
+  color:#FFF; font-weight:800; font-size:.7rem; letter-spacing:.02em;
+}
+.card-name{
+  font-weight:700; font-size:.95rem; letter-spacing:-.01em; line-height:1.3;
+}
+.card-meta{
+  font-size:.75rem; color:var(--text-soft); line-height:1.5;
+}
+.card-meta b{ color:var(--text); font-weight:600; }
+.card-bottom{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:auto; padding-top:.4rem;
+}
+.card-badge{
+  font-size:.65rem; font-weight:600; text-transform:uppercase;
+  letter-spacing:.08em; padding:.2rem .5rem; border-radius:4px;
+  background:var(--brand-soft); color:var(--brand);
+}
+.card-arrow{
+  color:var(--text-soft); font-size:.85rem; transition:transform .2s, color .2s;
+}
+.card:hover .card-arrow{ transform:translateX(3px); color:var(--accent); }
+.footer{
+  margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:.5rem;
+  font-size:.75rem; color:var(--text-soft);
+}
+.footer a{ color:var(--brand); text-decoration:none; }
+.cat-label{
+  font-size:.7rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--text-soft); margin:1.5rem 0 .5rem;
+  padding-left:.25rem;
+}
+.cat-label:first-of-type{ margin-top:0; }
+</style>
+
+<div class="wrap">
+  <div class="header">
+    <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" loading="eager">
+    <span class="header-sep"></span>
+    <span class="header-label">Flashcard Tools</span>
+  </div>
+  <p class="subtitle">All 10 Agile certification flashcard tools for review. Each has 75 recall-based cards, lead capture after 3 free cards, score tracking, PDF reports, and social sharing.</p>
+
+  <div class="cat-label">Agile — Category</div>
+  <div class="grid" id="catGrid"></div>
+
+  <div class="cat-label">Agile Certifications</div>
+  <div class="grid" id="certGrid"></div>
+
+  <div class="footer">
+    <span>Internal review page &middot; Not indexed</span>
+    <a href="https://github.com/ranjithkumar-lab/Invensis-Learning-Tools" target="_blank">GitHub repo</a>
+  </div>
+</div>
+
+<script>
+var courses = [
+  {
+    cat:'category',
+    name:'Agile Certification Courses',
+    short:'AGILE',
+    color:'#C2185B',
+    cards:75,
+    categories:'Foundations, Scrum, Kanban, Lean/XP, Scaling, Leadership, Metrics',
+    page:'https://frontendlearning-ten.vercel.app/agile-certification-courses/',
+    tool:'agile-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'PMI-ACP Exam Prep',
+    short:'ACP',
+    color:'#1976D2',
+    cards:75,
+    categories:'7 PMI-ACP domains',
+    page:'https://frontendlearning-ten.vercel.app/pmi-acp-certification-training/',
+    tool:'pmi-acp-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'AgilePM Foundation & Practitioner',
+    short:'APM',
+    color:'#8E24AA',
+    cards:75,
+    categories:'DSDM/AgilePM syllabus',
+    page:'https://frontendlearning-ten.vercel.app/agile-pm-certification/',
+    tool:'agile-pm-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'Agile Scrum Master (ASM)',
+    short:'ASM',
+    color:'#009DE1',
+    cards:75,
+    categories:'Scrum roles, events, artifacts, scaling',
+    page:'https://frontendlearning-ten.vercel.app/agile-scrum-master/',
+    tool:'index.html'
+  },
+  {
+    cat:'cert',
+    name:'Certified ScrumMaster (CSM)',
+    short:'CSM',
+    color:'#C48800',
+    cards:75,
+    categories:'Scrum Alliance CSM syllabus',
+    page:'https://frontendlearning-ten.vercel.app/csm-certification-training/',
+    tool:'csm-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'PRINCE2 Agile Foundation & Practitioner',
+    short:'P2A',
+    color:'#00897B',
+    cards:75,
+    categories:'PRINCE2 Agile themes, processes',
+    page:'https://frontendlearning-ten.vercel.app/prince2-agile-foundation-practitioner-certification-training/',
+    tool:'prince2-agile-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'Certified Scrum Product Owner (CSPO)',
+    short:'CSPO',
+    color:'#EF6C00',
+    cards:75,
+    categories:'Product ownership, backlog, stakeholders',
+    page:'https://frontendlearning-ten.vercel.app/cspo-certification-training/',
+    tool:'cspo-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'Agile Scrum Foundation',
+    short:'ASF',
+    color:'#3F51B5',
+    cards:75,
+    categories:'Agile & Scrum fundamentals',
+    page:'https://frontendlearning-ten.vercel.app/agile-scrum-foundation-certification-training/',
+    tool:'agile-scrum-foundation-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'Kanban Certification',
+    short:'KAN',
+    color:'#D84315',
+    cards:75,
+    categories:'Kanban method, flow, WIP, metrics',
+    page:'https://frontendlearning-ten.vercel.app/kanban-training/',
+    tool:'kanban-flashcards.html'
+  },
+  {
+    cat:'cert',
+    name:'Scrum Fundamentals',
+    short:'SFC',
+    color:'#2E7D32',
+    cards:75,
+    categories:'Beginner Scrum concepts',
+    page:'https://frontendlearning-ten.vercel.app/scrum-fundamentals-certification-training/',
+    tool:'scrum-fundamentals-flashcards.html'
+  }
+];
+
+function renderCard(c) {
+  return '<a class="card" href="' + c.tool + '" style="--accent:' + c.color + '">' +
+    '<div class="card-top">' +
+      '<div class="card-dot">' + c.short + '</div>' +
+      '<div class="card-name">' + c.name + '</div>' +
+    '</div>' +
+    '<div class="card-meta"><b>' + c.cards + ' cards</b> &middot; ' + c.categories + '</div>' +
+    '<div class="card-bottom">' +
+      '<span class="card-badge">Live on Vercel</span>' +
+      '<span class="card-arrow">&rarr;</span>' +
+    '</div>' +
+  '</a>';
+}
+
+var catHTML = '', certHTML = '';
+courses.forEach(function(c) {
+  if (c.cat === 'category') catHTML += renderCard(c);
+  else certHTML += renderCard(c);
+});
+document.getElementById('catGrid').innerHTML = catHTML;
+document.getElementById('certGrid').innerHTML = certHTML;
+</script>
