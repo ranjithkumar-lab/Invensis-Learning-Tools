@@ -1,7 +1,7 @@
-<title>Agile Scrum Master (ASM) Certification Flashcards | Invensis Learning</title>
-<meta name="description" content="Free Agile Scrum Master (ASM) certification exam prep tool. 75 concept flashcards covering the full ASM syllabus: Scrum roles, events, artifacts, estimation, scaling frameworks and more. Recall-first study with spaced repetition.">
+<title>Kanban Certification Flashcards | Invensis Learning</title>
+<meta name="description" content="Free Kanban certification exam prep tool. 75 concept flashcards covering Kanban principles, practices, flow metrics, WIP limits, pull systems, and continuous improvement. Recall-first study with spaced repetition.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LearningResource","name":"Agile Scrum Master Certification Flashcards","description":"75 recall-based flashcards covering the full Agile Scrum Master (ASM) certification syllabus: Scrum framework, roles, events, artifacts, estimation, metrics, scaling, and complementary practices.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Scrum Master (ASM) Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
+{"@context":"https://schema.org","@type":"LearningResource","name":"Kanban Certification Flashcards","description":"75 recall-based flashcards covering the full Kanban certification syllabus: Kanban principles, core practices, flow metrics, WIP limits, board design, cadences, and continuous improvement.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Kanban Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,8 @@
   :root{
     --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
     --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
-    --accent-400:#1AB0F0; --accent-500:#009DE1; --accent-600:#0080B8; --accent-700:#006690; --accent-glow:#7DD3FC;
-    --accent-soft:rgba(0,157,225,.10); --accent-line:rgba(0,157,225,.28);
+    --accent-400:#F4511E; --accent-500:#D84315; --accent-600:#BF360C; --accent-700:#870000; --accent-glow:#FF8A65;
+    --accent-soft:rgba(244,81,30,.10); --accent-line:rgba(244,81,30,.28);
     --gold:#D4A85A;
     --good:#D4880A; --good-soft:rgba(212,136,10,.14);
     --again:#E15A55; --again-soft:rgba(225,90,85,.14);
@@ -32,7 +32,7 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(0,157,225,.06), transparent 60%);
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(244,81,30,.06), transparent 60%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -49,13 +49,13 @@
     background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
     box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
   header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
-    background:linear-gradient(90deg, transparent 0%, rgba(0,157,225,.28) 50%, transparent 100%); }
+    background:linear-gradient(90deg, transparent 0%, rgba(244,81,30,.28) 50%, transparent 100%); }
   .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
     height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
   .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
-    box-shadow:0 0 20px -4px rgba(0,157,225,.42); }
+    box-shadow:0 0 20px -4px rgba(244,81,30,.42); }
   .brand .btxt{ line-height:1.1 }
   .brand .btxt .n{ display:block; font-family:var(--font-display); font-weight:700; font-size:.92rem }
   .brand .btxt .s{ display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
@@ -65,7 +65,7 @@
   @media(max-width:640px){ .topmeta{ display:none } }
   .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
     padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
-    transition:.15s; box-shadow:0 0 16px -6px rgba(0,157,225,.45); border:1px solid var(--accent-500); }
+    transition:.15s; box-shadow:0 0 16px -6px rgba(244,81,30,.45); border:1px solid var(--accent-500); }
   .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
   .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
     font-family:var(--font-mono); font-weight:600; font-size:.7rem; letter-spacing:.04em;
@@ -83,7 +83,7 @@
   .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
   .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
     width:800px; height:600px; pointer-events:none;
-    background:radial-gradient(ellipse, rgba(0,157,225,.14), transparent 60%);
+    background:radial-gradient(ellipse, rgba(244,81,30,.14), transparent 60%);
     filter:blur(8px); }
   .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
     display:flex; flex-direction:column; align-items:center; gap:1.1rem }
@@ -133,8 +133,8 @@
   .howto .step-d{ font-size:.75rem; color:var(--text-soft); line-height:1.45 }
 
   /* themed page background */
-  .page{ background:linear-gradient(180deg, rgba(0,157,225,.06) 0%, rgba(0,157,225,.02) 40%, transparent 100%);
-    border-radius:24px; border:1px solid rgba(0,157,225,.08); }
+  .page{ background:linear-gradient(180deg, rgba(244,81,30,.06) 0%, rgba(244,81,30,.02) 40%, transparent 100%);
+    border-radius:24px; border:1px solid rgba(244,81,30,.08); }
 
   /* intro screen */
   .intro-screen{ display:flex; justify-content:center; padding:1rem 0; }
@@ -515,14 +515,14 @@
 
 <header class="top">
   <div class="topinner">
-    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">
+    <a class="brand" id="brandLink" href="https://www.invensislearning.com/kanban-training/" target="_blank" rel="noopener">
       <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="brandlogo" width="140" height="34" loading="eager" decoding="async">
       <span class="brandsep"></span>
-      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Certification Exam Prep</span></span>
+      <span class="btxt"><span class="n">Kanban Flashcards</span><span class="s">Certification Exam Prep</span></span>
     </a>
     <div class="topright">
       <span class="topmeta">Free · No signup for 3 cards</span>
-      <a class="topcta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Full course →</a>
+      <a class="topcta" href="https://www.invensislearning.com/kanban-training/" target="_blank" rel="noopener">Full course →</a>
     </div>
   </div>
 </header>
@@ -533,8 +533,8 @@
     <div class="intro-screen" id="introScreen">
       <div class="intro-card">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="intro-logo" width="140" height="34" loading="eager" decoding="async">
-        <h2 class="intro-title">Agile Scrum Master Flashcards</h2>
-        <p class="intro-sub">Master the ASM syllabus with recall-based flashcards</p>
+        <h2 class="intro-title">Kanban Certification Flashcards</h2>
+        <p class="intro-sub">Master the Kanban syllabus with recall-based flashcards</p>
         <p class="intro-hook">Average first-attempt score is 68%. Can you beat it?</p>
         <div class="intro-steps">
           <div class="intro-step"><span class="intro-step-n">1</span><span>Read the term</span></div>
@@ -549,7 +549,7 @@
       <div class="panelbrand">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" width="110" height="27" loading="eager" decoding="async">
         <span class="panelbrand-sep"></span>
-        <span class="panelbrand-label">ASM Flashcards</span>
+        <span class="panelbrand-label">Kanban Flashcards</span>
       </div>
       <div class="paneltop">
         <div class="panelmeta">
@@ -598,84 +598,84 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v16';
+  var STORAGE_KEY = 'invensis-kanban-flashcards-v1';
 
   var CARDS = [
-    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
-    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The 12 guidelines behind the Manifesto. Cover customer satisfaction, welcoming change, frequent delivery, close daily collaboration, motivated teams, sustainable pace, technical excellence, and self-organising teams.'},
-    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
-    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
-    {id:'iterative-dev',cat:'Agile Concepts',term:'Iterative development',def:'Building in small cycles, each producing a working piece, refining based on feedback rather than trying to build everything upfront.'},
-    {id:'incremental-delivery',cat:'Agile Concepts',term:'Incremental delivery',def:'Releasing usable pieces of the product over time so stakeholders get value early and often, instead of one big-bang release.'},
-    {id:'done-vs-releasable',cat:'Agile Concepts',term:'Done vs releasable',def:'"Done" means the Increment meets the team\'s Definition of Done. "Releasable" means the business chooses to deploy it. Every Increment must be Done, not every Done Increment must be released.'},
-    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master accountabilities',def:'The Scrum Master is accountable for the Scrum Team\'s effectiveness. Specifically: coaching the team on self-management and Scrum practices, causing the removal of impediments, ensuring all Scrum events happen productively, and helping the organisation understand and adopt Scrum. Not a manager, not a project manager.',free:true},
-    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner accountabilities',def:'The Product Owner is accountable for maximising the value the Scrum Team delivers. Specifically: developing and communicating the Product Goal, creating and clearly ordering Product Backlog items, ensuring the backlog is transparent and understood. Sole authority on scope decisions.'},
-    {id:'developers',cat:'Scrum Roles',term:'Developers (Scrum role)',def:'The Scrum Team accountability held by the people who create the Increment each Sprint. Not just coders. Includes testers, designers, analysts, anyone contributing to a Done Increment. Self-managing and cross-functional as a group.'},
-    {id:'stakeholders',cat:'Scrum Roles',term:'Stakeholders',def:'Anyone outside the Scrum Team affected by the product: customers, users, sponsors, business leaders, other teams. Consulted at the Sprint Review.'},
-    {id:'agile-coach',cat:'Scrum Roles',term:'Agile Coach',def:'A more senior role than Scrum Master. Coaches multiple teams and the wider organisation on Agile mindset, practices, and transformation.'},
-    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
-    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
-    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
-    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
-    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
-    {id:'backlog-refinement',cat:'Scrum Events',term:'Backlog Refinement',def:'Ongoing activity where the Scrum Team clarifies, splits, and estimates upcoming Product Backlog items so they are Ready for a future Sprint.'},
-    {id:'sprint-goal',cat:'Scrum Events',term:'Sprint Goal',def:'A single objective for the Sprint that gives coherence to the Sprint Backlog. If work has to be dropped, the Sprint Goal is the priority.'},
-    {id:'working-agreement',cat:'Scrum Events',term:'Working agreement',def:'A team-created list of behaviours and norms the team commits to. Reviewed and updated at Retrospectives.'},
-    {id:'sprint-cancellation',cat:'Scrum Events',term:'Sprint cancellation',def:'The Product Owner has the sole authority to cancel a Sprint if the Sprint Goal becomes obsolete. Rare, but a real option.'},
-    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
-    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
-    {id:'increment',cat:'Scrum Artifacts',term:'Increment',def:'The sum of all completed Product Backlog items, verified to meet the Definition of Done, and potentially releasable at Sprint end.'},
-    {id:'definition-of-done',cat:'Scrum Artifacts',term:'Definition of Done (DoD)',def:'A shared checklist of what "complete" means for any Increment. Consistent across the team, evolves over time.'},
-    {id:'definition-of-ready',cat:'Scrum Artifacts',term:'Definition of Ready (DoR)',def:'A shared checklist of what makes a Product Backlog item ready to be pulled into a Sprint. Prevents unclear work from entering.'},
-    {id:'burnup-chart',cat:'Scrum Artifacts',term:'Burnup chart',def:'Tracks work completed against a total scope line over time. Unlike burndown, makes changes in scope visible as movement in the top line.'},
-    {id:'impediment',cat:'Scrum Artifacts',term:'Impediment',def:'Anything slowing the team\'s progress toward the Sprint Goal that the team cannot resolve on its own. The Scrum Master\'s job to remove.'},
-    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
-    {id:'velocity',cat:'Estimation & Planning',term:'Team velocity',def:'The average number of story points a Scrum Team completes per Sprint. Used to forecast how much work fits in future Sprints, not as a productivity target or team-to-team benchmark.'},
-    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
-    {id:'moscow',cat:'Estimation & Planning',term:'MoSCoW prioritisation',def:'Categorising backlog items as Must have, Should have, Could have, Won\'t have. Used for release scope decisions.'},
-    {id:'wsjf',cat:'Estimation & Planning',term:'WSJF',def:'Weighted Shortest Job First. Prioritises by dividing (business value + urgency + risk reduction) by job size. Common in SAFe.'},
-    {id:'invest',cat:'Estimation & Planning',term:'INVEST criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable.'},
-    {id:'cycle-time',cat:'Metrics & Reporting',term:'Cycle time',def:'How long it takes to move a work item from "in progress" to "done." Lower cycle time means faster feedback and less risk.'},
-    {id:'lead-time',cat:'Metrics & Reporting',term:'Lead time',def:'How long it takes from when a work item is requested to when it is delivered. Includes waiting time, cycle time does not.'},
-    {id:'throughput',cat:'Metrics & Reporting',term:'Throughput',def:'The number of work items completed per unit of time. Combined with cycle time, forecasts future delivery.'},
-    {id:'cfd',cat:'Metrics & Reporting',term:'Cumulative flow diagram',def:'A chart showing work item count in each state (backlog, in progress, done) over time. Reveals bottlenecks and WIP issues.'},
-    {id:'escaped-defects',cat:'Metrics & Reporting',term:'Escaped defects',def:'Bugs found by users after release. A quality metric that puts pressure on the Definition of Done.'},
-    {id:'team-happiness',cat:'Metrics & Reporting',term:'Team happiness',def:'Self-reported team mood, tracked over Sprints. A leading indicator of upcoming performance and turnover.'},
-    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
-    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
-    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
-    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
-    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
-    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'},
-    {id:'safe',cat:'Scaling & Adoption',term:'SAFe',def:'Scaled Agile Framework. Coordinates multiple Agile teams into "Agile Release Trains" with big-room Program Increment planning every 8 to 12 weeks.'},
-    {id:'less',cat:'Scaling & Adoption',term:'LeSS',def:'Large-Scale Scrum. Keeps Scrum minimal at scale: one Product Backlog, one Product Owner, multiple feature teams working from it.'},
-    {id:'nexus',cat:'Scaling & Adoption',term:'Nexus',def:'A framework for scaling to 3 to 9 Scrum teams working on one product with a shared Sprint. Adds a Nexus Integration Team.'},
-    {id:'sos',cat:'Scaling & Adoption',term:'Scrum of Scrums',def:'A daily coordination meeting where one rep from each team meets to share progress, dependencies, and impediments across teams.'},
-    {id:'cop',cat:'Scaling & Adoption',term:'Communities of Practice',def:'Cross-team groups formed around a shared interest (testing, security, UX) to spread knowledge and align approaches.'},
-    {id:'retro-formats',cat:'Facilitation & Team Dynamics',term:'Retrospective formats',def:'Techniques like Start-Stop-Continue, 4Ls, Sailboat, Mad-Sad-Glad. Rotating formats keeps Retros fresh and surfaces different insights.'},
-    {id:'tuckman',cat:'Facilitation & Team Dynamics',term:'Tuckman\'s stages',def:'Forming, Storming, Norming, Performing. Team development stages that predict predictable friction in the first weeks together.'},
-    {id:'silent-brainstorm',cat:'Facilitation & Team Dynamics',term:'Silent brainstorming',def:'Team members write ideas independently before discussing. Prevents anchoring on the first voice and includes introverts.'},
-    {id:'dot-voting',cat:'Facilitation & Team Dynamics',term:'Dot voting',def:'Each person gets N dots to place on options for prioritisation. Fast group decision-making without long debate.'},
-    {id:'one-two-four-all',cat:'Facilitation & Team Dynamics',term:'1-2-4-All',def:'Facilitation pattern: solo think, pair share, group of 4, then whole group. Scales participation and quality of input.'},
-    {id:'kanban',cat:'Kanban & Complementary',term:'Kanban',def:'A pull-based flow method: visualise work, limit WIP, manage flow, make process explicit, improve collaboratively. Often used alongside Scrum.'},
-    {id:'wip-limits',cat:'Kanban & Complementary',term:'WIP limits',def:'Maximum number of items allowed in each workflow state at once. Forces the team to finish before starting, reducing cycle time.'},
-    {id:'pull-system',cat:'Kanban & Complementary',term:'Pull system',def:'Work is pulled into the next stage only when there is capacity, rather than pushed. Prevents overload and reveals bottlenecks.'},
-    {id:'scrumban',cat:'Kanban & Complementary',term:'ScrumBan',def:'Hybrid approach: Scrum\'s rhythm (Sprints, Retros) combined with Kanban\'s flow (WIP limits, continuous pull). Common in maintenance teams.'},
-    {id:'littles-law',cat:'Kanban & Complementary',term:'Little\'s Law',def:'Average cycle time = WIP / Throughput. Mathematical foundation for why WIP limits improve delivery speed.'},
-    {id:'tdd',cat:'Technical Practices',term:'Test-Driven Development (TDD)',def:'Write a failing test first, then write minimal code to pass it, then refactor. Produces well-tested code by construction.'},
-    {id:'product-goal',cat:'Scrum Artifacts',term:'Product Goal',def:'The single long-term objective the Scrum Team commits to. Set by the Product Owner, lives in the Product Backlog, gives coherence to a series of Sprint Goals.'},
-    {id:'refactoring',cat:'Technical Practices',term:'Refactoring',def:'Improving code structure without changing behaviour. Continuous refactoring keeps technical debt low so future velocity stays predictable.'},
-    {id:'spike',cat:'Estimation & Planning',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty. Example: spike a proof of concept for the payment API integration before committing to build it.'},
-    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'},
-    {id:'estimation-techniques',cat:'Estimation & Planning',term:'Estimation techniques',def:'Common methods a Scrum Team uses to size Product Backlog items: Planning Poker (all reveal cards simultaneously to avoid anchoring), T-shirt sizing (S/M/L/XL for early rough sizing), Fibonacci scale (1, 2, 3, 5, 8, 13, 21, gaps widen as effort grows).'},
-    {id:'product-roadmap',cat:'Estimation & Planning',term:'Product Roadmap',def:'A time-based view of upcoming Product Backlog themes or features across quarters or releases. Communicates direction to stakeholders without committing to detailed dates.'},
-    {id:'story-mapping',cat:'Estimation & Planning',term:'Story mapping',def:'A backlog visualisation technique. User activities are arranged left-to-right along the top (the user journey), with detailed stories stacked vertically below in priority order. Reveals gaps and slices for release planning.'},
-    {id:'story-points-relative',cat:'Estimation & Planning',term:'Story points & relative sizing',def:'Story points are a relative unit that captures effort, complexity, and uncertainty of a backlog item, not hours. Teams estimate by comparing items to each other ("this is about twice that one") rather than fixing absolute times. Deliberately non-comparable across teams.'},
-    {id:'scrum-framework',cat:'Agile Concepts',term:'3-5-3 Scrum framework',def:'Scrum in one shorthand: 3 accountabilities (Product Owner, Scrum Master, Developers), 5 events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), 3 artifacts (Product Backlog, Sprint Backlog, Increment). Each artifact has a commitment: Product Goal, Sprint Goal, Definition of Done.'},
-    {id:'waterfall-vs-agile',cat:'Agile Concepts',term:'Waterfall vs Agile',def:'Waterfall assumes requirements are known up front and delivers in one pass at the end. Agile assumes requirements emerge, delivers working slices incrementally, and adapts based on feedback. Waterfall optimises for predictability, Agile for value in uncertainty.'},
-    {id:'sprint-zero',cat:'Scrum Events',term:'Sprint Zero',def:'An informal pre-Sprint used in some organisations to set up infrastructure, initial architecture, and an early Product Backlog before real Sprints begin. Not part of formal Scrum. Controversial because it can hide up-front design under a Scrum label.'},
-    {id:'sprint-goal-vs-scope',cat:'Scrum Events',term:'Sprint Goal vs Sprint scope',def:'The Sprint Goal is the single objective for the Sprint, fixed once Sprint Planning ends. The Sprint scope (which Product Backlog items) can be renegotiated between the Developers and Product Owner during the Sprint if learning shifts, as long as the Sprint Goal is not put at risk.'},
-    {id:'servant-vs-manager',cat:'Scrum Roles',term:'Servant-leader vs manager',def:'A traditional manager assigns tasks, sets deadlines, and controls people. A Scrum Master serves the team: removes obstacles, coaches self-management, facilitates decisions. Authority comes from influence and expertise, not position. Never gives the team direct instructions on how to do the work.'}
+    {id:'kanban-1',term:'Kanban definition',def:'A visual workflow management method using signal cards to control work. Teams pull items through stages, making work visible, limiting overload, and optimising delivery flow.',free:true},
+    {id:'kanban-2',term:'Origins of Kanban',def:'Originated in the Toyota Production System as a scheduling signal. David Anderson adapted it for knowledge work in 2007, creating the Kanban Method for software and services.',free:true},
+    {id:'kanban-3',term:'Kanban vs Scrum',def:'Scrum uses fixed-length Sprints, prescribed roles, and committed backlogs. Kanban uses continuous flow, WIP limits, and no required iterations. Kanban is less prescriptive and change-friendly.',free:true},
+    {id:'kanban-4',term:'Evolutionary change management',def:'Kanban promotes gradual, incremental change rather than radical transformation. Small, continuous improvements reduce resistance and risk compared to big-bang process overhauls.'},
+    {id:'kanban-5',term:'Start with what you do now',def:'The first Kanban principle. Begin by mapping your current process as-is rather than imposing a new framework. Respects existing workflows and reduces disruption.'},
+    {id:'kanban-6',term:'Knowledge work',def:'Work where the primary input and output is information rather than physical goods. Kanban adapts manufacturing flow concepts to software, IT, marketing, and other knowledge domains.'},
+    {id:'kanban-7',term:'Flow-based system',def:'A system where work items move continuously through stages without fixed timeboxes. Kanban optimises for smooth, predictable flow rather than batch delivery.'},
+    {id:'kanban-8',term:'Signal card (kanban)',def:'The Japanese word "kanban" means signboard or card. In manufacturing, a physical card signals that capacity is available to pull the next item into a stage.'},
+    {id:'kanban-9',term:'Visual management',def:'Making work, workflow, and policies visible to all stakeholders. A core concept enabling transparency, shared understanding, and faster decision-making.'},
+    {id:'kanban-10',term:'Kanban Method scope',def:'Applies beyond software: IT ops, HR, marketing, legal, and any service delivery. The method is domain-agnostic and focuses on how work flows, not what the work is.'},
+    {id:'kanban-11',term:'Demand vs capability',def:'Kanban balances incoming demand against team capability. When demand exceeds capacity, WIP limits prevent overload and maintain predictable delivery.'},
+    {id:'kanban-12',term:'Service orientation',def:'Kanban views teams as service providers delivering value to customers. The focus is on customer needs, service-level expectations, and end-to-end flow.'},
+    {id:'kanban-13',term:'Foundational principle 1',def:'Start with what you do now. Understand and visualise your existing process before attempting to change it. No upfront reorganisation required.'},
+    {id:'kanban-14',term:'Foundational principle 2',def:'Agree to pursue incremental, evolutionary change. Avoid large, disruptive transformations. Small experiments and adjustments compound into significant improvement over time.'},
+    {id:'kanban-15',term:'Foundational principle 3',def:'Respect the current process, roles, responsibilities, and job titles. Kanban does not prescribe new roles or reorganisations. Change emerges from within.'},
+    {id:'kanban-16',term:'Foundational principle 4',def:'Encourage acts of leadership at every level. Improvement ideas can come from anyone, not just managers. Empowerment drives sustainable change.'},
+    {id:'kanban-17',term:'Four foundational principles',def:'1) Start with what you do now. 2) Agree to pursue incremental change. 3) Respect current process, roles, and titles. 4) Encourage leadership at every level.'},
+    {id:'kanban-18',term:'Six core practices',def:'1) Visualise. 2) Limit WIP. 3) Manage flow. 4) Make policies explicit. 5) Implement feedback loops. 6) Improve collaboratively, evolve experimentally.'},
+    {id:'kanban-19',term:'Change resistance',def:'People resist imposed change. Kanban reduces resistance by starting with current reality, making small steps, and involving everyone in improvement decisions.'},
+    {id:'kanban-20',term:'Respect current roles',def:'Kanban does not create new job titles or remove existing ones. Teams keep their structure and evolve it naturally as flow improvements reveal better ways of working.'},
+    {id:'kanban-21',term:'Emergent leadership',def:'Leadership is not limited to formal authority. Any team member who identifies a problem, proposes a solution, or experiments with improvement is practising leadership.'},
+    {id:'kanban-22',term:'Culture of collaboration',def:'Kanban fosters shared ownership of process improvement. Cross-functional collaboration replaces siloed optimisation, aligning the team around end-to-end customer value.'},
+    {id:'kanban-23',term:'Visualise the workflow',def:'Core practice 1. Map each step work passes through on a board. Columns represent stages. Cards represent work items. Makes bottlenecks and blockers visible to everyone.'},
+    {id:'kanban-24',term:'Limit Work in Progress',def:'Core practice 2. Set a maximum number of items allowed in each column. Forces the team to finish work before starting new items, reducing context-switching and wait time.'},
+    {id:'kanban-25',term:'Manage flow',def:'Core practice 3. Monitor how work moves through the system. Identify and address stalls, bottlenecks, and variability to achieve smooth, predictable delivery.'},
+    {id:'kanban-26',term:'Make policies explicit',def:'Core practice 4. Write down the rules governing how work enters, moves through, and exits each stage. Visible policies enable objective discussion and consistent decisions.'},
+    {id:'kanban-27',term:'Implement feedback loops',def:'Core practice 5. Use regular cadences (standups, reviews) to inspect results and adapt. Feedback loops close the gap between action and learning.'},
+    {id:'kanban-28',term:'Improve collaboratively',def:'Core practice 6. Use models and the scientific method to propose, test, and evaluate changes. Evolve experimentally rather than guessing at solutions.'},
+    {id:'kanban-29',term:'Kanban board basics',def:'A visual board with columns for each workflow stage (e.g. To Do, In Progress, Done). Cards move left to right as work progresses. WIP limits are shown per column.'},
+    {id:'kanban-30',term:'WIP limit mechanics',def:'A number placed at the top of a column indicating the maximum cards allowed there. When a column is at its limit, no new work can enter until an item moves out.'},
+    {id:'kanban-31',term:'Why WIP limits work',def:'Reducing WIP shortens cycle time (Little\'s Law), exposes bottlenecks, lowers context-switching cost, and increases quality by focusing attention on fewer items.'},
+    {id:'kanban-32',term:'Blocked items',def:'Work items that cannot progress due to a dependency, missing information, or external wait. Flagged visually on the board so the team can swarm to resolve the block.'},
+    {id:'kanban-33',term:'Done column criteria',def:'Explicit rules defining when a work item is truly finished. Similar to Scrum\'s Definition of Done. Prevents incomplete work from being marked as complete.'},
+    {id:'kanban-34',term:'Commitment point',def:'The stage where the team commits to delivering a work item. Before this point, items are options. After it, the team actively works to complete them.'},
+    {id:'kanban-35',term:'Lead time',def:'The elapsed time from when a customer makes a request to when the item is delivered. Includes all waiting and working time. The key customer-facing metric.'},
+    {id:'kanban-36',term:'Cycle time',def:'The elapsed time from when work actually starts (enters "in progress") to when it is finished. A subset of lead time that excludes queue/wait time before work begins.'},
+    {id:'kanban-37',term:'Throughput',def:'The number of work items completed per unit of time (e.g. items per week). Measures the rate of delivery and helps with capacity planning and forecasting.'},
+    {id:'kanban-38',term:'Work in Progress (WIP)',def:'The count of items currently being worked on. One of the three core flow metrics alongside cycle time and throughput. Directly affects lead time via Little\'s Law.'},
+    {id:'kanban-39',term:'Cumulative Flow Diagram',def:'A stacked area chart showing item counts in each workflow state over time. Reveals WIP trends, bottlenecks (widening bands), and throughput (slope of the done band).'},
+    {id:'kanban-40',term:'Little\'s Law',def:'Average Lead Time = Average WIP / Average Throughput. The mathematical proof that reducing WIP (with stable throughput) directly reduces lead time.'},
+    {id:'kanban-41',term:'Flow efficiency',def:'The ratio of active work time to total lead time, expressed as a percentage. Typical knowledge work is 15-25% efficient, meaning items spend most time waiting.'},
+    {id:'kanban-42',term:'Blocked time',def:'Time a work item spends unable to progress. Tracked separately to identify systemic causes of delays such as approvals, dependencies, or resource constraints.'},
+    {id:'kanban-43',term:'Wait time vs touch time',def:'Wait time is when an item sits idle between stages. Touch time is active work. Lead time = wait time + touch time. Reducing wait time is often the biggest efficiency gain.'},
+    {id:'kanban-44',term:'Aging WIP',def:'Tracks how long each in-progress item has been in its current state. Items aging beyond their service-level expectation signal a risk and need attention.'},
+    {id:'kanban-45',term:'Cycle time scatterplot',def:'A chart plotting each completed item\'s cycle time over time. Reveals patterns, outliers, and trends. Percentile lines (50th, 85th, 95th) help set service-level expectations.'},
+    {id:'kanban-46',term:'Throughput run chart',def:'A time-series chart of completed items per period. Shows delivery trends, seasonal patterns, and the impact of process changes on output rate.'},
+    {id:'kanban-47',term:'Kanban board columns',def:'Represent workflow stages. Common columns: Backlog, Ready, In Progress, Review, Done. Customised to match the team\'s actual process. Each may have a WIP limit.'},
+    {id:'kanban-48',term:'Swimlanes',def:'Horizontal rows on a Kanban board that separate work by type, class of service, team, or project. Help visualise different work streams flowing in parallel.'},
+    {id:'kanban-49',term:'Explicit policies on board',def:'Written rules visible on the board: entry criteria, exit criteria, WIP limits, priority rules. Remove ambiguity and enable self-managing teams to make consistent decisions.'},
+    {id:'kanban-50',term:'Pull system vs push system',def:'In a pull system, workers take the next item when they have capacity. In a push system, work is assigned regardless of capacity. Kanban uses pull to prevent overload.'},
+    {id:'kanban-51',term:'Replenishment cadence',def:'A regular meeting where stakeholders decide which items to pull into the system. Separates the decision of what to work on from the act of doing the work.'},
+    {id:'kanban-52',term:'Delivery cadence',def:'A regular rhythm for releasing completed work to customers. Can be on-demand, daily, weekly, or tied to business cycles. Decoupled from the replenishment cadence.'},
+    {id:'kanban-53',term:'Classes of service',def:'Categories that determine how work items are prioritised and handled: Expedite (urgent), Fixed Date (deadline-driven), Standard (FIFO), and Intangible (long-term value).'},
+    {id:'kanban-54',term:'Expedite class',def:'Highest-priority class of service for urgent items. Typically limited to one at a time across the board. Bypasses normal WIP limits and gets immediate attention.'},
+    {id:'kanban-55',term:'Fixed date class',def:'Work that must be delivered by a specific deadline (regulatory, contractual). Scheduled and tracked to ensure on-time delivery. Cost of delay rises sharply as the date nears.'},
+    {id:'kanban-56',term:'Standard class',def:'The default class of service. Items are worked in order (FIFO). No special priority or deadline pressure. Most work on a Kanban board falls into this category.'},
+    {id:'kanban-57',term:'Seven Kanban cadences',def:'Strategy Review, Operations Review, Risk Review, Service Delivery Review, Replenishment Meeting, Delivery Planning Meeting, and the Kanban Meeting (daily standup).'},
+    {id:'kanban-58',term:'Kanban standup meeting',def:'A brief daily meeting focused on the board. The team walks the board right-to-left, discussing blocked items and flow issues rather than individual status updates.'},
+    {id:'kanban-59',term:'Replenishment meeting',def:'Upstream cadence where stakeholders select and prioritise items to enter the system. Balances demand against capacity and ensures the right work is pulled next.'},
+    {id:'kanban-60',term:'Service Delivery Review',def:'Examines delivery performance using flow metrics (lead time, throughput, SLE compliance). Identifies trends and improvement opportunities in the service provided to customers.'},
+    {id:'kanban-61',term:'Operations Review',def:'Cross-service review examining how multiple Kanban systems interact. Identifies shared dependencies, resource conflicts, and systemic improvement opportunities.'},
+    {id:'kanban-62',term:'Risk Review',def:'Assesses delivery risks: blocked items, aging WIP, policy violations, and capacity issues. Uses data to make risks visible and drive mitigation actions.'},
+    {id:'kanban-63',term:'Strategy Review',def:'The highest-level cadence. Reviews organisational fitness for purpose, strategic direction, and whether services are aligned with customer and business needs.'},
+    {id:'kanban-64',term:'Delivery Planning Meeting',def:'Coordinates the release of completed work. Determines what is ready to ship, aligns with downstream dependencies, and communicates delivery dates to customers.'},
+    {id:'kanban-65',term:'Kaizen',def:'Japanese for "continuous improvement." Small, incremental changes made regularly. A core philosophy behind the Kanban Method. Compounding small gains beats big infrequent leaps.'},
+    {id:'kanban-66',term:'PDCA cycle',def:'Plan-Do-Check-Act. A four-step improvement loop: plan a change, implement it, measure the result, then standardise or adjust. The scientific method applied to process improvement.'},
+    {id:'kanban-67',term:'Bottleneck identification',def:'A bottleneck is the stage with the lowest throughput, limiting overall system flow. Identified by WIP accumulating before it. Improving the bottleneck improves the whole system.'},
+    {id:'kanban-68',term:'Theory of Constraints',def:'Goldratt\'s method: identify the system constraint, exploit it, subordinate everything else to it, elevate it, then repeat. Kanban uses this to focus improvement where it matters most.'},
+    {id:'kanban-69',term:'Systems thinking',def:'Understanding the whole system, not just individual parts. Optimising one stage at the expense of overall flow is a local optimisation trap. Kanban encourages end-to-end thinking.'},
+    {id:'kanban-70',term:'Feedback loops in Kanban',def:'The seven cadences are structured feedback loops operating at different frequencies and scopes. They ensure the team inspects and adapts at operational and strategic levels.'},
+    {id:'kanban-71',term:'Service Level Expectation (SLE)',def:'A forecast of how long items should take based on historical data, expressed as a percentile (e.g. "85% of items finish within 12 days"). Not a guarantee, but a probabilistic target.'},
+    {id:'kanban-72',term:'Probabilistic forecasting',def:'Using historical flow data to predict future delivery dates with confidence levels rather than single-point estimates. More honest than fixed deadlines in uncertain environments.'},
+    {id:'kanban-73',term:'Monte Carlo simulation',def:'A statistical technique that runs thousands of random scenarios using historical throughput data to forecast completion dates with probability ranges (e.g. 85% chance by March 15).'},
+    {id:'kanban-74',term:'Cost of delay',def:'The economic impact of delivering a work item late. Used to prioritise: items with the highest cost of delay per unit of time should be worked first (CD3 / WSJF).'},
+    {id:'kanban-75',term:'Fitness for purpose',def:'Whether a service meets customer expectations. Kanban uses flow metrics and customer feedback to continuously evaluate and improve fitness for purpose.'}
   ];
 
   var SESSION_SIZE = 15;
@@ -713,9 +713,9 @@
   };
 
   var TESTIMONIALS = [
-    { quote:'The spaced-repetition alone made me pass. I stopped re-reading notes and just came back daily.', name:'Ananya M.', role:'Certified Scrum Master, Bengaluru' },
-    { quote:'Cleared ASM on the first attempt after two weeks with this + the Invensis course. Worth every rupee.', name:'Rohit K.', role:'Delivery Lead, Pune' },
-    { quote:'Best free resource I found. The scenario examples on the back of each card is what made concepts click for me.', name:'Priya S.', role:'Business Analyst, Hyderabad' }
+    { quote:'The visual board approach in the flashcards made the Kanban concepts click. Passed my certification first try.', name:'Meera R.', role:'Project Manager, Bengaluru' },
+    { quote:'Used these cards for two weeks alongside the Invensis course. The flow metrics section was especially helpful for the exam.', name:'Arun P.', role:'Delivery Lead, Chennai' },
+    { quote:'Best free Kanban study tool I found. The spaced repetition really works for memorising the cadences and principles.', name:'Shalini K.', role:'Agile Coach, Hyderabad' }
   ];
 
   function updateStreak(){
@@ -956,9 +956,9 @@
     ov.innerHTML =
       '<div class="mo-content">' +
         '<div class="mo-head"><span class="mo-badge">🎯</span><span class="mo-title">10 of 15 - well done</span></div>' +
-        '<p class="mo-msg">Ready to earn your ASM certification? Live instructor-led training with mock exams and a pass guarantee.</p>' +
+        '<p class="mo-msg">Ready to earn your Kanban certification? Live instructor-led training with practice exams and accredited certification.</p>' +
         '<div class="mo-actions">' +
-          '<a class="mo-cta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="mo-cta" href="https://www.invensislearning.com/kanban-training/" target="_blank" rel="noopener">View course</a>' +
           '<button class="mo-skip" id="milestoneSkip">Skip</button>' +
         '</div>' +
       '</div>';
@@ -1039,11 +1039,11 @@
       '</div>' +
       '<div class="coursecta">' +
         '<div class="ctxt">' +
-          '<h4>Ready for ASM certification?</h4>' +
-          '<p>2-day live training · EXIN accredited · 100% pass guarantee</p>' +
+          '<h4>Ready for Kanban certification?</h4>' +
+          '<p>2-day live training · Accredited · Kanban Foundation & Plus</p>' +
         '</div>' +
         '<div class="cta-btns">' +
-          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="gobtn" href="https://www.invensislearning.com/kanban-training/" target="_blank" rel="noopener">View course</a>' +
         '</div>' +
       '</div>' +
       '<div class="cta-trust">4,100+ certified with Invensis · 3,800+ use this deck</div>';
@@ -1051,8 +1051,8 @@
     document.getElementById('dlPdf').addEventListener('click', function(){ generatePdfReport(score, grade, easy, good, again); });
 
     document.getElementById('shareBtn').addEventListener('click', function(){
-      var shareUrl = 'https://www.invensislearning.com/blog/agile-scrum-master-flashcards/';
-      var copyText = 'Can you beat '+score+'% on the Agile Scrum Master flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
+      var shareUrl = 'https://www.invensislearning.com/blog/kanban-flashcards/';
+      var copyText = 'Can you beat '+score+'% on the Kanban flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
       var encodedUrl = encodeURIComponent(shareUrl);
       var shareMenu = document.createElement('div');
       shareMenu.className = 'share-menu';
@@ -1150,7 +1150,7 @@
       var t = TESTIMONIALS[idx];
       el.style.opacity = '0';
       setTimeout(function(){
-        el.querySelector('.tquote').textContent = '“' + t.quote + '”';
+        el.querySelector('.tquote').textContent = '"' + t.quote + '"';
         el.querySelector('.tname').textContent = t.name;
         el.querySelector('.trole').textContent = t.role;
         el.style.opacity = '1';
@@ -1182,7 +1182,7 @@
     if (name === 'Learner'){
       var entered = window.prompt('Enter your name for the certificate:', '');
       if (entered){ state.name = entered; saveState(); name = entered; }
-      else name = 'ASM Learner';
+      else name = 'Kanban Learner';
     }
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
@@ -1193,20 +1193,20 @@
 
     // Clean deep gradient (professional, not gamey)
     var g = ctx.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, '#05091C');
-    g.addColorStop(1, '#0A2A4A');
+    g.addColorStop(0, '#1A0800');
+    g.addColorStop(1, '#3E1A00');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
     // Elegant single glow
     var glow = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 500);
-    glow.addColorStop(0, 'rgba(125,211,252,0.14)');
-    glow.addColorStop(1, 'rgba(125,211,252,0)');
+    glow.addColorStop(0, 'rgba(255,138,101,0.14)');
+    glow.addColorStop(1, 'rgba(255,138,101,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
     // Ornamental top and bottom hairlines
-    ctx.strokeStyle = 'rgba(125,211,252,0.35)';
+    ctx.strokeStyle = 'rgba(255,138,101,0.35)';
     ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(80, 80); ctx.lineTo(W-80, 80); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(80, H-80); ctx.lineTo(W-80, H-80); ctx.stroke();
@@ -1218,7 +1218,7 @@
     ctx.fillText('INVENSIS LEARNING', 90, 55);
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('Agile Scrum Master · Certification Prep', 90, 72);
+    ctx.fillText('Kanban · Certification Prep', 90, 72);
 
     // Top-right date
     ctx.textAlign = 'right';
@@ -1231,7 +1231,7 @@
     var cx = W / 2;
 
     // Eyebrow
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#FF8A65';
     ctx.font = 'bold 14px Arial, sans-serif';
     ctx.fillText('CERTIFICATE OF ACCOMPLISHMENT', cx, 145);
 
@@ -1248,7 +1248,7 @@
 
     // Underline under name
     var nameW = ctx.measureText(nameDisplay).width;
-    ctx.strokeStyle = 'rgba(125,211,252,0.5)';
+    ctx.strokeStyle = 'rgba(255,138,101,0.5)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(cx - nameW/2 - 20, 265);
@@ -1258,19 +1258,19 @@
     // Achievement line
     ctx.fillStyle = 'rgba(255,255,255,0.85)';
     ctx.font = '19px Arial, sans-serif';
-    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile Scrum Master concepts', cx, 300);
+    ctx.fillText('for successfully studying ' + uniqueCards + ' Kanban concepts', cx, 300);
 
     // Score badge (center bottom)
     var scoreY = 435;
     // Outer soft ring
-    ctx.strokeStyle = 'rgba(125,211,252,0.2)';
+    ctx.strokeStyle = 'rgba(255,138,101,0.2)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, scoreY, 105, 0, Math.PI * 2);
     ctx.stroke();
 
     // Progress arc
-    ctx.strokeStyle = '#7DD3FC';
+    ctx.strokeStyle = '#FF8A65';
     ctx.lineWidth = 6;
     ctx.lineCap = 'round';
     ctx.beginPath();
@@ -1287,19 +1287,19 @@
     ctx.font = 'bold 52px Arial, sans-serif';
     ctx.fillText(score + '%', cx, scoreY + 8);
     // Grade
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#FF8A65';
     ctx.font = 'bold 12px Arial, sans-serif';
     ctx.fillText(grade.toUpperCase(), cx, scoreY + 32);
 
     // Bottom seal line
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('invensislearning.com  ·  ASM Flashcards', cx, H - 55);
+    ctx.fillText('invensislearning.com  ·  Kanban Flashcards', cx, H - 55);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+    a.download = 'kanban-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1326,7 +1326,7 @@
 
   function downloadPDFReport(){
     var name = getDisplayName();
-    if (name === 'Learner') name = 'ASM Learner';
+    if (name === 'Learner') name = 'Kanban Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; else again++; }
     var uniqueCards = Object.keys(sessionRatings).length;
@@ -1350,11 +1350,11 @@
       return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
     }).join('');
 
-    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASM Report - '+name+'</title>' +
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Kanban Report - '+name+'</title>' +
       '<style>' +
       '*{box-sizing:border-box}' +
       'body{font-family:Arial,Helvetica,sans-serif;padding:28px 34px;color:#171717;max-width:780px;margin:0 auto;line-height:1.55}' +
-      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #009DE1;margin-bottom:16px}' +
+      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #D84315;margin-bottom:16px}' +
       '.head .brand{display:flex;align-items:center;gap:8px}' +
       '.head .brandtxt{font-weight:bold;font-size:13px;color:#171717}' +
       '.head .brandtxt small{display:block;color:#64748B;font-weight:400;font-size:10px;margin-top:1px}' +
@@ -1363,8 +1363,8 @@
       '.toprow .info{flex:1}' +
       '.toprow h1{font-size:20px;margin:0 0 2px;font-weight:bold}' +
       '.toprow .sub{font-size:11px;color:#64748B;margin:0}' +
-      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #009DE1;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
-      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#009DE1;line-height:1}' +
+      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #D84315;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
+      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#D84315;line-height:1}' +
       '.toprow .sc .u{font-size:7px;text-transform:uppercase;letter-spacing:.06em;color:#64748B;margin-top:1px}' +
       '.toprow .grd{font-size:12px;font-weight:bold;color:#171717}' +
       '.toprow .gdesc{font-size:9px;color:#475569;margin-top:1px;max-width:160px;line-height:1.3}' +
@@ -1383,10 +1383,10 @@
       '.rbadge.hard{background:#FCE0DE;color:#C2534A}' +
       '.cta{background:linear-gradient(135deg,#171717,#2A2233);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}' +
       '.cta .ct{flex:1;min-width:220px}' +
-      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#7DD3FC;font-weight:bold;display:block;margin-bottom:4px}' +
+      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#FF8A65;font-weight:bold;display:block;margin-bottom:4px}' +
       '.cta .ct h3{font-size:17px;margin:0 0 4px;color:#FFF;border:none;padding:0}' +
       '.cta .ct p{font-size:11px;color:rgba(255,255,255,.75);margin:0}' +
-      '.cta .btn{display:inline-block;background:#009DE1;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
+      '.cta .btn{display:inline-block;background:#D84315;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
       '.foot{display:flex;justify-content:center;gap:18px;margin-top:18px;padding-top:12px;border-top:1px solid #E5E5E5;font-size:9px;color:#94A3B8}' +
       '.foot a{color:#94A3B8;text-decoration:none}' +
       '.foot svg{width:11px;height:11px;vertical-align:-1px;margin-right:3px;opacity:.7}' +
@@ -1396,7 +1396,7 @@
       '<div class="head">' +
         '<div class="brand">' +
           '<img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" style="height:24px;width:auto">' +
-          '<div class="brandtxt">ASM Flashcards<small>Study Session Report</small></div>' +
+          '<div class="brandtxt">Kanban Flashcards<small>Study Session Report</small></div>' +
         '</div>' +
         '<div class="date">'+today+'</div>' +
       '</div>' +
@@ -1415,10 +1415,10 @@
       '<div class="cta">' +
         '<div class="ct">' +
           '<b>READY FOR THE REAL EXAM?</b>' +
-          '<h3>Get instructor-led ASM certification</h3>' +
-          '<p>16 hours live training, 2 mock exams, 100% pass guarantee.</p>' +
+          '<h3>Get instructor-led Kanban certification</h3>' +
+          '<p>Live training, practice exams, accredited Kanban Foundation & Plus certification.</p>' +
         '</div>' +
-        '<a class="btn" href="https://www.invensislearning.com/agile-scrum-master/">Explore course</a>' +
+        '<a class="btn" href="https://www.invensislearning.com/kanban-training/">Explore course</a>' +
       '</div>' +
       '<div class="foot">' +
         '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@invensislearning.com">contact@invensislearning.com</a></span>' +
@@ -1429,7 +1429,7 @@
     var blob = new Blob([html], {type:'text/html;charset=utf-8'});
     var blobUrl = URL.createObjectURL(blob);
     var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    var filename = 'asm-report-' + safeName + '.html';
+    var filename = 'kanban-report-' + safeName + '.html';
     var a = document.createElement('a');
     a.href = blobUrl;
     a.download = filename;

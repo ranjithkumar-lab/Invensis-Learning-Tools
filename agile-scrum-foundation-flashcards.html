@@ -1,7 +1,7 @@
-<title>Agile Scrum Master (ASM) Certification Flashcards | Invensis Learning</title>
-<meta name="description" content="Free Agile Scrum Master (ASM) certification exam prep tool. 75 concept flashcards covering the full ASM syllabus: Scrum roles, events, artifacts, estimation, scaling frameworks and more. Recall-first study with spaced repetition.">
+<title>Agile Scrum Foundation Certification Flashcards | Invensis Learning</title>
+<meta name="description" content="Free Agile Scrum Foundation certification exam prep tool. 75 concept flashcards covering Agile principles, Scrum framework, roles, events, artifacts, and team dynamics. Recall-first study with spaced repetition.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LearningResource","name":"Agile Scrum Master Certification Flashcards","description":"75 recall-based flashcards covering the full Agile Scrum Master (ASM) certification syllabus: Scrum framework, roles, events, artifacts, estimation, metrics, scaling, and complementary practices.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Scrum Master (ASM) Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
+{"@context":"https://schema.org","@type":"LearningResource","name":"Agile Scrum Foundation Certification Flashcards","description":"75 recall-based flashcards covering the Agile Scrum Foundation certification syllabus: Agile principles, Scrum framework, roles, events, artifacts, estimation, and complementary practices.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Scrum Foundation Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,8 @@
   :root{
     --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
     --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
-    --accent-400:#1AB0F0; --accent-500:#009DE1; --accent-600:#0080B8; --accent-700:#006690; --accent-glow:#7DD3FC;
-    --accent-soft:rgba(0,157,225,.10); --accent-line:rgba(0,157,225,.28);
+    --accent-400:#5C6BC0; --accent-500:#3F51B5; --accent-600:#303F9F; --accent-700:#1A237E; --accent-glow:#9FA8DA;
+    --accent-soft:rgba(92,107,192,.10); --accent-line:rgba(92,107,192,.28);
     --gold:#D4A85A;
     --good:#D4880A; --good-soft:rgba(212,136,10,.14);
     --again:#E15A55; --again-soft:rgba(225,90,85,.14);
@@ -32,7 +32,7 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(0,157,225,.06), transparent 60%);
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(92,107,192,.06), transparent 60%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -49,13 +49,13 @@
     background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
     box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
   header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
-    background:linear-gradient(90deg, transparent 0%, rgba(0,157,225,.28) 50%, transparent 100%); }
+    background:linear-gradient(90deg, transparent 0%, rgba(92,107,192,.28) 50%, transparent 100%); }
   .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
     height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
   .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
-    box-shadow:0 0 20px -4px rgba(0,157,225,.42); }
+    box-shadow:0 0 20px -4px rgba(92,107,192,.42); }
   .brand .btxt{ line-height:1.1 }
   .brand .btxt .n{ display:block; font-family:var(--font-display); font-weight:700; font-size:.92rem }
   .brand .btxt .s{ display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
@@ -64,8 +64,8 @@
     color:var(--text-soft); padding:.3rem 0; }
   @media(max-width:640px){ .topmeta{ display:none } }
   .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
-    padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
-    transition:.15s; box-shadow:0 0 16px -6px rgba(0,157,225,.45); border:1px solid var(--accent-500); }
+    padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:#FFF;
+    transition:.15s; box-shadow:0 0 16px -6px rgba(92,107,192,.45); border:1px solid var(--accent-500); }
   .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
   .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
     font-family:var(--font-mono); font-weight:600; font-size:.7rem; letter-spacing:.04em;
@@ -83,7 +83,7 @@
   .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
   .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
     width:800px; height:600px; pointer-events:none;
-    background:radial-gradient(ellipse, rgba(0,157,225,.14), transparent 60%);
+    background:radial-gradient(ellipse, rgba(92,107,192,.14), transparent 60%);
     filter:blur(8px); }
   .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
     display:flex; flex-direction:column; align-items:center; gap:1.1rem }
@@ -133,8 +133,8 @@
   .howto .step-d{ font-size:.75rem; color:var(--text-soft); line-height:1.45 }
 
   /* themed page background */
-  .page{ background:linear-gradient(180deg, rgba(0,157,225,.06) 0%, rgba(0,157,225,.02) 40%, transparent 100%);
-    border-radius:24px; border:1px solid rgba(0,157,225,.08); }
+  .page{ background:linear-gradient(180deg, rgba(92,107,192,.06) 0%, rgba(92,107,192,.02) 40%, transparent 100%);
+    border-radius:24px; border:1px solid rgba(92,107,192,.08); }
 
   /* intro screen */
   .intro-screen{ display:flex; justify-content:center; padding:1rem 0; }
@@ -515,14 +515,14 @@
 
 <header class="top">
   <div class="topinner">
-    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">
+    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-scrum-foundation-certification-training/" target="_blank" rel="noopener">
       <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="brandlogo" width="140" height="34" loading="eager" decoding="async">
       <span class="brandsep"></span>
-      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Certification Exam Prep</span></span>
+      <span class="btxt"><span class="n">Agile Scrum Foundation Flashcards</span><span class="s">Certification Exam Prep</span></span>
     </a>
     <div class="topright">
       <span class="topmeta">Free · No signup for 3 cards</span>
-      <a class="topcta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Full course →</a>
+      <a class="topcta" href="https://www.invensislearning.com/agile-scrum-foundation-certification-training/" target="_blank" rel="noopener">Full course &#8594;</a>
     </div>
   </div>
 </header>
@@ -533,8 +533,8 @@
     <div class="intro-screen" id="introScreen">
       <div class="intro-card">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="intro-logo" width="140" height="34" loading="eager" decoding="async">
-        <h2 class="intro-title">Agile Scrum Master Flashcards</h2>
-        <p class="intro-sub">Master the ASM syllabus with recall-based flashcards</p>
+        <h2 class="intro-title">Agile Scrum Foundation Flashcards</h2>
+        <p class="intro-sub">Master the Agile Scrum Foundation syllabus with recall-based flashcards</p>
         <p class="intro-hook">Average first-attempt score is 68%. Can you beat it?</p>
         <div class="intro-steps">
           <div class="intro-step"><span class="intro-step-n">1</span><span>Read the term</span></div>
@@ -549,7 +549,7 @@
       <div class="panelbrand">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" width="110" height="27" loading="eager" decoding="async">
         <span class="panelbrand-sep"></span>
-        <span class="panelbrand-label">ASM Flashcards</span>
+        <span class="panelbrand-label">ASF Flashcards</span>
       </div>
       <div class="paneltop">
         <div class="panelmeta">
@@ -598,84 +598,84 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v16';
+  var STORAGE_KEY = 'invensis-asf-flashcards-v1';
 
   var CARDS = [
-    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
-    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The 12 guidelines behind the Manifesto. Cover customer satisfaction, welcoming change, frequent delivery, close daily collaboration, motivated teams, sustainable pace, technical excellence, and self-organising teams.'},
-    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
-    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
-    {id:'iterative-dev',cat:'Agile Concepts',term:'Iterative development',def:'Building in small cycles, each producing a working piece, refining based on feedback rather than trying to build everything upfront.'},
-    {id:'incremental-delivery',cat:'Agile Concepts',term:'Incremental delivery',def:'Releasing usable pieces of the product over time so stakeholders get value early and often, instead of one big-bang release.'},
-    {id:'done-vs-releasable',cat:'Agile Concepts',term:'Done vs releasable',def:'"Done" means the Increment meets the team\'s Definition of Done. "Releasable" means the business chooses to deploy it. Every Increment must be Done, not every Done Increment must be released.'},
-    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master accountabilities',def:'The Scrum Master is accountable for the Scrum Team\'s effectiveness. Specifically: coaching the team on self-management and Scrum practices, causing the removal of impediments, ensuring all Scrum events happen productively, and helping the organisation understand and adopt Scrum. Not a manager, not a project manager.',free:true},
-    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner accountabilities',def:'The Product Owner is accountable for maximising the value the Scrum Team delivers. Specifically: developing and communicating the Product Goal, creating and clearly ordering Product Backlog items, ensuring the backlog is transparent and understood. Sole authority on scope decisions.'},
-    {id:'developers',cat:'Scrum Roles',term:'Developers (Scrum role)',def:'The Scrum Team accountability held by the people who create the Increment each Sprint. Not just coders. Includes testers, designers, analysts, anyone contributing to a Done Increment. Self-managing and cross-functional as a group.'},
-    {id:'stakeholders',cat:'Scrum Roles',term:'Stakeholders',def:'Anyone outside the Scrum Team affected by the product: customers, users, sponsors, business leaders, other teams. Consulted at the Sprint Review.'},
-    {id:'agile-coach',cat:'Scrum Roles',term:'Agile Coach',def:'A more senior role than Scrum Master. Coaches multiple teams and the wider organisation on Agile mindset, practices, and transformation.'},
-    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
-    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
-    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
-    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
-    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
-    {id:'backlog-refinement',cat:'Scrum Events',term:'Backlog Refinement',def:'Ongoing activity where the Scrum Team clarifies, splits, and estimates upcoming Product Backlog items so they are Ready for a future Sprint.'},
-    {id:'sprint-goal',cat:'Scrum Events',term:'Sprint Goal',def:'A single objective for the Sprint that gives coherence to the Sprint Backlog. If work has to be dropped, the Sprint Goal is the priority.'},
-    {id:'working-agreement',cat:'Scrum Events',term:'Working agreement',def:'A team-created list of behaviours and norms the team commits to. Reviewed and updated at Retrospectives.'},
-    {id:'sprint-cancellation',cat:'Scrum Events',term:'Sprint cancellation',def:'The Product Owner has the sole authority to cancel a Sprint if the Sprint Goal becomes obsolete. Rare, but a real option.'},
-    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
-    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
-    {id:'increment',cat:'Scrum Artifacts',term:'Increment',def:'The sum of all completed Product Backlog items, verified to meet the Definition of Done, and potentially releasable at Sprint end.'},
-    {id:'definition-of-done',cat:'Scrum Artifacts',term:'Definition of Done (DoD)',def:'A shared checklist of what "complete" means for any Increment. Consistent across the team, evolves over time.'},
-    {id:'definition-of-ready',cat:'Scrum Artifacts',term:'Definition of Ready (DoR)',def:'A shared checklist of what makes a Product Backlog item ready to be pulled into a Sprint. Prevents unclear work from entering.'},
-    {id:'burnup-chart',cat:'Scrum Artifacts',term:'Burnup chart',def:'Tracks work completed against a total scope line over time. Unlike burndown, makes changes in scope visible as movement in the top line.'},
-    {id:'impediment',cat:'Scrum Artifacts',term:'Impediment',def:'Anything slowing the team\'s progress toward the Sprint Goal that the team cannot resolve on its own. The Scrum Master\'s job to remove.'},
-    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
-    {id:'velocity',cat:'Estimation & Planning',term:'Team velocity',def:'The average number of story points a Scrum Team completes per Sprint. Used to forecast how much work fits in future Sprints, not as a productivity target or team-to-team benchmark.'},
-    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
-    {id:'moscow',cat:'Estimation & Planning',term:'MoSCoW prioritisation',def:'Categorising backlog items as Must have, Should have, Could have, Won\'t have. Used for release scope decisions.'},
-    {id:'wsjf',cat:'Estimation & Planning',term:'WSJF',def:'Weighted Shortest Job First. Prioritises by dividing (business value + urgency + risk reduction) by job size. Common in SAFe.'},
-    {id:'invest',cat:'Estimation & Planning',term:'INVEST criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable.'},
-    {id:'cycle-time',cat:'Metrics & Reporting',term:'Cycle time',def:'How long it takes to move a work item from "in progress" to "done." Lower cycle time means faster feedback and less risk.'},
-    {id:'lead-time',cat:'Metrics & Reporting',term:'Lead time',def:'How long it takes from when a work item is requested to when it is delivered. Includes waiting time, cycle time does not.'},
-    {id:'throughput',cat:'Metrics & Reporting',term:'Throughput',def:'The number of work items completed per unit of time. Combined with cycle time, forecasts future delivery.'},
-    {id:'cfd',cat:'Metrics & Reporting',term:'Cumulative flow diagram',def:'A chart showing work item count in each state (backlog, in progress, done) over time. Reveals bottlenecks and WIP issues.'},
-    {id:'escaped-defects',cat:'Metrics & Reporting',term:'Escaped defects',def:'Bugs found by users after release. A quality metric that puts pressure on the Definition of Done.'},
-    {id:'team-happiness',cat:'Metrics & Reporting',term:'Team happiness',def:'Self-reported team mood, tracked over Sprints. A leading indicator of upcoming performance and turnover.'},
-    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
-    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
-    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
-    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
-    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
-    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'},
-    {id:'safe',cat:'Scaling & Adoption',term:'SAFe',def:'Scaled Agile Framework. Coordinates multiple Agile teams into "Agile Release Trains" with big-room Program Increment planning every 8 to 12 weeks.'},
-    {id:'less',cat:'Scaling & Adoption',term:'LeSS',def:'Large-Scale Scrum. Keeps Scrum minimal at scale: one Product Backlog, one Product Owner, multiple feature teams working from it.'},
-    {id:'nexus',cat:'Scaling & Adoption',term:'Nexus',def:'A framework for scaling to 3 to 9 Scrum teams working on one product with a shared Sprint. Adds a Nexus Integration Team.'},
-    {id:'sos',cat:'Scaling & Adoption',term:'Scrum of Scrums',def:'A daily coordination meeting where one rep from each team meets to share progress, dependencies, and impediments across teams.'},
-    {id:'cop',cat:'Scaling & Adoption',term:'Communities of Practice',def:'Cross-team groups formed around a shared interest (testing, security, UX) to spread knowledge and align approaches.'},
-    {id:'retro-formats',cat:'Facilitation & Team Dynamics',term:'Retrospective formats',def:'Techniques like Start-Stop-Continue, 4Ls, Sailboat, Mad-Sad-Glad. Rotating formats keeps Retros fresh and surfaces different insights.'},
-    {id:'tuckman',cat:'Facilitation & Team Dynamics',term:'Tuckman\'s stages',def:'Forming, Storming, Norming, Performing. Team development stages that predict predictable friction in the first weeks together.'},
-    {id:'silent-brainstorm',cat:'Facilitation & Team Dynamics',term:'Silent brainstorming',def:'Team members write ideas independently before discussing. Prevents anchoring on the first voice and includes introverts.'},
-    {id:'dot-voting',cat:'Facilitation & Team Dynamics',term:'Dot voting',def:'Each person gets N dots to place on options for prioritisation. Fast group decision-making without long debate.'},
-    {id:'one-two-four-all',cat:'Facilitation & Team Dynamics',term:'1-2-4-All',def:'Facilitation pattern: solo think, pair share, group of 4, then whole group. Scales participation and quality of input.'},
-    {id:'kanban',cat:'Kanban & Complementary',term:'Kanban',def:'A pull-based flow method: visualise work, limit WIP, manage flow, make process explicit, improve collaboratively. Often used alongside Scrum.'},
-    {id:'wip-limits',cat:'Kanban & Complementary',term:'WIP limits',def:'Maximum number of items allowed in each workflow state at once. Forces the team to finish before starting, reducing cycle time.'},
-    {id:'pull-system',cat:'Kanban & Complementary',term:'Pull system',def:'Work is pulled into the next stage only when there is capacity, rather than pushed. Prevents overload and reveals bottlenecks.'},
-    {id:'scrumban',cat:'Kanban & Complementary',term:'ScrumBan',def:'Hybrid approach: Scrum\'s rhythm (Sprints, Retros) combined with Kanban\'s flow (WIP limits, continuous pull). Common in maintenance teams.'},
-    {id:'littles-law',cat:'Kanban & Complementary',term:'Little\'s Law',def:'Average cycle time = WIP / Throughput. Mathematical foundation for why WIP limits improve delivery speed.'},
-    {id:'tdd',cat:'Technical Practices',term:'Test-Driven Development (TDD)',def:'Write a failing test first, then write minimal code to pass it, then refactor. Produces well-tested code by construction.'},
-    {id:'product-goal',cat:'Scrum Artifacts',term:'Product Goal',def:'The single long-term objective the Scrum Team commits to. Set by the Product Owner, lives in the Product Backlog, gives coherence to a series of Sprint Goals.'},
-    {id:'refactoring',cat:'Technical Practices',term:'Refactoring',def:'Improving code structure without changing behaviour. Continuous refactoring keeps technical debt low so future velocity stays predictable.'},
-    {id:'spike',cat:'Estimation & Planning',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty. Example: spike a proof of concept for the payment API integration before committing to build it.'},
-    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'},
-    {id:'estimation-techniques',cat:'Estimation & Planning',term:'Estimation techniques',def:'Common methods a Scrum Team uses to size Product Backlog items: Planning Poker (all reveal cards simultaneously to avoid anchoring), T-shirt sizing (S/M/L/XL for early rough sizing), Fibonacci scale (1, 2, 3, 5, 8, 13, 21, gaps widen as effort grows).'},
-    {id:'product-roadmap',cat:'Estimation & Planning',term:'Product Roadmap',def:'A time-based view of upcoming Product Backlog themes or features across quarters or releases. Communicates direction to stakeholders without committing to detailed dates.'},
-    {id:'story-mapping',cat:'Estimation & Planning',term:'Story mapping',def:'A backlog visualisation technique. User activities are arranged left-to-right along the top (the user journey), with detailed stories stacked vertically below in priority order. Reveals gaps and slices for release planning.'},
-    {id:'story-points-relative',cat:'Estimation & Planning',term:'Story points & relative sizing',def:'Story points are a relative unit that captures effort, complexity, and uncertainty of a backlog item, not hours. Teams estimate by comparing items to each other ("this is about twice that one") rather than fixing absolute times. Deliberately non-comparable across teams.'},
-    {id:'scrum-framework',cat:'Agile Concepts',term:'3-5-3 Scrum framework',def:'Scrum in one shorthand: 3 accountabilities (Product Owner, Scrum Master, Developers), 5 events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), 3 artifacts (Product Backlog, Sprint Backlog, Increment). Each artifact has a commitment: Product Goal, Sprint Goal, Definition of Done.'},
-    {id:'waterfall-vs-agile',cat:'Agile Concepts',term:'Waterfall vs Agile',def:'Waterfall assumes requirements are known up front and delivers in one pass at the end. Agile assumes requirements emerge, delivers working slices incrementally, and adapts based on feedback. Waterfall optimises for predictability, Agile for value in uncertainty.'},
-    {id:'sprint-zero',cat:'Scrum Events',term:'Sprint Zero',def:'An informal pre-Sprint used in some organisations to set up infrastructure, initial architecture, and an early Product Backlog before real Sprints begin. Not part of formal Scrum. Controversial because it can hide up-front design under a Scrum label.'},
-    {id:'sprint-goal-vs-scope',cat:'Scrum Events',term:'Sprint Goal vs Sprint scope',def:'The Sprint Goal is the single objective for the Sprint, fixed once Sprint Planning ends. The Sprint scope (which Product Backlog items) can be renegotiated between the Developers and Product Owner during the Sprint if learning shifts, as long as the Sprint Goal is not put at risk.'},
-    {id:'servant-vs-manager',cat:'Scrum Roles',term:'Servant-leader vs manager',def:'A traditional manager assigns tasks, sets deadlines, and controls people. A Scrum Master serves the team: removes obstacles, coaches self-management, facilitates decisions. Authority comes from influence and expertise, not position. Never gives the team direct instructions on how to do the work.'}
+    {id:'asf-1',term:'Agile Manifesto',def:'Four values: Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.',free:true},
+    {id:'asf-2',term:'Twelve Agile Principles',def:'Guidelines behind the Manifesto covering customer satisfaction through early delivery, welcoming change, frequent delivery, daily collaboration, motivated teams, face-to-face communication, working software as progress measure, sustainable pace, technical excellence, simplicity, self-organising teams, and regular reflection.',free:true},
+    {id:'asf-3',term:'Agile Mindset',def:'A way of thinking that embraces change, values collaboration, seeks continuous improvement, and focuses on delivering customer value over following rigid plans.',free:true},
+    {id:'asf-4',term:'Waterfall vs Agile',def:'Waterfall delivers in sequential phases with requirements fixed upfront. Agile delivers incrementally, welcomes changing requirements, and adapts based on feedback throughout the project.'},
+    {id:'asf-5',term:'Iterative Development',def:'Building in repeated cycles where each iteration produces a working piece of the product, refined through feedback rather than attempting to build everything in one pass.'},
+    {id:'asf-6',term:'Incremental Delivery',def:'Releasing usable portions of the product over time so stakeholders receive value early and often, instead of waiting for a single final release.'},
+    {id:'asf-7',term:'Empirical Process Control',def:'Decision-making based on observation and experience rather than prediction. Scrum implements this through three pillars: Transparency, Inspection, and Adaptation.'},
+    {id:'asf-8',term:'Culture Shift in Agile',def:'Moving from command-and-control management to empowered, self-managing teams. Requires trust, openness to failure, and organisational support for collaborative working.'},
+    {id:'asf-9',term:'Value-Driven Delivery',def:'Prioritising work that delivers the highest business value first, ensuring the most important features reach users early in the project lifecycle.'},
+    {id:'asf-10',term:'Continuous Improvement',def:'The practice of regularly reflecting on processes and outcomes to identify and implement small, ongoing enhancements. Core to the Agile mindset.'},
+    {id:'asf-11',term:'Customer Collaboration',def:'Working closely with customers throughout the project rather than relying on upfront contracts. Ensures the product meets real needs through ongoing feedback.'},
+    {id:'asf-12',term:'Responding to Change',def:'Agile values adapting to new information over rigidly following a plan. Change is seen as an opportunity to improve the product, not a disruption.'},
+    {id:'asf-13',term:'Working Software',def:'The primary measure of progress in Agile. Delivering functional, tested software at regular intervals is more valuable than comprehensive documentation alone.'},
+    {id:'asf-14',term:'Sustainable Pace',def:'Teams should work at a pace they can maintain indefinitely. Overwork leads to burnout and declining quality. One of the twelve Agile principles.'},
+    {id:'asf-15',term:'Technical Excellence',def:'Continuous attention to good design and technical practices enhances agility. Clean code and good architecture allow teams to adapt to change more easily.'},
+    {id:'asf-16',term:'Scrum Definition',def:'A lightweight framework for developing, delivering, and sustaining complex products. Uses an iterative, incremental approach to optimise predictability and control risk.'},
+    {id:'asf-17',term:'Three Pillars of Scrum',def:'Transparency: work and process visible to all. Inspection: frequent review of artifacts and progress. Adaptation: adjusting the process when results deviate from goals.'},
+    {id:'asf-18',term:'Scrum Values',def:'Five values guiding team behaviour: Commitment (to achieving goals), Courage (to do the right thing), Focus (on Sprint work), Openness (about challenges), Respect (for each other).'},
+    {id:'asf-19',term:'Scrum Theory',def:'Scrum is founded on empiricism and lean thinking. Empiricism asserts knowledge comes from experience. Lean thinking reduces waste and focuses on essentials.'},
+    {id:'asf-20',term:'Lightweight Framework',def:'Scrum is deliberately minimal: three roles, five events, three artifacts. It provides just enough structure to enable empirical process control without prescribing how to do the work.'},
+    {id:'asf-21',term:'Time-boxing',def:'Setting a fixed maximum duration for an event or activity. Ensures focus, prevents scope creep in meetings, and creates a predictable rhythm. All Scrum events are time-boxed.'},
+    {id:'asf-22',term:'Scrum Commitments',def:'Each artifact has a commitment: Product Backlog has the Product Goal, Sprint Backlog has the Sprint Goal, and Increment has the Definition of Done. Commitments provide focus and transparency.'},
+    {id:'asf-23',term:'Transparency in Scrum',def:'The process and work must be visible to those performing it and receiving it. Artifacts must have enough detail to enable meaningful inspection and informed decisions.'},
+    {id:'asf-24',term:'Inspection in Scrum',def:'Scrum artifacts and progress are frequently checked to detect variances or problems. Inspection enables adaptation and is built into every Scrum event.'},
+    {id:'asf-25',term:'Adaptation in Scrum',def:'When inspection reveals a process aspect deviates outside acceptable limits, the process or materials must be adjusted. Scrum provides four formal events for adaptation.'},
+    {id:'asf-26',term:'Self-managing Teams',def:'The Scrum Team decides internally who does what, when, and how. No one outside the team dictates how to turn backlog items into increments of value.'},
+    {id:'asf-27',term:'Cross-functional Teams',def:'The team collectively has all the skills needed to create value each Sprint without depending on people outside the team. Eliminates handoff delays.'},
+    {id:'asf-28',term:'Scrum Master',def:'Accountable for the Scrum Team\'s effectiveness. Serves the team by coaching self-management, removing impediments, facilitating events, and helping the organisation adopt Scrum. Not a project manager.'},
+    {id:'asf-29',term:'Servant Leadership',def:'The Scrum Master leads by serving the team: removing obstacles, coaching practices, and facilitating decisions rather than directing or assigning work.'},
+    {id:'asf-30',term:'Impediment Removal',def:'A key Scrum Master responsibility. Impediments are blockers the team cannot resolve alone. The Scrum Master works to eliminate them so the team can maintain its flow.'},
+    {id:'asf-31',term:'Product Owner',def:'Accountable for maximising the value delivered by the Scrum Team. Creates and orders the Product Backlog, defines the Product Goal, and ensures the backlog is transparent and understood.'},
+    {id:'asf-32',term:'Value Maximisation',def:'The Product Owner\'s core accountability. Every ordering decision in the Product Backlog should aim to deliver the highest possible value to stakeholders and users.'},
+    {id:'asf-33',term:'Developers in Scrum',def:'The people who create the Increment each Sprint. Includes anyone contributing to a Done Increment: coders, testers, designers, analysts. Self-managing as a group.'},
+    {id:'asf-34',term:'Scrum Team Size',def:'Recommended size is 10 or fewer people. Small enough for agility and communication, large enough to have all skills needed to complete meaningful work each Sprint.'},
+    {id:'asf-35',term:'Scrum Team Characteristics',def:'One Scrum Master, one Product Owner, Developers. No sub-teams or hierarchies. Cross-functional, self-managing, focused on one product objective at a time.'},
+    {id:'asf-36',term:'Sprint',def:'A fixed time-box of one month or less during which a Done, potentially releasable Increment is created. Sprints run consecutively with no gaps between them.'},
+    {id:'asf-37',term:'Sprint Planning',def:'Event that starts the Sprint. The team answers: Why is this Sprint valuable (Sprint Goal)? What can be Done this Sprint? How will the chosen work get done? Time-boxed to 8 hours for a one-month Sprint.'},
+    {id:'asf-38',term:'Sprint Goal',def:'A single objective for the Sprint that gives coherence and focus. Set during Sprint Planning. If work must be dropped, the Sprint Goal is the priority that remains.'},
+    {id:'asf-39',term:'Daily Scrum',def:'A 15-minute daily event for Developers to inspect progress toward the Sprint Goal and adapt the plan for the next 24 hours. Same time and place each day.'},
+    {id:'asf-40',term:'Sprint Review',def:'Event at Sprint end where the team and stakeholders inspect the Increment, discuss what was accomplished, and adapt the Product Backlog based on new insights. Time-boxed to 4 hours for a one-month Sprint.'},
+    {id:'asf-41',term:'Sprint Retrospective',def:'Closing event where the team inspects how it worked (people, process, tools) and identifies specific improvements for the next Sprint. Time-boxed to 3 hours for a one-month Sprint.'},
+    {id:'asf-42',term:'Consistent Sprint Duration',def:'Sprints should maintain the same length throughout the project. Consistency creates a predictable cadence that aids planning, measurement, and team rhythm.'},
+    {id:'asf-43',term:'Sprint Cancellation',def:'Only the Product Owner can cancel a Sprint if the Sprint Goal becomes obsolete. Any completed items are reviewed. Cancelled Sprints are rare and consume resources.'},
+    {id:'asf-44',term:'Backlog Refinement',def:'An ongoing activity where the team clarifies, splits, and estimates upcoming Product Backlog items. Not a formal Scrum event but essential to keep items ready for future Sprints.'},
+    {id:'asf-45',term:'Sprint Goal vs Sprint Scope',def:'The Sprint Goal is fixed once Sprint Planning ends. The scope (which items) can be renegotiated between Developers and Product Owner during the Sprint, as long as the Sprint Goal is not endangered.'},
+    {id:'asf-46',term:'Event Inspect-Adapt Pairs',def:'Sprint Planning adapts the Sprint Backlog. Daily Scrum adapts the daily plan. Sprint Review adapts the Product Backlog. Sprint Retrospective adapts the process.'},
+    {id:'asf-47',term:'Working Agreement',def:'A team-created list of norms and behaviours the team commits to follow. Reviewed and updated during Retrospectives to support continuous improvement.'},
+    {id:'asf-48',term:'Product Backlog',def:'An ordered, emergent list of everything needed to improve the product. Owned by the Product Owner. Never complete; it evolves as the product and its environment change.'},
+    {id:'asf-49',term:'Sprint Backlog',def:'Composed of the Sprint Goal, the Product Backlog items selected for the Sprint, and the plan for delivering them. Owned and managed by the Developers. Updated throughout the Sprint.'},
+    {id:'asf-50',term:'Increment',def:'The sum of all completed Product Backlog items that meet the Definition of Done. Each Increment is additive to all prior Increments and must be usable.'},
+    {id:'asf-51',term:'Definition of Done',def:'A shared checklist of quality standards every Increment must meet. Creates transparency about what "complete" means. Applied consistently and evolves over time.'},
+    {id:'asf-52',term:'Product Goal',def:'The long-term objective for the Scrum Team. Lives in the Product Backlog and gives coherence to a series of Sprints. The team works toward one Product Goal at a time.'},
+    {id:'asf-53',term:'Burndown Chart',def:'A graph showing remaining work in a Sprint or release plotted over time. The downward trend reveals whether the team is on track to complete its planned work.'},
+    {id:'asf-54',term:'Burnup Chart',def:'Tracks completed work against total scope over time. Unlike burndown, makes scope changes visible as movement in the top line, giving a clearer picture of progress.'},
+    {id:'asf-55',term:'Definition of Ready',def:'An informal checklist of what makes a Product Backlog item ready to be pulled into Sprint Planning. Prevents unclear or oversized items from entering a Sprint.'},
+    {id:'asf-56',term:'Backlog Ordering',def:'The Product Owner orders the Product Backlog by value, risk, dependencies, and learning opportunities. Higher-ordered items are clearer and more detailed than lower ones.'},
+    {id:'asf-57',term:'Artifact Transparency',def:'Artifacts represent work or value and must be sufficiently transparent for meaningful inspection. Low transparency leads to flawed decisions and diminished value.'},
+    {id:'asf-58',term:'Story Points',def:'A relative unit measuring effort, complexity, and uncertainty of a backlog item. Teams compare items to each other rather than estimating absolute hours. Not comparable across teams.'},
+    {id:'asf-59',term:'Planning Poker',def:'An estimation technique where each team member simultaneously reveals a card with their estimate. Prevents anchoring, surfaces differing assumptions, and drives discussion.'},
+    {id:'asf-60',term:'Velocity',def:'The average number of story points completed per Sprint. Used for forecasting how much work fits in future Sprints, not as a productivity target or cross-team benchmark.'},
+    {id:'asf-61',term:'User Stories',def:'Short descriptions of a feature from the user perspective: "As a [user], I want [goal] so that [benefit]." Captures requirements in a way that is easy to discuss and estimate.'},
+    {id:'asf-62',term:'Acceptance Criteria',def:'Specific conditions a Product Backlog item must satisfy to be accepted as complete. Written before development starts to clarify scope and enable testability.'},
+    {id:'asf-63',term:'Release Planning',def:'Forecasting which features will be delivered by a target date or how long a set of features will take. Uses velocity and backlog ordering to project delivery timelines.'},
+    {id:'asf-64',term:'Capacity Planning',def:'Assessing how much work the team can take on in a Sprint based on available team members, planned absences, and historical velocity. Informs Sprint Planning.'},
+    {id:'asf-65',term:'INVEST Criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, and Testable. A checklist for writing effective Product Backlog items.'},
+    {id:'asf-66',term:'Kanban Basics',def:'A visual workflow management method: visualise work on a board, limit work in progress (WIP), manage flow, and improve collaboratively. Often used alongside Scrum.'},
+    {id:'asf-67',term:'WIP Limits',def:'Maximum number of items allowed in each workflow state at one time. Forces the team to finish work before starting new items, reducing cycle time and multitasking waste.'},
+    {id:'asf-68',term:'Lean Principles',def:'Eliminate waste, amplify learning, decide late, deliver fast, empower the team, build integrity in, and see the whole. Lean thinking underpins many Agile practices.'},
+    {id:'asf-69',term:'Extreme Programming (XP)',def:'An Agile method emphasising technical practices: pair programming, test-driven development, continuous integration, refactoring, and small frequent releases to improve quality.'},
+    {id:'asf-70',term:'Continuous Integration',def:'Developers merge code changes into a shared repository frequently, ideally multiple times a day. Automated builds and tests catch integration errors early.'},
+    {id:'asf-71',term:'Continuous Delivery',def:'An extension of continuous integration where code is always in a deployable state. Any passing build can be released to production at the push of a button.'},
+    {id:'asf-72',term:'Retrospective Formats',def:'Techniques like Start-Stop-Continue, 4Ls, Sailboat, and Mad-Sad-Glad. Varying formats keeps retrospectives fresh and surfaces different types of insights.'},
+    {id:'asf-73',term:'Tuckman\'s Team Stages',def:'Forming (orientation), Storming (conflict), Norming (agreement), Performing (high output). Teams progress through these stages; the Scrum Master coaches them through friction.'},
+    {id:'asf-74',term:'Cycle Time',def:'The elapsed time from when work on an item starts to when it is done. Lower cycle time means faster feedback and reduced risk. A key flow metric.'},
+    {id:'asf-75',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty before committing to build a feature. Produces knowledge rather than a shippable increment.'}
   ];
 
   var SESSION_SIZE = 15;
@@ -713,9 +713,9 @@
   };
 
   var TESTIMONIALS = [
-    { quote:'The spaced-repetition alone made me pass. I stopped re-reading notes and just came back daily.', name:'Ananya M.', role:'Certified Scrum Master, Bengaluru' },
-    { quote:'Cleared ASM on the first attempt after two weeks with this + the Invensis course. Worth every rupee.', name:'Rohit K.', role:'Delivery Lead, Pune' },
-    { quote:'Best free resource I found. The scenario examples on the back of each card is what made concepts click for me.', name:'Priya S.', role:'Business Analyst, Hyderabad' }
+    { quote:'The flashcards helped me grasp the Scrum framework fundamentals quickly. Passed my foundation exam on the first attempt.', name:'Meera P.', role:'IT Coordinator, Chennai' },
+    { quote:'Simple and effective. I used these cards for two weeks alongside the Invensis course and felt fully prepared.', name:'Arjun D.', role:'Junior Developer, Mumbai' },
+    { quote:'Great free resource for anyone starting their Agile journey. The recall-based approach really makes concepts stick.', name:'Neha R.', role:'Business Analyst, Bengaluru' }
   ];
 
   function updateStreak(){
@@ -864,7 +864,7 @@
       '</div>' +
       '<div class="prompt"><svg class="prompt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>Try to recall</div>' +
       '<div class="term">'+card.term+'</div>' +
-      '<div class="flipcue">Tap to reveal definition ↻</div>';
+      '<div class="flipcue">Tap to reveal definition &#8635;</div>';
     backFace.innerHTML =
       '<div class="prompt">Definition</div>' +
       '<div class="def">'+card.def+'</div>' +
@@ -956,9 +956,9 @@
     ov.innerHTML =
       '<div class="mo-content">' +
         '<div class="mo-head"><span class="mo-badge">🎯</span><span class="mo-title">10 of 15 - well done</span></div>' +
-        '<p class="mo-msg">Ready to earn your ASM certification? Live instructor-led training with mock exams and a pass guarantee.</p>' +
+        '<p class="mo-msg">Ready to earn your Agile Scrum Foundation certification? Live instructor-led training with EXIN accreditation.</p>' +
         '<div class="mo-actions">' +
-          '<a class="mo-cta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="mo-cta" href="https://www.invensislearning.com/agile-scrum-foundation-certification-training/" target="_blank" rel="noopener">View course</a>' +
           '<button class="mo-skip" id="milestoneSkip">Skip</button>' +
         '</div>' +
       '</div>';
@@ -1039,11 +1039,11 @@
       '</div>' +
       '<div class="coursecta">' +
         '<div class="ctxt">' +
-          '<h4>Ready for ASM certification?</h4>' +
-          '<p>2-day live training · EXIN accredited · 100% pass guarantee</p>' +
+          '<h4>Ready for Agile Scrum Foundation certification?</h4>' +
+          '<p>2-day live training · EXIN accredited · Foundation level</p>' +
         '</div>' +
         '<div class="cta-btns">' +
-          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-foundation-certification-training/" target="_blank" rel="noopener">View course</a>' +
         '</div>' +
       '</div>' +
       '<div class="cta-trust">4,100+ certified with Invensis · 3,800+ use this deck</div>';
@@ -1051,8 +1051,8 @@
     document.getElementById('dlPdf').addEventListener('click', function(){ generatePdfReport(score, grade, easy, good, again); });
 
     document.getElementById('shareBtn').addEventListener('click', function(){
-      var shareUrl = 'https://www.invensislearning.com/blog/agile-scrum-master-flashcards/';
-      var copyText = 'Can you beat '+score+'% on the Agile Scrum Master flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
+      var shareUrl = 'https://www.invensislearning.com/blog/agile-scrum-foundation-flashcards/';
+      var copyText = 'Can you beat '+score+'% on the Agile Scrum Foundation flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
       var encodedUrl = encodeURIComponent(shareUrl);
       var shareMenu = document.createElement('div');
       shareMenu.className = 'share-menu';
@@ -1150,7 +1150,7 @@
       var t = TESTIMONIALS[idx];
       el.style.opacity = '0';
       setTimeout(function(){
-        el.querySelector('.tquote').textContent = '“' + t.quote + '”';
+        el.querySelector('.tquote').textContent = '"' + t.quote + '"';
         el.querySelector('.tname').textContent = t.name;
         el.querySelector('.trole').textContent = t.role;
         el.style.opacity = '1';
@@ -1182,7 +1182,7 @@
     if (name === 'Learner'){
       var entered = window.prompt('Enter your name for the certificate:', '');
       if (entered){ state.name = entered; saveState(); name = entered; }
-      else name = 'ASM Learner';
+      else name = 'ASF Learner';
     }
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
@@ -1194,19 +1194,19 @@
     // Clean deep gradient (professional, not gamey)
     var g = ctx.createLinearGradient(0, 0, 0, H);
     g.addColorStop(0, '#05091C');
-    g.addColorStop(1, '#0A2A4A');
+    g.addColorStop(1, '#0A1A4A');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
     // Elegant single glow
     var glow = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 500);
-    glow.addColorStop(0, 'rgba(125,211,252,0.14)');
-    glow.addColorStop(1, 'rgba(125,211,252,0)');
+    glow.addColorStop(0, 'rgba(159,168,218,0.14)');
+    glow.addColorStop(1, 'rgba(159,168,218,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
     // Ornamental top and bottom hairlines
-    ctx.strokeStyle = 'rgba(125,211,252,0.35)';
+    ctx.strokeStyle = 'rgba(159,168,218,0.35)';
     ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(80, 80); ctx.lineTo(W-80, 80); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(80, H-80); ctx.lineTo(W-80, H-80); ctx.stroke();
@@ -1218,7 +1218,7 @@
     ctx.fillText('INVENSIS LEARNING', 90, 55);
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('Agile Scrum Master · Certification Prep', 90, 72);
+    ctx.fillText('Agile Scrum Foundation · Certification Prep', 90, 72);
 
     // Top-right date
     ctx.textAlign = 'right';
@@ -1231,7 +1231,7 @@
     var cx = W / 2;
 
     // Eyebrow
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#9FA8DA';
     ctx.font = 'bold 14px Arial, sans-serif';
     ctx.fillText('CERTIFICATE OF ACCOMPLISHMENT', cx, 145);
 
@@ -1248,7 +1248,7 @@
 
     // Underline under name
     var nameW = ctx.measureText(nameDisplay).width;
-    ctx.strokeStyle = 'rgba(125,211,252,0.5)';
+    ctx.strokeStyle = 'rgba(159,168,218,0.5)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(cx - nameW/2 - 20, 265);
@@ -1258,19 +1258,19 @@
     // Achievement line
     ctx.fillStyle = 'rgba(255,255,255,0.85)';
     ctx.font = '19px Arial, sans-serif';
-    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile Scrum Master concepts', cx, 300);
+    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile Scrum Foundation concepts', cx, 300);
 
     // Score badge (center bottom)
     var scoreY = 435;
     // Outer soft ring
-    ctx.strokeStyle = 'rgba(125,211,252,0.2)';
+    ctx.strokeStyle = 'rgba(159,168,218,0.2)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, scoreY, 105, 0, Math.PI * 2);
     ctx.stroke();
 
     // Progress arc
-    ctx.strokeStyle = '#7DD3FC';
+    ctx.strokeStyle = '#9FA8DA';
     ctx.lineWidth = 6;
     ctx.lineCap = 'round';
     ctx.beginPath();
@@ -1287,19 +1287,19 @@
     ctx.font = 'bold 52px Arial, sans-serif';
     ctx.fillText(score + '%', cx, scoreY + 8);
     // Grade
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#9FA8DA';
     ctx.font = 'bold 12px Arial, sans-serif';
     ctx.fillText(grade.toUpperCase(), cx, scoreY + 32);
 
     // Bottom seal line
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('invensislearning.com  ·  ASM Flashcards', cx, H - 55);
+    ctx.fillText('invensislearning.com  ·  ASF Flashcards', cx, H - 55);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+    a.download = 'asf-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1326,7 +1326,7 @@
 
   function downloadPDFReport(){
     var name = getDisplayName();
-    if (name === 'Learner') name = 'ASM Learner';
+    if (name === 'Learner') name = 'ASF Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; else again++; }
     var uniqueCards = Object.keys(sessionRatings).length;
@@ -1350,11 +1350,11 @@
       return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
     }).join('');
 
-    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASM Report - '+name+'</title>' +
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASF Report - '+name+'</title>' +
       '<style>' +
       '*{box-sizing:border-box}' +
       'body{font-family:Arial,Helvetica,sans-serif;padding:28px 34px;color:#171717;max-width:780px;margin:0 auto;line-height:1.55}' +
-      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #009DE1;margin-bottom:16px}' +
+      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #3F51B5;margin-bottom:16px}' +
       '.head .brand{display:flex;align-items:center;gap:8px}' +
       '.head .brandtxt{font-weight:bold;font-size:13px;color:#171717}' +
       '.head .brandtxt small{display:block;color:#64748B;font-weight:400;font-size:10px;margin-top:1px}' +
@@ -1363,8 +1363,8 @@
       '.toprow .info{flex:1}' +
       '.toprow h1{font-size:20px;margin:0 0 2px;font-weight:bold}' +
       '.toprow .sub{font-size:11px;color:#64748B;margin:0}' +
-      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #009DE1;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
-      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#009DE1;line-height:1}' +
+      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #3F51B5;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
+      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#3F51B5;line-height:1}' +
       '.toprow .sc .u{font-size:7px;text-transform:uppercase;letter-spacing:.06em;color:#64748B;margin-top:1px}' +
       '.toprow .grd{font-size:12px;font-weight:bold;color:#171717}' +
       '.toprow .gdesc{font-size:9px;color:#475569;margin-top:1px;max-width:160px;line-height:1.3}' +
@@ -1381,12 +1381,12 @@
       '.rbadge.easy{background:#D8F0E4;color:#276842}' +
       '.rbadge.good{background:#FEF3E2;color:#9A6D08}' +
       '.rbadge.hard{background:#FCE0DE;color:#C2534A}' +
-      '.cta{background:linear-gradient(135deg,#171717,#2A2233);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}' +
+      '.cta{background:linear-gradient(135deg,#171717,#1A237E);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}' +
       '.cta .ct{flex:1;min-width:220px}' +
-      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#7DD3FC;font-weight:bold;display:block;margin-bottom:4px}' +
+      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#9FA8DA;font-weight:bold;display:block;margin-bottom:4px}' +
       '.cta .ct h3{font-size:17px;margin:0 0 4px;color:#FFF;border:none;padding:0}' +
       '.cta .ct p{font-size:11px;color:rgba(255,255,255,.75);margin:0}' +
-      '.cta .btn{display:inline-block;background:#009DE1;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
+      '.cta .btn{display:inline-block;background:#3F51B5;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
       '.foot{display:flex;justify-content:center;gap:18px;margin-top:18px;padding-top:12px;border-top:1px solid #E5E5E5;font-size:9px;color:#94A3B8}' +
       '.foot a{color:#94A3B8;text-decoration:none}' +
       '.foot svg{width:11px;height:11px;vertical-align:-1px;margin-right:3px;opacity:.7}' +
@@ -1396,7 +1396,7 @@
       '<div class="head">' +
         '<div class="brand">' +
           '<img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" style="height:24px;width:auto">' +
-          '<div class="brandtxt">ASM Flashcards<small>Study Session Report</small></div>' +
+          '<div class="brandtxt">ASF Flashcards<small>Study Session Report</small></div>' +
         '</div>' +
         '<div class="date">'+today+'</div>' +
       '</div>' +
@@ -1415,10 +1415,10 @@
       '<div class="cta">' +
         '<div class="ct">' +
           '<b>READY FOR THE REAL EXAM?</b>' +
-          '<h3>Get instructor-led ASM certification</h3>' +
-          '<p>16 hours live training, 2 mock exams, 100% pass guarantee.</p>' +
+          '<h3>Get Agile Scrum Foundation certification</h3>' +
+          '<p>2-day live training, EXIN accredited, Foundation level.</p>' +
         '</div>' +
-        '<a class="btn" href="https://www.invensislearning.com/agile-scrum-master/">Explore course</a>' +
+        '<a class="btn" href="https://www.invensislearning.com/agile-scrum-foundation-certification-training/">Explore course</a>' +
       '</div>' +
       '<div class="foot">' +
         '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@invensislearning.com">contact@invensislearning.com</a></span>' +
@@ -1429,7 +1429,7 @@
     var blob = new Blob([html], {type:'text/html;charset=utf-8'});
     var blobUrl = URL.createObjectURL(blob);
     var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    var filename = 'asm-report-' + safeName + '.html';
+    var filename = 'asf-report-' + safeName + '.html';
     var a = document.createElement('a');
     a.href = blobUrl;
     a.download = filename;

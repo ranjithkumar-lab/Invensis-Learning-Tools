@@ -1,7 +1,7 @@
-<title>Agile Scrum Master (ASM) Certification Flashcards | Invensis Learning</title>
-<meta name="description" content="Free Agile Scrum Master (ASM) certification exam prep tool. 75 concept flashcards covering the full ASM syllabus: Scrum roles, events, artifacts, estimation, scaling frameworks and more. Recall-first study with spaced repetition.">
+<title>CSPO Certification Flashcards | Invensis Learning</title>
+<meta name="description" content="Free Certified Scrum Product Owner (CSPO) certification exam prep tool. 75 concept flashcards covering the full CSPO syllabus: product ownership, backlog management, stakeholder engagement, value maximization, and more. Recall-first study with spaced repetition.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LearningResource","name":"Agile Scrum Master Certification Flashcards","description":"75 recall-based flashcards covering the full Agile Scrum Master (ASM) certification syllabus: Scrum framework, roles, events, artifacts, estimation, metrics, scaling, and complementary practices.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Agile Scrum Master (ASM) Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
+{"@context":"https://schema.org","@type":"LearningResource","name":"Certified Scrum Product Owner Flashcards","description":"75 recall-based flashcards covering the full Certified Scrum Product Owner (CSPO) certification syllabus: product ownership, backlog management, stakeholder engagement, value maximization, prioritization, and scaling.","educationalUse":"practice","learningResourceType":"Flashcard","teaches":"Certified Scrum Product Owner (CSPO) Certification","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Invensis Learning"}}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,8 @@
   :root{
     --ink-950:#0A0F1A; --ink-900:#0F1521; --ink-850:#131A28; --ink-800:#1A2233; --ink-700:#2A3548;
     --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1; --slate-400:#94A3B8; --slate-500:#64748B;
-    --accent-400:#1AB0F0; --accent-500:#009DE1; --accent-600:#0080B8; --accent-700:#006690; --accent-glow:#7DD3FC;
-    --accent-soft:rgba(0,157,225,.10); --accent-line:rgba(0,157,225,.28);
+    --accent-400:#FF8F00; --accent-500:#EF6C00; --accent-600:#E65100; --accent-700:#BF360C; --accent-glow:#FFCC80;
+    --accent-soft:rgba(255,143,0,.10); --accent-line:rgba(255,143,0,.28);
     --gold:#D4A85A;
     --good:#D4880A; --good-soft:rgba(212,136,10,.14);
     --again:#E15A55; --again-soft:rgba(225,90,85,.14);
@@ -32,7 +32,7 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
     background:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(0,157,225,.06), transparent 60%);
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255,143,0,.06), transparent 60%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -49,13 +49,13 @@
     background:rgba(255,255,255,.9); border-bottom:1px solid var(--line);
     box-shadow:0 1px 0 rgba(15,26,43,.03), 0 4px 12px -8px rgba(15,26,43,.08); }
   header.top::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
-    background:linear-gradient(90deg, transparent 0%, rgba(0,157,225,.28) 50%, transparent 100%); }
+    background:linear-gradient(90deg, transparent 0%, rgba(255,143,0,.28) 50%, transparent 100%); }
   .topinner{ max-width:960px; margin:0 auto; padding:0 clamp(16px,3vw,32px);
     height:60px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .brand{ display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--text); cursor:pointer }
   .logo{ width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,var(--accent-400),var(--accent-700)); color:var(--ink-950); font-weight:900; font-size:.72rem;
-    box-shadow:0 0 20px -4px rgba(0,157,225,.42); }
+    box-shadow:0 0 20px -4px rgba(255,143,0,.42); }
   .brand .btxt{ line-height:1.1 }
   .brand .btxt .n{ display:block; font-family:var(--font-display); font-weight:700; font-size:.92rem }
   .brand .btxt .s{ display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-400) }
@@ -65,7 +65,7 @@
   @media(max-width:640px){ .topmeta{ display:none } }
   .topcta{ font-family:inherit; font-weight:600; font-size:.78rem; text-decoration:none;
     padding:.45rem .9rem; border-radius:8px; background:var(--accent-500); color:var(--ink-950);
-    transition:.15s; box-shadow:0 0 16px -6px rgba(0,157,225,.45); border:1px solid var(--accent-500); }
+    transition:.15s; box-shadow:0 0 16px -6px rgba(255,143,0,.45); border:1px solid var(--accent-500); }
   .topcta:hover{ background:var(--accent-400); transform:translateY(-1px) }
   .pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; border-radius:8px;
     font-family:var(--font-mono); font-weight:600; font-size:.7rem; letter-spacing:.04em;
@@ -83,7 +83,7 @@
   .hero{ position:relative; padding:2rem 0 1rem; text-align:center; overflow:hidden }
   .hero-glow{ position:absolute; left:50%; top:-40%; transform:translateX(-50%);
     width:800px; height:600px; pointer-events:none;
-    background:radial-gradient(ellipse, rgba(0,157,225,.14), transparent 60%);
+    background:radial-gradient(ellipse, rgba(255,143,0,.14), transparent 60%);
     filter:blur(8px); }
   .hero-inner{ position:relative; max-width:640px; margin:0 auto; padding:0 .5rem;
     display:flex; flex-direction:column; align-items:center; gap:1.1rem }
@@ -133,8 +133,8 @@
   .howto .step-d{ font-size:.75rem; color:var(--text-soft); line-height:1.45 }
 
   /* themed page background */
-  .page{ background:linear-gradient(180deg, rgba(0,157,225,.06) 0%, rgba(0,157,225,.02) 40%, transparent 100%);
-    border-radius:24px; border:1px solid rgba(0,157,225,.08); }
+  .page{ background:linear-gradient(180deg, rgba(255,143,0,.06) 0%, rgba(255,143,0,.02) 40%, transparent 100%);
+    border-radius:24px; border:1px solid rgba(255,143,0,.08); }
 
   /* intro screen */
   .intro-screen{ display:flex; justify-content:center; padding:1rem 0; }
@@ -515,14 +515,14 @@
 
 <header class="top">
   <div class="topinner">
-    <a class="brand" id="brandLink" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">
+    <a class="brand" id="brandLink" href="https://www.invensislearning.com/cspo-certification-training/" target="_blank" rel="noopener">
       <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="brandlogo" width="140" height="34" loading="eager" decoding="async">
       <span class="brandsep"></span>
-      <span class="btxt"><span class="n">ASM Flashcards</span><span class="s">Certification Exam Prep</span></span>
+      <span class="btxt"><span class="n">CSPO Flashcards</span><span class="s">Certification Exam Prep</span></span>
     </a>
     <div class="topright">
       <span class="topmeta">Free · No signup for 3 cards</span>
-      <a class="topcta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">Full course →</a>
+      <a class="topcta" href="https://www.invensislearning.com/cspo-certification-training/" target="_blank" rel="noopener">Full course →</a>
     </div>
   </div>
 </header>
@@ -533,8 +533,8 @@
     <div class="intro-screen" id="introScreen">
       <div class="intro-card">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" class="intro-logo" width="140" height="34" loading="eager" decoding="async">
-        <h2 class="intro-title">Agile Scrum Master Flashcards</h2>
-        <p class="intro-sub">Master the ASM syllabus with recall-based flashcards</p>
+        <h2 class="intro-title">CSPO Certification Flashcards</h2>
+        <p class="intro-sub">Master the CSPO syllabus with recall-based flashcards</p>
         <p class="intro-hook">Average first-attempt score is 68%. Can you beat it?</p>
         <div class="intro-steps">
           <div class="intro-step"><span class="intro-step-n">1</span><span>Read the term</span></div>
@@ -549,7 +549,7 @@
       <div class="panelbrand">
         <img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" width="110" height="27" loading="eager" decoding="async">
         <span class="panelbrand-sep"></span>
-        <span class="panelbrand-label">ASM Flashcards</span>
+        <span class="panelbrand-label">CSPO Flashcards</span>
       </div>
       <div class="paneltop">
         <div class="panelmeta">
@@ -598,84 +598,97 @@
 
 <script>
 (function(){
-  var STORAGE_KEY = 'invensis-asm-flashcards-v16';
+  var STORAGE_KEY = 'invensis-cspo-flashcards-v1';
 
   var CARDS = [
-    {id:'agile-manifesto',cat:'Agile Concepts',term:'Agile Manifesto',def:'Four values published in 2001. Individuals and interactions over processes and tools. Working software over comprehensive documentation. Customer collaboration over contract negotiation. Responding to change over following a plan.'},
-    {id:'twelve-principles',cat:'Agile Concepts',term:'Twelve Agile principles',def:'The 12 guidelines behind the Manifesto. Cover customer satisfaction, welcoming change, frequent delivery, close daily collaboration, motivated teams, sustainable pace, technical excellence, and self-organising teams.'},
-    {id:'scrum-values',cat:'Agile Concepts',term:'Scrum values',def:'Commitment, Focus, Openness, Respect, and Courage. The five values that shape how a Scrum Team behaves and holds itself accountable.'},
-    {id:'empiricism',cat:'Agile Concepts',term:'Empiricism',def:'The idea underpinning Scrum that knowledge comes from experience and decisions are based on what is observed. Implemented through the three pillars of Transparency, Inspection, and Adaptation.'},
-    {id:'iterative-dev',cat:'Agile Concepts',term:'Iterative development',def:'Building in small cycles, each producing a working piece, refining based on feedback rather than trying to build everything upfront.'},
-    {id:'incremental-delivery',cat:'Agile Concepts',term:'Incremental delivery',def:'Releasing usable pieces of the product over time so stakeholders get value early and often, instead of one big-bang release.'},
-    {id:'done-vs-releasable',cat:'Agile Concepts',term:'Done vs releasable',def:'"Done" means the Increment meets the team\'s Definition of Done. "Releasable" means the business chooses to deploy it. Every Increment must be Done, not every Done Increment must be released.'},
-    {id:'scrum-master',cat:'Scrum Roles',term:'Scrum Master accountabilities',def:'The Scrum Master is accountable for the Scrum Team\'s effectiveness. Specifically: coaching the team on self-management and Scrum practices, causing the removal of impediments, ensuring all Scrum events happen productively, and helping the organisation understand and adopt Scrum. Not a manager, not a project manager.',free:true},
-    {id:'product-owner',cat:'Scrum Roles',term:'Product Owner accountabilities',def:'The Product Owner is accountable for maximising the value the Scrum Team delivers. Specifically: developing and communicating the Product Goal, creating and clearly ordering Product Backlog items, ensuring the backlog is transparent and understood. Sole authority on scope decisions.'},
-    {id:'developers',cat:'Scrum Roles',term:'Developers (Scrum role)',def:'The Scrum Team accountability held by the people who create the Increment each Sprint. Not just coders. Includes testers, designers, analysts, anyone contributing to a Done Increment. Self-managing and cross-functional as a group.'},
-    {id:'stakeholders',cat:'Scrum Roles',term:'Stakeholders',def:'Anyone outside the Scrum Team affected by the product: customers, users, sponsors, business leaders, other teams. Consulted at the Sprint Review.'},
-    {id:'agile-coach',cat:'Scrum Roles',term:'Agile Coach',def:'A more senior role than Scrum Master. Coaches multiple teams and the wider organisation on Agile mindset, practices, and transformation.'},
-    {id:'sprint',cat:'Scrum Events',term:'Sprint',def:'A fixed timebox, typically 1 to 4 weeks, during which the team delivers a Done, potentially releasable Increment. Sprints are the same length back-to-back with no gaps between them.',free:true},
-    {id:'sprint-planning',cat:'Scrum Events',term:'Sprint Planning',def:'The event that kicks off a Sprint. The team sets a Sprint Goal, selects Product Backlog items it forecasts it can complete, and shapes an initial plan for delivering them.'},
-    {id:'daily-scrum',cat:'Scrum Events',term:'Daily Scrum',def:'A 15-minute daily event where Developers inspect progress toward the Sprint Goal and adapt their plan for the next 24 hours. Held at the same time and place.'},
-    {id:'sprint-review',cat:'Scrum Events',term:'Sprint Review',def:'An event at the end of the Sprint where the team and stakeholders inspect the Increment, discuss what was done, and adapt the Product Backlog accordingly.'},
-    {id:'sprint-retro',cat:'Scrum Events',term:'Sprint Retrospective',def:'An event closing the Sprint where the team inspects how it worked (people, relationships, process, tools) and plans specific improvements for the next Sprint.'},
-    {id:'backlog-refinement',cat:'Scrum Events',term:'Backlog Refinement',def:'Ongoing activity where the Scrum Team clarifies, splits, and estimates upcoming Product Backlog items so they are Ready for a future Sprint.'},
-    {id:'sprint-goal',cat:'Scrum Events',term:'Sprint Goal',def:'A single objective for the Sprint that gives coherence to the Sprint Backlog. If work has to be dropped, the Sprint Goal is the priority.'},
-    {id:'working-agreement',cat:'Scrum Events',term:'Working agreement',def:'A team-created list of behaviours and norms the team commits to. Reviewed and updated at Retrospectives.'},
-    {id:'sprint-cancellation',cat:'Scrum Events',term:'Sprint cancellation',def:'The Product Owner has the sole authority to cancel a Sprint if the Sprint Goal becomes obsolete. Rare, but a real option.'},
-    {id:'product-backlog',cat:'Scrum Artifacts',term:'Product Backlog',def:'An ordered, emergent list of everything known to be needed to improve the product. Owned and ordered by the Product Owner and never "finished."'},
-    {id:'sprint-backlog',cat:'Scrum Artifacts',term:'Sprint Backlog',def:'The plan for the Sprint: the Sprint Goal, the Product Backlog items chosen for the Sprint, and the plan for delivering them. Owned by the Developers.'},
-    {id:'increment',cat:'Scrum Artifacts',term:'Increment',def:'The sum of all completed Product Backlog items, verified to meet the Definition of Done, and potentially releasable at Sprint end.'},
-    {id:'definition-of-done',cat:'Scrum Artifacts',term:'Definition of Done (DoD)',def:'A shared checklist of what "complete" means for any Increment. Consistent across the team, evolves over time.'},
-    {id:'definition-of-ready',cat:'Scrum Artifacts',term:'Definition of Ready (DoR)',def:'A shared checklist of what makes a Product Backlog item ready to be pulled into a Sprint. Prevents unclear work from entering.'},
-    {id:'burnup-chart',cat:'Scrum Artifacts',term:'Burnup chart',def:'Tracks work completed against a total scope line over time. Unlike burndown, makes changes in scope visible as movement in the top line.'},
-    {id:'impediment',cat:'Scrum Artifacts',term:'Impediment',def:'Anything slowing the team\'s progress toward the Sprint Goal that the team cannot resolve on its own. The Scrum Master\'s job to remove.'},
-    {id:'user-story',cat:'Estimation & Planning',term:'User story',def:'A short, plain-language description of a feature from the user\'s perspective. "As a &lt;user&gt;, I want &lt;goal&gt; so that &lt;benefit&gt;." Used to capture a backlog item that fits inside a Sprint.',free:true},
-    {id:'velocity',cat:'Estimation & Planning',term:'Team velocity',def:'The average number of story points a Scrum Team completes per Sprint. Used to forecast how much work fits in future Sprints, not as a productivity target or team-to-team benchmark.'},
-    {id:'burndown',cat:'Estimation & Planning',term:'Burndown chart',def:'A visualisation of remaining work in a Sprint or release over time. Used to inspect trend and prompt conversations, not to enforce a schedule.'},
-    {id:'moscow',cat:'Estimation & Planning',term:'MoSCoW prioritisation',def:'Categorising backlog items as Must have, Should have, Could have, Won\'t have. Used for release scope decisions.'},
-    {id:'wsjf',cat:'Estimation & Planning',term:'WSJF',def:'Weighted Shortest Job First. Prioritises by dividing (business value + urgency + risk reduction) by job size. Common in SAFe.'},
-    {id:'invest',cat:'Estimation & Planning',term:'INVEST criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable.'},
-    {id:'cycle-time',cat:'Metrics & Reporting',term:'Cycle time',def:'How long it takes to move a work item from "in progress" to "done." Lower cycle time means faster feedback and less risk.'},
-    {id:'lead-time',cat:'Metrics & Reporting',term:'Lead time',def:'How long it takes from when a work item is requested to when it is delivered. Includes waiting time, cycle time does not.'},
-    {id:'throughput',cat:'Metrics & Reporting',term:'Throughput',def:'The number of work items completed per unit of time. Combined with cycle time, forecasts future delivery.'},
-    {id:'cfd',cat:'Metrics & Reporting',term:'Cumulative flow diagram',def:'A chart showing work item count in each state (backlog, in progress, done) over time. Reveals bottlenecks and WIP issues.'},
-    {id:'escaped-defects',cat:'Metrics & Reporting',term:'Escaped defects',def:'Bugs found by users after release. A quality metric that puts pressure on the Definition of Done.'},
-    {id:'team-happiness',cat:'Metrics & Reporting',term:'Team happiness',def:'Self-reported team mood, tracked over Sprints. A leading indicator of upcoming performance and turnover.'},
-    {id:'scaling-agile',cat:'Scaling & Adoption',term:'Scaling Agile',def:'Adapting Scrum for multiple teams working on the same product. Approaches include Scrum of Scrums, Nexus, LeSS, and SAFe, all designed to coordinate work without losing self-management.'},
-    {id:'project-type',cat:'Scaling & Adoption',term:'Project type suitability',def:'Assessing whether Agile fits the work. It suits complex, adaptive problems where requirements emerge, less so simple, repeatable work where a predictive plan is sufficient.'},
-    {id:'agile-tooling',cat:'Scaling & Adoption',term:'Agile tooling',def:'The supporting infrastructure (issue trackers, boards, CI/CD, wikis) that makes visibility, flow, and integration practical at team and organisation scale.'},
-    {id:'self-management',cat:'Scaling & Adoption',term:'Self-management',def:'The team decides for itself who does what, when, and how within a Sprint. The Scrum Master coaches rather than directs.'},
-    {id:'requirements-mgmt',cat:'Scaling & Adoption',term:'Agile requirements management',def:'Capturing needs as prioritised, progressively refined backlog items rather than a fully-specified upfront document. Details emerge as work approaches.'},
-    {id:'agile-adoption',cat:'Scaling & Adoption',term:'Agile adoption',def:'The organisational shift required to make Agile stick. Mindset change, structural adjustment, and sustained leadership investment, not just a process rollout.'},
-    {id:'safe',cat:'Scaling & Adoption',term:'SAFe',def:'Scaled Agile Framework. Coordinates multiple Agile teams into "Agile Release Trains" with big-room Program Increment planning every 8 to 12 weeks.'},
-    {id:'less',cat:'Scaling & Adoption',term:'LeSS',def:'Large-Scale Scrum. Keeps Scrum minimal at scale: one Product Backlog, one Product Owner, multiple feature teams working from it.'},
-    {id:'nexus',cat:'Scaling & Adoption',term:'Nexus',def:'A framework for scaling to 3 to 9 Scrum teams working on one product with a shared Sprint. Adds a Nexus Integration Team.'},
-    {id:'sos',cat:'Scaling & Adoption',term:'Scrum of Scrums',def:'A daily coordination meeting where one rep from each team meets to share progress, dependencies, and impediments across teams.'},
-    {id:'cop',cat:'Scaling & Adoption',term:'Communities of Practice',def:'Cross-team groups formed around a shared interest (testing, security, UX) to spread knowledge and align approaches.'},
-    {id:'retro-formats',cat:'Facilitation & Team Dynamics',term:'Retrospective formats',def:'Techniques like Start-Stop-Continue, 4Ls, Sailboat, Mad-Sad-Glad. Rotating formats keeps Retros fresh and surfaces different insights.'},
-    {id:'tuckman',cat:'Facilitation & Team Dynamics',term:'Tuckman\'s stages',def:'Forming, Storming, Norming, Performing. Team development stages that predict predictable friction in the first weeks together.'},
-    {id:'silent-brainstorm',cat:'Facilitation & Team Dynamics',term:'Silent brainstorming',def:'Team members write ideas independently before discussing. Prevents anchoring on the first voice and includes introverts.'},
-    {id:'dot-voting',cat:'Facilitation & Team Dynamics',term:'Dot voting',def:'Each person gets N dots to place on options for prioritisation. Fast group decision-making without long debate.'},
-    {id:'one-two-four-all',cat:'Facilitation & Team Dynamics',term:'1-2-4-All',def:'Facilitation pattern: solo think, pair share, group of 4, then whole group. Scales participation and quality of input.'},
-    {id:'kanban',cat:'Kanban & Complementary',term:'Kanban',def:'A pull-based flow method: visualise work, limit WIP, manage flow, make process explicit, improve collaboratively. Often used alongside Scrum.'},
-    {id:'wip-limits',cat:'Kanban & Complementary',term:'WIP limits',def:'Maximum number of items allowed in each workflow state at once. Forces the team to finish before starting, reducing cycle time.'},
-    {id:'pull-system',cat:'Kanban & Complementary',term:'Pull system',def:'Work is pulled into the next stage only when there is capacity, rather than pushed. Prevents overload and reveals bottlenecks.'},
-    {id:'scrumban',cat:'Kanban & Complementary',term:'ScrumBan',def:'Hybrid approach: Scrum\'s rhythm (Sprints, Retros) combined with Kanban\'s flow (WIP limits, continuous pull). Common in maintenance teams.'},
-    {id:'littles-law',cat:'Kanban & Complementary',term:'Little\'s Law',def:'Average cycle time = WIP / Throughput. Mathematical foundation for why WIP limits improve delivery speed.'},
-    {id:'tdd',cat:'Technical Practices',term:'Test-Driven Development (TDD)',def:'Write a failing test first, then write minimal code to pass it, then refactor. Produces well-tested code by construction.'},
-    {id:'product-goal',cat:'Scrum Artifacts',term:'Product Goal',def:'The single long-term objective the Scrum Team commits to. Set by the Product Owner, lives in the Product Backlog, gives coherence to a series of Sprint Goals.'},
-    {id:'refactoring',cat:'Technical Practices',term:'Refactoring',def:'Improving code structure without changing behaviour. Continuous refactoring keeps technical debt low so future velocity stays predictable.'},
-    {id:'spike',cat:'Estimation & Planning',term:'Spike',def:'A time-boxed research task added to a Sprint to reduce uncertainty. Example: spike a proof of concept for the payment API integration before committing to build it.'},
-    {id:'pair-programming',cat:'Technical Practices',term:'Pair programming',def:'Two developers at one workstation, one typing, one navigating. Reduces defects, spreads knowledge across the team, often results in better design.'},
-    {id:'estimation-techniques',cat:'Estimation & Planning',term:'Estimation techniques',def:'Common methods a Scrum Team uses to size Product Backlog items: Planning Poker (all reveal cards simultaneously to avoid anchoring), T-shirt sizing (S/M/L/XL for early rough sizing), Fibonacci scale (1, 2, 3, 5, 8, 13, 21, gaps widen as effort grows).'},
-    {id:'product-roadmap',cat:'Estimation & Planning',term:'Product Roadmap',def:'A time-based view of upcoming Product Backlog themes or features across quarters or releases. Communicates direction to stakeholders without committing to detailed dates.'},
-    {id:'story-mapping',cat:'Estimation & Planning',term:'Story mapping',def:'A backlog visualisation technique. User activities are arranged left-to-right along the top (the user journey), with detailed stories stacked vertically below in priority order. Reveals gaps and slices for release planning.'},
-    {id:'story-points-relative',cat:'Estimation & Planning',term:'Story points & relative sizing',def:'Story points are a relative unit that captures effort, complexity, and uncertainty of a backlog item, not hours. Teams estimate by comparing items to each other ("this is about twice that one") rather than fixing absolute times. Deliberately non-comparable across teams.'},
-    {id:'scrum-framework',cat:'Agile Concepts',term:'3-5-3 Scrum framework',def:'Scrum in one shorthand: 3 accountabilities (Product Owner, Scrum Master, Developers), 5 events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), 3 artifacts (Product Backlog, Sprint Backlog, Increment). Each artifact has a commitment: Product Goal, Sprint Goal, Definition of Done.'},
-    {id:'waterfall-vs-agile',cat:'Agile Concepts',term:'Waterfall vs Agile',def:'Waterfall assumes requirements are known up front and delivers in one pass at the end. Agile assumes requirements emerge, delivers working slices incrementally, and adapts based on feedback. Waterfall optimises for predictability, Agile for value in uncertainty.'},
-    {id:'sprint-zero',cat:'Scrum Events',term:'Sprint Zero',def:'An informal pre-Sprint used in some organisations to set up infrastructure, initial architecture, and an early Product Backlog before real Sprints begin. Not part of formal Scrum. Controversial because it can hide up-front design under a Scrum label.'},
-    {id:'sprint-goal-vs-scope',cat:'Scrum Events',term:'Sprint Goal vs Sprint scope',def:'The Sprint Goal is the single objective for the Sprint, fixed once Sprint Planning ends. The Sprint scope (which Product Backlog items) can be renegotiated between the Developers and Product Owner during the Sprint if learning shifts, as long as the Sprint Goal is not put at risk.'},
-    {id:'servant-vs-manager',cat:'Scrum Roles',term:'Servant-leader vs manager',def:'A traditional manager assigns tasks, sets deadlines, and controls people. A Scrum Master serves the team: removes obstacles, coaches self-management, facilitates decisions. Authority comes from influence and expertise, not position. Never gives the team direct instructions on how to do the work.'}
+    // Product Owner Role & Responsibilities (~12 cards)
+    {id:'cspo-1',term:'Product Owner accountability',def:'The Product Owner is the single person accountable for maximising the value of the product and the work the Scrum Team performs. They own the "what" and "why," not the "how."',free:true},
+    {id:'cspo-2',term:'Product Owner authority',def:'The PO has sole authority to order the Product Backlog and decide what the team builds next. Stakeholders must work through the PO; no one else can override backlog decisions.',free:true},
+    {id:'cspo-3',term:'PO decision-making',def:'The PO makes scope and priority decisions. They accept or reject work results against acceptance criteria and decide whether an Increment is released.',free:true},
+    {id:'cspo-4',term:'PO and Scrum Master relationship',def:'The Scrum Master coaches the PO on backlog management, stakeholder facilitation, and empirical planning. They do not make product decisions for the PO.'},
+    {id:'cspo-5',term:'PO and Development Team',def:'The PO collaborates with Developers to clarify requirements and negotiate Sprint scope. Developers pull work; the PO does not assign tasks or dictate how work is done.'},
+    {id:'cspo-6',term:'PO and stakeholders',def:'The PO represents all stakeholders to the team and the team to stakeholders. They gather input, synthesise competing needs, and communicate a single coherent direction.'},
+    {id:'cspo-7',term:'Product Owner vs Project Manager',def:'A PO maximises product value and owns the backlog; a PM manages schedule, budget, and resources. In Scrum the PO role replaces traditional PM scope-control duties.'},
+    {id:'cspo-8',term:'Single Product Owner principle',def:'Each product has exactly one PO to ensure clear accountability. A committee cannot own the backlog because shared ownership dilutes decision speed and clarity.'},
+    {id:'cspo-9',term:'PO as value maximiser',def:'The PO\'s primary job is maximising the value delivered by the Scrum Team. Every backlog ordering decision should reflect the highest-value work first.'},
+    {id:'cspo-10',term:'PO empowerment',def:'The organisation must empower the PO to make real decisions. A PO who must get every choice approved by a manager is a proxy, not a true Product Owner.'},
+    {id:'cspo-11',term:'PO availability',def:'The PO must be available to the team throughout the Sprint to answer questions, clarify acceptance criteria, and make scope trade-offs quickly.'},
+    {id:'cspo-12',term:'PO anti-patterns',def:'Common anti-patterns: absent PO, PO by committee, PO who is also a Developer, PO with no authority, and PO who micromanages how the team builds solutions.'},
+
+    // Product Backlog Management (~12 cards)
+    {id:'cspo-13',term:'Product Backlog',def:'A single ordered list of everything needed to improve the product. It is the sole source of work for the Scrum Team, owned and ordered by the Product Owner.'},
+    {id:'cspo-14',term:'User stories',def:'Short, plain-language descriptions of functionality from a user\'s perspective: "As a [user], I want [goal] so that [benefit]." They invite conversation, not specification.'},
+    {id:'cspo-15',term:'Epics',def:'Large bodies of work that span multiple Sprints. Epics are broken down into smaller user stories before they can be pulled into a Sprint.'},
+    {id:'cspo-16',term:'Themes',def:'A collection of related user stories or epics grouped by a common business objective, such as "onboarding experience" or "payment processing."'},
+    {id:'cspo-17',term:'Acceptance criteria',def:'Specific, testable conditions a Product Backlog item must satisfy to be considered complete. Written by or with the PO before development begins.'},
+    {id:'cspo-18',term:'Definition of Done',def:'A shared checklist of quality standards every Increment must meet. Created by the Scrum Team and applied consistently to all backlog items.'},
+    {id:'cspo-19',term:'Backlog refinement',def:'An ongoing activity where the PO and Developers add detail, estimates, and order to Product Backlog items. Typically consumes no more than 10% of Sprint capacity.'},
+    {id:'cspo-20',term:'Story splitting',def:'Breaking a large story into smaller, independently valuable pieces that can each be completed in a single Sprint. Techniques include splitting by workflow step, data type, or business rule.'},
+    {id:'cspo-21',term:'INVEST criteria',def:'Good user stories are Independent, Negotiable, Valuable, Estimable, Small, and Testable. INVEST helps the PO write stories the team can reliably deliver.'},
+    {id:'cspo-22',term:'Backlog ordering',def:'The PO orders the backlog by value, risk, dependencies, and learning needs. Higher-ordered items are smaller and more detailed; lower items are larger and less defined.'},
+    {id:'cspo-23',term:'Emergent requirements',def:'The Product Backlog is never complete. New items emerge as the team learns from delivered Increments and market feedback, keeping the backlog a living document.'},
+    {id:'cspo-24',term:'Backlog transparency',def:'The backlog must be visible and understood by all stakeholders. Transparency enables meaningful inspection and adaptation at Sprint Reviews and planning sessions.'},
+
+    // Value & Vision (~10 cards)
+    {id:'cspo-25',term:'Product vision',def:'A concise statement describing the future state the product aims to achieve. It aligns stakeholders, guides backlog decisions, and inspires the team toward a shared destination.'},
+    {id:'cspo-26',term:'Product Goal',def:'The single long-term objective for the Scrum Team that lives in the Product Backlog. It gives coherence to a series of Sprints and is the commitment of the Product Backlog artifact.'},
+    {id:'cspo-27',term:'Value maximisation',def:'The PO\'s core responsibility: ensuring the team always works on the highest-value items first. Value can be revenue, cost savings, risk reduction, or user satisfaction.'},
+    {id:'cspo-28',term:'Return on Investment (ROI)',def:'A measure comparing the value gained from a feature against its development cost. POs use ROI to justify backlog ordering and communicate trade-offs to stakeholders.'},
+    {id:'cspo-29',term:'Cost of delay',def:'The economic impact of not delivering a feature sooner. High cost-of-delay items should be prioritised because every Sprint they wait erodes their potential value.'},
+    {id:'cspo-30',term:'Opportunity cost',def:'The value of the next-best alternative foregone when choosing to build one feature over another. POs weigh opportunity cost when ordering the backlog.'},
+    {id:'cspo-31',term:'Product roadmap',def:'A strategic, time-based view of upcoming themes or features across releases. It communicates direction without committing to detailed dates, and adapts as learning occurs.'},
+    {id:'cspo-32',term:'Release planning',def:'Forecasting which backlog items will ship in a future release based on velocity, priorities, and dependencies. Release plans are revisited frequently as conditions change.'},
+    {id:'cspo-33',term:'Minimum Viable Product (MVP)',def:'The smallest version of a product that delivers enough value to early users and generates validated learning. MVPs test assumptions before investing in full-scale development.'},
+    {id:'cspo-34',term:'Value vs feature delivery',def:'Delivering features is not the same as delivering value. The PO measures success by outcomes (user adoption, revenue) not outputs (number of stories shipped).'},
+
+    // Prioritization Techniques (~10 cards)
+    {id:'cspo-35',term:'MoSCoW prioritisation',def:'Categorises items as Must have, Should have, Could have, and Won\'t have. Useful for release scope decisions, ensuring must-haves ship first.'},
+    {id:'cspo-36',term:'Value vs effort matrix',def:'A 2x2 grid plotting items by business value (high/low) against implementation effort (high/low). Quick wins (high value, low effort) are prioritised first.'},
+    {id:'cspo-37',term:'Kano model',def:'Classifies features as Basic (expected), Performance (more is better), and Excitement (delighters). Helps POs balance must-have hygiene factors with differentiating features.'},
+    {id:'cspo-38',term:'WSJF',def:'Weighted Shortest Job First. Prioritises by dividing cost of delay (value + urgency + risk reduction) by job duration. Items with the highest WSJF score are done first.'},
+    {id:'cspo-39',term:'Stack ranking',def:'Forcing a strict 1-to-N order on backlog items with no ties. Eliminates ambiguity and compels the PO to make explicit trade-off decisions.'},
+    {id:'cspo-40',term:'Buy-a-feature',def:'A collaborative prioritisation game where stakeholders pool fake currency to "buy" features. Reveals true priorities through negotiation and trade-offs.'},
+    {id:'cspo-41',term:'Impact mapping',def:'A strategic planning technique that maps goals to actors, impacts, and deliverables. Helps POs trace every backlog item back to a business objective.'},
+    {id:'cspo-42',term:'Story mapping',def:'User activities arranged left-to-right as a journey, with detailed stories stacked vertically by priority. Reveals gaps and natural release slices for the PO.'},
+    {id:'cspo-43',term:'Risk-adjusted backlog',def:'Ordering the backlog so that high-risk, high-uncertainty items are tackled early. Failing fast on risky items prevents costly surprises later.'},
+    {id:'cspo-44',term:'Prioritisation trade-offs',def:'Every prioritisation choice trades one item against another. The PO must articulate the reasoning, not just the result, so stakeholders understand and trust the ordering.'},
+
+    // Stakeholder Management (~10 cards)
+    {id:'cspo-45',term:'Stakeholder identification',def:'Mapping everyone affected by or interested in the product: users, sponsors, regulators, support teams. The PO must know who they are to gather complete input.'},
+    {id:'cspo-46',term:'Stakeholder engagement',def:'Actively involving stakeholders through demos, reviews, and regular updates. Engaged stakeholders provide better feedback and resist fewer changes.'},
+    {id:'cspo-47',term:'Managing competing priorities',def:'Stakeholders often want conflicting things. The PO resolves conflicts by aligning decisions to the product vision, data, and value, not by political negotiation alone.'},
+    {id:'cspo-48',term:'Communicating vision and progress',def:'The PO shares the product vision at every opportunity and uses burn-up charts, roadmaps, and Sprint Reviews to show progress toward it.'},
+    {id:'cspo-49',term:'Sprint Review as feedback loop',def:'The Sprint Review is the PO\'s primary mechanism for collecting stakeholder feedback on the Increment and adapting the backlog based on what is learned.'},
+    {id:'cspo-50',term:'Transparency and information radiators',def:'Making product progress visible through boards, dashboards, and open backlogs. Transparency builds trust and reduces the need for status meetings.'},
+    {id:'cspo-51',term:'Saying no to stakeholders',def:'A key PO skill. Saying no to low-value requests protects the team\'s focus on high-value work. The PO explains the trade-off, not just the refusal.'},
+    {id:'cspo-52',term:'Stakeholder communication plan',def:'A lightweight plan defining who needs what information, how often, and through which channel. Prevents over-communication and missed stakeholders.'},
+    {id:'cspo-53',term:'Building stakeholder trust',def:'Trust is built by delivering working Increments regularly, being transparent about trade-offs, and following through on commitments made at Sprint Reviews.'},
+    {id:'cspo-54',term:'Feedback incorporation',def:'The PO synthesises stakeholder and user feedback into actionable backlog items, re-orders the backlog accordingly, and communicates what changed and why.'},
+
+    // Scrum Framework for PO (~10 cards)
+    {id:'cspo-55',term:'Sprint Planning (PO role)',def:'The PO presents the highest-ordered backlog items and the proposed Sprint Goal. Developers select items they forecast they can complete; the PO negotiates scope, not effort.'},
+    {id:'cspo-56',term:'Sprint Review (PO role)',def:'The PO presents the Sprint Goal, demonstrates the Increment with the team, collects stakeholder feedback, and updates the backlog to reflect new insights.'},
+    {id:'cspo-57',term:'Increment',def:'The sum of all Product Backlog items completed during a Sprint plus all prior Increments. Each Increment must meet the Definition of Done and be potentially releasable.'},
+    {id:'cspo-58',term:'Sprint Goal',def:'A single objective for the Sprint negotiated between the PO and Developers at Sprint Planning. It provides focus and allows flexible scope negotiation during the Sprint.'},
+    {id:'cspo-59',term:'Scrum values',def:'Commitment, Courage, Focus, Openness, and Respect. These five values guide how the Scrum Team behaves and collaborates; the PO models them in every interaction.'},
+    {id:'cspo-60',term:'Sprint timebox',def:'A fixed period of one to four weeks. The PO cannot extend it. Short Sprints give faster feedback loops and reduce the risk of building the wrong thing.'},
+    {id:'cspo-61',term:'Sprint Retrospective (PO role)',def:'The PO participates in Retrospectives to inspect and improve how the team collaborates. The PO may raise process issues affecting value delivery.'},
+    {id:'cspo-62',term:'Definition of Done vs acceptance criteria',def:'DoD applies to every Increment (quality standard). Acceptance criteria apply to individual backlog items (functional requirements). Both must be met for an item to be complete.'},
+    {id:'cspo-63',term:'Sprint scope negotiation',def:'During a Sprint, if new learning emerges, the PO and Developers can renegotiate which items are in scope, provided the Sprint Goal is not endangered.'},
+    {id:'cspo-64',term:'Daily Scrum and PO',def:'The Daily Scrum is for Developers. The PO does not run it but should be available to answer questions and unblock the team when needed.'},
+
+    // Scaling & Advanced Concepts (~11 cards)
+    {id:'cspo-65',term:'Multiple teams, one PO',def:'When scaling, one Product Owner maintains a single Product Backlog across multiple teams. This preserves a unified vision and prevents conflicting priorities.'},
+    {id:'cspo-66',term:'Product Owner in SAFe',def:'In SAFe, the PO works at the team level writing stories and accepting work. The Product Manager handles the program-level vision and roadmap above the PO.'},
+    {id:'cspo-67',term:'Product Owner in LeSS',def:'In Large-Scale Scrum, one PO owns the single Product Backlog for all teams. Area Product Owners may assist but the PO retains final ordering authority.'},
+    {id:'cspo-68',term:'Product Owner in Nexus',def:'In Nexus, a single PO manages the Product Backlog for 3-9 Scrum teams. The Nexus Integration Team helps coordinate cross-team dependencies.'},
+    {id:'cspo-69',term:'Velocity',def:'The average number of story points a team completes per Sprint. The PO uses velocity to forecast delivery dates, not to pressure the team for higher output.'},
+    {id:'cspo-70',term:'Lead time',def:'Time from when a backlog item is requested to when it is delivered. Shorter lead time means faster value delivery and tighter customer feedback loops.'},
+    {id:'cspo-71',term:'Customer satisfaction metrics',def:'Measures like NPS, CSAT, and retention rate that tell the PO whether delivered features actually solve user problems and create real value.'},
+    {id:'cspo-72',term:'Continuous discovery',def:'An ongoing practice of interviewing users, running experiments, and analysing data to continuously identify the most valuable problems to solve next.'},
+    {id:'cspo-73',term:'Dual-track agile',def:'Running discovery (what to build) and delivery (building it) in parallel. The PO feeds validated ideas from discovery into the delivery backlog continuously.'},
+    {id:'cspo-74',term:'Evidence-Based Management (EBM)',def:'A framework using four key value areas: Current Value, Unrealised Value, Ability to Innovate, and Time to Market. Helps the PO make data-driven product decisions.'},
+    {id:'cspo-75',term:'Product Owner career growth',def:'POs can grow into Senior PO, Product Manager, or Chief Product Officer roles. Mastery of stakeholder management, strategy, and data-driven decisions is key.'}
   ];
 
   var SESSION_SIZE = 15;
@@ -713,9 +726,9 @@
   };
 
   var TESTIMONIALS = [
-    { quote:'The spaced-repetition alone made me pass. I stopped re-reading notes and just came back daily.', name:'Ananya M.', role:'Certified Scrum Master, Bengaluru' },
-    { quote:'Cleared ASM on the first attempt after two weeks with this + the Invensis course. Worth every rupee.', name:'Rohit K.', role:'Delivery Lead, Pune' },
-    { quote:'Best free resource I found. The scenario examples on the back of each card is what made concepts click for me.', name:'Priya S.', role:'Business Analyst, Hyderabad' }
+    { quote:'The flashcards made product ownership concepts click. I passed CSPO on the first attempt after two weeks of daily practice.', name:'Meera S.', role:'Certified Scrum Product Owner, Bengaluru' },
+    { quote:'Best free CSPO prep tool I found. The backlog management and prioritisation cards were exactly what the exam tested.', name:'Arjun P.', role:'Product Manager, Hyderabad' },
+    { quote:'Used these alongside the Invensis CSPO course. The recall-based approach is far more effective than re-reading slides.', name:'Divya R.', role:'Business Analyst, Pune' }
   ];
 
   function updateStreak(){
@@ -956,9 +969,9 @@
     ov.innerHTML =
       '<div class="mo-content">' +
         '<div class="mo-head"><span class="mo-badge">🎯</span><span class="mo-title">10 of 15 - well done</span></div>' +
-        '<p class="mo-msg">Ready to earn your ASM certification? Live instructor-led training with mock exams and a pass guarantee.</p>' +
+        '<p class="mo-msg">Ready to earn your CSPO certification? Live instructor-led training with Scrum Alliance certification and Product Owner focus.</p>' +
         '<div class="mo-actions">' +
-          '<a class="mo-cta" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="mo-cta" href="https://www.invensislearning.com/cspo-certification-training/" target="_blank" rel="noopener">View course</a>' +
           '<button class="mo-skip" id="milestoneSkip">Skip</button>' +
         '</div>' +
       '</div>';
@@ -1039,11 +1052,11 @@
       '</div>' +
       '<div class="coursecta">' +
         '<div class="ctxt">' +
-          '<h4>Ready for ASM certification?</h4>' +
-          '<p>2-day live training · EXIN accredited · 100% pass guarantee</p>' +
+          '<h4>Ready for CSPO certification?</h4>' +
+          '<p>2-day live training · Scrum Alliance certified · Product Owner focus</p>' +
         '</div>' +
         '<div class="cta-btns">' +
-          '<a class="gobtn" href="https://www.invensislearning.com/agile-scrum-master/" target="_blank" rel="noopener">View course</a>' +
+          '<a class="gobtn" href="https://www.invensislearning.com/cspo-certification-training/" target="_blank" rel="noopener">View course</a>' +
         '</div>' +
       '</div>' +
       '<div class="cta-trust">4,100+ certified with Invensis · 3,800+ use this deck</div>';
@@ -1051,8 +1064,8 @@
     document.getElementById('dlPdf').addEventListener('click', function(){ generatePdfReport(score, grade, easy, good, again); });
 
     document.getElementById('shareBtn').addEventListener('click', function(){
-      var shareUrl = 'https://www.invensislearning.com/blog/agile-scrum-master-flashcards/';
-      var copyText = 'Can you beat '+score+'% on the Agile Scrum Master flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
+      var shareUrl = 'https://www.invensislearning.com/blog/cspo-flashcards/';
+      var copyText = 'Can you beat '+score+'% on the CSPO flashcards?\n\nFree practice tool with recall-based cards. Try it yourself:\n'+shareUrl;
       var encodedUrl = encodeURIComponent(shareUrl);
       var shareMenu = document.createElement('div');
       shareMenu.className = 'share-menu';
@@ -1150,7 +1163,7 @@
       var t = TESTIMONIALS[idx];
       el.style.opacity = '0';
       setTimeout(function(){
-        el.querySelector('.tquote').textContent = '“' + t.quote + '”';
+        el.querySelector('.tquote').textContent = '"' + t.quote + '"';
         el.querySelector('.tname').textContent = t.name;
         el.querySelector('.trole').textContent = t.role;
         el.style.opacity = '1';
@@ -1182,7 +1195,7 @@
     if (name === 'Learner'){
       var entered = window.prompt('Enter your name for the certificate:', '');
       if (entered){ state.name = entered; saveState(); name = entered; }
-      else name = 'ASM Learner';
+      else name = 'CSPO Learner';
     }
     var W = 1200, H = 630;
     var c = document.createElement('canvas');
@@ -1191,34 +1204,34 @@
     var uniqueCards = Object.keys(sessionRatings).length;
     var today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
 
-    // Clean deep gradient (professional, not gamey)
+    // Clean deep gradient
     var g = ctx.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, '#05091C');
-    g.addColorStop(1, '#0A2A4A');
+    g.addColorStop(0, '#1A0800');
+    g.addColorStop(1, '#3E1A00');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
     // Elegant single glow
     var glow = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 500);
-    glow.addColorStop(0, 'rgba(125,211,252,0.14)');
-    glow.addColorStop(1, 'rgba(125,211,252,0)');
+    glow.addColorStop(0, 'rgba(255,204,128,0.14)');
+    glow.addColorStop(1, 'rgba(255,204,128,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
     // Ornamental top and bottom hairlines
-    ctx.strokeStyle = 'rgba(125,211,252,0.35)';
+    ctx.strokeStyle = 'rgba(255,204,128,0.35)';
     ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(80, 80); ctx.lineTo(W-80, 80); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(80, H-80); ctx.lineTo(W-80, H-80); ctx.stroke();
 
-    // Top-left brand (small, professional)
+    // Top-left brand
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.textAlign = 'left';
     ctx.font = 'bold 12px Arial, sans-serif';
     ctx.fillText('INVENSIS LEARNING', 90, 55);
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('Agile Scrum Master · Certification Prep', 90, 72);
+    ctx.fillText('Certified Scrum Product Owner · Certification Prep', 90, 72);
 
     // Top-right date
     ctx.textAlign = 'right';
@@ -1226,12 +1239,12 @@
     ctx.font = '11px Arial, sans-serif';
     ctx.fillText(today, W-90, 62);
 
-    // Center composition: eyebrow, name, achievement, score
+    // Center composition
     ctx.textAlign = 'center';
     var cx = W / 2;
 
     // Eyebrow
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#FFCC80';
     ctx.font = 'bold 14px Arial, sans-serif';
     ctx.fillText('CERTIFICATE OF ACCOMPLISHMENT', cx, 145);
 
@@ -1248,7 +1261,7 @@
 
     // Underline under name
     var nameW = ctx.measureText(nameDisplay).width;
-    ctx.strokeStyle = 'rgba(125,211,252,0.5)';
+    ctx.strokeStyle = 'rgba(255,204,128,0.5)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(cx - nameW/2 - 20, 265);
@@ -1258,19 +1271,18 @@
     // Achievement line
     ctx.fillStyle = 'rgba(255,255,255,0.85)';
     ctx.font = '19px Arial, sans-serif';
-    ctx.fillText('for successfully studying ' + uniqueCards + ' Agile Scrum Master concepts', cx, 300);
+    ctx.fillText('for successfully studying ' + uniqueCards + ' Certified Scrum Product Owner concepts', cx, 300);
 
-    // Score badge (center bottom)
+    // Score badge
     var scoreY = 435;
-    // Outer soft ring
-    ctx.strokeStyle = 'rgba(125,211,252,0.2)';
+    ctx.strokeStyle = 'rgba(255,204,128,0.2)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, scoreY, 105, 0, Math.PI * 2);
     ctx.stroke();
 
     // Progress arc
-    ctx.strokeStyle = '#7DD3FC';
+    ctx.strokeStyle = '#FFCC80';
     ctx.lineWidth = 6;
     ctx.lineCap = 'round';
     ctx.beginPath();
@@ -1287,19 +1299,19 @@
     ctx.font = 'bold 52px Arial, sans-serif';
     ctx.fillText(score + '%', cx, scoreY + 8);
     // Grade
-    ctx.fillStyle = '#7DD3FC';
+    ctx.fillStyle = '#FFCC80';
     ctx.font = 'bold 12px Arial, sans-serif';
     ctx.fillText(grade.toUpperCase(), cx, scoreY + 32);
 
     // Bottom seal line
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('invensislearning.com  ·  ASM Flashcards', cx, H - 55);
+    ctx.fillText('invensislearning.com  ·  CSPO Flashcards', cx, H - 55);
 
     var url = c.toDataURL('image/png');
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'asm-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+    a.download = 'cspo-certificate-' + name.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1326,7 +1338,7 @@
 
   function downloadPDFReport(){
     var name = getDisplayName();
-    if (name === 'Learner') name = 'ASM Learner';
+    if (name === 'Learner') name = 'CSPO Learner';
     var easy=0, good=0, again=0;
     for (var k in sessionRatings){ if (sessionRatings[k]==='easy') easy++; else if (sessionRatings[k]==='good') good++; else again++; }
     var uniqueCards = Object.keys(sessionRatings).length;
@@ -1350,11 +1362,11 @@
       return '<div class="q"><div class="qhead">'+badge+'<h3>' + c.term + '</h3></div><p>' + c.def + '</p></div>';
     }).join('');
 
-    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASM Report - '+name+'</title>' +
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>CSPO Report - '+name+'</title>' +
       '<style>' +
       '*{box-sizing:border-box}' +
       'body{font-family:Arial,Helvetica,sans-serif;padding:28px 34px;color:#171717;max-width:780px;margin:0 auto;line-height:1.55}' +
-      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #009DE1;margin-bottom:16px}' +
+      '.head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid #EF6C00;margin-bottom:16px}' +
       '.head .brand{display:flex;align-items:center;gap:8px}' +
       '.head .brandtxt{font-weight:bold;font-size:13px;color:#171717}' +
       '.head .brandtxt small{display:block;color:#64748B;font-weight:400;font-size:10px;margin-top:1px}' +
@@ -1363,8 +1375,8 @@
       '.toprow .info{flex:1}' +
       '.toprow h1{font-size:20px;margin:0 0 2px;font-weight:bold}' +
       '.toprow .sub{font-size:11px;color:#64748B;margin:0}' +
-      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #009DE1;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
-      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#009DE1;line-height:1}' +
+      '.toprow .sc{width:56px;height:56px;border-radius:50%;border:3px solid #EF6C00;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}' +
+      '.toprow .sc .n{font-size:17px;font-weight:bold;color:#EF6C00;line-height:1}' +
       '.toprow .sc .u{font-size:7px;text-transform:uppercase;letter-spacing:.06em;color:#64748B;margin-top:1px}' +
       '.toprow .grd{font-size:12px;font-weight:bold;color:#171717}' +
       '.toprow .gdesc{font-size:9px;color:#475569;margin-top:1px;max-width:160px;line-height:1.3}' +
@@ -1383,10 +1395,10 @@
       '.rbadge.hard{background:#FCE0DE;color:#C2534A}' +
       '.cta{background:linear-gradient(135deg,#171717,#2A2233);color:#FFF;padding:22px 26px;border-radius:12px;margin:24px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}' +
       '.cta .ct{flex:1;min-width:220px}' +
-      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#7DD3FC;font-weight:bold;display:block;margin-bottom:4px}' +
+      '.cta .ct b{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#FFCC80;font-weight:bold;display:block;margin-bottom:4px}' +
       '.cta .ct h3{font-size:17px;margin:0 0 4px;color:#FFF;border:none;padding:0}' +
       '.cta .ct p{font-size:11px;color:rgba(255,255,255,.75);margin:0}' +
-      '.cta .btn{display:inline-block;background:#009DE1;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
+      '.cta .btn{display:inline-block;background:#EF6C00;color:#FFF;font-weight:bold;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:12px;white-space:nowrap}' +
       '.foot{display:flex;justify-content:center;gap:18px;margin-top:18px;padding-top:12px;border-top:1px solid #E5E5E5;font-size:9px;color:#94A3B8}' +
       '.foot a{color:#94A3B8;text-decoration:none}' +
       '.foot svg{width:11px;height:11px;vertical-align:-1px;margin-right:3px;opacity:.7}' +
@@ -1396,7 +1408,7 @@
       '<div class="head">' +
         '<div class="brand">' +
           '<img src="https://www.invensislearning.com/static/images/invensis-learning-logo.svg" alt="Invensis Learning" style="height:24px;width:auto">' +
-          '<div class="brandtxt">ASM Flashcards<small>Study Session Report</small></div>' +
+          '<div class="brandtxt">CSPO Flashcards<small>Study Session Report</small></div>' +
         '</div>' +
         '<div class="date">'+today+'</div>' +
       '</div>' +
@@ -1415,10 +1427,10 @@
       '<div class="cta">' +
         '<div class="ct">' +
           '<b>READY FOR THE REAL EXAM?</b>' +
-          '<h3>Get instructor-led ASM certification</h3>' +
-          '<p>16 hours live training, 2 mock exams, 100% pass guarantee.</p>' +
+          '<h3>Get instructor-led CSPO certification</h3>' +
+          '<p>16 hours live training, Scrum Alliance certified, Product Owner focus.</p>' +
         '</div>' +
-        '<a class="btn" href="https://www.invensislearning.com/agile-scrum-master/">Explore course</a>' +
+        '<a class="btn" href="https://www.invensislearning.com/cspo-certification-training/">Explore course</a>' +
       '</div>' +
       '<div class="foot">' +
         '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@invensislearning.com">contact@invensislearning.com</a></span>' +
@@ -1429,7 +1441,7 @@
     var blob = new Blob([html], {type:'text/html;charset=utf-8'});
     var blobUrl = URL.createObjectURL(blob);
     var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-    var filename = 'asm-report-' + safeName + '.html';
+    var filename = 'cspo-report-' + safeName + '.html';
     var a = document.createElement('a');
     a.href = blobUrl;
     a.download = filename;
